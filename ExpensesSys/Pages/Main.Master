@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ExpensesSys.Pages.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    
+
+      <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />
+     <script src="../Libs/bootstrap.min.js"></script>
+        <script src="../Libs/jquery.min.js"></script>
+        <script src="../Libs/popper.min.js"></script>
+        <script src="../Libs/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../Libs/main.js"></script>
+        <script src="../Libs/jquery-3.3.1.slim.min.js"></script>
+        <script src="../Libs/jquery.dataTables.min.js"></script>
+        <link href="../Libs/bootstrap.min.css" rel="stylesheet" />
+        <link href="../Libs/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+        <link href="../Libs/all.css" rel="stylesheet" />
+        <link href="../Libs/main.css" rel="stylesheet" />
+        <link href="../Libs/sidebar-themes.css" rel="stylesheet" />
+        <script src="../Libs/dataTables.bulma.min.js"></script>
+        <link href="../Libs/bulma.min.css" rel="stylesheet" />
+            <link href="../Libs/dataTables.bulma.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/334e818a85.js" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+       
+      <style>
+          body {
+              background-image: url("../Images/bgbg.jpg");
+              background-repeat: repeat;
+              background-size: 300px;
+          }
+          .button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  width:100%;
+  height:100%;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+      </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+      <div class="page-wrapper legacy-theme sidebar-bg bg4 toggled " >
+
+                <nav id="sidebar"  class="sidebar-wrapper">
+                        
+                    <div class="sidebar-content" style="background-color:floralwhite;">
+<%--                                     <button id="toggle-sidebar" class="btn btn-outline-primary"  >Slider</button> --%>
+
+                        <!-- sidebar-brand  -->
+                        <div class="sidebar-item sidebar-brand " style="height:3em;width:17em;
+  
+
+  border: 1px dashed #55c0f6;">
+                           
+                                                      
+                                                                <asp:Label Font-Bold="true" style="color:darkcyan; margin-top:10px;" runat="server" ID="TLbl" Text=""></asp:Label>
+                        </div>
+                        <!-- sidebar-header  -->
+                        <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                       
+                            <div class="user-info">
+                                <span class="user-name ">
+                                    <asp:Label Font-Bold="true" style="color:black;" runat="server" ID="NameL"></asp:Label>
+                                </span>
+                                <asp:Label runat="server" ID="JobL" Font-Italic="true"></asp:Label>
+
+
+                            </div>
+                        </div>
+                        <!-- sidebar-search  -->
+
+                        <!-- sidebar-menu  -->
+                        <div class=" sidebar-item sidebar-menu">
+                            <ul>
+                               
+                               
+                            
+                               
+                                <li class="header-menu">
+                                    <span></span>
+                                </li>
+                                  <li>
+                                    <a href="Home.aspx">
+                                        <i class="fa fa-list"style="color:white; background-color:#408cd4;"></i>
+                                        <span class="menu-text" style="color:black; " ><strong> الرئيسيـــة</strong></span>
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>
+                           
+                                <li >
+                                    <a " href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                         <asp:Button runat="server" ID="Button5" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="مصروفـــات المشاريــــع"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </a>
+                                </li>
+                              
+                                       <li>
+                                    <a href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                      <asp:Button runat="server" ID="Button15" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="ادارة المشاريــــع"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>       <li>
+                                    <a href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                      <asp:Button runat="server" ID="Button14" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="رواتـــب الموظفيــــن"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>    <li> <a href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                      <asp:Button runat="server" ID="Button13" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="ادارة الموظفيـــن"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>  
+                           <li> <a href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                      <asp:Button runat="server" ID="Button12" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen" Font-Bold="true" Text="مصروفـــات عامــــة"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>   <li> <a href="">
+                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
+                                      <asp:Button runat="server" ID="Button11" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="التقاريــــر"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>  
+                        
+                             
+                            
+                           
+                                <li>
+                                    <a href="">
+                                       
+
+                                        <asp:Button runat="server" ID="LogOutBtn" class="button  is-text text-danger "  Text="تسجيــل الخروج"  />
+                                    </a>
+                                </li> 
+                                
+                                
+                               
+                              
+
+                            </ul>
+
+
+                        </div>
+                        <!-- sidebar-menu  -->
+
+                    </div>
+
+
+                </nav>
+
+                <!-- page-content  -->
+                <main class="page-content pt-2">
+                    <div id="overlay" class="overlay"></div>
+                    <div class="container-fluid p-5">
+                    <div class="box" style="background:rgba(255,255,255,0.8);">
+
+                
+                         
+                                <h2></h2>
+                                                                    
+                              <i class="fa-solid fa-2x fa-file-signature"></i>
+                                        <asp:Label  runat="server"  class="menu-text text is-size-4">نظــــام المصروفــــات</asp:Label>
+                                        <span class="badge badge-pill badge-primary"></span>
+                            
+                     
+
+                    
+
+
+
+
+            </div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+                    </div>
+
+                </main>
+                <!-- page-content" -->
+
+            </div>
+
+           
+             
+
+
+                
+    
+         <script>
+             var hamburger = document.querySelector(".hamburger");
+             hamburger.addEventListener("click", function () {
+                 document.querySelector("body").classList.toggle("active");
+             })
+         </script>
+    </form>
+</body>
+</html>
