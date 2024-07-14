@@ -92,26 +92,26 @@
     <form id="form1" runat="server">
       <div class="page-wrapper legacy-theme sidebar-bg bg4 toggled " >
 
-                <nav id="sidebar"  class="sidebar-wrapper">
+                <nav id="sidebar"  style="box-shadow:2px 2px 4px #1a1e24;" class="sidebar-wrapper">
                         
-                    <div class="sidebar-content" style="background-color:floralwhite;">
+                    <div class="sidebar-content" style="background-color:#282e37;">
 <%--                                     <button id="toggle-sidebar" class="btn btn-outline-primary"  >Slider</button> --%>
 
                         <!-- sidebar-brand  -->
                         <div class="sidebar-item sidebar-brand " style="height:3em;width:17em;
   
 
-  border: 1px dashed #55c0f6;">
+  border: 1px dashed white;">
                            
                                                       
-                                                                <asp:Label Font-Bold="true" style="color:darkcyan; margin-top:10px;" runat="server" ID="TLbl" Text=""></asp:Label>
+                                                                <asp:Label Font-Bold="true" style="color:white; margin-top:10px;" runat="server" ID="TLbl" Text=""></asp:Label>
                         </div>
                         <!-- sidebar-header  -->
                         <div class="sidebar-item sidebar-header d-flex flex-nowrap">
                        
                             <div class="user-info">
                                 <span class="user-name ">
-                                    <asp:Label Font-Bold="true" style="color:black;" runat="server" ID="NameL"></asp:Label>
+                                    <asp:Label Font-Bold="true" style="color:darkgray;" runat="server" ID="NameL"></asp:Label>
                                 </span>
                                 <asp:Label runat="server" ID="JobL" Font-Italic="true"></asp:Label>
 
@@ -131,55 +131,59 @@
                                     <span></span>
                                 </li>
                                   <li>
-                                    <a href="Home.aspx">
-                                        <i class="fa fa-list"style="color:white; background-color:#408cd4;"></i>
-                                        <span class="menu-text" style="color:black; " ><strong> الرئيسيـــة</strong></span>
+                                      <asp:Panel runat="server" ID="Home" >                                   <a href="Home.aspx">
+                                        <i class="fa fa-list"style="color:white; background-color:transparent;"></i>
+                                        <span class="menu-text" style="color:white; " ><strong> الرئيسيـــة</strong></span>
                                         <span class="badge badge-pill badge-primary"></span>
+
+                                          </asp:Panel>
+ 
                                     </li>
                            
                                 <li >
                                     <a " href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                         <asp:Button runat="server" ID="Button5" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="مصروفـــات المشاريــــع"  />
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                         <asp:Button runat="server" ID="Button5" class="button  is-text   " Font-Underline="false" ForeColor="white"  Font-Bold="true"  Text="مصروفـــات المشاريــــع"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </a>
                                 </li>
                               
-                                       <li>
+                                
+                                <li>
                                     <a href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                      <asp:Button runat="server" ID="Button15" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="ادارة المشاريــــع"  />
+                                        <i class="fa fa-list " style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button15" class="button  is-text   " Font-Underline="false" ForeColor="white"  Font-Bold="true"  Text="ادارة المشاريــــع"  />
                                         <span class="badge badge-pill badge-primary"></span>
-                                    </li>       <li>
+                                    </li>      
+                                
+                                
+                                <li>
                                     <a href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                      <asp:Button runat="server" ID="Button14" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="رواتـــب الموظفيــــن"  />
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button14" class="button  is-text   " Font-Underline="false" ForeColor="white"  Font-Bold="true"  Text="رواتـــب الموظفيــــن"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </li>    <li> <a href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                      <asp:Button runat="server" ID="Button13" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="ادارة الموظفيـــن"  />
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button13" class="button  is-text   " Font-Underline="false" ForeColor="white"  Font-Bold="true"  Text="ادارة الموظفيـــن"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </li>  
                            <li> <a href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                      <asp:Button runat="server" ID="Button12" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen" Font-Bold="true" Text="مصروفـــات عامــــة"  />
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button12" class="button  is-text   " Font-Underline="false" ForeColor="white" Font-Bold="true" Text="مصروفـــات عامــــة"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </li>   <li> <a href="">
-                                        <i class="fa fa-list" style="color:white; background-color:#408cd4;"></i>
-                                      <asp:Button runat="server" ID="Button11" class="button  is-text   " Font-Underline="false" ForeColor="DarkGreen"  Font-Bold="true"  Text="التقاريــــر"  />
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button11" class="button  is-text   " Font-Underline="false" ForeColor="white"  Font-Bold="true"  Text="التقاريــــر"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                    </li>  
+                          <li> <a href="">
+                                        <i class="fa-solid fa-right-from-bracket" style="color:Pink; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="LogOutBtn" class="button  is-text   " Font-Underline="false" ForeColor="Pink"  Font-Bold="true"  Text="تسجيــل الخروج"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </li>  
                         
                              
-                            
-                           
-                                <li>
-                                    <a href="">
-                                       
-
-                                        <asp:Button runat="server" ID="LogOutBtn" class="button  is-text text-danger "  Text="تسجيــل الخروج"  />
-                                    </a>
-                                </li> 
+                          
                                 
                                 
                                

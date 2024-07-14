@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Main.openPage = "Home";
         }
     }
 }

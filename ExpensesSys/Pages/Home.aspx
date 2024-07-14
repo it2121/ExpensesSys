@@ -29,7 +29,7 @@
         </div>
     </asp:Panel>
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
-        <p class="panel-heading text-center">الرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
+        <p class="panel-heading text-center" style="background-color:#3399ff;">الرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
 
         
               <div class="row  " style="padding:1em;">
