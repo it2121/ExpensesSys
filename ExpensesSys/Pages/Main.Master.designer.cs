@@ -69,6 +69,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel Home;
 
         /// <summary>
+        /// Expences control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Expences;
+
+        /// <summary>
         /// Button5 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button5;
+
+        /// <summary>
+        /// ProjMan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ProjMan;
 
         /// <summary>
         /// Button15 control.
@@ -87,6 +105,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button Button15;
 
         /// <summary>
+        /// Salary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Salary;
+
+        /// <summary>
         /// Button14 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button14;
+
+        /// <summary>
+        /// EmpMan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EmpMan;
 
         /// <summary>
         /// Button13 control.

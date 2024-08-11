@@ -69,8 +69,18 @@
   <ItemGroup>
     <Content Include="Pages\BBAALL.aspx" />
     <Content Include="Pages\DDAALL.aspx" />
+    <Content Include="Pages\EmpEditor.aspx" />
+    <Content Include="Pages\EmpMan.aspx" />
+    <Content Include="Pages\Expences.aspx" />
     <Content Include="Pages\Home.aspx" />
+    <Content Include="Pages\ItemsEditor.aspx" />
+    <Content Include="Pages\ItemsMan.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
+    <Content Include="Pages\PeojectSeector.aspx" />
+    <Content Include="Pages\ProjEditor.aspx" />
+    <Content Include="Pages\ProjMan.aspx" />
+    <Content Include="Pages\Salary.aspx" />
+    <Content Include="Pages\SalaryEditor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,12 +98,47 @@
     <Compile Include="Pages\DDAALL.aspx.designer.cs">
       <DependentUpon>DDAALL.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EmpEditor.aspx.cs">
+      <DependentUpon>EmpEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EmpEditor.aspx.designer.cs">
+      <DependentUpon>EmpEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmpMan.aspx.cs">
+      <DependentUpon>EmpMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EmpMan.aspx.designer.cs">
+      <DependentUpon>EmpMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Expences.aspx.cs">
+      <DependentUpon>Expences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Expences.aspx.designer.cs">
+      <DependentUpon>Expences.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ItemsEditor.aspx.cs">
+      <DependentUpon>ItemsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ItemsEditor.aspx.designer.cs">
+      <DependentUpon>ItemsEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ItemsMan.aspx.cs">
+      <DependentUpon>ItemsMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ItemsMan.aspx.designer.cs">
+      <DependentUpon>ItemsMan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\LogInSeprate.aspx.cs">
       <DependentUpon>LogInSeprate.aspx</DependentUpon>
@@ -108,6 +153,41 @@
     </Compile>
     <Compile Include="Pages\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PeojectSeector.aspx.cs">
+      <DependentUpon>PeojectSeector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PeojectSeector.aspx.designer.cs">
+      <DependentUpon>PeojectSeector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProjEditor.aspx.cs">
+      <DependentUpon>ProjEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProjEditor.aspx.designer.cs">
+      <DependentUpon>ProjEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProjMan.aspx.cs">
+      <DependentUpon>ProjMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProjMan.aspx.designer.cs">
+      <DependentUpon>ProjMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Salary.aspx.cs">
+      <DependentUpon>Salary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Salary.aspx.designer.cs">
+      <DependentUpon>Salary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SalaryEditor.aspx.cs">
+      <DependentUpon>SalaryEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SalaryEditor.aspx.designer.cs">
+      <DependentUpon>SalaryEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

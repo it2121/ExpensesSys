@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ExpensesSys.Pages.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs"  Inherits="ExpensesSys.Pages.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,6 +29,7 @@
         </div>
     </asp:Panel>
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
+
         <p class="panel-heading text-center" style="background-color:#3399ff;">الرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
 
         
@@ -38,14 +39,21 @@
 
             <div class="col-6 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-list-check mt-1 mr-3"></i> مصروفـــات المشاريــــع</span></button>
-
+                   <asp:Button runat="server"  ID="Button6"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToExpences" role="button" Text="مصروفـــات المشاريــــع"></asp:Button>
+               
+              
 
 
             </div> <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
+              
+                  <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
+               
+              
+                   
+           
+             
 
-                              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-gear mt-1 mr-3"></i> ادارة المشاريــــع</span></button>
 
 
             </div>
@@ -57,16 +65,18 @@
 
             <div class="col-6 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-money-bill-wave mt-1 mr-3"></i> رواتـــب الموظفيــــن</span></button>
-
+                   <asp:Button runat="server"  ID="Button1"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToSalary" role="button" Text="رواتـــب الموظفيــــن"></asp:Button>
+               
+              
 
 
             </div> 
                 
                 <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-gear mt-1 mr-3"></i> ادارة الموظفيـــن</span></button>
-
+                       <asp:Button runat="server"  ID="Button2"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToEmpMan" role="button" Text="ادارة الموظفيـــن"></asp:Button>
+               
+              
 
 
             </div>
@@ -76,8 +86,9 @@
 
             <div class="col-12 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-cart-shopping mt-1 mr-3"></i> مصروفـــات عامــــة</span></button>
-
+                   <asp:Button runat="server"  ID="Button3"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="مصروفـــات عامــــة"></asp:Button>
+               
+              
 
 
             </div> 
@@ -89,8 +100,9 @@
 
             <div class="col-12 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                              <button class="button-64" role="button" style="font:bolder;" ><span class="text">   <i class="fa-solid fa-scroll mt-1 mr-3"></i> التقاريــــر</span></button>
-
+                   <asp:Button runat="server"  ID="Button4"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="التقاريــــر"></asp:Button>
+               
+              
 
 
             </div> 

@@ -13,5 +13,37 @@ namespace ExpensesSys.Pages
         {
             Main.openPage = "Home";
         }
+
+
+        protected void GoToSalary(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Salary";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }   protected void GoToExpences(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Expences";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }
+        
+        protected void GoToProjMan(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("ProjMan.aspx");
+
+        }
+
+        protected void GoToEmpMan(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "EmpMan";
+            Response.Redirect("PeojectSeector.aspx");
+
+        }
     }
+
+
+
 }

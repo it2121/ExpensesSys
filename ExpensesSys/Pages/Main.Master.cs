@@ -51,7 +51,55 @@ namespace ExpensesSys.Pages
 
 
             }
-        
+            else if (pageName.Equals("ProjMan")) {
+                ProjMan.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            }
+
+            else if (pageName.Equals("EmpMan"))
+            {
+                EmpMan.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            }   else if (pageName.Equals("Expences"))
+            {
+                Expences.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            } else if (pageName.Equals("Salary"))
+            {
+                Salary.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            }
+
+
+        }
+        protected void GoToProjMan(object sender, EventArgs e)
+        {
+
+            Response.Redirect("ProjMan.aspx");
+
+        }  protected void GoToEmpMan(object sender, EventArgs e)
+        {
+
+            PeojectSeector.GoToPage = "EmpMan";
+            Response.Redirect("PeojectSeector.aspx");
+
+        }
+        protected void GoToExpences(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Expences";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }   protected void GoToSalary(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Salary";
+            Response.Redirect("PeojectSeector.aspx");
+
+
         }
     }
 }

@@ -57,16 +57,16 @@
                              <%--         <img src="../Images/SCLogo.png" width="212px" >--%>
                                     </center>
                                 <div class="field" >
-                                    <label for="" class="label">    </label>
+                                    <label for="" class="label">اسم المستخدم</label>
                                     <div class="control has-icons-left">
-                                        <asp:TextBox runat="server" ID="UsernameTB" type="text" placeholder="Username" class="input" required />
+                                        <asp:TextBox runat="server" ID="UsernameTB" type="text" placeholder="اسم المستخدم" class="input" required />
                                         <span class="icon is-small is-left">
                                             <i class="fa fa-envelope"></i>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="" class="label">Password</label>
+                                    <label for="" class="label">الرمز السري</label>
                                     <div class="control has-icons-left">
                                         <asp:TextBox runat="server" ID="PassTB" type="password" placeholder="*******" class="input" required />
                                         <span class="icon is-small is-left">
@@ -74,15 +74,10 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="field">
-                                    <label for="" class="checkbox">
-                                        <input type="checkbox">
-                                        Remember me
-                                    </label>
-                                </div>
+                           
 
                                 <div class="field buttons">
-                                    <asp:Button runat="server" OnClick="SubmitBtn_Click" ID="btn" Text="Log In" class="button is-fullwidth is-success" BackColor="#33B3FF"></asp:Button>
+                                    <asp:Button runat="server" OnClick="SubmitBtn_Click" ID="btn" Text="تسجيل الدخول" class="button is-fullwidth is-success" BackColor="#33B3FF"></asp:Button>
                                 </div>
 
                           
