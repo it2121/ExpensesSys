@@ -58,6 +58,10 @@ namespace ExpensesSys.Pages
                 Salary.ProjectID = Convert.ToInt32(id.Text);
 
 
+            } else if (GoToPage.Equals("Nth")) {
+                Nth.ProjectID = Convert.ToInt32(id.Text);
+
+
             }
 
 

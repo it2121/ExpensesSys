@@ -16,11 +16,48 @@ namespace ExpensesSys.Pages
 
         }
 
-        protected void GoToItemsMan(object sender, EventArgs e)
+        protected void GoToItemMan(object sender, EventArgs e)
         {
 
             ItemsMan.ProjectID = ProjectID;
             Response.Redirect("ItemsMan.aspx");
+
+        }
+
+        protected void GoToSalary(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Salary";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }  
+        
+        protected void GoToContr(object sender, EventArgs e)
+        {
+           // PeojectSeector.GoToPage = "Salary";
+           // Response.Redirect("PeojectSeector.aspx");
+
+
+        }
+        
+        protected void GoToMatBuy(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "MatBuy";
+
+
+            MatBuy.ProjectID = ProjectID;
+            Response.Redirect("MatBuy.aspx");
+
+
+        }
+        
+        
+        protected void GoToH5(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "Salary";
+            //Response.Redirect("PeojectSeector.aspx");
+            Comp.ProjectID = ProjectID;
+            Response.Redirect("Comp.aspx");
 
         }
     }

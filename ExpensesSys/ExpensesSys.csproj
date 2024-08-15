@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\BBAALL.aspx" />
+    <Content Include="Pages\Comp.aspx" />
+    <Content Include="Pages\CompEditor.aspx" />
     <Content Include="Pages\DDAALL.aspx" />
     <Content Include="Pages\EmpEditor.aspx" />
     <Content Include="Pages\EmpMan.aspx" />
@@ -76,6 +78,12 @@
     <Content Include="Pages\ItemsEditor.aspx" />
     <Content Include="Pages\ItemsMan.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
+    <Content Include="Pages\MatBuy.aspx" />
+    <Content Include="Pages\MatBuyEditor.aspx" />
+    <Content Include="Pages\Nth.aspx" />
+    <Content Include="Pages\NthEdtor.aspx" />
+    <Content Include="Pages\Pay.aspx" />
+    <Content Include="Pages\PayEdit.aspx" />
     <Content Include="Pages\PeojectSeector.aspx" />
     <Content Include="Pages\ProjEditor.aspx" />
     <Content Include="Pages\ProjMan.aspx" />
@@ -90,6 +98,20 @@
     </Compile>
     <Compile Include="Pages\BBAALL.aspx.designer.cs">
       <DependentUpon>BBAALL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Comp.aspx.cs">
+      <DependentUpon>Comp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Comp.aspx.designer.cs">
+      <DependentUpon>Comp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompEditor.aspx.cs">
+      <DependentUpon>CompEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CompEditor.aspx.designer.cs">
+      <DependentUpon>CompEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\DDAALL.aspx.cs">
       <DependentUpon>DDAALL.aspx</DependentUpon>
@@ -153,6 +175,48 @@
     </Compile>
     <Compile Include="Pages\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MatBuy.aspx.cs">
+      <DependentUpon>MatBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MatBuy.aspx.designer.cs">
+      <DependentUpon>MatBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MatBuyEditor.aspx.cs">
+      <DependentUpon>MatBuyEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MatBuyEditor.aspx.designer.cs">
+      <DependentUpon>MatBuyEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Nth.aspx.cs">
+      <DependentUpon>Nth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Nth.aspx.designer.cs">
+      <DependentUpon>Nth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NthEdtor.aspx.cs">
+      <DependentUpon>NthEdtor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NthEdtor.aspx.designer.cs">
+      <DependentUpon>NthEdtor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pay.aspx.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Pay.aspx.designer.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayEdit.aspx.cs">
+      <DependentUpon>PayEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PayEdit.aspx.designer.cs">
+      <DependentUpon>PayEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PeojectSeector.aspx.cs">
       <DependentUpon>PeojectSeector.aspx</DependentUpon>

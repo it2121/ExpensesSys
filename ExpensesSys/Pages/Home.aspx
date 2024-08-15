@@ -33,18 +33,12 @@
         <p class="panel-heading text-center" style="background-color:#3399ff;">الرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
 
         
-              <div class="row  " style="padding:1em;">
+        
+        <div class="row  " style="padding:1em;">
         
           
 
-            <div class="col-6 mt-3  text-center">
-<%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button6"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToExpences" role="button" Text="مصروفـــات المشاريــــع"></asp:Button>
-               
-              
-
-
-            </div> <div class="col-6 mt-3  text-center ">
+            <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
               
                   <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
@@ -57,20 +51,6 @@
 
 
             </div>
-            </div>
-        
-        <div class="row  " style="padding:1em;">
-        
-          
-
-            <div class="col-6 mt-3  text-center">
-<%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button1"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToSalary" role="button" Text="رواتـــب الموظفيــــن"></asp:Button>
-               
-              
-
-
-            </div> 
                 
                 <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
@@ -80,13 +60,29 @@
 
 
             </div>
-            </div>        <div class="row  " style="padding:1em;">
+            </div>   
+              <div class="row  " style="padding:1em;">
         
           
 
             <div class="col-12 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button3"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="مصروفـــات عامــــة"></asp:Button>
+                   <asp:Button runat="server"  ID="Button6"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToExpences" role="button" Text="مصروفـــات المشاريــــع"></asp:Button>
+               
+              
+
+
+            </div> 
+                  
+                  
+                
+            </div>     <div class="row  " style="padding:1em;">
+        
+          
+
+            <div class="col-12 mt-3  text-center">
+<%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
+                   <asp:Button runat="server"  ID="Button3"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToNth" role="button" Text="النثريــــات"></asp:Button>
                
               
 

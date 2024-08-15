@@ -21,7 +21,17 @@ namespace ExpensesSys.Pages
             Response.Redirect("PeojectSeector.aspx");
 
 
-        }   protected void GoToExpences(object sender, EventArgs e)
+        }
+        protected void GoToNth(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "Nth";
+            Response.Redirect("Nth.aspx");
+
+            
+
+
+        }
+        protected void GoToExpences(object sender, EventArgs e)
         {
             PeojectSeector.GoToPage = "Expences";
             Response.Redirect("PeojectSeector.aspx");

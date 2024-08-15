@@ -16,6 +16,60 @@ namespace ExpensesSys.Pages
 
         }
 
+        public static DataTable getCompByID(int ID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getCompByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    public static DataTable getAllCompOfProject(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllCompOfProject";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable getPayCountByRecID(int RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getPayCountByRecID";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+        
+        
+        
+        public static DataTable getMatBuyRecByID(int ID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getMatBuyRecByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+        public static DataTable GetMatBuyOfAProject(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetMatBuyOfAProject";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+        
+        
+        
         public static DataTable LogIn(string Username, string Password)
         {
             SqlCommand cm;
@@ -70,7 +124,17 @@ namespace ExpensesSys.Pages
         }
         
         
-        public static DataTable DeleteSalary(int SalaryIDRecord)
+        public static DataTable DeleteMatBuy(int MatBuyRecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "DeleteMatBuy";
+            cm.Parameters.AddWithValue("@MatBuyRecID ", MatBuyRecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+           public static DataTable DeleteSalary(int SalaryIDRecord)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -81,6 +145,26 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
         
+           
+        public static DataTable getAllNth()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllNth";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }       
+        public static DataTable getNthByID(int ID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getNthByID";
+            cm.Parameters.AddWithValue("@ID ", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }      
            
         public static DataTable getSalaryRecBySalaryRecID(int ID)
         {
@@ -95,6 +179,27 @@ namespace ExpensesSys.Pages
         
         
         
+        public static DataTable getAllPayByRecID(int RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllPayByRecID";
+            cm.Parameters.AddWithValue("@RecID ", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    
+        public static DataTable getMatNameByMatBuyID(int RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getMatNameByMatBuyID";
+            cm.Parameters.AddWithValue("@RecID ", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+           
         public static DataTable getSalaryByProjectID(int ProjectID)
         {
             SqlCommand cm;
@@ -104,7 +209,10 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@ProjectID ", ProjectID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }  public static DataTable getEmpByID(int ID)
+        }  
+        
+        
+        public static DataTable getEmpByID(int ID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -175,6 +283,48 @@ namespace ExpensesSys.Pages
 
 
 
+        }  public static bool UpdateComp(int ID, string NameOrReason, int Cost , string PayDate  )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateComp";
+
+
+            cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@NameOrReason", NameOrReason);
+            cm.Parameters.AddWithValue("@Cost", Cost);
+            cm.Parameters.AddWithValue("@PayDate", PayDate);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        } public static bool InsertComp( string NameOrReason, int Cost , string PayDate ,int ProjectID )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertComp";
+
+
+            cm.Parameters.AddWithValue("@NameOrReason", NameOrReason);
+            cm.Parameters.AddWithValue("@Cost", Cost);
+            cm.Parameters.AddWithValue("@PayDate", PayDate);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
         } 
           public static bool UpdateItem(string ItemName,int ID)
 
@@ -196,6 +346,169 @@ namespace ExpensesSys.Pages
 
 
         } 
+        
+        
+        public static bool UpdaeMatBuy(string MatName, int Quant, int Count , string MatType, int TotalCost,
+           
+            int ProjectID,
+            string BuyingParty,
+            string Buyer,
+            int MatBuyRecID
+            )
+
+
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdaeMatBuy";
+
+
+            cm.Parameters.AddWithValue("@MatName", MatName);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+            cm.Parameters.AddWithValue("@MatType", MatType);
+            cm.Parameters.AddWithValue("@TotalCost", TotalCost);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@BuyingParty", BuyingParty);
+            cm.Parameters.AddWithValue("@Buyer", Buyer);
+            cm.Parameters.AddWithValue("@Count", Count);
+            cm.Parameters.AddWithValue("@MatBuyRecID", MatBuyRecID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        } 
+            public static bool InsertMatBuy(string MatName, int Quant, int Count , string MatType, int TotalCost,
+           
+            int ProjectID,
+            string BuyingParty,
+            string Buyer
+            )
+
+
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertMatBuy";
+
+
+            cm.Parameters.AddWithValue("@MatName", MatName);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+            cm.Parameters.AddWithValue("@MatType", MatType);
+            cm.Parameters.AddWithValue("@TotalCost", TotalCost);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@BuyingParty", BuyingParty);
+            cm.Parameters.AddWithValue("@Buyer", Buyer);
+            cm.Parameters.AddWithValue("@Count", Count);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        } 
+        
+        
+        public static bool updatePay(int PaidAmount, string Date, int RecID, int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "updatePay";
+
+
+            cm.Parameters.AddWithValue("@PaidAmount", PaidAmount);
+            cm.Parameters.AddWithValue("@Date", Date);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }    
+        public static bool UpdateNth(string Name, int Quant, string BuyDate,int Cost ,int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateNth";
+
+
+            cm.Parameters.AddWithValue("@Name", Name);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+            cm.Parameters.AddWithValue("@BuyDate", BuyDate);
+            cm.Parameters.AddWithValue("@Cost", Cost);
+            cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }  
+          public static bool InsertNth(string Name, int Quant, string BuyDate,int Cost )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertNth";
+
+
+            cm.Parameters.AddWithValue("@Name", Name);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+            cm.Parameters.AddWithValue("@BuyDate", BuyDate);
+            cm.Parameters.AddWithValue("@Cost", Cost);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }  
+        
+        
+        public static bool InsertPay(int PaidAmount, string Date, int RecID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertPay";
+
+
+            cm.Parameters.AddWithValue("@PaidAmount", PaidAmount);
+            cm.Parameters.AddWithValue("@Date", Date);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }  
+        
         
         
         public static bool InsertEmp(string EmpName, string EmpJob,int EmpSal, int ProjectID)
@@ -355,6 +668,25 @@ namespace ExpensesSys.Pages
         
         
         
+        public static bool DeleteNth(int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DeleteNth";
+
+
+            cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }   
         public static bool DeleteProject(int ID)
 
         {
@@ -373,7 +705,11 @@ namespace ExpensesSys.Pages
 
 
 
-        }  public static bool DeleteItem(int ID)
+        }  
+        
+        
+        
+        public static bool DeleteItem(int ID)
 
         {
             SqlCommand cm;
