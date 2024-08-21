@@ -39,14 +39,14 @@ namespace ExpensesSys.Pages
             if (x.Equals("GoToPayEdit"))
             {
 
-                Pay.RecId = Convert.ToInt32(e.CommandArgument.ToString());
-                Pay.ProjectID = ProjectID;
+                PayEdit.RecID = Convert.ToInt32(e.CommandArgument.ToString());
+                PayEdit.MainRecID = RecId;
 
 
 
 
 
-                Response.Redirect("Pay.aspx");
+                Response.Redirect("PayEdit.aspx");
 
             }
 

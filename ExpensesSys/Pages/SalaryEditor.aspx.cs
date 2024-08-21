@@ -13,11 +13,22 @@ namespace ExpensesSys.Pages
         public static int EmpId = 0;
         public static int SalaryRecID = 0;
         public static int ProjectID = 0;
+        DataTable ProjectsNames;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ProjectsNames = BBAALL.GetAllProjects();
             if (!IsPostBack)
             {
-                
+
+                ProjectsNames = BBAALL.GetAllProjects();
+                WithdrowParty.Items.Add("وارد المستثمر");
+
+                foreach (DataRow row in ProjectsNames.Rows)
+                {
+
+                    WithdrowParty.Items.Add(row["Name"].ToString());
+
+                }
 
 
                 if (SalaryRecID != 0)
@@ -33,6 +44,20 @@ namespace ExpensesSys.Pages
                             EmpJob.Text = EmpTbl.Rows[0]["EmpJob"].ToString();
                             EmpSal.Text = EmpTbl.Rows[0]["EmpSalary"].ToString();
                             SalDate.Text = SalaryDT.Rows[0]["RecDate"].ToString();
+
+                    if (SalaryDT.Rows[0]["ProjectID"].ToString().Equals(0))
+                    {
+
+                            WithdrowParty.Text = "وارد المستثمر";
+
+
+                    }else
+                    {
+
+                        WithdrowParty.Text = BBAALL.getProjectNameByID(Convert.ToInt32(SalaryDT.Rows[0]["ProjectID"].ToString())).Rows[0][0].ToString();
+
+
+                    }
 
 
 
@@ -94,6 +119,19 @@ namespace ExpensesSys.Pages
 
         protected void CreateItem(object sender, EventArgs e)
         {
+       /*     int ProjectIDFromSelection = 0;
+            foreach(DataRow row in ProjectsNames.Rows)
+            {
+
+                if (row["Name"].Equals(WithdrowParty.Text))
+                {
+
+                    ProjectIDFromSelection = Convert.ToInt32(row["ID"]);
+
+                }
+
+            }*/
+            
             if (SalaryRecID == 0)
             {
 
@@ -102,7 +140,7 @@ namespace ExpensesSys.Pages
 
 
 
-                BBAALL.InsertSalary(ProjectID, EmpId, SalDate.Text,Convert.ToInt32(EmpSal.Text));
+                BBAALL.InsertSalary(ProjectID, EmpId, SalDate.Text,Convert.ToInt32(EmpSal.Text), WithdrowParty.Text);
 
 
 
@@ -114,7 +152,7 @@ namespace ExpensesSys.Pages
             {
 
 
-                BBAALL.UpdateSalary(ProjectID, EmpId, SalDate.Text, Convert.ToInt32(EmpSal.Text),SalaryRecID);
+                BBAALL.UpdateSalary(ProjectID, EmpId, SalDate.Text, Convert.ToInt32(EmpSal.Text),SalaryRecID,WithdrowParty.Text);
 
                 EmpId = 0;
                 SalaryRecID = 0;

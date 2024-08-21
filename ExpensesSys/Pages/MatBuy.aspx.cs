@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -28,7 +29,37 @@ namespace ExpensesSys.Pages
 
             }
         }
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
 
+                    Label TotlaCostLbl = (e.Row.FindControl("lbl_TotalCost") as Label);
+                    Label RecAmountLbl = (e.Row.FindControl("lbl_RecAmount") as Label);
+
+                    int TotlaCostint = Convert.ToInt32(TotlaCostLbl.Text);
+                    int RecAmountint = Convert.ToInt32(RecAmountLbl.Text);
+
+
+                    if (TotlaCostint- RecAmountint <=0)
+                    {
+                        e.Row.BackColor = Color.FromName("#e6ffe3");
+                    }
+                    else
+                    {
+                        e.Row.BackColor = Color.FromName("#ffe3e3");
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
         {//GoToPay
@@ -55,6 +86,7 @@ namespace ExpensesSys.Pages
         {
 
             //  MatBuyEditor.ProjectID = ProjectID;
+            MatBuyEditor.ProjectID = ProjectID;
 
             Response.Redirect("MatBuyEditor.aspx");
 

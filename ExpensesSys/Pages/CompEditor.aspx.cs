@@ -18,8 +18,19 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                DataTable ProjectsNames = BBAALL.GetAllProjects();
+                WithdrowParty.Items.Add("وارد المستثمر");
+
+                foreach (DataRow row in ProjectsNames.Rows)
+                {
+
+                    WithdrowParty.Items.Add(row["Name"].ToString());
+
+                }
                 if (ID != 0)
                 {
+
+                  
                     DataTable CompTbl = BBAALL.getCompByID(ID);
 
                     DelBtn.Visible = true;
@@ -33,6 +44,7 @@ namespace ExpensesSys.Pages
                             NameOrReason.Text = dt["NameOrReason"].ToString();
                             Cost.Text = dt["Cost"].ToString();
                             PayDate.Text = dt["PayDate"].ToString();
+                            WithdrowParty.Text = dt["WithdrowParty"].ToString();
 
 
                         }
@@ -87,7 +99,7 @@ namespace ExpensesSys.Pages
 
                 BBAALL.InsertComp( NameOrReason.Text, Convert.ToInt32(Cost.Text),
 
-                   PayDate.Text,ProjectID);
+                   PayDate.Text,ProjectID,WithdrowParty.Text);
 
                 Response.Redirect("Comp.aspx");
 
@@ -99,7 +111,7 @@ namespace ExpensesSys.Pages
                 BBAALL.UpdateComp(ID,NameOrReason.Text,
                     Convert.ToInt32(Cost.Text),
 
-                    PayDate.Text);
+                    PayDate.Text, WithdrowParty.Text);
 
                 ID = 0;
                 DelBtn.Visible = false;

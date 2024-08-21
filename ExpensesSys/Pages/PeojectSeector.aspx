@@ -21,7 +21,17 @@
                        <div class="col-auto">
                 <div class="field buttons align-items-end">
 
+                         <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="القناة العامة"
+        
+         
+         data-target="modal-js-example"
+                                 onclick="GoToProjectZero"
 
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">القناة العامة 
+                       
+                        <i class="fas " style="margin-left: 1em">
+
+                        </i></asp:LinkButton>
 
 
                 </div>

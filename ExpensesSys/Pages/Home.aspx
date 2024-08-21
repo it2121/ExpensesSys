@@ -34,7 +34,7 @@
 
         
         
-        <div class="row  " style="padding:1em;">
+        <div class="row  " style="padding-left :1em; padding-right:1em;">
         
           
 
@@ -61,9 +61,18 @@
 
             </div>
             </div>   
-              <div class="row  " style="padding:1em;">
+              <div class="row  " style="padding-left :1em; padding-right:1em;">
         
           
+            <div class="col-12 mt-3  text-center">
+<%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
+                   <asp:Button runat="server"  ID="Button1"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToIncome" role="button" Text="الايرادات"></asp:Button>
+               
+              
+
+
+            </div> 
+                  
 
             <div class="col-12 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
@@ -76,7 +85,7 @@
                   
                   
                 
-            </div>     <div class="row  " style="padding:1em;">
+            </div>     <div class="row  " style="padding-left :1em; padding-right:1em;">
         
           
 
@@ -90,13 +99,13 @@
             </div> 
                 
              
-            </div>  <div class="row  " style="padding:1em;">
+            </div>  <div class="row  " style="padding-left :1em; padding-right:1em;">
         
           
 
-            <div class="col-12 mt-3  text-center">
+            <div class="col-12 mt-1  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button4"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToProjMan" role="button" Text="التقاريــــر"></asp:Button>
+                   <asp:Button runat="server"  ID="Button4"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToReports" role="button" Text="التقاريــــر"></asp:Button>
                
               
 

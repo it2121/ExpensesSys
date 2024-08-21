@@ -86,6 +86,8 @@
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
                           OnRowCommand="MyGridView_OnRowCommand"
+                             OnRowDataBound="GridView1_RowDataBound"
+
                             >
             <Columns>
         

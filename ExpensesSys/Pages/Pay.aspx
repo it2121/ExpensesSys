@@ -125,6 +125,10 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     <ItemTemplate>
                         <asp:Label  ID="lbl_Quant1" runat="server" Text='<%#Eval("Date") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
                     </ItemTemplate>
+                </asp:TemplateField>               <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة السحب">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_Quant1WithdrowParty" runat="server" Text='<%#Eval("WithdrowParty") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                    </ItemTemplate>
                 </asp:TemplateField>   
 
 

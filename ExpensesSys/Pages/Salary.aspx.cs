@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -91,7 +92,34 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
 
+                    Label ChecrLbl = (e.Row.FindControl("lbl_ORName12s2") as Label);
+
+
+
+                    if (ChecrLbl.Text.Equals("✓"))
+                    {
+                        e.Row.BackColor = Color.FromName("#e6ffe3");
+                    }
+                    else 
+                    {
+                        e.Row.BackColor = Color.FromName("#ffe3e3");
+
+                    }
+                 
+
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
@@ -105,11 +133,13 @@ namespace ExpensesSys.Pages
 
 
 
-            if (id.Text.Length > 0)
+            if (!id.Text.Equals("0"))
             {
 
                 SalaryEditor.SalaryRecID = Convert.ToInt32(id.Text);
                 SalaryEditor.ProjectID = ProjectID;
+                SalaryEditor.EmpId = Convert.ToInt32(emdID.Text);
+
             }
             else {
 
@@ -120,9 +150,9 @@ namespace ExpensesSys.Pages
                 SalaryEditor.ProjectID = ProjectID;
 
             }
+   
 
-
-           Response.Redirect("SalaryEditor.aspx");
+             Response.Redirect("SalaryEditor.aspx");
 
 
         }
@@ -137,7 +167,7 @@ namespace ExpensesSys.Pages
                 
                 DateTime dateTime = DateTime.UtcNow.Date;
 
-                BBAALL.AutoInsertSalary(Convert.ToInt32(EmpID), dateTime.ToString("dd/MM/yyyy"), ProjectID);
+                BBAALL.AutoInsertSalary(Convert.ToInt32(EmpID), dateTime.ToString("dd/MM/yyyy"), ProjectID,BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString());
                 Response.Redirect("Salary.aspx");
 
             }

@@ -69,6 +69,24 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel Home;
 
         /// <summary>
+        /// Income control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Income;
+
+        /// <summary>
+        /// Button55 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button55;
+
+        /// <summary>
         /// Expences control.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button12;
+
+        /// <summary>
+        /// Reports control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Reports;
 
         /// <summary>
         /// Button11 control.

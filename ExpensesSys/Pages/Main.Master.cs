@@ -72,16 +72,37 @@ namespace ExpensesSys.Pages
                 Salary.BackColor = ColorTranslator.FromHtml("#3399ff");
 
 
+            }else if (pageName.Equals("Income"))
+            {
+                Income.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            }else if (pageName.Equals("Reports"))
+            {
+                Reports.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
             }
 
 
         }
-        protected void GoToProjMan(object sender, EventArgs e)
+        protected void GoToReports(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Reports.aspx");
+
+        }   protected void GoToProjMan(object sender, EventArgs e)
         {
 
             Response.Redirect("ProjMan.aspx");
 
-        }  protected void GoToEmpMan(object sender, EventArgs e)
+        }  protected void GoToIncome(object sender, EventArgs e)
+        {
+
+            PeojectSeector.GoToPage = "Income";
+            Response.Redirect("PeojectSeector.aspx");
+
+        }protected void GoToEmpMan(object sender, EventArgs e)
         {
 
             PeojectSeector.GoToPage = "EmpMan";

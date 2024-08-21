@@ -16,8 +16,20 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                DataTable ProjectsNames = BBAALL.GetAllProjects();
+                WithdrowParty.Items.Add("وارد المستثمر");
+
+                foreach (DataRow row in ProjectsNames.Rows)
+                {
+
+                    WithdrowParty.Items.Add(row["Name"].ToString());
+
+                }
+
                 if (ID != 0)
                 {
+
+
                     DataTable ProjectDT = BBAALL.getNthByID(ID);
 
                     DelBtn.Visible = true;
@@ -32,6 +44,7 @@ namespace ExpensesSys.Pages
                             Quant.Text = dt["Quant"].ToString();
                             BuyDate.Text = dt["BuyDate"].ToString();
                             Cost.Text = dt["Cost"].ToString();
+                            WithdrowParty.Text = dt["WithdrowParty"].ToString();
 
 
                         }
@@ -84,7 +97,7 @@ namespace ExpensesSys.Pages
                 BBAALL.InsertNth(Name.Text,
                     Convert.ToInt32(Quant.Text),
 
-                    BuyDate.Text, Convert.ToInt32(Cost.Text));
+                    BuyDate.Text, Convert.ToInt32(Cost.Text), WithdrowParty.Text);
 
 
 
@@ -99,7 +112,7 @@ namespace ExpensesSys.Pages
                 BBAALL.UpdateNth(Name.Text,
                     Convert.ToInt32(Quant.Text),
 
-                    BuyDate.Text, Convert.ToInt32(Cost.Text),ID);
+                    BuyDate.Text, Convert.ToInt32(Cost.Text),ID, WithdrowParty.Text);
 
                 ID = 0;
                 DelBtn.Visible = false;

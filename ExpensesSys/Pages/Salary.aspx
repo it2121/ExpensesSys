@@ -99,7 +99,7 @@
                             OnRowCommand="MyGridView_OnRowCommand"
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
-                          
+ OnRowDataBound="GridView1_RowDataBound"
                             >
             <Columns>
         

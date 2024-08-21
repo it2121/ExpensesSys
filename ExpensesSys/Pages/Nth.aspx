@@ -121,6 +121,12 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Label  ID="lbl_OR24" runat="server" Text='<%#Eval("Cost") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
+                  <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة السحب">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR242" runat="server" Text='<%#Eval("WithdrowParty") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
            <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
                     <ItemTemplate>
                         <asp:Label ID="lbl_ProviderID" runat="server" Text='<%#Eval("ProviderID") %>'></asp:Label>

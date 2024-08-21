@@ -11,7 +11,11 @@ namespace ExpensesSys.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             Main.openPage = "Home";
+
+
         }
 
 
@@ -22,7 +26,15 @@ namespace ExpensesSys.Pages
 
 
         }
-        protected void GoToNth(object sender, EventArgs e)
+        protected void GoToReports(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "Nth";
+            Response.Redirect("Reports.aspx");
+
+            
+
+
+        }   protected void GoToNth(object sender, EventArgs e)
         {
             //PeojectSeector.GoToPage = "Nth";
             Response.Redirect("Nth.aspx");
@@ -31,7 +43,13 @@ namespace ExpensesSys.Pages
 
 
         }
-        protected void GoToExpences(object sender, EventArgs e)
+        protected void GoToIncome(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Income";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }  protected void GoToExpences(object sender, EventArgs e)
         {
             PeojectSeector.GoToPage = "Expences";
             Response.Redirect("PeojectSeector.aspx");

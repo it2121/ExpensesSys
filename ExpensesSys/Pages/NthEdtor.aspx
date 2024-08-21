@@ -107,7 +107,33 @@
 
 
         </div>
-     
+
+<div class="row">
+
+
+    
+<div class="col-1">
+    <label class="label align-content-end ml-2 mt-1"> جهة السحب</label>
+
+</div>  
+        
+<div class="col-11">
+     <asp:DropDownList ID="WithdrowParty"
+                    class="input is-info" type="text" placeholder="جهة السحب"
+                    AutoPostBack="True"
+                    runat="server">
+             
+
+
+                </asp:DropDownList>
+              
+
+</div>  <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
+</div>                <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
+               
+       
+
+
      
       <div class="row m-2">
            

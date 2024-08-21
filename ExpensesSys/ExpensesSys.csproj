@@ -74,7 +74,10 @@
     <Content Include="Pages\EmpEditor.aspx" />
     <Content Include="Pages\EmpMan.aspx" />
     <Content Include="Pages\Expences.aspx" />
+    <Content Include="Pages\FullReportInAndOutWithDate.aspx" />
     <Content Include="Pages\Home.aspx" />
+    <Content Include="Pages\Income.aspx" />
+    <Content Include="Pages\IncomeEditor.aspx" />
     <Content Include="Pages\ItemsEditor.aspx" />
     <Content Include="Pages\ItemsMan.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
@@ -87,6 +90,7 @@
     <Content Include="Pages\PeojectSeector.aspx" />
     <Content Include="Pages\ProjEditor.aspx" />
     <Content Include="Pages\ProjMan.aspx" />
+    <Content Include="Pages\Reports.aspx" />
     <Content Include="Pages\Salary.aspx" />
     <Content Include="Pages\SalaryEditor.aspx" />
     <Content Include="Web.config" />
@@ -141,12 +145,33 @@
     <Compile Include="Pages\Expences.aspx.designer.cs">
       <DependentUpon>Expences.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FullReportInAndOutWithDate.aspx.cs">
+      <DependentUpon>FullReportInAndOutWithDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FullReportInAndOutWithDate.aspx.designer.cs">
+      <DependentUpon>FullReportInAndOutWithDate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Income.aspx.cs">
+      <DependentUpon>Income.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Income.aspx.designer.cs">
+      <DependentUpon>Income.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IncomeEditor.aspx.cs">
+      <DependentUpon>IncomeEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\IncomeEditor.aspx.designer.cs">
+      <DependentUpon>IncomeEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ItemsEditor.aspx.cs">
       <DependentUpon>ItemsEditor.aspx</DependentUpon>
@@ -190,6 +215,7 @@
     <Compile Include="Pages\MatBuyEditor.aspx.designer.cs">
       <DependentUpon>MatBuyEditor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MyStringManager.cs" />
     <Compile Include="Pages\Nth.aspx.cs">
       <DependentUpon>Nth.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +264,13 @@
     </Compile>
     <Compile Include="Pages\ProjMan.aspx.designer.cs">
       <DependentUpon>ProjMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Salary.aspx.cs">
       <DependentUpon>Salary.aspx</DependentUpon>

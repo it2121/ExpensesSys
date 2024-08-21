@@ -18,9 +18,18 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
+                DataTable ProjectsNames = BBAALL.GetAllProjects();
+                WithdrowParty.Items.Add("وارد المستثمر");
+
+                foreach (DataRow row in ProjectsNames.Rows)
+                {
+
+                    WithdrowParty.Items.Add(row["Name"].ToString());
+
+                }
                 if (RecID != 0)
                 {
-                    DataTable PayTbl = BBAALL.getAllPayByRecID(RecID);
+                    DataTable PayTbl = BBAALL.getPayByID(RecID);
 
                     DelBtn.Visible = true;
                     foreach (DataRow dt in PayTbl.Rows)
@@ -32,6 +41,7 @@ namespace ExpensesSys.Pages
 
                             PaidAmount.Text = dt["PaidAmount"].ToString();
                             Date.Text = dt["Date"].ToString();
+                            WithdrowParty.Text = dt["WithdrowParty"].ToString();
 
 
                         }
@@ -77,7 +87,7 @@ namespace ExpensesSys.Pages
 
 
 
-                BBAALL.InsertPay(Convert.ToInt32(PaidAmount.Text), Date.Text, MainRecID );
+                BBAALL.InsertPay(Convert.ToInt32(PaidAmount.Text), Date.Text, MainRecID ,WithdrowParty.Text);
 
 
 
@@ -89,7 +99,7 @@ namespace ExpensesSys.Pages
             {
 
 
-                BBAALL.updatePay(Convert.ToInt32(PaidAmount.Text), Date.Text, MainRecID,RecID);
+                BBAALL.updatePay(Convert.ToInt32(PaidAmount.Text), Date.Text, MainRecID,RecID, WithdrowParty.Text);
 
                 RecID = 0;
                 DelBtn.Visible = false;
@@ -105,7 +115,7 @@ namespace ExpensesSys.Pages
         protected void DelProv(object sender, EventArgs e)
         {
 
-            BBAALL.DeleteEmp(RecID);
+            BBAALL.DeletePay(RecID);
             RecID = 0;
             DelBtn.Visible = false;
 

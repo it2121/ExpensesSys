@@ -24,6 +24,62 @@ namespace ExpensesSys.Pages
 
             }
         }
+             protected void GoToProjectZero(object sender, EventArgs e)
+        {
+
+            if (GoToPage.Equals("ProjEditor"))
+            {
+                // ProjEditor.ProjID = Convert.ToInt32(id.Text);
+            }
+            else if (GoToPage.Equals("EmpEditor"))
+            {
+                // EmpEditor.EmpId = Convert.ToInt32(id.Text);
+
+
+            }
+            else if (GoToPage.Equals("ItemsEditor"))
+            {
+                // ItemsEditor.ItemID = Convert.ToInt32(id.Text);
+
+
+            }
+            else if (GoToPage.Equals("EmpMan"))
+            {
+                EmpMan.ProjectID = 0;
+
+
+            }
+            else if (GoToPage.Equals("Expences"))
+            {
+                Expences.ProjectID = 0;
+
+
+            }
+            else if (GoToPage.Equals("Salary"))
+            {
+                Salary.ProjectID = 0;
+
+
+            }
+            else if (GoToPage.Equals("Nth"))
+            {
+                Nth.ProjectID = 0;
+
+
+            }
+            else if (GoToPage.Equals("Income"))
+            {
+                Income.ProjectID = 0;
+
+
+            }
+
+
+
+            Response.Redirect(GoToPage + ".aspx");
+
+
+        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
@@ -60,6 +116,11 @@ namespace ExpensesSys.Pages
 
             } else if (GoToPage.Equals("Nth")) {
                 Nth.ProjectID = Convert.ToInt32(id.Text);
+
+
+            }
+            else if (GoToPage.Equals("Income")) {
+                Income.ProjectID = Convert.ToInt32(id.Text);
 
 
             }

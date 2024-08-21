@@ -26,9 +26,9 @@ namespace ExpensesSys.Pages
 
         protected void GoToSalary(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Salary";
-            Response.Redirect("PeojectSeector.aspx");
-
+  
+            Salary.ProjectID = ProjectID;
+            Response.Redirect("Salary.aspx");
 
         }  
         
