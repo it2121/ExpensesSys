@@ -86,7 +86,14 @@ namespace ExpensesSys.Pages
 
 
         }
-        protected void GoToReports(object sender, EventArgs e)
+        protected void LogOut(object sender, EventArgs e)
+        {
+            Session["redirected"] = "0";
+            TLbl.Text = "";
+            NameL.Text = "";
+            Response.Redirect("LogInSeprate.aspx");
+
+        }      protected void GoToReports(object sender, EventArgs e)
         {
 
             Response.Redirect("Reports.aspx");

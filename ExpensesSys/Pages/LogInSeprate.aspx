@@ -26,6 +26,8 @@
     <script src="https://kit.fontawesome.com/334e818a85.js" crossorigin="anonymous"></script>
 
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+            <link rel="icon" type="image/png" href="../Images/logo.ico" sizes="32x32">
+
           <style>
           body {
   background-image: url("../Images/bgbg.jpg");
@@ -54,7 +56,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <center>
-                             <%--         <img src="../Images/SCLogo.png" width="212px" >--%>
+                                    <img src="../Images/logo.png" width="212px" >
                                     </center>
                                 <div class="field" >
                                     <label for="" class="label">اسم المستخدم</label>

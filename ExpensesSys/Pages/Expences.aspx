@@ -52,7 +52,7 @@
 
             <div class="col-6 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button6"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToMatBuy" role="button" Text="شــــــراء مـــــواد"></asp:Button>
+                   <asp:Button runat="server"  ID="Button6"  style="font:bolder; width:100%;" class="btn" OnClick="GoToMatBuy" role="button" Text="شــــــراء مـــــواد"></asp:Button>
                
               
 
@@ -60,7 +60,7 @@
             </div> <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
               
-                  <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToContr" role="button" Text="العقـــــود"></asp:Button>
+                  <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="btn" OnClick="GoToContr" role="button" Text="العقـــــود"></asp:Button>
                
               
                    
@@ -76,7 +76,7 @@
         
             <div class="col-6 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button3"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToH5" role="button" Text="مجامـــــلات"></asp:Button>
+                   <asp:Button runat="server"  ID="Button3"  style="font:bolder; width:100%;" class="btn" OnClick="GoToH5" role="button" Text="مجامـــــلات"></asp:Button>
                
               
 
@@ -85,7 +85,7 @@
 
             <div class="col-6 mt-3  text-center">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
-                   <asp:Button runat="server"  ID="Button1"  style="font:bolder; width:100%;" class="button-89" OnClick="GoToSalary" role="button" Text="الرواتــــــب"></asp:Button>
+                   <asp:Button runat="server"  ID="Button1"  style="font:bolder; width:100%;" class="btn" OnClick="GoToSalary" role="button" Text="الرواتــــــب"></asp:Button>
                
               
 

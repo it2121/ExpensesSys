@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,84 +13,182 @@ namespace ExpensesSys.Pages
 {
     public partial class Salary : System.Web.UI.Page
     {
+
+        public static string StartOfMonthDate ="";
+        public static string EndOfMonthDate =""; 
         public static int ProjectID = 0;
+        string DateStarterString = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-
-                
-                PageProjectNameLbl.Text = "رواتب موظفي مشروع - " + BBAALL.getProjectNameByID(ProjectID).Rows[0]["Name"].ToString();
-
-                DataTable SalaryTbl = BBAALL.getSalaryByProjectID(ProjectID);
-                DataTable EmpTbl = BBAALL.GetEmpOfProject(ProjectID);
-
-                DataTable EmpAndSalaryTbl = null;
-
-                EmpAndSalaryTbl = EmpTbl.Clone();
-                EmpAndSalaryTbl.Clear();
-
-                DataColumn SalaryID = new DataColumn("SalaryID", typeof(int));
-                DataColumn EmpID = new DataColumn("EmpID", typeof(string));
-                DataColumn RecDate = new DataColumn("RecDate", typeof(string));
-                DataColumn Salary = new DataColumn("Salary", typeof(int));
-                DataColumn Paid = new DataColumn("Paid", typeof(int));
-
-                EmpAndSalaryTbl.Columns.Add(SalaryID);
-                EmpAndSalaryTbl.Columns.Add(EmpID);
-                EmpAndSalaryTbl.Columns.Add(RecDate);
-                EmpAndSalaryTbl.Columns.Add(Salary);
-                EmpAndSalaryTbl.Columns.Add(Paid);
-
-                int counter = 0;
-                foreach (DataRow row in EmpTbl.Rows)
+               
+                if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 10)
                 {
-
-                    EmpAndSalaryTbl.Rows.Add(EmpAndSalaryTbl.NewRow());
-                    EmpAndSalaryTbl.Rows[counter]["EmpName"] = row["EmpName"];
-                    EmpAndSalaryTbl.Rows[counter]["EmpJob"] = row["EmpJob"];
-                    EmpAndSalaryTbl.Rows[counter]["EmpSalary"] = row["EmpSalary"];
-                    EmpAndSalaryTbl.Rows[counter]["EmpID"] = row["ID"];
-                    EmpAndSalaryTbl.Rows[counter]["EmpSalary"] = row["EmpSalary"];
-
-                    EmpAndSalaryTbl.Rows[counter]["SalaryID"] = 0;
-                    EmpAndSalaryTbl.Rows[counter]["RecDate"] = "";
-                    EmpAndSalaryTbl.Rows[counter]["Salary"] = 0;
-                    EmpAndSalaryTbl.Rows[counter]["Paid"] =0;
-
-
-                        counter ++;
+                    DateStarterString = "0" + DateTime.Now.Month + "/" + DateTime.Now.Year;
 
                 }
-
-                foreach (DataRow row in SalaryTbl.Rows)
+                else
                 {
-                    foreach (DataRow rowMain in EmpAndSalaryTbl.Rows)
+                    DateStarterString =   DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+
+                }
+                MonthYearSelector.Text = DateStarterString;
+                SetUpDate();
+
+            }
+            else
+            {
+                SetUpDate();
+            }
+
+        }
+
+        public void SetUpDate()
+        {
+
+
+            PageProjectNameLbl.Text = "رواتب موظفي مشروع - " + BBAALL.getProjectNameByID(ProjectID).Rows[0]["Name"].ToString();
+
+            DataTable SalaryTbl = BBAALL.getSalaryByProjectID(ProjectID);
+            DataTable EmpTbl = BBAALL.GetEmpOfProject(ProjectID);
+
+            DataTable EmpAndSalaryTbl = null;
+
+            EmpAndSalaryTbl = EmpTbl.Clone();
+            EmpAndSalaryTbl.Clear();
+
+            DataColumn SalaryID = new DataColumn("SalaryID", typeof(int));
+            DataColumn EmpID = new DataColumn("EmpID", typeof(string));
+            DataColumn RecDate = new DataColumn("RecDate", typeof(string));
+            DataColumn Salary = new DataColumn("Salary", typeof(int));
+            DataColumn Paid = new DataColumn("Paid", typeof(int));
+
+            EmpAndSalaryTbl.Columns.Add(SalaryID);
+            EmpAndSalaryTbl.Columns.Add(EmpID);
+            EmpAndSalaryTbl.Columns.Add(RecDate);
+            EmpAndSalaryTbl.Columns.Add(Salary);
+            EmpAndSalaryTbl.Columns.Add(Paid);
+
+            int counter = 0;
+            foreach (DataRow row in EmpTbl.Rows)
+            {
+
+                EmpAndSalaryTbl.Rows.Add(EmpAndSalaryTbl.NewRow());
+                EmpAndSalaryTbl.Rows[counter]["EmpName"] = row["EmpName"];
+                EmpAndSalaryTbl.Rows[counter]["EmpJob"] = row["EmpJob"];
+                EmpAndSalaryTbl.Rows[counter]["EmpSalary"] = row["EmpSalary"];
+                EmpAndSalaryTbl.Rows[counter]["EmpID"] = row["ID"];
+                EmpAndSalaryTbl.Rows[counter]["EmpSalary"] = row["EmpSalary"];
+
+                EmpAndSalaryTbl.Rows[counter]["SalaryID"] = 0;
+                EmpAndSalaryTbl.Rows[counter]["RecDate"] = "";
+                EmpAndSalaryTbl.Rows[counter]["Salary"] = 0;
+                EmpAndSalaryTbl.Rows[counter]["Paid"] = 0;
+
+
+                counter++;
+
+            }
+
+            foreach (DataRow row in SalaryTbl.Rows)
+            {
+                foreach (DataRow rowMain in EmpAndSalaryTbl.Rows)
                 {
-                   
-                    
 
-                        if (rowMain["EmpID"].ToString().Equals(row["EmpID"].ToString())) {
 
+
+                    if (rowMain["EmpID"].ToString().Equals(row["EmpID"].ToString()))
+                    {
+                        if (StartOfMonthDate.Length > 0) { 
+                        DateTime Date = DateTime.ParseExact(row["RecDate"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime Startdate = DateTime.ParseExact(StartOfMonthDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime Enddate = DateTime.ParseExact(EndOfMonthDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                        int startResult = DateTime.Compare(Date, Startdate);
+                        int endResult = DateTime.Compare(Enddate, Date);
+
+                        if (startResult >= 0 && endResult >= 0)
+                        {
+                            rowMain["SalaryID"] = row["ID"];
+                            rowMain["RecDate"] = row["RecDate"];
+                            rowMain["Salary"] = row["Salary"];
+                            rowMain["Paid"] = 1;
+                            SalaryTbl.AcceptChanges();
+
+                        }
+
+                        }
+                        else
+                        {
+                            //  DateTime.Now.ToString("MM");
+
+                            //    string startTemp = "01/" + DateTime.Now.Month + "/" + DateTime.Now.Year +"";
+                            string startTemp = "";
+                            if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 10) {
+                                 startTemp = "01/0" + DateTime.Now.Month + "/" + DateTime.Now.Year ;
+
+                            }
+                            else
+                            {
+                                 startTemp = "01/" + DateTime.Now.Month + "/" + DateTime.Now.Year ;
+
+
+                            }
+
+                            DateTime Date = DateTime.ParseExact(row["RecDate"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                            DateTime Startdate = DateTime.ParseExact(startTemp, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                            string tempend = "";
+                            if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 10)
+                            {
+                                 tempend = MyStringManager.GetLastDayOfTheMonth(DateTime.Now.Month) + "/0" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+                            }
+                            else
+                            {
+                                 tempend = MyStringManager.GetLastDayOfTheMonth(DateTime.Now.Month) + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+
+                            }
+
+
+                            DateTime Enddate = DateTime.ParseExact(tempend, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                            int startResult = DateTime.Compare(Date, Startdate);
+                            int endResult = DateTime.Compare(Enddate, Date);
+
+                            if (startResult >= 0 && endResult >= 0)
+                            {
                                 rowMain["SalaryID"] = row["ID"];
                                 rowMain["RecDate"] = row["RecDate"];
                                 rowMain["Salary"] = row["Salary"];
                                 rowMain["Paid"] = 1;
-                            SalaryTbl.AcceptChanges();
+                                SalaryTbl.AcceptChanges();
+
+                            }
+
+
                         }
 
+
+                    }
+
                 }
-                
-                }
-
-
-                 DataGridUsers.DataSource = EmpAndSalaryTbl;
-                 DataGridUsers.DataBind();
-
-
 
             }
+
+
+            DataGridUsers.DataSource = EmpAndSalaryTbl;
+            DataGridUsers.DataBind();
+
+
 
 
         }
@@ -154,6 +254,19 @@ namespace ExpensesSys.Pages
 
              Response.Redirect("SalaryEditor.aspx");
 
+
+        }
+      
+        protected void monthSelected(object sender, EventArgs e)
+        {
+
+
+           // MyStringManager.GetUntilOrEmpty(MonthYearSelector.Text, "/");
+
+             StartOfMonthDate = "01/" + MonthYearSelector.Text;
+             EndOfMonthDate = MyStringManager.GetLastDayOfTheMonth(Convert.ToInt32(MyStringManager.GetUntilOrEmpty(MonthYearSelector.Text, "/"))) + "/" + MonthYearSelector.Text;
+
+            SetUpDate();
 
         }
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)

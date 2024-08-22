@@ -104,16 +104,24 @@
     });
 </script>
         <article class="panel is-info" style="background-color: white;">
-        <p class="panel-heading ">تقرير شامل حسب التاريخ</p>
 
-   
+        <p class="panel-heading ">التقارير</p>
+            <br />
+            <div class="row">
+
+
+                <div class="col-4">
+                    <asp:Panel ID ="DatePanel" Width="95%"  HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em"  runat="server" Visible="true">
+
+
+ 
 
             <div class="row  m-4">
 
                 
 
            
-      <asp:CheckBox runat="server" ID="UnMarkedDate" class="input is-info border-1 checkbox "  AutoPostBack="true" OnCheckedChanged="ChckedChanged" type="text" Text="من دون تحديد فترة زمنية" TextAlign="Right"  placeholder="من دون تحديد فترة زمنية" />
+      <asp:CheckBox runat="server" ID="UnMarkedDate" class="input is-info border-0 checkbox "  Width="100%"  Checked="true"   AutoPostBack="true" OnCheckedChanged="ChckedChanged" type="text" Text="من دون تحديد فترة زمنية" TextAlign="Right"  placeholder="من دون تحديد فترة زمنية" />
  </div>
           
  <asp:UpdatePanel ID="UpdatePanelDates" runat="server" style="width:100%;" UpdateMode="Conditional" >
@@ -123,7 +131,7 @@
 
             <p class="control has-icons-left">
 
-                <asp:TextBox runat="server" ID="StartDate" class="input is-info" type="text" placeholder="من تاريخ" />
+                <asp:TextBox runat="server" ID="StartDate" Enabled="false" class="input is-info" type="text" placeholder="من تاريخ" />
                 <span class="icon is-left">
                     <i class="fas fa-book" aria-hidden="true"></i>
                 </span>
@@ -132,7 +140,7 @@
 
        
               <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="EndDate" class="input is-info"   type="text" placeholder="الى تاريخ" />
+                <asp:TextBox runat="server" Enabled="false" ID="EndDate" class="input is-info"   type="text" placeholder="الى تاريخ" />
                 <span class="icon is-left">
                     <i class="fas fa-book" aria-hidden="true"></i>
                 </span>
@@ -143,7 +151,102 @@
               </ContentTemplate>
     </asp:UpdatePanel>
       
+        </asp:Panel>
+
+                </div>
+
+                 <div class="col-4">
+
+                    <asp:Panel ID ="WithdrowPartyPanel" Width="95%"  HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em"  runat="server" Visible="true">
+
+
+ 
+
+            <div class="row  m-4">
+
+                
+
+           
+      <asp:CheckBox runat="server" ID="PrjectNameCheck" class="input is-info border-0 checkbox "  Width="100%" Checked="true"  AutoPostBack="true" OnCheckedChanged="ChckedChangedProjectName" type="text" Text="من دون تحديد مشروع" TextAlign="Right"  placeholder="من دون تحديد مشروع" />
+ </div>
+          
+ <asp:UpdatePanel ID="ProjectNameUpdatePanel" runat="server" style="width:100%;" UpdateMode="Conditional" >
+                       <ContentTemplate >
+                                  <div class="row m-4">
+                                                                        <div class="col-12">
+
+            <p class="control has-icons-left">
+
+     <asp:DropDownList ID="ProjectName" Enabled="false"
+                    class="input is-info" type="text" placeholder="المشروع"
+                    AutoPostBack="True"
+                    runat="server">
+             
+
+
+                </asp:DropDownList>                <span class="icon is-left">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+            </p>  
+                                                                            </div>                                                                     
+  </div>
+                
+              </ContentTemplate>
+    </asp:UpdatePanel>
+             <asp:Label  runat ="server"  ID ="Label2" Font-Bold="true" Font-Size="Small" ForeColor="Red" Text="النثريات لا تتاثر بهذا الفلتر * " ></asp:Label>
+
+        </asp:Panel>
+                </div>
+
+                <div class="col-4">
+
+                    <asp:Panel ID ="ProjectNamePanel" Width="95%"  HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em"  runat="server" Visible="true">
+
+
+ 
+
+            <div class="row  m-4">
+
+                
+
+           
+      <asp:CheckBox runat="server" ID="WithdrowPartyCheck" class="input is-info border-0 checkbox "  Width="100%" Checked="true"  AutoPostBack="true" OnCheckedChanged="ChckedChangedWithdowParty" type="text" Text="من دون تحديد جهة السحب" TextAlign="Right"  placeholder="من دون تحديد مشروع" />
+ </div>
+          
+ <asp:UpdatePanel ID="WithdrowPartyUpdatePanel" runat="server" style="width:100%;" UpdateMode="Conditional" >
+                       <ContentTemplate >
+                                  <div class="row m-4">
+                                                                        <div class="col-12">
+
+            <p class="control has-icons-left">
+
+     <asp:DropDownList ID="WithdrowParty" Enabled="false"
+                    class="input is-info" type="text" placeholder="المشروع"
+                    AutoPostBack="True"
+                    runat="server">
+             
+
+
+                </asp:DropDownList>                <span class="icon is-left">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+            </p>  
+                                                                            </div>                                                                     
+  </div>
+                
+              </ContentTemplate>
+    </asp:UpdatePanel>
       
+        </asp:Panel>
+                </div> 
+                
+                
+                
+               
+
+            </div>
+
+  
   
             <hr />
              <div class="row m-2">
@@ -156,7 +259,7 @@
            
                    <div class="col-md-4 text-center ">
 
-              <asp:Button runat="server" ID="CreateBtn" style="width:20em; margin-top:1.6rem;" OnClick="CreateInReport" class="button  is-outlined is-primary text-center "  Text="اضهار التقرير بالوارد"></asp:Button>
+              <asp:Button runat="server" ID="CreateBtn" style="width:20em; margin-top:1.6rem;" OnClick="CreateInReport" class="button  is-outlined is-primary text-center "  Text="اضهار تقرير الوارد"></asp:Button>
           </div>
                 <div class="col-md-8 text-center ">
                       <div class="row m-2">

@@ -33,6 +33,24 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Label PageProjectNameLbl;
 
         /// <summary>
+        /// MonthYearSelector control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MonthYearSelector;
+
+        /// <summary>
+        /// MonthSelectorButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button MonthSelectorButton;
+
+        /// <summary>
         /// DataGridUsers control.
         /// </summary>
         /// <remarks>

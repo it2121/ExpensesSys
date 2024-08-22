@@ -87,6 +87,94 @@ namespace ExpensesSys.Pages
             return retunrDT;
         }
 
+        public static string GetLastDayOfTheMonth(int Month)
+        {
+            int total_days_in_month;
+
+            switch (Month)
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    total_days_in_month = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    total_days_in_month = 30;
+                    break;
+                case 2:
+                default:
+                    total_days_in_month = 28;
+                    break;
+            }
+
+            return  total_days_in_month+"";
+
+
+
+        }
+
+        public static string GetUntilOrEmpty(this string text, string stopAt = "-")
+        {
+            if (!String.IsNullOrWhiteSpace(text))
+            {
+                int charLocation = text.IndexOf(stopAt, StringComparison.Ordinal);
+
+                if (charLocation > 0)
+                {
+                    return text.Substring(0, charLocation);
+                }
+            }
+
+            return String.Empty;
+        }
+
+        public static  DataTable GetTableAfterCeckWithdorwParty(DataTable InTbl ,string WithdorwParty, string FeildName)
+        {
+
+            DataTable AfterPrjectName = InTbl.Clone();
+            AfterPrjectName.Clear();
+
+            foreach(DataRow dr in InTbl.Rows)
+            {
+
+                if (dr[FeildName].ToString().Equals(WithdorwParty))
+                {
+                    AfterPrjectName.ImportRow(dr);
+                }
+
+
+            }
+
+            return AfterPrjectName;
+
+        }  public static  DataTable GetTableAfterCeckProjectName(DataTable InTbl ,string ProjectName, string FeildName)
+        {
+
+            DataTable AfterPrjectName = InTbl.Clone();
+            AfterPrjectName.Clear();
+
+            foreach(DataRow dr in InTbl.Rows)
+            {
+
+                if (dr[FeildName].ToString().Equals(ProjectName))
+                {
+                    AfterPrjectName.ImportRow(dr);
+                }
+
+
+            }
+
+            return AfterPrjectName;
+
+        }
+
 
         public static DataTable ReturnTableWithCurrencyCommas (DataTable InTbl ,string FeildName)
         {

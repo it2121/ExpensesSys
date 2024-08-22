@@ -79,10 +79,73 @@
           <p class="panel-heading text-center" style="background-color:#3399ff;">                <asp:Label  runat ="server" ID ="PageProjectNameLbl" Text="" ></asp:Label>
 <i class="fa-solid fa-file-invoice-dollar"></i></p>
     
-        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />   
 
 
- 
+        <div class="row">
+
+
+            <div class="col-12 text-center">
+                        <label class="text-center" >يرجى تحديد الشهر</label>
+
+
+
+
+            </div>
+            
+            <div class="col-4 text-center" >            </div>
+
+            <div class="col-4 text-center" >
+<div class='input-group date datepicker text-center' id='datepicker'  style="width:100%;">
+    <asp:TextBox runat="server" ID="MonthYearSelector"   type='text' class="form-control text-center" />
+
+    <span class="input-group-addon ">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+</div>
+
+
+
+            </div>
+            
+            <div class="col-4 ">
+
+
+            </div>   
+            <div class="col-4 ">
+
+
+            </div>
+            <div class="col-4 text-center">
+                 <asp:Button
+                   
+                Style="width: 100%; height: 2.5rem; font-size:medium;font-weight:200;"
+                class=" d-flex justify-content-center Button  js-modal-trigger button text-center is-warning "
+                ID="MonthSelectorButton" runat="server"
+                    
+                    OnClick="monthSelected"
+                Text=" - بحث - "></asp:Button>
+
+
+
+            </div>
+            </div>
+           
+
+
+        <hr />
+
+            <script>
+                $(function () {
+                    $('#datepicker').datepicker({
+                        format: 'mm/yyyy',  
+                        startView: "months",
+                        minViewMode: "months",
+                        language: "tr"
+                    });
+                });
+            </script>
      <div class="row ">
         
           

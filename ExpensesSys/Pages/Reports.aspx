@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="ExpensesSys.Pages.Reports" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -31,7 +35,7 @@
         </div>
     </asp:Panel>
     <article class="panel is-info" style="background-color: white;">
-        <p class="panel-heading ">التقارير</p>
+        <p class="panel-heading text-center">التقارير</p>
     
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -80,40 +84,22 @@
         
           
 
-            <div class="col-4 mt-3  text-center ">
+            <div class="col-12 mt-12  text-center ">
 
                    
                 <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
+                   
+                Style="width: 100%; height: 4rem; font-size:larger;font-weight:700;"
+                class=" d-flex justify-content-center Button  js-modal-trigger button is-warning is-bold"
                 ID="ExportBtn" runat="server"
+                    
                     OnClick="GoToFullReportInAndOutWithDate"
-                Text=" - تقرير شامل حسب التاريخ - "></asp:Button>
+                Text=" - التقارير - "></asp:Button>
            
 
             </div>
                 
-                <div class="col-4 mt-3  text-center ">
-
-                    
-                <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
-                ID="Button1" runat="server"
-
-                Text=" - تقرير بالمشروع حسب التاريخ - "></asp:Button>
-            </div>
-
-                <div class="col-4 mt-3  text-center ">
-
-                    
-                <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
-                ID="Button2" runat="server"
-
-                Text=" - تقرير بالمصروفات العامة حسب التاريخ - "></asp:Button>
-            </div>
+     
 
             </div> 
 
@@ -121,47 +107,7 @@
    
 
         
-         <div class="row  " style="padding-left :1em; padding-right:1em; margin-bottom:1em;">
-        
-          
-
-            <div class="col-4 mt-3  text-center ">
-
-                   
-                <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
-                ID="Button3" runat="server"
-
-                Text=" - تقرير شامل بالرواتب حسب التاريخ - "></asp:Button>
-           
-
-            </div>
-                
-                <div class="col-4 mt-3  text-center ">
-
-                    
-                <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
-                ID="Button4" runat="server"
-
-                Text=" - تقرير بالرواتب حسب المشروع والتاريخ - "></asp:Button>
-            </div>
-
-                <div class="col-4 mt-3  text-center ">
-
-                    
-                <asp:Button
-                Style="width: 100%; height: 40px;"
-                class=" d-flex justify-content-center js-modal-trigger button is-warning is-bold"
-                ID="Button5" runat="server"
-
-                Text=" -  - "></asp:Button>
-            </div>
-
-            </div> 
-          
+       
         
         
         
@@ -277,7 +223,7 @@
                           backgroundColor: [
                               'rgba(0, 102, 204, 0.6)',
                               'rgba(255, 159, 64, 0.6)',
-                              'rgba(255, 159, 64, 0.6)',
+                              'rgba(255, 19, 64, 0.6)',
                               'rgba(144, 238, 144, 0.6)'
 
 
