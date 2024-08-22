@@ -158,13 +158,14 @@ font-family: CustomFont, sans-serif !important  ;
                                     <span></span>
                                 </li>
                                   <li>
-                                      <asp:Panel runat="server" ID="Home" >                                   <a href="Home.aspx">
+                                      <asp:Panel runat="server" ID="Home" >     
+                                          <a href="Home.aspx">
                                         <i class="fa fa-list"style="color:white; background-color:transparent;"></i>
                                         <span class="menu-text" style="color:white; " ><strong> الرئيسيـــة</strong></span>
                                         <span class="badge badge-pill badge-primary"></span>
-
+                                          </a>
                                           </asp:Panel>
- <a />
+
                                     </li>
                            
                                 <li >
@@ -173,7 +174,7 @@ font-family: CustomFont, sans-serif !important  ;
 
                                     <a  href="ProjMan.aspx">
                                         <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                         <asp:Button runat="server" ID="Button55" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToIncome" Font-Bold="true"  Text="الــــــوادرات"  />
+                                         <asp:Button runat="server" ID="Button55" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToIncome" Font-Bold="true"  Text="الــــواردات"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </a>
                                                                                   </asp:Panel>
@@ -241,6 +242,9 @@ font-family: CustomFont, sans-serif !important  ;
                                         </a>
                                                                             </asp:Panel>
                                     </li>  
+                                <br />
+                                <br />
+                                <br />
                           <li> <a href="ProjMan.aspx">
                                         <i class="fa-solid fa-right-from-bracket" style="color:Pink; background-color:transparent;"></i>
                                       <asp:Button runat="server" ID="LogOutBtn" class="button  is-text   " Font-Underline="false" ForeColor="Pink" OnClick="LogOut" Font-Bold="true"  Text="تسجيــل الخروج"  />
