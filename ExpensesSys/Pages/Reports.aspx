@@ -72,6 +72,16 @@
             <canvas id="myChart2"></canvas>
         </div>
 
+            </div>   
+            
+            
+       <div class="col-6 justify-content-center ">
+               <div class="justify-content-center" style="width:100% ;display: flex;
+    align-items: center;
+    flex-wrap: wrap;">
+            <canvas id="LineChart"></canvas>
+        </div>
+
             </div>
 
 
@@ -237,6 +247,80 @@
                           ],
                           hoverOffset: 1
                       }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+
+              });
+
+          </script>
+          <script>
+              var m1 = '<%= m1 %>';
+              var m2 = '<%= m2 %>';
+              var m3 = '<%= m3 %>';
+              var m4 = '<%= m4 %>';
+              var m5 = '<%= m5 %>';
+              var m6 = '<%= m6 %>';
+              var m7 = '<%= m7 %>';
+              var m8 = '<%= m8 %>';
+              var m9 = '<%= m9 %>';
+              var m10 = '<%= m10 %>';
+              var m11 = '<%= m11 %>';
+              var m12 = '<%= m12 %>';
+
+              var mm1 = '<%= mm1 %>';
+              var mm2 = '<%= mm2 %>';
+              var mm3 = '<%= mm3 %>';
+              var mm4 = '<%= mm4 %>';
+              var mm5 = '<%= mm5 %>';
+              var mm6 = '<%= mm6 %>';
+              var mm7 = '<%= mm7 %>';
+              var mm8 = '<%= mm8 %>';
+              var mm9 = '<%= mm9 %>';
+              var mm10 = '<%= mm10 %>';
+              var mm11 = '<%= mm11 %>';
+              var mm12 = '<%= mm12 %>';
+         
+              const ctx3 = document.getElementById('LineChart');
+
+              new Chart(
+                  ctx3, {
+
+                      type: 'line',
+                  data: {
+                      labels: ['يناير 1', 'فبراير 2', 'مارس 3', 'أبريل 4', 'مايو 5', 'يونيو 6', 'يوليو 7', 'أغسطس 8', 'سبتمبر 9', 'أكتوبر 10', 'نوفمبر 11', 'ديسمبر 12'],
+                      datasets: [{
+                          label: 'الايرادات',
+                          data: [m1, m2, m3, m4, m5, m6, m7,
+                              m8, m9, m10, m11, m12],
+                          backgroundColor: [
+                              'rgba(255, 99, 132, 1)'
+
+
+
+                          ], borderColor: [
+                              'rgb(255, 99, 132)'
+
+                          ],
+                          hoverOffset: 1
+                      }, {
+                              label: 'المصاريف',
+                              data: [mm1, mm2, mm3, mm4, mm5, mm6, mm7,
+                                  mm8, mm9, mm10, mm11, mm12],
+                              backgroundColor: [
+                                  'rgba(144, 238, 144,1)'
+
+
+                              ], borderColor: [
+                              'rgba(144, 298, 44, 0.8)'
+                          ],
+                              hoverOffset: 1
+                          }]
                   },
                   options: {
                       scales: {
