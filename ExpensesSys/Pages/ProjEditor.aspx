@@ -1,5 +1,70 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="ProjEditor.aspx.cs" Inherits="ExpensesSys.Pages.ProjEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <style>
+
+        .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -65,28 +130,26 @@
         <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading ">Add New OR</p>
 
-        <div class="panel-block">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="ProjectName" class="input is-info" type="text" placeholder="اسم المشروع" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
+    
        
-
-            
-
-        
-
-
-
-        </div>
      
+      <div class="row m-6" >
+           
+                   <div class="col-md-12 text-center ">
+
+
+                                     <div class="form__group field">
+     <asp:TextBox runat="server" ID="ProjectName"  class="form__field" type="input" placeholder="اسم المشروع" />
+
+    <label for="name" class="form__label">اسم المشروع</label>
+</div>
+</div>
+</div>
+           
+
+                  
+
+
      
       <div class="row m-2">
            

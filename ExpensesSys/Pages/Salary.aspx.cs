@@ -17,32 +17,33 @@ namespace ExpensesSys.Pages
         public static string StartOfMonthDate ="";
         public static string EndOfMonthDate =""; 
         public static int ProjectID = 0;
-        string DateStarterString = "";
+        string DateStarterString ;
+        public static bool fromItSelf = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-               
+                if (!fromItSelf) { 
                 if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 10)
                 {
                     DateStarterString = "0" + DateTime.Now.Month + "/" + DateTime.Now.Year;
-
+                        Session["Month"] = DateStarterString; 
                 }
                 else
                 {
                     DateStarterString =   DateTime.Now.Month + "/" + DateTime.Now.Year;
+                        Session["Month"] = DateStarterString;
 
-
+                    }
+                
                 }
-                MonthYearSelector.Text = DateStarterString;
+                MonthYearSelector.Text = Session["Month"].ToString() ;
+
                 SetUpDate();
 
             }
-            else
-            {
-                SetUpDate();
-            }
+         
 
         }
 
@@ -265,7 +266,7 @@ namespace ExpensesSys.Pages
 
              StartOfMonthDate = "01/" + MonthYearSelector.Text;
              EndOfMonthDate = MyStringManager.GetLastDayOfTheMonth(Convert.ToInt32(MyStringManager.GetUntilOrEmpty(MonthYearSelector.Text, "/"))) + "/" + MonthYearSelector.Text;
-
+            Session["Month"] = MonthYearSelector.Text;
             SetUpDate();
 
         }
@@ -279,8 +280,24 @@ namespace ExpensesSys.Pages
                 string EmpID = e.CommandArgument.ToString();
                 
                 DateTime dateTime = DateTime.UtcNow.Date;
+                string dateForAutoIn = "";
+                    
+                if (Convert.ToInt32(DateTime.Now.Day.ToString()) < 10)
+                {
+                    dateForAutoIn = "0" + DateTime.Now.Day + "/" + MonthYearSelector.Text;
 
-                BBAALL.AutoInsertSalary(Convert.ToInt32(EmpID), dateTime.ToString("dd/MM/yyyy"), ProjectID,BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString());
+                }
+                else
+                {
+                    dateForAutoIn = DateTime.Now.Day + "/" + MonthYearSelector.Text;
+
+
+                }
+
+                BBAALL.AutoInsertSalary(Convert.ToInt32(EmpID), dateForAutoIn, ProjectID,BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString());
+    
+                MonthYearSelector.Text = DateStarterString;
+                fromItSelf = true;
                 Response.Redirect("Salary.aspx");
 
             }

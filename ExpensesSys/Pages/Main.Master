@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>نظام الصومعة</title>
 
     
      <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />

@@ -27,8 +27,19 @@ namespace ExpensesSys.Pages
 
             if (login.Rows.Count > 0)
             {
+                string temp = "";
+                if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 10)
+                {
+                    temp = "0" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+                }
+                else
+                {
+                    temp = DateTime.Now.Month + "/" + DateTime.Now.Year;
 
 
+                }
+                Session["Month"] = temp;
 
                 Session["Name"] = login.Rows[0]["Name"];
 

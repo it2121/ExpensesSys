@@ -137,6 +137,10 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     <ItemTemplate>
                         <asp:Label  ID="lbl_RecAmount33" runat="server" Text='<%#Eval("Buyer") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
                     </ItemTemplate>
+                </asp:TemplateField>     <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="حالة التخزين">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_RecAmount3322" runat="server" Text='<%#Eval("WereHouseState") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                    </ItemTemplate>
                 </asp:TemplateField>
            <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
                     <ItemTemplate>

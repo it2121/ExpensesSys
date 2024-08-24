@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>نظام الصومعة</title>
        <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />
      <script src="../Libs/bootstrap.min.js"></script>
         <script src="../Libs/jquery.min.js"></script>

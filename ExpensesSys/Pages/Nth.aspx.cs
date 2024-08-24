@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace ExpensesSys.Pages
         protected void GoToNewItem(object sender, EventArgs e)
         {
 
-          
+            NthEdtor.ID = 0;
+
 
             Response.Redirect("NthEdtor.aspx");
 

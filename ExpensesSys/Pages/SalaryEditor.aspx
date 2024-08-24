@@ -1,6 +1,73 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="SalaryEditor.aspx.cs" Inherits="ExpensesSys.Pages.SalaryEditor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+       <style>
+
+        .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -50,48 +117,74 @@
     <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading ">معلومات المرتب</p>
 
-        <div class="panel-block">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="EmpName" class="input is-info" type="text" ReadOnly="true" placeholder="اسم الموظف" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>
 
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="EmpJob" class="input is-info" type="text" ReadOnly="true" placeholder="الوظية" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>
+               <div class="row m-2">
 
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="EmpSal" class="input is-info" type="text" placeholder="المرتب" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="SalDate" class="input is-info" type="text" placeholder="تاريخ الاستلام" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>
+                <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="EmpName"  class="form__field" type="input" placeholder="اسم الموظف" />
+
+    <label for="name" class="form__label">اسم الموظف</label>
+</div>
+           
 
 
 
+            </div>
+
+
+                
+                <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="EmpJob"  class="form__field" type="input" placeholder="الوظية" />
+
+    <label for="name" class="form__label">الوظية</label>
+</div>
+           
+            </div>
+
+
+                
+                <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="EmpSal"  class="form__field" type="input" placeholder="المرتب" />
+
+    <label for="name" class="form__label">المرتب</label>
+</div>
+           
+            </div>
+                            <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SalDate"  class="form__field" type="input" placeholder="تاريخ الاستلام" />
+
+    <label for="name" class="form__label">تاريخ الاستلام</label>
+</div>
+           
+            </div>
 
 
 
 
+            </div>
 
 
-        </div>
+                  <br />
+
+
+
+  
 
 
         <div class="row">
@@ -99,21 +192,28 @@
 
 
             <div class="col-1">
-                <label class="label align-content-end ml-2 mt-1">جهة السحب</label>
 
             </div>
 
-            <div class="col-11">
-                <asp:DropDownList ID="WithdrowParty"
-                    class="input is-info" type="text" placeholder="جهة السحب"
+            <div class="col-10">
+            
+
+                                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="TextBox1"  class="form__field" type="input" placeholder="تاريخ الاستلام" />
+    <asp:DropDownList ID="WithdrowParty"
+                    class="form__field" type="text" placeholder="جهة السحب"
                     AutoPostBack="True"
                     runat="server">
                 </asp:DropDownList>
-
-
+    <label for="name" class="form__label">جهة السحب</label>
+</div>
+         
             </div>
             <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
         </div>
+        
+                  <br />
+
         <div class="row m-2">
 
             <div class="col-md-12 text-center ">

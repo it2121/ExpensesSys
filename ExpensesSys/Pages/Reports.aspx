@@ -94,7 +94,7 @@
         
           
 
-            <div class="col-12 mt-12  text-center ">
+            <div class="col-4 mt-3 text-center ">
 
                    
                 <asp:Button
@@ -104,7 +104,35 @@
                 ID="ExportBtn" runat="server"
                     
                     OnClick="GoToFullReportInAndOutWithDate"
-                Text=" - التقارير - "></asp:Button>
+                Text=" - تقارير الصرفيات والايرادات - "></asp:Button>
+           
+
+            </div>
+                    <div class="col-4 mt-3 text-center ">
+
+                   
+                <asp:Button
+                   
+                Style="width: 100%; height: 4rem; font-size:larger;font-weight:700;"
+                class=" d-flex justify-content-center Button  js-modal-trigger button is-warning is-bold"
+                ID="WarehouseBtn" runat="server"
+                    
+                    OnClick="GoToFullReportInAndOutWithDate"
+                Text=" - تقارير المخزن - "></asp:Button>
+           
+
+            </div>
+                    <div class="col-4 mt-3  text-center ">
+
+                   
+                <asp:Button
+                   
+                Style="width: 100%; height: 4rem; font-size:larger;font-weight:700;"
+                class=" d-flex justify-content-center Button  js-modal-trigger button is-warning is-bold"
+                ID="ContractBtn" runat="server"
+                    
+                    OnClick="GoToFullReportInAndOutWithDate"
+                Text=" - تقارير العقود - "></asp:Button>
            
 
             </div>

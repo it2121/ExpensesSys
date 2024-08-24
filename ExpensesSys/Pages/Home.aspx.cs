@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -46,6 +48,47 @@ namespace ExpensesSys.Pages
                 GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum().Rows[0][0].ToString());
                 GetAllNthSum = Convert.ToInt32(BBAALL.GetAllNthSum().Rows[0][0].ToString());
 
+                EmpCountLbl.Text = BBAALL.getAllEmpCount().Rows[0][0].ToString();
+                projectsCountLbl.Text = BBAALL.getAllProjectCount().Rows[0][0].ToString();
+                DataTable IncomeTbl = BBAALL.REP_GetAllIncomeRecords();
+                DateTime start = DateTime.Now.AddDays(-30);
+                DateTime end = DateTime.Now;
+
+                string startDate = start.ToString("dd/MM/yyyy");
+                string endtDate = end.ToString("dd/MM/yyyy");
+                DataTable IncomeSet = MyStringManager.GetTableAfterDateCheck(IncomeTbl, startDate, endtDate);
+
+                Last30DaysIncome.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ") + "") + " IQD ";
+
+
+
+                DataTable MatBuy = BBAALL.REP_GetAllMatBuyRecords();
+
+                DataTable MatBuySet = MyStringManager.GetTableAfterDateCheck(MatBuy, startDate, endtDate);
+
+
+
+
+                DataTable Salary = BBAALL.REP_GetAllSalaryRecords();
+                DataTable SalarySet = MyStringManager.GetTableAfterDateCheck(Salary, startDate, endtDate);
+
+
+
+
+                DataTable Comp = BBAALL.REP_GetAllCompRecords();
+                DataTable CompSet = MyStringManager.GetTableAfterDateCheck(Comp, startDate, endtDate);
+
+
+
+                DataTable Nth = BBAALL.REP_GetAllNthRecords();
+
+                DataTable NthSet = MyStringManager.GetTableAfterDateCheck(Nth, startDate, endtDate);
+                int sum = 0;
+                sum += MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة");
+                sum += MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة");
+                sum += MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم");
+                sum += MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة") ;
+                Last30DaysSpendings.Text = MyStringManager.GetNumberWithComas(sum+"") + " IQD ";
 
             }
             else

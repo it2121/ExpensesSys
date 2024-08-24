@@ -19,7 +19,8 @@ namespace ExpensesSys.Pages
             if (!IsPostBack)
             {
                 DataTable ProjectsNames = BBAALL.GetAllProjects();
-                WithdrowParty.Items.Add("وارد المستثمر");
+                WithdrowParty.Items.Add("تمويل من المستثمر");
+                WithdrowParty.Items.Add("قرض");
 
                 foreach (DataRow row in ProjectsNames.Rows)
                 {
@@ -115,7 +116,7 @@ namespace ExpensesSys.Pages
         protected void DelProv(object sender, EventArgs e)
         {
 
-            BBAALL.DeletePay(RecID);
+            BBAALL.DeletePay(RecID, MainRecID);
             RecID = 0;
             DelBtn.Visible = false;
 

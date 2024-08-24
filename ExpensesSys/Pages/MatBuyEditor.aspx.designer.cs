@@ -123,6 +123,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox Buyer;
 
         /// <summary>
+        /// WereHouseState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList WereHouseState;
+
+        /// <summary>
         /// CreateBtn control.
         /// </summary>
         /// <remarks>

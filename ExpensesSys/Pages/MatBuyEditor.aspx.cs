@@ -38,6 +38,7 @@ namespace ExpensesSys.Pages
                             MatName.Text = dt["MatName"].ToString();
                             BuyingParty.Text = dt["BuyingParty"].ToString();
                             Buyer.Text = dt["Buyer"].ToString();
+                            WereHouseState.Text = dt["WereHouseState"].ToString();
 
                             DataTable counttbl = BBAALL.getPayCountByRecID(MatBuyRecId);
                             RecPayCount.Text = "0";
@@ -110,7 +111,7 @@ namespace ExpensesSys.Pages
                     ProjectID,
 
                                         BuyingParty.Text,
-                    Buyer.Text
+                    Buyer.Text, WereHouseState.Text
                     );
 
 
@@ -133,7 +134,7 @@ namespace ExpensesSys.Pages
 
                                         BuyingParty.Text,
                     Buyer.Text,
-                    MatBuyRecId
+                    MatBuyRecId, WereHouseState.Text
                     );
 
                 MatBuyRecId = 0;

@@ -1,5 +1,70 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="IncomeEditor.aspx.cs" Inherits="ExpensesSys.Pages.IncomeEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <style>
+
+        .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
@@ -64,68 +129,92 @@
         <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading ">المعلومات</p>
 
-        <div class="panel-block">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
 
-                        
-  
-                 <p class="control has-icons-left">
-                <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
-                <asp:DropDownList ID="TypeOfIncome"
-                    class="input is-info" type="text" placeholder="نوع الوارد"
+
+
+                       <div class="row m-2">
+
+                <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+ <asp:DropDownList ID="TypeOfIncome"
+                    class="form__field mt-2" type="text" placeholder="نوع الوارد"
                     AutoPostBack="True"
                     runat="server">
-                    <asp:ListItem Selected="True" Value="دفعة مستثمر"> دفعة مستثمر</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="تمويل من المستثمر">تمويل من المستثمر</asp:ListItem>
                     <asp:ListItem Value="وارد مشروع"> وارد مشروع</asp:ListItem>
+                    <asp:ListItem Value="قرض">قرض</asp:ListItem>
 
 
                 </asp:DropDownList>
-                <span class="icon is-left">
-
-                    <i class="fas fa-calendar" aria-hidden="true"></i>
-
-                </span>
-            </p>
+    <label for="name" class="form__label">نوع الوارد</label>
+</div>
+           
 
 
-  
-       
-              <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="Amount" class="input is-info" type="text" placeholder="المبلغ" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
 
-              <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="IncomeDate" class="input is-info" type="text" placeholder="تاريخ الاستلام" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
+            </div>
+
+
                 
-
-        </div>
-     <div class="panel-block">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-              <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="Note" class="input is-info" type="text" placeholder="ملاحظات" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
+                <div class="col-4">
 
 
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Amount"  class="form__field" type="input" placeholder="المبلغ" />
 
-        </div>
+    <label for="name" class="form__label">المبلغ</label>
+</div>
+           
+            </div>
+
+
+                
+                <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="IncomeDate"  class="form__field" type="input" placeholder="تاريخ الاستلام" />
+
+    <label for="name" class="form__label">تاريخ الاستلام</label>
+</div>
+           
+            </div>
+
+
+
+
+            </div>
+
+
+                  <br />
+
+
+                    <div class="row m-2">
+
+                <div class="col-12">
+
+
+           
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Note"  class="form__field" type="input" placeholder="ملاحظات" />
+
+    <label for="name" class="form__label">ملاحظات</label>
+</div> 
+
+
+
+            </div>
+            </div>
+
+              <br />
+
+
       <div class="row m-2">
            
                    <div class="col-md-12 text-center ">

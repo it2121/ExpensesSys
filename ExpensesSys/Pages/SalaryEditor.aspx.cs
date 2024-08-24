@@ -21,7 +21,8 @@ namespace ExpensesSys.Pages
             {
 
                 ProjectsNames = BBAALL.GetAllProjects();
-                WithdrowParty.Items.Add("وارد المستثمر");
+                WithdrowParty.Items.Add("تمويل من المستثمر");
+                WithdrowParty.Items.Add("قرض");
 
                 foreach (DataRow row in ProjectsNames.Rows)
                 {
@@ -44,18 +45,21 @@ namespace ExpensesSys.Pages
                             EmpJob.Text = EmpTbl.Rows[0]["EmpJob"].ToString();
                             EmpSal.Text = EmpTbl.Rows[0]["EmpSalary"].ToString();
                             SalDate.Text = SalaryDT.Rows[0]["RecDate"].ToString();
+                    WithdrowParty.Text = SalaryDT.Rows[0]["WithdrowParty"].ToString();
+
 
                     if (SalaryDT.Rows[0]["ProjectID"].ToString().Equals(0))
                     {
 
-                            WithdrowParty.Text = "وارد المستثمر";
+                            WithdrowParty.Text = "تمويل من المستثمر";
 
 
                     }else
                     {
 
-                        WithdrowParty.Text = BBAALL.getProjectNameByID(Convert.ToInt32(SalaryDT.Rows[0]["ProjectID"].ToString())).Rows[0][0].ToString();
+                      //  WithdrowParty.Text = BBAALL.getProjectNameByID(Convert.ToInt32(SalaryDT.Rows[0]["ProjectID"].ToString())).Rows[0][0].ToString();
 
+                        WithdrowParty.Text = SalaryDT.Rows[0]["WithdrowParty"].ToString();
 
                     }
 
@@ -110,7 +114,7 @@ namespace ExpensesSys.Pages
         protected void Return(object sender, EventArgs e)
         {
 
-
+            Salary.fromItSelf = true;
             Response.Redirect("Salary.aspx");
 
 
@@ -144,6 +148,7 @@ namespace ExpensesSys.Pages
 
 
 
+                Salary.fromItSelf = true;
 
                 Response.Redirect("Salary.aspx");
 
@@ -160,6 +165,7 @@ namespace ExpensesSys.Pages
 
                 CreateBtn.Text = "اضافة مرتب جديد";
 
+                Salary.fromItSelf = true;
 
                 Response.Redirect("Salary.aspx");
             }
@@ -180,6 +186,7 @@ namespace ExpensesSys.Pages
             EmpName.Text = "";
             EmpJob.Text = "";
             EmpSal.Text = "";
+            Salary.fromItSelf = true;
 
             Response.Redirect("Salary.aspx");
 

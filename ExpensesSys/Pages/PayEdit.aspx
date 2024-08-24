@@ -1,5 +1,70 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="PayEdit.aspx.cs" Inherits="ExpensesSys.Pages.PayEdit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <style>
+
+        .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
          <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
@@ -64,55 +129,73 @@
         <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading ">الدفعات</p>
 
-        <div class="panel-block">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="PaidAmount" class="input is-info" type="text" placeholder="مقدار الدفعة" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
-       
-              <p class="control has-icons-left">
-                <asp:TextBox runat="server" ID="Date" class="input is-info" type="text" placeholder="التاريخ" />
-                <span class="icon is-left">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-            </p>  
-
-        
-             
 
             
-            
-</div>   
-        
+            <div class="row m-2">
+
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="PaidAmount"  class="form__field" type="input" placeholder="مقدار الدفعة" />
+
+    <label for="name" class="form__label">مقدار الدفعة</label>
+</div>
+           
+
+
+
+            </div>
+                    <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Date"  class="form__field" type="input" placeholder="التاريخ" />
+
+    <label for="name" class="form__label">التاريخ</label>
+</div>
+           
+
+
+
+            </div>
+
+
+
+
+            </div>
+
+
+
+            <br />
+
 
 <div class="row">
 
 
-    
-<div class="col-1">
-    <label class="label align-content-end ml-2 mt-1"> جهة السحب</label>
+    <div class="col-1"></div>
 
-</div>  
-        
-<div class="col-11">
+<div class="col-10">
+                             <div class="form__group field">
+
      <asp:DropDownList ID="WithdrowParty"
-                    class="input is-info" type="text" placeholder="جهة السحب"
+                    class="form__field mt-2" type="text" placeholder="جهة السحب"
                     AutoPostBack="True"
                     runat="server">
              
 
 
                 </asp:DropDownList>
-              
+                  <label for="name" class="form__label">جهة السحب</label>
 
-</div>  <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
+
+</div> 
+</div> 
+    
+    
+    <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
 
 
         </div>

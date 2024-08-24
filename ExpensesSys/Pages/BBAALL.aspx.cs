@@ -71,7 +71,24 @@ namespace ExpensesSys.Pages
         }  
         
         
-        public static DataTable GetAllOutcomeSum()
+        public static DataTable getAllProjectCount()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllProjectCount";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }       public static DataTable getAllEmpCount()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllEmpCount";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+             public static DataTable GetAllOutcomeSum()
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -80,13 +97,17 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }  
-           public static DataTable DeletePay(int ID)
+
+
+
+           public static DataTable DeletePay(int ID , int RecID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "DeletePay";
             cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@RecID", RecID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }    public static DataTable getCompByID(int ID)
@@ -594,7 +615,8 @@ namespace ExpensesSys.Pages
             int ProjectID,
             string BuyingParty,
             string Buyer,
-            int MatBuyRecID
+            int MatBuyRecID,
+            string WereHouseState
             )
 
 
@@ -615,6 +637,7 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@Buyer", Buyer);
             cm.Parameters.AddWithValue("@Count", Count);
             cm.Parameters.AddWithValue("@MatBuyRecID", MatBuyRecID);
+            cm.Parameters.AddWithValue("@WereHouseState", WereHouseState);
       
 
 
@@ -628,7 +651,9 @@ namespace ExpensesSys.Pages
            
             int ProjectID,
             string BuyingParty,
-            string Buyer
+            string Buyer,
+                        string WereHouseState
+
             )
 
 
@@ -648,6 +673,7 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@BuyingParty", BuyingParty);
             cm.Parameters.AddWithValue("@Buyer", Buyer);
             cm.Parameters.AddWithValue("@Count", Count);
+            cm.Parameters.AddWithValue("@WereHouseState", WereHouseState);
       
 
 

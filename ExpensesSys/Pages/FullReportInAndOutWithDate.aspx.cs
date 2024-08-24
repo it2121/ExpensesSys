@@ -48,7 +48,8 @@ namespace ExpensesSys.Pages
 
                 DataTable ProjectsNames = BBAALL.GetAllProjects();
                 ProjectName.Items.Add("القناة العامة");
-                WithdrowParty.Items.Add("وارد المستثمر");
+                WithdrowParty.Items.Add("تمويل من المستثمر");
+                WithdrowParty.Items.Add("قرض");
 
                 foreach (DataRow row in ProjectsNames.Rows)
                 {

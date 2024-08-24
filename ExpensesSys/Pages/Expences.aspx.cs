@@ -28,6 +28,8 @@ namespace ExpensesSys.Pages
         {
   
             Salary.ProjectID = ProjectID;
+            Salary.fromItSelf = false;
+
             Response.Redirect("Salary.aspx");
 
         }  
