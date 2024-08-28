@@ -271,7 +271,7 @@
                     </div>
                     <div class="col-md-6 text-center ">
 
-                        <asp:Button runat="server" ID="Button4" Style="width: 100%" OnClick="CreateCompReport" class="button is-outlined  is-danger text-center " Text="اضهار تقرير المجاملات"></asp:Button>
+                        <asp:Button runat="server" ID="Button4" Style="width: 100%" OnClick="CreateCompReport" class="button is-outlined  is-danger text-center " Text="اضهار تقرير الاخرى"></asp:Button>
                     </div>
                 </div>
             </div>
@@ -332,7 +332,7 @@
 
 
 
-                            <asp:Label runat="server" ID="CompSum" ForeColor="DarkOrange" Font-Bold="true" Text="0 IQD مجموع المجاملات"></asp:Label>
+                            <asp:Label runat="server" ID="CompSum" ForeColor="DarkOrange" Font-Bold="true" Text="0 IQD مجموع الصرفيات الاخرى"></asp:Label>
 
 
 
@@ -352,7 +352,7 @@
 
                 <div class="col-12  text-center">
                    <br />
-                    <asp:Label runat="server" ID="Label1" ForeColor="DarkGreen"  Font-Size="Larger" Font-Bold="true" Text="الايرادات"></asp:Label>
+                    <asp:Label runat="server" ID="Label1" ForeColor="DarkGreen"  Font-Size="Larger" Font-Bold="true" Text="الايرادات والتمويل"></asp:Label>
                 </div>
                 <br />
 
@@ -471,7 +471,7 @@
                 <div class="col-12 text-center">
                     <br />
                    
-                    <asp:Label runat="server" ID="Label5" ForeColor="DarkGreen" Font-Size="Larger" Font-Bold="true" Text="صرفيات المجاملات"></asp:Label>
+                    <asp:Label runat="server" ID="Label5" ForeColor="DarkGreen" Font-Size="Larger" Font-Bold="true" Text="صرفيات خرى"></asp:Label>
                 </div>
                 <div class="container-fluid d-flex flex-column">
                     <div class="row m-2">

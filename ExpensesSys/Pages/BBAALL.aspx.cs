@@ -16,7 +16,15 @@ namespace ExpensesSys.Pages
 
         }
 
-        public static DataTable REP_GetAllNthRecords()
+   public static DataTable getAllWarehouse()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllWarehouse";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }        public static DataTable REP_GetAllNthRecords()
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -100,7 +108,45 @@ namespace ExpensesSys.Pages
 
 
 
-           public static DataTable DeletePay(int ID , int RecID)
+           public static DataTable getAllOrigenalEmp(int ProjectID,string InvolvmentType)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getAllOrigenalEmp";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@InvolvmentType", InvolvmentType);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable getOrigenalEmpByID(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getOrigenalEmpByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable getWarehouseByID(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getWarehouseByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+           public static DataTable DeleteOriginalEmp(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "DeleteOriginalEmp";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable DeletePay(int ID , int RecID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -110,7 +156,10 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@RecID", RecID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }    public static DataTable getCompByID(int ID)
+        } 
+        
+        
+        public static DataTable getCompByID(int ID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -534,6 +583,103 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@PayDate", PayDate);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             cm.Parameters.AddWithValue("@WithdrowParty", WithdrowParty);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }  
+        
+        public static bool UpdateOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
+            string Note,string InvolvmentType, int ProjectID,int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateOrigenalEmp";
+
+
+            cm.Parameters.AddWithValue("@EmpName", EmpName);
+            cm.Parameters.AddWithValue("@EmpJob", EmpJob);
+            cm.Parameters.AddWithValue("@Depart", Depart);
+            cm.Parameters.AddWithValue("@Address", Address);
+            cm.Parameters.AddWithValue("@Note", Note);
+            cm.Parameters.AddWithValue("@InvolvmentType", InvolvmentType);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        }    public static bool InsertIntoOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
+            string Note,string InvolvmentType, int ProjectID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoOrigenalEmp";
+
+
+            cm.Parameters.AddWithValue("@EmpName", EmpName);
+            cm.Parameters.AddWithValue("@EmpJob", EmpJob);
+            cm.Parameters.AddWithValue("@Depart", Depart);
+            cm.Parameters.AddWithValue("@Address", Address);
+            cm.Parameters.AddWithValue("@Note", Note);
+            cm.Parameters.AddWithValue("@InvolvmentType", InvolvmentType);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        } 
+        
+        public static bool UpdateWarehouse( int MatBuyID, string ActionType, int Quant,int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateWarehouse";
+
+
+            cm.Parameters.AddWithValue("@MatBuyID", MatBuyID);
+            cm.Parameters.AddWithValue("@ActionType", ActionType);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+            cm.Parameters.AddWithValue("@ID", ID);
+
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        } 
+        
+        
+        public static bool InsertIntoWarehouse( int MatBuyID, string ActionType, int Quant)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoWarehouse";
+
+
+            cm.Parameters.AddWithValue("@MatBuyID", MatBuyID);
+            cm.Parameters.AddWithValue("@ActionType", ActionType);
+            cm.Parameters.AddWithValue("@Quant", Quant);
+
       
 
 
@@ -983,7 +1129,25 @@ namespace ExpensesSys.Pages
         
         
         
-        public static bool DeleteItem(int ID)
+        public static bool deleteWarehouse(int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "deleteWarehouse";
+
+
+            cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }  public static bool DeleteItem(int ID)
 
         {
             SqlCommand cm;

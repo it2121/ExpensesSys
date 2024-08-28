@@ -17,8 +17,13 @@ namespace ExpensesSys.Pages
 
         }
 
-        static string DatabaseConnectionString = @"Server=GAMMA;Database=ExpensesDB;Trusted_Connection = True;";
-        //  static string DatabaseConnectionString = @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
+        /// <summary>
+        /// ////////////////////////////static string DatabaseConnectionString = @"Server=192.168.0.100;Database=ExpensesDB; User Id=exp; Password=123;  ";
+        /// </summary>
+        /// 
+
+        //static string DatabaseConnectionString = @"Server=GAMMA;Database=ExpensesDB;Trusted_Connection = True; ";
+          static string DatabaseConnectionString = @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
        // static string DatabaseConnectionString = @"Server=SQL8010.site4now.net;Database=db_aa8601_furnituremasterdb; User Id=db_aa8601_furnituremasterdb_admin; Password=Akastarlord1._; ";
 
 

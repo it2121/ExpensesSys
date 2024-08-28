@@ -18,7 +18,7 @@
 
     <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
-                       <div class="col-auto">
+       <%--                <div class="col-auto">
                 <div class="field buttons align-items-end">
 
 
@@ -38,7 +38,7 @@
                         </i></asp:LinkButton>
 
                 </div>
-            </div>
+            </div>--%>
                 
             <div class="col-auto">
                 <div class="field buttons align-items-end">

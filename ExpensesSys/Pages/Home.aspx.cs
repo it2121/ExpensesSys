@@ -41,7 +41,7 @@ namespace ExpensesSys.Pages
                 // DateTime enteredDate;
                 //  foreach(DataRow row in Out30.Rows)
                 //  {
-                //     enteredDate = DateTime.Parse(row[""]);
+                //     enteredDate = DateTime.Parse(row[""]);\
                 //   }
                 GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum().Rows[0][0].ToString());
                 GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum().Rows[0][0].ToString());
@@ -87,8 +87,8 @@ namespace ExpensesSys.Pages
                 sum += MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة");
                 sum += MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة");
                 sum += MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم");
-                sum += MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة") ;
-                Last30DaysSpendings.Text = MyStringManager.GetNumberWithComas(sum+"") + " IQD ";
+                sum += MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة");
+                Last30DaysSpendings.Text = MyStringManager.GetNumberWithComas(sum + "") + " IQD ";
 
             }
             else
@@ -113,9 +113,25 @@ namespace ExpensesSys.Pages
         }
 
 
-        protected void GoToSalary(object sender, EventArgs e)
+        protected void GoToOriginalEmp(object sender, EventArgs e)
+        {
+           // PeojectSeector.GoToPage = "OriginalEmp";
+            PeojectSeector.GoToPage = "OriginalEmpSelector";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+
+
+
+        }    protected void GoToSalary(object sender, EventArgs e)
         {
             PeojectSeector.GoToPage = "Salary";
+            Response.Redirect("PeojectSeector.aspx");
+
+
+        }     protected void GoToWarehouse(object sender, EventArgs e)
+        {
+            PeojectSeector.GoToPage = "Warehouse";
             Response.Redirect("PeojectSeector.aspx");
 
 

@@ -295,7 +295,7 @@
 
                 type: 'bar',
                 data: {
-                    labels: ['المصروفات', 'الايرادات', 'السيولة المتوفرة'],
+                    labels: ['المصروفات', 'الايرادات والتمويل', 'السيولة المتوفرة'],
                     datasets: [{
                         label: 'نظرة عامة',
                         data: [OR, IN, Free],
@@ -346,7 +346,7 @@
 
                 type: 'bar',
                 data: {
-                    labels: ['مصروفات عامة', 'المجاملات', 'الرواتب', ' شراء المواد'],
+                    labels: ['مصروفات عامة', 'اخرى', 'الرواتب', ' شراء المواد'],
                     datasets: [{
                         label: 'نظرة تفصيلية بالمصاريف',
                         data: [GetAllNthSum, GetAllCompSum, GetAllSalarySum, GetAllMatBuySum],
@@ -387,7 +387,7 @@
 
 
 
-            <div class="col-6   text-center ">
+            <div class="col-4   text-center ">
 
                 <asp:Button runat="server" ID="Button5" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
 
@@ -400,8 +400,14 @@
 
             </div>
 
-            <div class="col-6   text-center ">
-                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToEmpMan" role="button" Text="ادارة الموظفيـــن"></asp:Button>
+            <div class="col-4   text-center ">
+                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToEmpMan" role="button" Text="ادارة الرواتب"></asp:Button>
+
+
+
+
+            </div>       <div class="col-4   text-center ">
+                <asp:Button runat="server" ID="Button23" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmp" role="button" Text="الادارة والملاك"></asp:Button>
 
 
 
@@ -412,7 +418,7 @@
 
 
             <div class="col-4 mt-5  text-center">
-                <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات"></asp:Button>
+                <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>
 
 
 
@@ -439,6 +445,44 @@
 
 
         </div>
+
+
+        <div class="row  " style="padding-left: 1em; padding-right: 1em;">
+
+
+            <div class="col-4 mt-5  text-center">
+<%--                <asp:Button runat="server" ID="Button8" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>--%>
+
+
+
+
+            </div>
+
+
+            <div class="col-4 mt-5  text-center">
+                <asp:Button runat="server" ID="Button9" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToWarehouse" role="button" Text="ادارة المخـــزن"></asp:Button>
+
+
+
+
+            </div>
+
+            <div class="col-4 mt-5  text-center">
+<%--                <asp:Button runat="server" ID="Button10" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToNth" role="button" Text="النثريــــات"></asp:Button>--%>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
         <div class="row  " style="padding-left: 1em; padding-right: 1em;">
 
 

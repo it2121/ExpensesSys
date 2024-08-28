@@ -142,7 +142,7 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="EmpName"  class="form__field" type="input" placeholder="اسم الموظف" />
+     <asp:TextBox runat="server" ID="EmpName"  ReadOnly="true" class="form__field" type="input" placeholder="اسم الموظف" />
 
     <label for="name" class="form__label">اسم الموظف</label>
 </div>
@@ -159,7 +159,7 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="EmpJob"  class="form__field" type="input" placeholder="الوظيفة" />
+     <asp:TextBox runat="server" ID="EmpJob" ReadOnly="true" class="form__field" type="input" placeholder="الوظيفة" />
 
     <label for="name" class="form__label">الوظيفة</label>
 </div>

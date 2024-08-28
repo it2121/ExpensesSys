@@ -100,46 +100,46 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                 
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="أسم المادة">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("MatName") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("MatName") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField> 
                 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="اكمية">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="الكمية">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_Quant" runat="server" Text='<%#Eval("Quant") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_Quant" runat="server" Text='<%#Eval("Quant") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>   
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="العدد">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_Count" runat="server" Text='<%#Eval("Count") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_Count" runat="server" Text='<%#Eval("Count") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="النوع">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_Type" runat="server" Text='<%#Eval("MatType") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_Type" runat="server" Text='<%#Eval("MatType") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField> <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="اجمالي الكلفة">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_TotalCost" runat="server" Text='<%#Eval("TotalCost") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_TotalCost" runat="server" Text='<%#Eval("TotalCost") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField><asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المدفوع">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_RecAmount" runat="server" Text='<%#Eval("RecAmount") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_RecAmount" runat="server" Text='<%#Eval("RecAmount") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة الشراء">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المزود">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_RecAmount1" runat="server" Text='<%#Eval("BuyingParty") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_RecAmount1" runat="server" Text='<%#Eval("BuyingParty") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المشتري">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_RecAmount33" runat="server" Text='<%#Eval("Buyer") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_RecAmount33" runat="server" Text='<%#Eval("Buyer") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>     <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="حالة التخزين">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_RecAmount3322" runat="server" Text='<%#Eval("WereHouseState") %>' Font-Bold="true" Font-Size="Small"></asp:Label>
+                        <asp:Label  ID="lbl_RecAmount3322" runat="server" Text='<%#Eval("WereHouseState") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
            <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
@@ -151,7 +151,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
-                                      Font-Bold="true"                          class="js-modal-trigger button is-small is-bold is-info is-outlined"
+                                      Font-Bold="true"                          class="js-modal-trigger button  is-bold is-info is-outlined"
                                     style="Width:50%; Height:25px"  
 
                             ID="btn_Edit" runat="server" Text="تعديل" CommandName="Edit" />
@@ -161,7 +161,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                   <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button Font-Bold="true"
-                                                                class="js-modal-trigger is-small is-bold button is-warning "
+                                                                class="js-modal-trigger  is-bold button is-warning "
                                     style="Width:50%; Height:25px"  
                             CommandArgument='<%#Eval("ID") %>' CommandName="GoToPay"
                             ID="btn_Edit1" runat="server" Text="الدفعات"  />

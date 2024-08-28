@@ -243,9 +243,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="BuyingParty"  class="form__field" type="input" placeholder="جهة الشراء" />
+     <asp:TextBox runat="server" ID="BuyingParty"  class="form__field" type="input" placeholder="المزود" />
 
-    <label for="name" class="form__label">جهة الشراء</label>
+    <label for="name" class="form__label">المزود</label>
 </div>
 </div>      
                 

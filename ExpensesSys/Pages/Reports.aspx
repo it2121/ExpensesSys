@@ -132,7 +132,7 @@
                 ID="ContractBtn" runat="server"
                     
                     OnClick="GoToFullReportInAndOutWithDate"
-                Text=" - تقارير العقود - "></asp:Button>
+                Text=" - تقارير عقود العمل - "></asp:Button>
            
 
             </div>
@@ -254,7 +254,7 @@
 
                   type: 'bar',
                   data: {
-                      labels: ['مصروفات عامة', 'المجاملات', 'الرواتب', ' شراء المواد'],
+                      labels: ['مصروفات عامة', 'اخرى', 'الرواتب', 'عقود شراء المواد'],
                       datasets: [{
                           label: 'نظرة تفصيلية بالمصاريف',
                           data: [GetAllNthSum, GetAllCompSum, GetAllSalarySum, GetAllMatBuySum],

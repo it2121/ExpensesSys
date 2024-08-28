@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,6 +53,9 @@
     </Reference>
     <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
       <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
@@ -138,11 +140,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Pages\BBAALL.aspx" />
     <Content Include="Pages\Comp.aspx" />
     <Content Include="Pages\CompEditor.aspx" />
@@ -161,6 +158,9 @@
     <Content Include="Pages\MatBuyEditor.aspx" />
     <Content Include="Pages\Nth.aspx" />
     <Content Include="Pages\NthEdtor.aspx" />
+    <Content Include="Pages\OriginalEmp.aspx" />
+    <Content Include="Pages\OriginalEmpEditor.aspx" />
+    <Content Include="Pages\OriginalEmpSelector.aspx" />
     <Content Include="Pages\Pay.aspx" />
     <Content Include="Pages\PayEdit.aspx" />
     <Content Include="Pages\PeojectSeector.aspx" />
@@ -169,6 +169,8 @@
     <Content Include="Pages\Reports.aspx" />
     <Content Include="Pages\Salary.aspx" />
     <Content Include="Pages\SalaryEditor.aspx" />
+    <Content Include="Pages\Warehouse.aspx" />
+    <Content Include="Pages\WarehouseEditor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +309,27 @@
     <Compile Include="Pages\NthEdtor.aspx.designer.cs">
       <DependentUpon>NthEdtor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OriginalEmp.aspx.cs">
+      <DependentUpon>OriginalEmp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OriginalEmp.aspx.designer.cs">
+      <DependentUpon>OriginalEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OriginalEmpEditor.aspx.cs">
+      <DependentUpon>OriginalEmpEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OriginalEmpEditor.aspx.designer.cs">
+      <DependentUpon>OriginalEmpEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OriginalEmpSelector.aspx.cs">
+      <DependentUpon>OriginalEmpSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OriginalEmpSelector.aspx.designer.cs">
+      <DependentUpon>OriginalEmpSelector.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Pay.aspx.cs">
       <DependentUpon>Pay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -363,6 +386,20 @@
     <Compile Include="Pages\SalaryEditor.aspx.designer.cs">
       <DependentUpon>SalaryEditor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Warehouse.aspx.cs">
+      <DependentUpon>Warehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Warehouse.aspx.designer.cs">
+      <DependentUpon>Warehouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WarehouseEditor.aspx.cs">
+      <DependentUpon>WarehouseEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WarehouseEditor.aspx.designer.cs">
+      <DependentUpon>WarehouseEditor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -404,11 +441,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
