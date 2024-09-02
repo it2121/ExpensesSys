@@ -26,18 +26,11 @@ namespace ExpensesSys.Pages
             else if (Session["Name"] != null)
             {
 
-                /*  Users user = (Users)Session["User"];
-                  NavBar.Visible = true;
-
-
-                  UserFullNameLbl.Text = user.Fullname;
-
-  */
-
 
             }
             TLbl.Text= Session["Name"].ToString();
             NameL.Text = Session["Role"].ToString();
+            MainLbl.Text = "   نظــــام الصومعــــة  -" + "   مشروع   " + BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0][0].ToString();
 
             setSelectedPageBGColor(openPage);
 
@@ -106,26 +99,30 @@ namespace ExpensesSys.Pages
         }  protected void GoToIncome(object sender, EventArgs e)
         {
 
-            PeojectSeector.GoToPage = "Income";
-            Response.Redirect("PeojectSeector.aspx");
+            ExpensesSys.Pages.Income.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Income.aspx");
 
         }protected void GoToEmpMan(object sender, EventArgs e)
         {
 
-            PeojectSeector.GoToPage = "EmpMan";
-            Response.Redirect("PeojectSeector.aspx");
+            ExpensesSys.Pages.EmpMan.ProjectID = Global.getProjectID();
+
+            Response.Redirect("EmpMan.aspx");
 
         }
         protected void GoToExpences(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Expences";
-            Response.Redirect("PeojectSeector.aspx");
+            ExpensesSys.Pages.Expences.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Expences.aspx");
 
 
         }   protected void GoToSalary(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Salary";
-            Response.Redirect("PeojectSeector.aspx");
+            ExpensesSys.Pages.Salary.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Salary.aspx");
 
 
         }

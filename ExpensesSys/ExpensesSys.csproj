@@ -171,6 +171,7 @@
     <Content Include="Pages\Reports.aspx" />
     <Content Include="Pages\Salary.aspx" />
     <Content Include="Pages\SalaryEditor.aspx" />
+    <Content Include="Pages\SeperateProjectSelector.aspx" />
     <Content Include="Pages\Warehouse.aspx" />
     <Content Include="Pages\WarehouseEditor.aspx" />
     <Content Include="Pages\WarehouseEditorInside.aspx" />
@@ -238,6 +239,7 @@
     <Compile Include="Pages\FullReportInAndOutWithDate.aspx.designer.cs">
       <DependentUpon>FullReportInAndOutWithDate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Global.cs" />
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,6 +409,13 @@
     </Compile>
     <Compile Include="Pages\SalaryEditor.aspx.designer.cs">
       <DependentUpon>SalaryEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeperateProjectSelector.aspx.cs">
+      <DependentUpon>SeperateProjectSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SeperateProjectSelector.aspx.designer.cs">
+      <DependentUpon>SeperateProjectSelector.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse.aspx.cs">
       <DependentUpon>Warehouse.aspx</DependentUpon>

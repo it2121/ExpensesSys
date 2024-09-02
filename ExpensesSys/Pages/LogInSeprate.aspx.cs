@@ -46,8 +46,9 @@ namespace ExpensesSys.Pages
                 Session["Role"] = login.Rows[0]["Role"];
 
                 Session["redirected"] = "1";
+                PeojectSeector.GoToPage = "Home";
 
-                Response.Redirect("Home.aspx");
+                Response.Redirect("SeperateProjectSelector.aspx");
 
             }
             else

@@ -8,12 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class PeojectSeector : System.Web.UI.Page
+    public partial class SeperateProjectSelector : System.Web.UI.Page
     {
         public static string GoToPage = "Home";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           // Main.openPage = "ProjectSelector";
             if (!IsPostBack)
             {
                 DataTable allProjects = BBAALL.GetAllProjects();
@@ -23,8 +23,10 @@ namespace ExpensesSys.Pages
                 DataGridUsers.DataBind();
 
             }
+
         }
-             protected void GoToProjectZero(object sender, EventArgs e)
+
+        protected void GoToProjectZero(object sender, EventArgs e)
         {
 
             if (GoToPage.Equals("ProjEditor"))
@@ -72,23 +74,26 @@ namespace ExpensesSys.Pages
                 Income.ProjectID = 0;
 
 
-            }           else if (GoToPage.Equals("OriginalEmp"))
+            }
+            else if (GoToPage.Equals("OriginalEmp"))
             {
                 OriginalEmp.ProjectID = 0;
 
 
             }
-                       else if (GoToPage.Equals("OriginalEmpSelector"))
+            else if (GoToPage.Equals("OriginalEmpSelector"))
             {
                 OriginalEmpSelector.ProjectID = 0;
 
 
-            }     else if (GoToPage.Equals("Warehouse"))
+            }
+            else if (GoToPage.Equals("Warehouse"))
             {
                 Warehouse.ProjectID = 0;
 
 
-            }   else if (GoToPage.Equals("Home"))
+            }
+            else if (GoToPage.Equals("Home"))
             {
                 Home.ProjectID = 0;
                 Global.setProjectID(0);
@@ -111,36 +116,46 @@ namespace ExpensesSys.Pages
 
             if (GoToPage.Equals("ProjEditor"))
             {
-               // ProjEditor.ProjID = Convert.ToInt32(id.Text);
+                // ProjEditor.ProjID = Convert.ToInt32(id.Text);
             }
-            else if (GoToPage.Equals("EmpEditor")) {
-               // EmpEditor.EmpId = Convert.ToInt32(id.Text);
+            else if (GoToPage.Equals("EmpEditor"))
+            {
+                // EmpEditor.EmpId = Convert.ToInt32(id.Text);
 
 
             }
-            else if (GoToPage.Equals("ItemsEditor")) {
-               // ItemsEditor.ItemID = Convert.ToInt32(id.Text);
+            else if (GoToPage.Equals("ItemsEditor"))
+            {
+                // ItemsEditor.ItemID = Convert.ToInt32(id.Text);
 
 
-            }  else if (GoToPage.Equals("EmpMan")) {
+            }
+            else if (GoToPage.Equals("EmpMan"))
+            {
                 EmpMan.ProjectID = Convert.ToInt32(id.Text);
 
 
-            }else if (GoToPage.Equals("Expences")) {
+            }
+            else if (GoToPage.Equals("Expences"))
+            {
                 Expences.ProjectID = Convert.ToInt32(id.Text);
 
 
             }
-            else if (GoToPage.Equals("Salary")) {
+            else if (GoToPage.Equals("Salary"))
+            {
                 Salary.ProjectID = Convert.ToInt32(id.Text);
 
 
-            } else if (GoToPage.Equals("Nth")) {
+            }
+            else if (GoToPage.Equals("Nth"))
+            {
                 Nth.ProjectID = Convert.ToInt32(id.Text);
 
 
             }
-            else if (GoToPage.Equals("Income")) {
+            else if (GoToPage.Equals("Income"))
+            {
                 Income.ProjectID = Convert.ToInt32(id.Text);
 
 
@@ -150,17 +165,20 @@ namespace ExpensesSys.Pages
                 OriginalEmp.ProjectID = Convert.ToInt32(id.Text);
 
 
-            }     else if (GoToPage.Equals("OriginalEmpSelector"))
+            }
+            else if (GoToPage.Equals("OriginalEmpSelector"))
             {
                 OriginalEmpSelector.ProjectID = Convert.ToInt32(id.Text);
 
 
-            }  else if (GoToPage.Equals("Warehouse"))
+            }
+            else if (GoToPage.Equals("Warehouse"))
             {
                 Warehouse.ProjectID = Convert.ToInt32(id.Text);
 
 
-            }else if (GoToPage.Equals("Home"))
+            }
+            else if (GoToPage.Equals("Home"))
             {
                 Home.ProjectID = Convert.ToInt32(id.Text);
 
@@ -169,7 +187,7 @@ namespace ExpensesSys.Pages
             }
 
 
-            Response.Redirect(GoToPage+ ".aspx");
+            Response.Redirect(GoToPage + ".aspx");
 
 
 
@@ -205,7 +223,6 @@ namespace ExpensesSys.Pages
 
 
         }
-
 
     }
 }

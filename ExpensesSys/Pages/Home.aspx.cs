@@ -23,6 +23,7 @@ namespace ExpensesSys.Pages
         public static int GetAllSalarySum = 0;
         public static int GetAllNthSum = 0;
         public static int GetAllCompSum = 0;
+        public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -119,8 +120,11 @@ namespace ExpensesSys.Pages
         protected void GoToOriginalEmp(object sender, EventArgs e)
         {
            // PeojectSeector.GoToPage = "OriginalEmp";
-            PeojectSeector.GoToPage = "OriginalEmpSelector";
-            Response.Redirect("PeojectSeector.aspx");
+           // PeojectSeector.GoToPage = "OriginalEmpSelector";
+
+
+            OriginalEmpSelector.ProjectID = Global.getProjectID();
+            Response.Redirect("OriginalEmpSelector.aspx");
 
 
 
@@ -128,14 +132,20 @@ namespace ExpensesSys.Pages
 
         }    protected void GoToSalary(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Salary";
-            Response.Redirect("PeojectSeector.aspx");
+
+
+            //PeojectSeector.GoToPage = "Salary";
+            Salary.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Salary.aspx");
 
 
         }     protected void GoToWarehouse(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Warehouse";
-            Response.Redirect("PeojectSeector.aspx");
+            //PeojectSeector.GoToPage = "Warehouse";
+            Warehouse.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Warehouse.aspx");
 
 
         }
@@ -158,14 +168,19 @@ namespace ExpensesSys.Pages
         }
         protected void GoToIncome(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Income";
-            Response.Redirect("PeojectSeector.aspx");
+            // PeojectSeector.GoToPage = "Income";
+
+
+            ExpensesSys.Pages.Income.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Income.aspx");
 
 
         }  protected void GoToExpences(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "Expences";
-            Response.Redirect("PeojectSeector.aspx");
+          Expences.ProjectID = Global.getProjectID();
+
+            Response.Redirect("Expences.aspx");
 
 
         }
@@ -179,8 +194,9 @@ namespace ExpensesSys.Pages
 
         protected void GoToEmpMan(object sender, EventArgs e)
         {
-            PeojectSeector.GoToPage = "EmpMan";
-            Response.Redirect("PeojectSeector.aspx");
+            EmpMan.ProjectID = Global.getProjectID();
+
+            Response.Redirect("EmpMan.aspx");
 
         }
     }
