@@ -60,13 +60,8 @@
                               <div class="col-auto">
                 <div class="field buttons align-items-end">
 
-
-
-
-
      <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="الرجوع"
-        
-         
+      
          data-target="modal-js-example"
                                  onclick="Return"
 
@@ -75,12 +70,8 @@
                         <i class="fas fa-home " style="margin-left: 1em">
 
                         </i></asp:LinkButton>
-
                 </div>
             </div>
-                
-
-
                 </div>
             </div>
 
@@ -110,6 +101,7 @@
 
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
+                            HeaderStyle-Font-Size="X-Large"
                           
                             >
             <Columns>
@@ -121,24 +113,21 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>    
                 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="أسم المشروع">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="أسم المشروع">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("Name") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                        <asp:Label  ID="lbl_OR" runat="server"  Text='<%#Eval("Name") %>' Font-Bold="true" Font-Size="XX-Large"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-           <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_ProviderID" runat="server" Text='<%#Eval("ProviderID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>--%>
+
+
            
-                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center"  HeaderText="أسم المشروع">
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-info is-outlined"
-                                    style="Width:50%; Height:25px"  
+                                    style="Width:50%; Height:100%"  
 
-                            ID="btn_Edit" runat="server" Text="تحديد" CommandName="Edit" />
+                            ID="btn_Edit" Font-Size="XX-Large" runat="server" Text='<%#Eval("Name") %>' CommandName="Edit" />
                     </ItemTemplate>
             
                 </asp:TemplateField>

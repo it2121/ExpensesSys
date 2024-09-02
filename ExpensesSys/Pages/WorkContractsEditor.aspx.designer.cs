@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class MatBuyEditor
+    public partial class WorkContractsEditor
     {
 
         /// <summary>
@@ -42,6 +42,42 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox ContractNumber;
 
         /// <summary>
+        /// ContractType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ContractType;
+
+        /// <summary>
+        /// NameOfPersonal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NameOfPersonal;
+
+        /// <summary>
+        /// NumberOfPersonal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NumberOfPersonal;
+
+        /// <summary>
+        /// AddressOfPersonal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddressOfPersonal;
+
+        /// <summary>
         /// ContractDate control.
         /// </summary>
         /// <remarks>
@@ -49,60 +85,6 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ContractDate;
-
-        /// <summary>
-        /// NameOfSupplyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NameOfSupplyer;
-
-        /// <summary>
-        /// MatType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MatType;
-
-        /// <summary>
-        /// NumberOfSupplyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NumberOfSupplyer;
-
-        /// <summary>
-        /// AddressOfSupplyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddressOfSupplyer;
-
-        /// <summary>
-        /// Buyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Buyer;
-
-        /// <summary>
-        /// MatName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MatName;
 
         /// <summary>
         /// Quant control.
@@ -114,22 +96,31 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox Quant;
 
         /// <summary>
-        /// Count control.
+        /// Feetage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Count;
+        protected global::System.Web.UI.WebControls.TextBox Feetage;
 
         /// <summary>
-        /// MatUnit control.
+        /// UnityType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MatUnit;
+        protected global::System.Web.UI.WebControls.TextBox UnityType;
+
+        /// <summary>
+        /// UnitPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox UnitPrice;
 
         /// <summary>
         /// TotalCost control.
@@ -141,22 +132,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox TotalCost;
 
         /// <summary>
-        /// RecPayCount control.
+        /// PainAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RecPayCount;
-
-        /// <summary>
-        /// RecAmount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RecAmount;
+        protected global::System.Web.UI.WebControls.TextBox PainAmount;
 
         /// <summary>
         /// RemAmount control.
@@ -166,24 +148,6 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox RemAmount;
-
-        /// <summary>
-        /// ProvidedQuant control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProvidedQuant;
-
-        /// <summary>
-        /// ProvidedQuantPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProvidedQuantPrice;
 
         /// <summary>
         /// CreateBtn control.

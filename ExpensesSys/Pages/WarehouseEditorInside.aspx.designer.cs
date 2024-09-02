@@ -11,8 +11,17 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class WarehouseEditor
+    public partial class WarehouseEditorInside
     {
+
+        /// <summary>
+        /// ScriptManager11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager11;
 
         /// <summary>
         /// ButtonsBar control.
@@ -24,21 +33,30 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// PageProjectNameLbl control.
+        /// Quant control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PageProjectNameLbl;
+        protected global::System.Web.UI.WebControls.TextBox Quant;
 
         /// <summary>
-        /// DataGridUsers control.
+        /// CreateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DataGridUsers;
+        protected global::System.Web.UI.WebControls.Button CreateBtn;
+
+        /// <summary>
+        /// DelBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DelBtn;
     }
 }

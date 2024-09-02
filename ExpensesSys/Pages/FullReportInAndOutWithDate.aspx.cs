@@ -187,7 +187,7 @@ namespace ExpensesSys.Pages
 
 
             IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ")+"") + " IQD مجموع الوارد"; 
-            NthSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة")+"") + " IQD مجموع النثريات";
+            NthSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة")+"") + " IQD مجموع الصرفيات العامة";
             CompSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة") +"") + " IQD مجموع الصرفيات الاخرى"; 
             SalarySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم")+"") + " IQD مجموع الرواتب"; 
             MatBuySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة")+"") + " IQD مجموع صرفيات المواد";
@@ -342,7 +342,7 @@ namespace ExpensesSys.Pages
             sheetCounter++;
             
             DataTable NthTbl = NthSet;
-            NthTbl.TableName = "صرفيات النثريات";
+            NthTbl.TableName = "الصرفيات العامة";
             wb.Worksheets.Add(NthTbl);
             sheetCounter++;
             

@@ -133,47 +133,78 @@
              
             <div class="row m-2">
 
-                <div class="col-3">
+                <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="MatName"  class="form__field" type="input" placeholder="اسم المادة" />
+     <asp:TextBox runat="server" ID="ContractNumber"  class="form__field" type="input" placeholder="رقم العقد" />
 
-    <label for="name" class="form__label">اسم المادة</label>
+    <label for="name" class="form__label">رقم العقد</label>
 </div>
 </div>      
                 
-                <div class="col-3">
+                <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Quant"  class="form__field" type="input" placeholder="الكمية" />
+     <asp:TextBox runat="server" ID="ContractDate"  class="form__field" type="input" placeholder="التاريخ" />
 
-    <label for="name" class="form__label">الكمية</label>
+    <label for="name" class="form__label">التاريخ</label>
 </div>
 </div>              
-                <div class="col-3">
+                <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Count"  class="form__field" type="input" placeholder="العدد" />
+     <asp:TextBox runat="server" ID="NameOfSupplyer"  class="form__field" type="input" placeholder="اسم المجهز" />
 
-    <label for="name" class="form__label">العدد</label>
+    <label for="name" class="form__label">اسم المجهز</label>
 </div>
 </div>
 
-    <div class="col-3">
+    <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="MatType"  class="form__field" type="input" placeholder="نوع المادة" />
+     <asp:TextBox runat="server" ID="MatType"  class="form__field" type="input" placeholder="نوع التجهيز" />
 
-    <label for="name" class="form__label">نوع المادة</label>
+    <label for="name" class="form__label">نوع التجهيز</label>
 </div>
+</div>  <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="NumberOfSupplyer"  class="form__field" type="input" placeholder="رقم الهاتف" />
+
+    <label for="name" class="form__label">رقم الهاتف</label>
+</div>
+</div> 
+                <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="AddressOfSupplyer"  class="form__field" type="input" placeholder="العنوان" />
+
+    <label for="name" class="form__label">العنوان</label>
+</div>
+</div>   <div class="col-4">
+
+
+        
+</div> <div class="col-4">
+                       <div class="form__group field">
+     <asp:TextBox runat="server" ID="Buyer"  class="form__field"   type="input" placeholder="المشتري" />
+
+    <label for="name" class="form__label">المشتري</label>
+</div>
+
+        
 </div>
 
 
@@ -181,22 +212,67 @@
 </div>
           
 <hr />
+ <div class="row m-2">
 
-            
-             
+                <div class="col-3">
+
+                                             <div class="form__group field">
+     <asp:TextBox runat="server" ID="MatName"  class="form__field" type="input" placeholder="اسم المادة" />
+
+    <label for="name" class="form__label">اسم المادة</label>
+</div>                                 
+
+
+
+            </div>      <div class="col-3">
+
+                                             <div class="form__group field">
+     <asp:TextBox runat="server" ID="Quant"  class="form__field" type="input" placeholder="الكمية" />
+
+    <label for="name" class="form__label">الكمية</label>
+</div>                                 
+
+
+
+            </div>
+                 <div class="col-3">
+
+                    <div class="form__group field">
+     <asp:TextBox runat="server" ID="Count"  class="form__field" type="input" placeholder="العدد" />
+
+    <label for="name" class="form__label">العدد</label>
+</div>
+
+
+            </div>
+
+               <div class="col-3">
+
+                    <div class="form__group field">
+     <asp:TextBox runat="server" ID="MatUnit"  class="form__field" type="input" placeholder="الوحدة" />
+
+    <label for="name" class="form__label">الوحدة</label>
+</div>
+
+
+            </div>
+
+</div>
+           <hr />  
             <div class="row m-2">
 
+
+                
                 <div class="col-3">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="TotalCost"  class="form__field" type="input" placeholder="اجمالي الكلفة" />
+     <asp:TextBox runat="server" ID="TotalCost"  class="form__field"  type="input" placeholder="اجمالي الكلفة" />
 
     <label for="name" class="form__label">اجمالي الكلفة</label>
 </div>
-</div>      
-                
+</div>        
                 <div class="col-3">
 
 
@@ -223,7 +299,7 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="RemAmount"  class="form__field" type="input" placeholder="المتبقي" />
+     <asp:TextBox runat="server" ID="RemAmount"  class="form__field" ReadOnly="true" type="input" placeholder="المتبقي" />
 
     <label for="name" class="form__label">المتبقي</label>
 </div>
@@ -234,34 +310,35 @@
 </div>
           
 <hr />
-
-          
-            <div class="row m-2">
-
-                <div class="col-6">
+      <div class="row m-2">
 
 
-           
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="BuyingParty"  class="form__field" type="input" placeholder="المزود" />
-
-    <label for="name" class="form__label">المزود</label>
-</div>
-</div>      
                 
-                     
-                <div class="col-6">
+                <div class="col-2">
+                                        </div>              
+
+                <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Buyer"  class="form__field"   ReadOnly="true" type="input" placeholder="المشتري" />
+     <asp:TextBox runat="server" ID="ProvidedQuant"  class="form__field"  ReadOnly="true" type="input" placeholder="الكمية المجهزة" />
 
-    <label for="name" class="form__label">المشتري</label>
+    <label for="name" class="form__label">الكمية المجهزة</label>
+</div>
+</div>              
+                <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="ProvidedQuantPrice"  class="form__field"   ReadOnly="true" type="input" placeholder="كلفة الكمية المجهزة" />
+
+    <label for="name" class="form__label">كلفة الكمية المجهزة</label>
 </div>
 </div>
 
-
+  
 
 
 </div>
@@ -269,35 +346,7 @@
 <hr />
 
      
-     
-<div class="row">
 
-    <div class="col-1">
-    </div>
-
-        
-<div class="col-10">
- 
-              
-                         <div class="form__group field ">
-    <asp:DropDownList ID="WereHouseState"
-                    class="form__field mt-2" type="text" placeholder="حالة التخزين"
-                    AutoPostBack="True"
-                    runat="server">
-             
-           <asp:ListItem Selected="True" Value="لم تسلم بعد">لم تسلم بعد</asp:ListItem>
-                    <asp:ListItem Value="في المخزن">في المخزن</asp:ListItem>
-                    <asp:ListItem Value="مستهلكة بالكامل">مستهلكة بالكامل</asp:ListItem>
-
-                </asp:DropDownList>
-    <label for="name" class="form__label">المشتري</label>
-</div>
-<hr />
-
-</div>  <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>
-
-
-        </div>
       <div class="row m-2">
            
                    <div class="col-md-12 text-center ">

@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="MatBuy.aspx.cs" Inherits="ExpensesSys.Pages.MatBuy" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="WorkContracts.aspx.cs" Inherits="ExpensesSys.Pages.WorkContracts" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <script type="text/javascript">
+
+    
+     <script type="text/javascript">
 
                $(document).ready(function () {
 
@@ -11,10 +13,14 @@
                    $('.table1').DataTable();
                });
 
-        </script>
+     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:Panel runat="server" ID="ButtonsBar">
+
+    
+    
+    <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
                        <div class="col-auto">
                 <div class="field buttons align-items-end">
@@ -23,13 +29,13 @@
 
 
 
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة قيد شراء جديد"
+     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة عقد جديد"
         
          
          data-target="modal-js-example"
                                  onclick="GoToNewItem"
 
-                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة قيد شراء جديد 
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة عقد جديد 
                        
                         <i class="fas fa-add " style="margin-left: 1em">
 
@@ -67,7 +73,6 @@
         
         
 
-
  
      <div class="row ">
         
@@ -82,12 +87,11 @@
 
 
                         <asp:GridView ShowHeaderWhenEmpty="true" ID="DataGridUsers" runat="server" AutoGenerateColumns="False"  class="table table-striped  table-hover border-0 " CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                                                        OnRowCommand="MyGridView_OnRowCommand"
 
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
-                          OnRowCommand="MyGridView_OnRowCommand"
-                             OnRowDataBound="GridView1_RowDataBound"
-
+                          
                             >
             <Columns>
         
@@ -100,70 +104,85 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                 
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="رقم العقد">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_OR4" runat="server" Text='<%#Eval("ContractNumber") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>      
-                
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="التاريخ">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_OR3" runat="server" Text='<%#Eval("ContractDate") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>    
-                
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="أسم المادة">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("MatName") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField> 
-                
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="الكمية">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_Quant" runat="server" Text='<%#Eval("Quant") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>   
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المجهز">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_Count" runat="server" Text='<%#Eval("NameOfSupplyer") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="النوع">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_Type" runat="server" Text='<%#Eval("MatType") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField> <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="اجمالي الكلفة">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_TotalCost" runat="server" Text='<%#Eval("TotalCost") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField><asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المدفوع">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_RecAmount" runat="server" Text='<%#Eval("RecAmount") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
+                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("ContractNumber") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-           
-             
-    
-           
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="نوع العقد">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR1" runat="server" Text='<%#Eval("ContractType") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="الاسم">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR23" runat="server" Text='<%#Eval("NameOfPersonal") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>   
+                
+                
+                
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="اجمالي الكلفة">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR22ggd33" runat="server" Text='<%#Eval("TotalCost") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                      
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="عدد الوحدات المشمولة">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR2b2dd33" runat="server" Text='<%#Eval("UnitCount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+              
+                     
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ المدفوع">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OR4wsc2b233" runat="server" Text='<%#Eval("PaidAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+              
+                  
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ المتبقي">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_OvR2b233" runat="server" Text='<%#Eval("RemAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+              
+       
+
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
-                                      Font-Bold="true"                          class="js-modal-trigger button  is-bold is-info is-outlined"
-                                    style="Width:50%; Height:25px"  
+                                                                class="js-modal-trigger button is-info is-outlined"
+                                    style="Width:45%; Height:25px"  
 
-                            ID="btn_Edit" runat="server" Text="تعديل" CommandName="Edit" />
+                            ID="btn_Edit" runat="server" Font-Size="Medium" Text="تعديل البيانات" CommandName="Edit" />
                     </ItemTemplate>
             
                 </asp:TemplateField>
-                  <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+
+                   <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
-                        <asp:Button Font-Bold="true"
-                                                                class="js-modal-trigger  is-bold button is-warning "
-                                    style="Width:50%; Height:25px"  
-                            CommandArgument='<%#Eval("ID") %>' CommandName="GoToPay"
-                            ID="btn_Edit1" runat="server" Text="الدفعات"  />
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-primary "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="GoToUnitsBtn" runat="server"   Font-Size="Medium" Text="تحديد الوحدات المشمولة" CommandArgument='<%#Eval("ID") %>' CommandName="GoToUnits" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>  
+                
+                <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-warning "
+                                    style="Width:45%; Height:25px"  
+
+                            ID="GoToWorkContractPayments" runat="server"   Font-Size="Medium" Text="الدفعات" CommandArgument='<%#Eval("ID") %>' CommandName="GoToContractPaymentsCommand" />
                     </ItemTemplate>
             
                 </asp:TemplateField>
-
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 
@@ -195,8 +214,6 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                      new DataTable.Responsive(table);
 
                  </script>
-
-
 
 
 </asp:Content>

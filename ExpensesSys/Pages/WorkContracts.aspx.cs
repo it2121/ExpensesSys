@@ -8,21 +8,38 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class WarehouseEditor : System.Web.UI.Page
+    public partial class WorkContracts : System.Web.UI.Page
     {
         public static int ProjectID = 0;
-        public static int MatBuyRecID = 0;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Main.openPage = "Warehouse";
+
+
+            Main.openPage = "WorkContracts";
 
             if (!IsPostBack)
             {
 
-                DataTable dt = BBAALL.GetAllWarehouseRecordsOfMatBuy(MatBuyRecID);
-                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0]["Name"].ToString();
+                DataTable dt = BBAALL.GetAllWorkContractsOFAProject(ProjectID);
+                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
+                DataTable finalTbl = dt.Clone();
+                finalTbl.Clear();
+
+                dt.Columns.Add("UnitCount", typeof(String));
+                dt.Columns.Add("PaidAmount", typeof(String));
+                dt.Columns.Add("RemAmount", typeof(String));
+
+                foreach (DataRow dr in dt.Rows)
+                    
+                {
+
+                    dr["UnitCount"] = BBAALL.getCoutOfUnitsForWorkContracts(Convert.ToInt32(dr["ID"])).Rows[0][0].ToString();
+                    dr["PaidAmount"] = BBAALL.GetTotalPaidAmountOfWorkContract(Convert.ToInt32(dr["ID"])).Rows[0][0].ToString();
+                    dr["RemAmount"] = BBAALL.GetTotalRemAmountOfWorkContract(Convert.ToInt32(dr["ID"])).Rows[0][0].ToString();
+                }
+
+
 
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
@@ -30,61 +47,57 @@ namespace ExpensesSys.Pages
 
 
             }
+
+        }
+        protected void GoToNewItem(object sender, EventArgs e)
+        {
+
+
+            WorkContractsEditor.ProjectID = ProjectID;
+
+            Response.Redirect("WorkContractsEditor.aspx");
+
         }
 
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
-        {//GoToPay
+        {
             string x = e.CommandName;//returns "Select" for both asp:CommandField columns
 
-            if (x.Equals("GoToPay"))
+            if (x.Equals("GoToUnits"))
             {
 
-                Pay.RecId = Convert.ToInt32(e.CommandArgument.ToString());
-                Pay.ProjectID = ProjectID;
+                string IDToShare = e.CommandArgument.ToString();
 
 
 
 
+                WorkContractsUnits.ID = Convert.ToInt32(IDToShare);
+                WorkContractsUnits.ProjectID = ProjectID;
 
-                Response.Redirect("Pay.aspx");
+
+                Response.Redirect("WorkContractsUnits.aspx");
 
             }
+            else if (x.Equals("GoToContractPaymentsCommand")) {
+
+
+                string IDToShare = e.CommandArgument.ToString();
+
+
+
+
+                WorkContractsPayments.RecID = Convert.ToInt32(IDToShare);
+
+
+                Response.Redirect("WorkContractsPayments.aspx");
+
+            }
+           
 
 
         }
 
-        protected void GoToNewItemDepo(object sender, EventArgs e)
-        {
 
-            //  MatBuyEditor.ProjectID = ProjectID;
-            WarehouseEditorInside.ProjectID = ProjectID;
-            WarehouseEditorInside.MatBuyRecID = MatBuyRecID;
-            WarehouseEditorInside.ActionType = "ايداع";
-
-            Response.Redirect("WarehouseEditorInside.aspx");
-
-        } 
-        protected void GoToNewItemWithdraw(object sender, EventArgs e)
-        {
-
-            //  MatBuyEditor.ProjectID = ProjectID;
-            WarehouseEditorInside.ProjectID = ProjectID;
-            WarehouseEditorInside.MatBuyRecID = MatBuyRecID;
-            WarehouseEditorInside.ActionType = "سحب";
-
-            Response.Redirect("WarehouseEditorInside.aspx");
-
-        }   protected void GoToNewItemDirectWithdraw(object sender, EventArgs e)
-        {
-
-            //  MatBuyEditor.ProjectID = ProjectID;
-            WarehouseEditorInside.ProjectID = ProjectID;
-            WarehouseEditorInside.MatBuyRecID = MatBuyRecID;
-            WarehouseEditorInside.ActionType = "سحب مباشر";
-
-            Response.Redirect("WarehouseEditorInside.aspx");
-
-        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
@@ -94,15 +107,15 @@ namespace ExpensesSys.Pages
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
-            WarehouseEditorInside.ID = Convert.ToInt32(id.Text);
-            WarehouseEditorInside.ProjectID = ProjectID;
-            WarehouseEditorInside.MatBuyRecID = MatBuyRecID;
+            WorkContractsEditor.ID = Convert.ToInt32(id.Text);
+            WorkContractsEditor.ProjectID = ProjectID;
 
 
-            Response.Redirect("WarehouseEditorInside.aspx");
+            Response.Redirect("WorkContractsEditor.aspx");
 
 
         }
+
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update
@@ -124,7 +137,6 @@ namespace ExpensesSys.Pages
             //  DataGridUsers.EditIndex = -1;
             // showstuff();
         }
-
 
     }
 }

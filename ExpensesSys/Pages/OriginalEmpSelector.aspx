@@ -78,7 +78,7 @@
 
             <div class="col-6   text-center ">
 
-                <asp:Button runat="server" ID="Button5" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmpAsManagment" role="button" Text="الملاك الاداري"></asp:Button>
+                <asp:Button runat="server" ID="Button5" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmpAsManagment" role="button" Text="الملاك الهندسي "></asp:Button>
 
 
 
@@ -90,7 +90,7 @@
             </div>
 
             <div class="col-6   text-center ">
-                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmpAsEngineering" role="button" Text="الملاك الهندسي"></asp:Button>
+                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmpAsEngineering" role="button" Text="الملاك الاداري"></asp:Button>
 
 
 

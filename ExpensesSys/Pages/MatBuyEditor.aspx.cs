@@ -18,7 +18,10 @@ namespace ExpensesSys.Pages
             {
                 if (MatBuyRecId != 0)
                 {
-                    DataTable MatBuyTbl = BBAALL.getMatBuyRecByID(MatBuyRecId);
+                    ProvidedQuant.Text = "0";
+                      DataTable MatBuyTbl = BBAALL.getMatBuyRecByID(MatBuyRecId);
+                    DataTable ProvidedQuantTbl = BBAALL.getProvidedQuantByMatBuyID(MatBuyRecId);
+                    ProvidedQuant.Text = ProvidedQuantTbl.Rows[0][0].ToString();
 
                     DelBtn.Visible = true;
                     foreach (DataRow dt in MatBuyTbl.Rows)
@@ -34,11 +37,14 @@ namespace ExpensesSys.Pages
                             MatType.Text = dt["MatType"].ToString();
                             TotalCost.Text = dt["TotalCost"].ToString();
                             RecAmount.Text = dt["RecAmount"].ToString();
-                            MatName.Text = dt["MatName"].ToString();
-                            MatName.Text = dt["MatName"].ToString();
-                            BuyingParty.Text = dt["BuyingParty"].ToString();
                             Buyer.Text = dt["Buyer"].ToString();
-                            WereHouseState.Text = dt["WereHouseState"].ToString();
+                            ContractNumber.Text = dt["ContractNumber"].ToString();
+                            ContractDate.Text = dt["ContractDate"].ToString();
+                            ContractDate.Text = dt["ContractDate"].ToString();
+                            MatUnit.Text = dt["MatUnit"].ToString();
+                            NameOfSupplyer.Text = dt["NameOfSupplyer"].ToString();
+                            NumberOfSupplyer.Text = dt["NumberOfSupplyer"].ToString();
+                            AddressOfSupplyer.Text = dt["AddressOfSupplyer"].ToString();
 
                             DataTable counttbl = BBAALL.getPayCountByRecID(MatBuyRecId);
                             RecPayCount.Text = "0";
@@ -53,6 +59,17 @@ namespace ExpensesSys.Pages
                     }
                     DelBtn.Visible = true;
                     CreateBtn.Text = "حفظ التعديلات";
+                    if (ProvidedQuant.Text.Length > 0) { 
+                   ProvidedQuantPrice.Text =  (Convert.ToInt32(TotalCost.Text) / Convert.ToInt32(Quant.Text)) * Convert.ToInt32(ProvidedQuant.Text) +"" ;
+                    }
+                    else
+                    {
+                        ProvidedQuantPrice.Text = "0";
+                        ProvidedQuant.Text = "0";
+
+
+
+                    }
 
 
                 }
@@ -73,11 +90,17 @@ namespace ExpensesSys.Pages
                     RecAmount.Text = "";
                     MatName.Text = "";
                     MatName.Text = "";
-                    BuyingParty.Text = "";
                     Buyer.Text = "";
+                    ContractNumber.Text = "";
+                    ContractDate.Text = "";
+                    ContractDate.Text = "";
+                    MatUnit.Text = "";
+                    NameOfSupplyer.Text = "";
+                    NumberOfSupplyer.Text = "";
+                    AddressOfSupplyer.Text = "";
+                    DateTime dateTime = DateTime.UtcNow.Date;
+                    ContractDate.Text = dateTime.ToString("dd/MM/yyyy");
 
-
-                
                 }
             }
 
@@ -109,9 +132,10 @@ namespace ExpensesSys.Pages
                                         Convert.ToInt32(TotalCost.Text),
 
                     ProjectID,
+                    "", Buyer.Text,
 
-                                        BuyingParty.Text,
-                    Buyer.Text, WereHouseState.Text
+                                        ContractNumber.Text,
+                    ContractDate.Text, MatUnit.Text, NameOfSupplyer.Text, NumberOfSupplyer.Text, AddressOfSupplyer.Text
                     );
 
 
@@ -131,10 +155,14 @@ namespace ExpensesSys.Pages
                                         Convert.ToInt32(TotalCost.Text),
 
                     ProjectID,
+                     "", Buyer.Text, MatBuyRecId,
 
-                                        BuyingParty.Text,
-                    Buyer.Text,
-                    MatBuyRecId, WereHouseState.Text
+                                        ContractNumber.Text,
+                    ContractDate.Text, MatUnit.Text, NameOfSupplyer.Text, NumberOfSupplyer.Text, AddressOfSupplyer.Text
+
+                                    
+                    
+                    
                     );
 
                 MatBuyRecId = 0;
@@ -169,7 +197,6 @@ namespace ExpensesSys.Pages
             RecAmount.Text = "";
             MatName.Text = "";
             MatName.Text = "";
-            BuyingParty.Text = "";
             Buyer.Text = "";
 
 

@@ -164,6 +164,8 @@
     <Content Include="Pages\Pay.aspx" />
     <Content Include="Pages\PayEdit.aspx" />
     <Content Include="Pages\PeojectSeector.aspx" />
+    <Content Include="Pages\PeojectUnit.aspx" />
+    <Content Include="Pages\PeojectUnitEditor.aspx" />
     <Content Include="Pages\ProjEditor.aspx" />
     <Content Include="Pages\ProjMan.aspx" />
     <Content Include="Pages\Reports.aspx" />
@@ -171,6 +173,12 @@
     <Content Include="Pages\SalaryEditor.aspx" />
     <Content Include="Pages\Warehouse.aspx" />
     <Content Include="Pages\WarehouseEditor.aspx" />
+    <Content Include="Pages\WarehouseEditorInside.aspx" />
+    <Content Include="Pages\WorkContracts.aspx" />
+    <Content Include="Pages\WorkContractsEditor.aspx" />
+    <Content Include="Pages\WorkContractsPayments.aspx" />
+    <Content Include="Pages\WorkContractsPaymentsEditor.aspx" />
+    <Content Include="Pages\WorkContractsUnits.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +359,20 @@
     <Compile Include="Pages\PeojectSeector.aspx.designer.cs">
       <DependentUpon>PeojectSeector.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PeojectUnit.aspx.cs">
+      <DependentUpon>PeojectUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PeojectUnit.aspx.designer.cs">
+      <DependentUpon>PeojectUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PeojectUnitEditor.aspx.cs">
+      <DependentUpon>PeojectUnitEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PeojectUnitEditor.aspx.designer.cs">
+      <DependentUpon>PeojectUnitEditor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProjEditor.aspx.cs">
       <DependentUpon>ProjEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +421,48 @@
     </Compile>
     <Compile Include="Pages\WarehouseEditor.aspx.designer.cs">
       <DependentUpon>WarehouseEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WarehouseEditorInside.aspx.cs">
+      <DependentUpon>WarehouseEditorInside.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WarehouseEditorInside.aspx.designer.cs">
+      <DependentUpon>WarehouseEditorInside.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkContracts.aspx.cs">
+      <DependentUpon>WorkContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WorkContracts.aspx.designer.cs">
+      <DependentUpon>WorkContracts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkContractsEditor.aspx.cs">
+      <DependentUpon>WorkContractsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WorkContractsEditor.aspx.designer.cs">
+      <DependentUpon>WorkContractsEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkContractsPayments.aspx.cs">
+      <DependentUpon>WorkContractsPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WorkContractsPayments.aspx.designer.cs">
+      <DependentUpon>WorkContractsPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkContractsPaymentsEditor.aspx.cs">
+      <DependentUpon>WorkContractsPaymentsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WorkContractsPaymentsEditor.aspx.designer.cs">
+      <DependentUpon>WorkContractsPaymentsEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkContractsUnits.aspx.cs">
+      <DependentUpon>WorkContractsUnits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WorkContractsUnits.aspx.designer.cs">
+      <DependentUpon>WorkContractsUnits.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

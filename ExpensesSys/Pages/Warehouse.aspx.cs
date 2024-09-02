@@ -19,8 +19,8 @@ namespace ExpensesSys.Pages
             if (!IsPostBack)
             {
 
-                DataTable dt = BBAALL.getAllWarehouse();
-                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
+                DataTable dt = BBAALL.GetMatBuyOfAProject(ProjectID);
+                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0]["Name"].ToString();
 
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
@@ -31,17 +31,38 @@ namespace ExpensesSys.Pages
 
         }
 
+      
+
+        protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {//GoToPay
+            string x = e.CommandName;//returns "Select" for both asp:CommandField columns
+
+            if (x.Equals("GoToPay"))
+            {
+
+                Pay.RecId = Convert.ToInt32(e.CommandArgument.ToString());
+                Pay.ProjectID = ProjectID;
+
+
+
+
+
+                Response.Redirect("Pay.aspx");
+
+            }
+
+
+        }
 
         protected void GoToNewItem(object sender, EventArgs e)
         {
 
-
+            //  MatBuyEditor.ProjectID = ProjectID;
             WarehouseEditor.ProjectID = ProjectID;
 
             Response.Redirect("WarehouseEditor.aspx");
 
         }
-
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
@@ -51,7 +72,7 @@ namespace ExpensesSys.Pages
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
-            WarehouseEditor.ID = Convert.ToInt32(id.Text);
+            WarehouseEditor.MatBuyRecID = Convert.ToInt32(id.Text);
             WarehouseEditor.ProjectID = ProjectID;
 
 
@@ -59,7 +80,6 @@ namespace ExpensesSys.Pages
 
 
         }
-
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update

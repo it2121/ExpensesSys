@@ -83,6 +83,11 @@ namespace ExpensesSys.Pages
                 OriginalEmpSelector.ProjectID = 0;
 
 
+            }     else if (GoToPage.Equals("Warehouse"))
+            {
+                Warehouse.ProjectID = 0;
+
+
             }
 
 
@@ -143,6 +148,11 @@ namespace ExpensesSys.Pages
             }     else if (GoToPage.Equals("OriginalEmpSelector"))
             {
                 OriginalEmpSelector.ProjectID = Convert.ToInt32(id.Text);
+
+
+            }  else if (GoToPage.Equals("Warehouse"))
+            {
+                Warehouse.ProjectID = Convert.ToInt32(id.Text);
 
 
             }

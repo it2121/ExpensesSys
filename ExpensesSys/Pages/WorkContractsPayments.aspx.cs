@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,19 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class Nth : System.Web.UI.Page
+    public partial class WorkContractsPayments : System.Web.UI.Page
     {
-        public static int ProjectID = 0;
+        public static int RecID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Main.openPage = "Nth";
+            Main.openPage = "WorkContracts";
 
             if (!IsPostBack)
             {
 
-                DataTable dt = BBAALL.getAllNth();
-                PageProjectNameLbl.Text = "الصرفيات العامة";
+                DataTable dt = BBAALL.getAllWorkContractsPayByRecID(RecID);
+                PageProjectNameLbl.Text = BBAALL.getWorkContractHeaderInfoBuyID(RecID).Rows[0][0].ToString();
 
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
@@ -29,24 +27,35 @@ namespace ExpensesSys.Pages
 
 
             }
+        }
+        protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {//GoToPay
+            string x = e.CommandName;//returns "Select" for both asp:CommandField columns
+
+            if (x.Equals("GoToPayEdit"))
+            {
+
+                WorkContractsPaymentsEditor.RecID = Convert.ToInt32(e.CommandArgument.ToString());
+                WorkContractsPaymentsEditor.MainRecID = RecID;
+
+
+
+
+
+                Response.Redirect("WorkContractsPaymentsEditor.aspx");
+
+            }
+
 
         }
+
         protected void GoToNewItem(object sender, EventArgs e)
         {
 
-            NthEdtor.ID = 0;
+            WorkContractsPaymentsEditor.RecID = 0;
+            WorkContractsPaymentsEditor.MainRecID = RecID;
 
-
-            Response.Redirect("NthEdtor.aspx");
-
-        }
-        protected void Return(object sender, EventArgs e)
-        {
-
-
-            Response.Redirect("Home.aspx");
-
-
+            Response.Redirect("WorkContractsPaymentsEditor.aspx");
 
         }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
@@ -58,14 +67,25 @@ namespace ExpensesSys.Pages
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
-            NthEdtor.ID = Convert.ToInt32(id.Text);
+            WorkContractsPaymentsEditor.RecID = Convert.ToInt32(id.Text);
+            WorkContractsPaymentsEditor.MainRecID = RecID;
+
+            //  PayEdit.ProjectID = ProjectID;
 
 
-            Response.Redirect("NthEdtor.aspx");
+            Response.Redirect("WorkContractsPaymentsEditor.aspx");
 
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
 
+
+            Response.Redirect("WorkContracts.aspx");
+
+
+
+        }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update
@@ -87,6 +107,5 @@ namespace ExpensesSys.Pages
             //  DataGridUsers.EditIndex = -1;
             // showstuff();
         }
-
     }
 }

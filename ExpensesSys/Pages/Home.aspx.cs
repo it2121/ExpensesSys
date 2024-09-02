@@ -63,8 +63,10 @@ namespace ExpensesSys.Pages
 
 
                 DataTable MatBuy = BBAALL.REP_GetAllMatBuyRecords();
+                DataTable WorkContractsPayment = BBAALL.REP_GetAllWorkContractsPaymentRecords();
 
                 DataTable MatBuySet = MyStringManager.GetTableAfterDateCheck(MatBuy, startDate, endtDate);
+                DataTable WorkContractsPaymentSet = MyStringManager.GetTableAfterDateCheck(WorkContractsPayment, startDate, endtDate);
 
 
 
@@ -88,6 +90,7 @@ namespace ExpensesSys.Pages
                 sum += MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة");
                 sum += MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم");
                 sum += MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة");
+                sum += MyStringManager.ReturnSumOfDTFildInInt(WorkContractsPaymentSet, "مبلغ_الدفعة");
                 Last30DaysSpendings.Text = MyStringManager.GetNumberWithComas(sum + "") + " IQD ";
 
             }

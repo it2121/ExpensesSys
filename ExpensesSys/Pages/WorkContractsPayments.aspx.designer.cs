@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class WarehouseEditor
+    public partial class WorkContractsPayments
     {
 
         /// <summary>

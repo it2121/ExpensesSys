@@ -60,7 +60,7 @@
             </div> <div class="col-6 mt-3  text-center ">
 <%--                <span class="tag is-primary  is-large"      >  <asp:Label class="label align-text-top " Font-Size="Larger"  style=" margin-right:1em ; color:white;"  runat="server" ID="NumOfProviders" Text=""></asp:Label></span>--%>
               
-                  <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="btn" OnClick="GoToContr" role="button" Text="عقـــود العمـــل"></asp:Button>
+                  <asp:Button runat="server"  ID="Button5"  style="font:bolder; width:100%;" class="btn" OnClick="GoToWorkContracts" role="button" Text="عقـــود العمـــل"></asp:Button>
                
               
                    

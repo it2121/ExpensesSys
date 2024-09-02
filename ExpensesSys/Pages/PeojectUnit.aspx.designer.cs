@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class WarehouseEditor
+    public partial class PeojectUnit
     {
 
         /// <summary>
@@ -22,15 +22,6 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
-
-        /// <summary>
-        /// PageProjectNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PageProjectNameLbl;
 
         /// <summary>
         /// DataGridUsers control.

@@ -84,6 +84,7 @@
 
 
                         <asp:GridView ShowHeaderWhenEmpty="true" ID="DataGridUsers" runat="server" AutoGenerateColumns="False"  class="table table-striped  table-hover border-0 " CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                                                        OnRowCommand="MyGridView_OnRowCommand"
 
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
@@ -109,6 +110,8 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>--%>
            
+
+
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
@@ -119,6 +122,20 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
             
                 </asp:TemplateField>
+
+                    <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-warning "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="UnitMan" runat="server"   Font-Size="Medium" Text="ادارة وحدات المشروع" CommandArgument='<%#Eval("ID") %>' CommandName="UnitMan" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+
+
+
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 

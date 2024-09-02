@@ -87,6 +87,7 @@ namespace ExpensesSys.Pages
 
             //  MatBuyEditor.ProjectID = ProjectID;
             MatBuyEditor.ProjectID = ProjectID;
+            MatBuyEditor.MatBuyRecId = 0;
 
             Response.Redirect("MatBuyEditor.aspx");
 

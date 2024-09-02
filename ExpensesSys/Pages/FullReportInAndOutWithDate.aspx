@@ -177,7 +177,7 @@
 
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                    <asp:Label runat="server" ID="Label2" Font-Bold="true" Font-Size="Small" ForeColor="Red" Text="النثريات لا تتاثر بهذا الفلتر * "></asp:Label>
+                    <asp:Label runat="server" ID="Label2" Font-Bold="true" Font-Size="Small" ForeColor="Red" Text="المصروفات العامة لا تتاثر بهذا الفلتر * "></asp:Label>
 
                 </asp:Panel>
             </div>
@@ -257,7 +257,7 @@
                 <div class="row m-2">
                     <div class="col-6 text-center ">
 
-                        <asp:Button runat="server" ID="Button1" Style="width: 100%" OnClick="CreateNthReport" class="button  is-outlined is-danger text-center " Text="اضهار تقرير النثريات"></asp:Button>
+                        <asp:Button runat="server" ID="Button1" Style="width: 100%" OnClick="CreateNthReport" class="button  is-outlined is-danger text-center " Text="اضهار تقرير المصروفات العامة"></asp:Button>
                     </div>
                     <div class="col-md-6 text-center ">
 
@@ -295,7 +295,7 @@
 
 
 
-                            <asp:Label runat="server" ID="NthSum" ForeColor="DarkOrange" Font-Bold="true" Text="0 IQD مجموع النثريات "></asp:Label>
+                            <asp:Label runat="server" ID="NthSum" ForeColor="DarkOrange" Font-Bold="true" Text="0 IQD مجموع المصروفات العامة "></asp:Label>
 
 
 
@@ -506,7 +506,7 @@
                 <div class="col-12 text-center">
                     <br />
                   
-                    <asp:Label runat="server" ID="Label6" ForeColor="DarkGreen" Font-Size="Larger" Font-Bold="true" Text="صرفيات النثريات"></asp:Label>
+                    <asp:Label runat="server" ID="Label6" ForeColor="DarkGreen" Font-Size="Larger" Font-Bold="true" Text="الصرفيات العامة"></asp:Label>
                 </div>
 
                 <div class="container-fluid d-flex flex-column">

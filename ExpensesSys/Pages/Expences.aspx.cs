@@ -52,6 +52,16 @@ namespace ExpensesSys.Pages
 
 
         }
+          protected void GoToWorkContracts(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "MatBuy";
+
+
+            WorkContracts.ProjectID = ProjectID;
+            Response.Redirect("WorkContracts.aspx");
+
+
+        }
         
         
         protected void GoToH5(object sender, EventArgs e)
