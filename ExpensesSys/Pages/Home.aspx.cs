@@ -113,11 +113,42 @@ namespace ExpensesSys.Pages
             }
             Main.openPage = "Home";
 
-
+           // SetBtnsVisibility();
         }
 
+        public void SetBtnsVisibility()
+        {
 
-        protected void GoToOriginalEmp(object sender, EventArgs e)
+            if (ProjectID == 0)
+            {
+
+                ProjectManBtn.Text = "ادارة المشروع";
+
+
+            }
+            else 
+            {
+
+                SalaryManBtn.Visible = false;
+                EmpManBtn.Visible = false;
+
+            }
+
+        }
+        protected void GoToUnitInfo(object sender, EventArgs e)
+        {
+            // PeojectSeector.GoToPage = "OriginalEmp";
+            // PeojectSeector.GoToPage = "OriginalEmpSelector";
+
+
+            UnitSearch.ProjectID = Global.getProjectID();
+            Response.Redirect("UnitSearch.aspx");
+
+
+
+
+
+        }      protected void GoToOriginalEmp(object sender, EventArgs e)
         {
            // PeojectSeector.GoToPage = "OriginalEmp";
            // PeojectSeector.GoToPage = "OriginalEmpSelector";

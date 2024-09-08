@@ -148,6 +148,8 @@
     <Content Include="Pages\EmpMan.aspx" />
     <Content Include="Pages\Expences.aspx" />
     <Content Include="Pages\FullReportInAndOutWithDate.aspx" />
+    <Content Include="Pages\GeneralIncome.aspx" />
+    <Content Include="Pages\GeneralInfoEditor.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Income.aspx" />
     <Content Include="Pages\IncomeEditor.aspx" />
@@ -172,6 +174,9 @@
     <Content Include="Pages\Salary.aspx" />
     <Content Include="Pages\SalaryEditor.aspx" />
     <Content Include="Pages\SeperateProjectSelector.aspx" />
+    <Content Include="Pages\TechInfoEditor.aspx" />
+    <Content Include="Pages\UnitIncome.aspx" />
+    <Content Include="Pages\UnitSearch.aspx" />
     <Content Include="Pages\Warehouse.aspx" />
     <Content Include="Pages\WarehouseEditor.aspx" />
     <Content Include="Pages\WarehouseEditorInside.aspx" />
@@ -238,6 +243,20 @@
     </Compile>
     <Compile Include="Pages\FullReportInAndOutWithDate.aspx.designer.cs">
       <DependentUpon>FullReportInAndOutWithDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralIncome.aspx.cs">
+      <DependentUpon>GeneralIncome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralIncome.aspx.designer.cs">
+      <DependentUpon>GeneralIncome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralInfoEditor.aspx.cs">
+      <DependentUpon>GeneralInfoEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralInfoEditor.aspx.designer.cs">
+      <DependentUpon>GeneralInfoEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Global.cs" />
     <Compile Include="Pages\Home.aspx.cs">
@@ -416,6 +435,27 @@
     </Compile>
     <Compile Include="Pages\SeperateProjectSelector.aspx.designer.cs">
       <DependentUpon>SeperateProjectSelector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TechInfoEditor.aspx.cs">
+      <DependentUpon>TechInfoEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TechInfoEditor.aspx.designer.cs">
+      <DependentUpon>TechInfoEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitIncome.aspx.cs">
+      <DependentUpon>UnitIncome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitIncome.aspx.designer.cs">
+      <DependentUpon>UnitIncome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitSearch.aspx.cs">
+      <DependentUpon>UnitSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitSearch.aspx.designer.cs">
+      <DependentUpon>UnitSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Warehouse.aspx.cs">
       <DependentUpon>Warehouse.aspx</DependentUpon>

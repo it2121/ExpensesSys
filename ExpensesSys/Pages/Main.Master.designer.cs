@@ -114,13 +114,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ProjMan;
 
         /// <summary>
-        /// Button15 control.
+        /// ProjectManBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button15;
+        protected global::System.Web.UI.WebControls.Button ProjectManBtn;
 
         /// <summary>
         /// Salary control.

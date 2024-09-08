@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class PeojectUnit : System.Web.UI.Page
+    public partial class UnitIncome : System.Web.UI.Page
     {
-
         public static int ProjectID = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Main.openPage = "ProjMan";
@@ -26,29 +26,54 @@ namespace ExpensesSys.Pages
             }
 
         }
+
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
         {
             string x = e.CommandName;//returns "Select" for both asp:CommandField columns
 
-            if (x.Equals("GenInfo"))
+            if (x.Equals("Finance"))
             {
                 // go to gen info
 
 
-                string ID = e.CommandArgument.ToString();
+               /* string ID = e.CommandArgument.ToString();
                 GeneralInfoEditor.RecID = ID;
                 GeneralInfoEditor.ProjectID = ProjectID;
                 Response.Redirect("GeneralInfoEditor.aspx");
+*/
+
+
+            }
+            else if (x.Equals("Payments"))
+            {
+
+            /*    string ID = e.CommandArgument.ToString();
+                TechInfoEditor.RecID = ID;
+                TechInfoEditor.ProjectID = ProjectID;
+                Response.Redirect("TechInfoEditor.aspx");*/
 
 
 
-            } else if (x.Equals("TechInfo")) {
 
-                string ID = e.CommandArgument.ToString();
+            }else if (x.Equals("Loan"))
+            {
+
+               /* string ID = e.CommandArgument.ToString();
                 TechInfoEditor.RecID = ID;
                 TechInfoEditor.ProjectID = ProjectID;
                 Response.Redirect("TechInfoEditor.aspx");
-                
+
+*/
+
+
+            }else if (x.Equals("LoanPayments"))
+            {
+
+           /*     string ID = e.CommandArgument.ToString();
+                TechInfoEditor.RecID = ID;
+                TechInfoEditor.ProjectID = ProjectID;
+                Response.Redirect("TechInfoEditor.aspx");*/
+
 
 
 
@@ -62,14 +87,14 @@ namespace ExpensesSys.Pages
             // DataGridUsers.EditIndex = e.NewEditIndex;
             //  showstuff();
 
-            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
+    /*        Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
             PeojectUnitEditor.ID = Convert.ToInt32(id.Text);
             PeojectUnitEditor.ProjectID = ProjectID;
 
 
-            Response.Redirect("PeojectUnitEditor.aspx");
+            Response.Redirect("PeojectUnitEditor.aspx");*/
 
 
         }
@@ -96,12 +121,6 @@ namespace ExpensesSys.Pages
             // showstuff();
         }
 
-        protected void GoToNewItem(object sender, EventArgs e)
-        {
-            PeojectUnitEditor.ID = 0;
-            PeojectUnitEditor.ProjectID = ProjectID;
-            Response.Redirect("PeojectUnitEditor.aspx");
-
-        }
+   
     }
 }

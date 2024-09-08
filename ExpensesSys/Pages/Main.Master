@@ -23,8 +23,10 @@
         <script src="../Libs/dataTables.bulma.min.js"></script>
         <link href="../Libs/bulma.min.css" rel="stylesheet" />
             <link href="../Libs/dataTables.bulma.min.css" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/334e818a85.js" crossorigin="anonymous"></script>
+                <link href="../Libs/font-awesome.css"" rel="stylesheet" />
+        <script src="../Libs/334e818a85.js" crossorigin="anonymous"></script>
+
+
       <script src="path/to/chartjs/dist/chart.umd.js"></script>
             <link rel="icon" type="image/png" href="../Images/logo.ico" sizes="32x32">
 
@@ -202,7 +204,7 @@ html, body {
                                     <asp:Panel runat="server" ID="ProjMan" > 
                                     <a href="ProjMan.aspx">
                                         <i class="fa fa-list " style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button15" class="button  is-text   " Font-Underline="false" ForeColor="white" onclick="GoToProjMan" Font-Bold="true"  Text="ادارة المشاريــــع"  />
+                                      <asp:Button runat="server" ID="ProjectManBtn" class="button  is-text   " Font-Underline="false" ForeColor="white" onclick="GoToProjMan" Font-Bold="true"  Text="ادارة المشاريــــع"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                     </a>
                                           </asp:Panel>

@@ -202,7 +202,7 @@
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../Libs//chart.js"></script>
 
 
 
@@ -387,27 +387,20 @@
 
 
 
-            <div class="col-4   text-center ">
+            
 
-                <asp:Button runat="server" ID="Button5" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
+            <div class="col   text-center ">
+                <asp:Button runat="server" ID="SalaryManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToEmpMan" role="button" Text="ادارة الرواتب"></asp:Button>
+            </div> 
+            
+            <div class="col   text-center ">
 
-
-
-
-
-
-
-
+                <asp:Button runat="server" ID="ProjectManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
             </div>
-
-            <div class="col-4   text-center ">
-                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToEmpMan" role="button" Text="ادارة الرواتب"></asp:Button>
-
-
-
-
-            </div>       <div class="col-4   text-center ">
-                <asp:Button runat="server" ID="Button23" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmp" role="button" Text="الادارة والملاك"></asp:Button>
+            
+            
+            <div class="col   text-center ">
+                <asp:Button runat="server" ID="EmpManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmp" role="button" Text="الادارة والملاك"></asp:Button>
 
 
 
@@ -418,7 +411,7 @@
 
 
             <div class="col-4 mt-5  text-center">
-                <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>
+                <asp:Button runat="server" ID="IncomeManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>
 
 
 
@@ -427,7 +420,7 @@
 
 
             <div class="col-4 mt-5  text-center">
-                <asp:Button runat="server" ID="Button6" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToExpences" role="button" Text="مصروفـــات المشاريــــع"></asp:Button>
+                <asp:Button runat="server" ID="ExpManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToExpences" role="button" Text="مصروفـــات المشاريــــع"></asp:Button>
 
 
 
@@ -435,7 +428,7 @@
             </div>
 
             <div class="col-4 mt-5  text-center">
-                <asp:Button runat="server" ID="Button3" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToNth" role="button" Text="مصــــروفات عــامة"></asp:Button>
+                <asp:Button runat="server" ID="NthManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToNth" role="button" Text="مصــــروفات عــامة"></asp:Button>
 
 
 
@@ -460,7 +453,7 @@
 
 
             <div class="col-4 mt-5  text-center">
-                <asp:Button runat="server" ID="Button9" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToWarehouse" role="button" Text="ادارة المخـــزن"></asp:Button>
+                <asp:Button runat="server" ID="WarehouseManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToWarehouse" role="button" Text="ادارة المخـــزن"></asp:Button>
 
 
 
@@ -471,6 +464,7 @@
 <%--                <asp:Button runat="server" ID="Button10" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToNth" role="button" Text="النثريــــات"></asp:Button>--%>
 
 
+                                <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف وحدة سكنية"></asp:Button>
 
 
             </div>
@@ -488,7 +482,7 @@
 
 
             <div class="col-12 mt-5  text-center">
-                <asp:Button runat="server" ID="Button4" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToReports" role="button" Text="التقاريــــر"></asp:Button>
+                <asp:Button runat="server" ID="ReportsBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToReports" role="button" Text="التقاريــــر"></asp:Button>
 
 
 

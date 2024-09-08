@@ -101,23 +101,27 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>    
                 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="الاسم او السبب">
+                
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="تاريخ الدفع">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("NameOrReason") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                        <asp:Label  ID="lbl_OR23" runat="server" Text='<%#Eval("PayDate") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>  
 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ">
+                       <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_OR1" runat="server" Text='<%#Eval("Cost") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="تاريخ الدفع">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة او سبب الصرف">
                     <ItemTemplate>
-                        <asp:Label  ID="lbl_OR23" runat="server" Text='<%#Eval("PayDate") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                        <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("NameOrReason") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>    <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة السحب">
+                </asp:TemplateField>
+
+         
+  <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="جهة السحب او التمويل">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_OR2233" runat="server" Text='<%#Eval("WithdrowParty") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>

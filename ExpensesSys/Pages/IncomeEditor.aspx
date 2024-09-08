@@ -134,46 +134,7 @@
 
                        <div class="row m-2">
 
-                <div class="col-4">
-
-
-           
-                         <div class="form__group field">
- <asp:DropDownList ID="TypeOfIncome"
-                    class="form__field mt-2" type="text" placeholder="نوع الوارد"
-                    AutoPostBack="True"
-                    runat="server">
-                    <asp:ListItem Selected="True" Value="تمويل من المستثمر">تمويل من المستثمر</asp:ListItem>
-                    <asp:ListItem Value="وارد مشروع"> وارد مشروع</asp:ListItem>
-                    <asp:ListItem Value="قرض">قرض</asp:ListItem>
-
-
-                </asp:DropDownList>
-    <label for="name" class="form__label">نوع الوارد</label>
-</div>
-           
-
-
-
-            </div>
-
-
-                
-                <div class="col-4">
-
-
-           
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="Amount"  class="form__field" type="input" placeholder="المبلغ" />
-
-    <label for="name" class="form__label">المبلغ</label>
-</div>
-           
-            </div>
-
-
-                
-                <div class="col-4">
+                               <div class="col-4">
 
 
            
@@ -184,6 +145,48 @@
 </div>
            
             </div>
+
+
+          
+
+
+                
+                <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Amount"  class="form__field" type="input" placeholder="المبلغ المستلم" />
+
+    <label for="name" class="form__label">المبلغ المستلم</label>
+</div>
+           
+            </div>
+
+
+                      <div class="col-4">
+
+
+           
+                         <div class="form__group field">
+ <asp:DropDownList ID="TypeOfIncome"
+                    class="form__field mt-2" type="text" placeholder="حهة ونوع التمويل"
+                    AutoPostBack="True"
+                    runat="server">
+                    <asp:ListItem Selected="True" Value="تمويل من المستثمر">تمويل من المستثمر</asp:ListItem>
+                    <asp:ListItem Value="وارد مشروع"> وارد مشروع</asp:ListItem>
+                    <asp:ListItem Value="قرض">قرض</asp:ListItem>
+
+
+                </asp:DropDownList>
+    <label for="name" class="form__label">جهة ونوع التمويل</label>
+</div>
+           
+
+
+
+            </div>
+            
 
 
 

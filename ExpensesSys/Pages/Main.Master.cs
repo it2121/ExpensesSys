@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;   
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -32,8 +32,29 @@ namespace ExpensesSys.Pages
             NameL.Text = Session["Role"].ToString();
             MainLbl.Text = "   نظــــام الصومعــــة  -" + "   مشروع   " + BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0][0].ToString();
 
+            //SetBtnsVisibility();
+
             setSelectedPageBGColor(openPage);
 
+
+        }
+        public void SetBtnsVisibility()
+        {
+
+            if (Global.getProjectID() == 0)
+            {
+
+                ProjectManBtn.Text = "ادارة المشروع";
+
+
+            }
+            else
+            {
+
+                Salary.Visible = false;
+                EmpMan.Visible = false;
+
+            }
 
         }
         public void setSelectedPageBGColor(string pageName) {

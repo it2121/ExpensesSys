@@ -176,19 +176,7 @@
 <hr />    
       
 
-        <div class="row m-2">
-           <div class="col-md-12 text-center ">
-              <asp:Button runat="server" Visible="false" 
-                   UseSubmitBehavior="true" 
-    OnClientClick="return confirmation();"  ID="DelBtn" style="width:20em" OnClick="DelProv" class="button is-danger text-center" Text="حذف نهائياً"></asp:Button>
-          </div>
-          </div>
-        <br />
-    </article>
-
-    <script>function confirmation() {
-            return confirm("هل انت متاكد, سوف يحذف الوحدة نهائياً?");
-        }</script>
+  
 
 
 

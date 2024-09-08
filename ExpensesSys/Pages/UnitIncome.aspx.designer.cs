@@ -11,26 +11,8 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class SeperateProjectSelector
+    public partial class UnitIncome
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// MainLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MainLbl;
 
         /// <summary>
         /// ButtonsBar control.
@@ -40,15 +22,6 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
-
-        /// <summary>
-        /// OverseeingManagmntBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton OverseeingManagmntBtn;
 
         /// <summary>
         /// DataGridUsers control.

@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="OriginalEmpEditor.aspx.cs" Inherits="ExpensesSys.Pages.OriginalEmpEditor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="GeneralInfoEditor.aspx.cs" Inherits="ExpensesSys.Pages.GeneralInfoEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-       <style>
+      <style>
 
         .form__group {
   position: relative;
@@ -68,7 +68,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
+       
     <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
     <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
@@ -123,9 +123,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="EmpName"  class="form__field" type="input" placeholder="اسم الموظف" />
+     <asp:TextBox runat="server" ID="FullName"  class="form__field" type="input" placeholder="الاسم" />
 
-    <label for="name" class="form__label">اسم الموظف</label>
+    <label for="name" class="form__label">الاسم</label>
 </div>
            
 
@@ -140,9 +140,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="EmpJob"  class="form__field" type="input" placeholder="الوظية" />
+     <asp:TextBox runat="server" ID="PhoneNumber"  class="form__field" type="input" placeholder="رقم الهاتف" />
 
-    <label for="name" class="form__label">الوظية</label>
+    <label for="name" class="form__label">رقم الهاتف</label>
 </div>
            
             </div>
@@ -154,9 +154,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Depart"  class="form__field" type="input" placeholder="القسم" />
+     <asp:TextBox runat="server" ID="Address"  class="form__field" type="input" placeholder="العنوان" />
 
-    <label for="name" class="form__label">القسم</label>
+    <label for="name" class="form__label">العنوان</label>
 </div>
            
             </div>
@@ -170,19 +170,93 @@
 
            
                  
-                 <div class="col-4">
+                 <div class="col-3">
 
 
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Address"  class="form__field" type="input" placeholder="العنوان" />
+     <asp:TextBox runat="server" ID="UniNumAndCat"  class="form__field" type="input" placeholder="رقم السجل والصفحة" />
 
-    <label for="name" class="form__label">العنوان</label>
+    <label for="name" class="form__label">رقم السجل والصفحة</label>
 </div>
             </div> 
-                  <div class="col-4">
+                  <div class="col-3">
                  
                            <div class="form__group field">
-     <asp:TextBox runat="server" ID="Note"  class="form__field" type="input" placeholder="الملاحظات" />
+     <asp:TextBox runat="server" ID="ProNum"  class="form__field" type="input" placeholder="رقم الطابو" />
+    <label for="name" class="form__label">رقم الطابو</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>   
+                 
+                 <div class="col-3">
+                 
+                           <div class="form__group field">
+     <asp:TextBox runat="server" ID="BuildArea"  class="form__field" type="input" placeholder="مساحة البناء" />
+    <label for="name" class="form__label">مساحة البناء</label>
+</div>
+</div>
+
+                   <div class="col-3">
+                 
+                           <div class="form__group field">
+     <asp:TextBox runat="server" ID="UniArea"  class="form__field" type="input" placeholder="مساحة الوحدة" />
+    <label for="name" class="form__label">مساحة الوحدة</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>
+                     <div class="col-4">
+                 
+                           <div class="form__group field">
+     <asp:TextBox runat="server" ID="ProPrice"  class="form__field" type="input" placeholder="سعر الوحدة" />
+    <label for="name" class="form__label">سعر الوحدة</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>
+                     <div class="col-4">
+                 
+                           <div class="form__group field">
+     <asp:CheckBox runat="server" ID="Emp"  class="form__field" type="input" placeholder="موظف" />
+    <label for="name" class="form__label">موظف</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>
+                     <div class="col-4">
+                 
+                           <div class="form__group field">
+     <asp:CheckBox runat="server" ID="Loan"  class="form__field" type="input" placeholder="مقترض" />
+    <label for="name" class="form__label">مقترض</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>  <div class="col-12">
+                 
+                           <div class="form__group field">
+    <asp:TextBox runat="server" ID="GINote"  class="form__field" type="input" placeholder="الملاحظات" />
+
     <label for="name" class="form__label">الملاحظات</label>
 </div>
 
@@ -192,6 +266,8 @@
                 
                       
             </div>
+
+
             </div>
 
 
@@ -205,34 +281,6 @@
                   <br /> 
         
         
-             <div class="row m-2">
-
- 
-                <div class="col-4">
-
-
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="HiringDate"  class="form__field" type="input" placeholder="تاريخ التعيين" />
-
-    <label for="name" class="form__label">تاريخ التوظيف</label>
-</div>
-            </div> 
-                                      <div class="col-4">
-                        <asp:CheckBox runat="server" ID="TermatedCheck" class="input is-info border-0 checkbox " Width="100%" Checked="false" AutoPostBack="true" OnCheckedChanged="ChckedChanged" type="text" Text="الموظف منفك" TextAlign="Right" placeholder="الموظف منفك" />
-
-            </div>  
-                 <div class="col-4">
-                     
-                    <asp:UpdatePanel ID="UpdateTermanationPanel" runat="server" style="width: 100%;" UpdateMode="Conditional">
-                        <ContentTemplate>
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="TreminationDate"  Enabled="false" class="form__field" type="input" placeholder="تاريخ الانقكاك" />
-    <label for="name" class="form__label">تاريخ الانفكاك</label>
-</div>
-                               </ContentTemplate>
-                    </asp:UpdatePanel>
-            </div>
-            </div>
         
         <br />
 
@@ -242,7 +290,7 @@
 
             <div class="col-md-12 text-center ">
 
-                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em" OnClick="CreateItem" class="button is-primary text-center " Text="اضافة المرتب"></asp:Button>
+                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em" OnClick="CreateItem" class="button is-primary text-center " Text="تاكيد"></asp:Button>
             </div>
 
         </div>
@@ -250,18 +298,8 @@
         <hr />
 
 
-        <div class="row m-2">
-            <div class="col-md-12 text-center ">
-                <asp:Button runat="server" Visible="false"
-                    UseSubmitBehavior="true"
-                    OnClientClick="return confirmation();" ID="DelBtn" Style="width: 20em" OnClick="DelProv" class="button is-danger text-center" Text="حذف نهائياً"></asp:Button>
-            </div>
-        </div>
         <br />
     </article>
 
-    <script>function confirmation() {
-            return confirm("هل انت متاكد, سوف تحذف بيانات المرتب لهذا الشهر نهائياً?");
-        }</script>
 
 </asp:Content>

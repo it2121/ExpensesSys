@@ -22,8 +22,9 @@
         <script src="../Libs/dataTables.bulma.min.js"></script>
         <link href="../Libs/bulma.min.css" rel="stylesheet" />
             <link href="../Libs/dataTables.bulma.min.css" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/334e818a85.js" crossorigin="anonymous"></script>
+            <link href="../Libs/font-awesome.css"" rel="stylesheet" />
+
+    <script src="../Libs/334e818a85.js" crossorigin="anonymous"></script>
       <script src="path/to/chartjs/dist/chart.umd.js"></script>
             <link rel="icon" type="image/png" href="../Images/logo.ico" sizes="32x32">
 
@@ -162,13 +163,13 @@ html, body {
                        <div class="col-auto">
                 <div class="field buttons align-items-end">
 
-                         <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="القناة العامة"
+                         <asp:LinkButton  ID="OverseeingManagmntBtn" runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="القناة العامة"
         
          
          data-target="modal-js-example"
                                  onclick="GoToProjectZero"
 
-                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">القناة العامة 
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-large">الادارة العامة 
                        
                         <i class="fas " style="margin-left: 1em">
 
@@ -251,7 +252,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>
 
-
+          
            
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center"  HeaderText="أسم المشروع">
                     <ItemTemplate>
@@ -260,9 +261,13 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                                     style="Width:50%; Height:100%"  
 
                             ID="btn_Edit" Font-Size="XX-Large" runat="server" Text='<%#Eval("Name") %>' CommandName="Edit" />
+
+                       
+
+
                     </ItemTemplate>
             
-                </asp:TemplateField>
+                </asp:TemplateField>   
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 

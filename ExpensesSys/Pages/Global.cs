@@ -12,15 +12,9 @@ namespace ExpensesSys.Pages
         public static void setProjectID (int projectID)
         {
             ProjecID = projectID;
-
-            
-
-
         }
         public static int getProjectID() {
-
             return ProjecID;
-        
         }
     }
 }

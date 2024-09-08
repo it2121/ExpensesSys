@@ -8,54 +8,37 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class PeojectUnit : System.Web.UI.Page
+    public partial class GeneralIncome : System.Web.UI.Page
     {
-
         public static int ProjectID = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Main.openPage = "ProjMan";
+            Main.openPage = "Income";
+
             if (!IsPostBack)
             {
-                DataTable allProjects = BBAALL.GetAllUnitsOfAPorject(ProjectID);
-                DataGridUsers.DataSource = allProjects;
 
+                DataTable dt = BBAALL.getAllIncomeOfProject(ProjectID);
+                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
 
+                DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
 
-            }
 
+
+            }
         }
-        protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GoToNewItem(object sender, EventArgs e)
         {
-            string x = e.CommandName;//returns "Select" for both asp:CommandField columns
-
-            if (x.Equals("GenInfo"))
-            {
-                // go to gen info
 
 
-                string ID = e.CommandArgument.ToString();
-                GeneralInfoEditor.RecID = ID;
-                GeneralInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("GeneralInfoEditor.aspx");
+            IncomeEditor.ProjectID = ProjectID;
 
-
-
-            } else if (x.Equals("TechInfo")) {
-
-                string ID = e.CommandArgument.ToString();
-                TechInfoEditor.RecID = ID;
-                TechInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("TechInfoEditor.aspx");
-                
-
-
-
-            }
-
+            Response.Redirect("IncomeEditor.aspx");
 
         }
+
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
@@ -65,11 +48,11 @@ namespace ExpensesSys.Pages
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
-            PeojectUnitEditor.ID = Convert.ToInt32(id.Text);
-            PeojectUnitEditor.ProjectID = ProjectID;
+            IncomeEditor.ID = Convert.ToInt32(id.Text);
+            IncomeEditor.ProjectID = ProjectID;
 
 
-            Response.Redirect("PeojectUnitEditor.aspx");
+            Response.Redirect("IncomeEditor.aspx");
 
 
         }
@@ -96,12 +79,5 @@ namespace ExpensesSys.Pages
             // showstuff();
         }
 
-        protected void GoToNewItem(object sender, EventArgs e)
-        {
-            PeojectUnitEditor.ID = 0;
-            PeojectUnitEditor.ProjectID = ProjectID;
-            Response.Redirect("PeojectUnitEditor.aspx");
-
-        }
     }
 }

@@ -18,32 +18,12 @@
 
     <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
-       <%--                <div class="col-auto">
-                <div class="field buttons align-items-end">
+  
 
 
-
-
-
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة موظف جديد"
-        
-         
-         data-target="modal-js-example"
-                                 onclick="GoToNewItem"
-
-                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة موظف جديد 
-                       
-                        <i class="fas fa-add " style="margin-left: 1em">
-
-                        </i></asp:LinkButton>
-
-                </div>
-            </div>--%>
+            
                 
-            <div class="col-auto">
-                <div class="field buttons align-items-end">
-                </div>
-            </div>
+     
 
 
             <div class="col-auto">

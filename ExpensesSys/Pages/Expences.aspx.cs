@@ -13,7 +13,7 @@ namespace ExpensesSys.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           // SalaryBtn.Visible = ProjectID == 0; 
         }
 
         protected void GoToItemMan(object sender, EventArgs e)

@@ -138,24 +138,20 @@
             
             <div class="row m-2">
 
-                <div class="col-4">
+                            <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="NameOrReason"  class="form__field" type="input" placeholder="الاسم او السبب" />
+     <asp:TextBox runat="server" ID="PayDate"  class="form__field" type="input" placeholder="تاريخ الدفع" />
 
-    <label for="name" class="form__label">الاسم او السبب</label>
+    <label for="name" class="form__label">تاريخ الدفع</label>
 </div>
            
-
-
-
             </div>
 
 
-                
-                <div class="col-4">
+                     <div class="col-4">
 
 
            
@@ -168,18 +164,27 @@
             </div>
 
 
-                
                 <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="PayDate"  class="form__field" type="input" placeholder="تاريخ الدفع" />
+     <asp:TextBox runat="server" ID="NameOrReason"  class="form__field" type="input" placeholder="جهة او سبب الصرف" />
 
-    <label for="name" class="form__label">تاريخ الدفع</label>
+    <label for="name" class="form__label">جهة او سبب الصرف</label>
 </div>
            
+
+
+
             </div>
+
+
+                
+           
+
+                
+    
 
 
 
@@ -209,14 +214,14 @@
 
                                        <div class="form__group field">
     <asp:DropDownList ID="WithdrowParty"
-                    class="form__field mt-2" type="text" placeholder="جهة السحب"
+                    class="form__field mt-2" type="text" placeholder="جهة السحب او التمويل"
                     AutoPostBack="True"
                     runat="server">
              
 
 
                 </asp:DropDownList>
-    <label for="name" class="form__label">جهة السحب</label>
+    <label for="name" class="form__label">جهة السحب او التمويل</label>
 </div>
 
 </div>  <%--                <asp:TextBox runat="server" ID="DepartmentTB" class="input is-info" type="text" placeholder="Department" />--%>

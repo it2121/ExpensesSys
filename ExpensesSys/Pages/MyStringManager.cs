@@ -43,7 +43,45 @@ namespace ExpensesSys.Pages
 
 
         }
-        public static  DataTable GetTableAfterDateCheck(DataTable InTbl ,string StartDate, string EndDate)
+        public static  DataTable GetTableAferDateIsWithTheTwoDatesFromTheTable(DataTable InTbl ,string StartDateFeild, string EndDateFeild , 
+            string DateToBeWithn)
+        {
+
+            DataTable AfterDateDT = InTbl.Clone();
+            DataTable retunrDT = AfterDateDT.Clone();
+            retunrDT.Clone();
+            if (DateToBeWithn.Length > 0 )
+            {
+                AfterDateDT.Clear();
+
+                foreach (DataRow dr in InTbl.Rows)
+                {
+                
+                        DateTime Date = DateTime.ParseExact(DateToBeWithn ,"dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime Startdate = DateTime.ParseExact(dr[StartDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime Enddate = DateTime.ParseExact(dr[EndDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        int startResult = DateTime.Compare(Date, Startdate);
+                        int endResult = DateTime.Compare(Enddate, Date);
+
+                        if (startResult >= 0 && endResult >= 0)
+                        {
+                            AfterDateDT.ImportRow(dr);
+
+                        }
+                 
+
+                }
+                retunrDT = AfterDateDT;
+            }
+            else
+            {
+                retunrDT = InTbl;
+
+            }
+
+            return retunrDT;
+        }
+          public static  DataTable GetTableAfterDateCheck(DataTable InTbl ,string StartDate, string EndDate)
         {
 
             DataTable AfterDateDT = InTbl.Clone();
@@ -72,11 +110,7 @@ namespace ExpensesSys.Pages
                  
 
                 }
-
-
                 retunrDT = AfterDateDT;
-
-
             }
             else
             {

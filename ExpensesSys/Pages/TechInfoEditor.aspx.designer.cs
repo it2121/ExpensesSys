@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class IncomeEditor
+    public partial class TechInfoEditor
     {
 
         /// <summary>
@@ -33,40 +33,31 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// IncomeDate control.
+        /// BuiType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IncomeDate;
+        protected global::System.Web.UI.WebControls.TextBox BuiType;
 
         /// <summary>
-        /// Amount control.
+        /// ComPre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Amount;
+        protected global::System.Web.UI.WebControls.TextBox ComPre;
 
         /// <summary>
-        /// TypeOfIncome control.
+        /// ComStage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TypeOfIncome;
-
-        /// <summary>
-        /// Note control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Note;
+        protected global::System.Web.UI.WebControls.TextBox ComStage;
 
         /// <summary>
         /// CreateBtn control.
@@ -78,12 +69,12 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button CreateBtn;
 
         /// <summary>
-        /// DelBtn control.
+        /// SelectAndAddBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DelBtn;
+        protected global::System.Web.UI.WebControls.Button SelectAndAddBtn;
     }
 }

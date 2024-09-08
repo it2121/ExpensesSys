@@ -135,14 +135,36 @@
  
             <div class="row m-2">
 
+                            <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="BuyDate"  class="form__field" type="input" placeholder="التاريخ" />
+
+    <label for="name" class="form__label">التاريخ</label>
+</div>
+</div>
+         <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Cost"  class="form__field" type="input" placeholder="المبلغ المصروف" />
+
+    <label for="name" class="form__label">المبلغ المصروف</label>
+</div>
+</div>
+
+
                 <div class="col-3">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Name"  class="form__field" type="input" placeholder="اسم المادة" />
+     <asp:TextBox runat="server" ID="Name"  class="form__field" type="input" placeholder="جهة او سبب الصرف" />
 
-    <label for="name" class="form__label">اسم المادة</label>
+    <label for="name" class="form__label">جهة او سبب الصرف</label>
 </div>
 </div>
 
@@ -157,27 +179,8 @@
 </div>
 </div>
 
-                <div class="col-3">
-
-
-           
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="BuyDate"  class="form__field" type="input" placeholder="التاريخ" />
-
-    <label for="name" class="form__label">التاريخ</label>
-</div>
-</div>
-                <div class="col-3">
-
-
-           
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="Cost"  class="form__field" type="input" placeholder="الكلفة" />
-
-    <label for="name" class="form__label">الكلفة</label>
-</div>
-</div>
-
+    
+       
    
 
 
@@ -196,14 +199,14 @@
            
                          <div class="form__group field">
    <asp:DropDownList ID="WithdrowParty"
-                    class="form__field m-2" type="input" placeholder="جهة السحب"
+                    class="form__field m-2" type="input" placeholder="جهة السحب او التمويل"
                     AutoPostBack="True"
                     runat="server">
              
 
 
                 </asp:DropDownList>
-    <label for="name" class="form__label ">جهة السحب</label>
+    <label for="name" class="form__label ">جهة السحب او التمويل</label>
 
 </div>
 </div>

@@ -20,7 +20,6 @@ namespace ExpensesSys.Pages
                 {
                     DataTable ProjectDT = BBAALL.getUnitByID(ID);
 
-                    DelBtn.Visible = true;
                     foreach (DataRow dt in ProjectDT.Rows)
                     {
                         if (ID.Equals(dt[0]))
@@ -35,7 +34,6 @@ namespace ExpensesSys.Pages
                         }
 
                     }
-                    DelBtn.Visible = true;
                     CreateBtn.Text = "حفظ التعديلات";
 
 
@@ -43,7 +41,7 @@ namespace ExpensesSys.Pages
                 else
                 {
                     ID = 0;
-                    DelBtn.Visible = false;
+                   
 
                     CreateBtn.Text = "اضافة وحدة جديد";
 
@@ -91,7 +89,6 @@ namespace ExpensesSys.Pages
                 BBAALL.UpdateUnit(NameOfUnit.Text, IDOFUnitIfExist.Text, ProjectID,ID);
 
                 ID = 0;
-                DelBtn.Visible = false;
 
                 CreateBtn.Text = "اضافة وحدة جديد";
 
@@ -107,7 +104,6 @@ namespace ExpensesSys.Pages
 
             BBAALL.DeleteUnit(ID);
             ID = 0;
-            DelBtn.Visible = false;
 
             CreateBtn.Text = "اضافة وحدة جديد";
 

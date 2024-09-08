@@ -155,7 +155,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-info is-outlined"
-                                    style="Width:45%; Height:25px"  
+                                    style="Width:60%; Height:25px"  
 
                             ID="btn_Edit" runat="server" Font-Size="Medium" Text="تعديل البيانات" CommandName="Edit" />
                     </ItemTemplate>
@@ -166,7 +166,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-primary "
-                                    style="Width:60%; Height:25px"  
+                                    style="Width:75%; Height:25px"  
 
                             ID="GoToUnitsBtn" runat="server"   Font-Size="Medium" Text="تحديد الوحدات المشمولة" CommandArgument='<%#Eval("ID") %>' CommandName="GoToUnits" />
                     </ItemTemplate>

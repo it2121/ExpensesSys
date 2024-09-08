@@ -96,31 +96,67 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Label Last30DaysSpendings;
 
         /// <summary>
-        /// Button5 control.
+        /// SalaryManBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.Button SalaryManBtn;
 
         /// <summary>
-        /// Button2 control.
+        /// ProjectManBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ProjectManBtn;
 
         /// <summary>
-        /// Button23 control.
+        /// EmpManBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button23;
+        protected global::System.Web.UI.WebControls.Button EmpManBtn;
+
+        /// <summary>
+        /// IncomeManBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button IncomeManBtn;
+
+        /// <summary>
+        /// ExpManBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ExpManBtn;
+
+        /// <summary>
+        /// NthManBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NthManBtn;
+
+        /// <summary>
+        /// WarehouseManBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button WarehouseManBtn;
 
         /// <summary>
         /// Button1 control.
@@ -132,39 +168,12 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Button6 control.
+        /// ReportsBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
-
-        /// <summary>
-        /// Button3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-
-        /// <summary>
-        /// Button9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button9;
-
-        /// <summary>
-        /// Button4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button ReportsBtn;
     }
 }

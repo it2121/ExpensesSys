@@ -24,21 +24,21 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// PageProjectNameLbl control.
+        /// Button6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PageProjectNameLbl;
+        protected global::System.Web.UI.WebControls.Button Button6;
 
         /// <summary>
-        /// DataGridUsers control.
+        /// Button5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DataGridUsers;
+        protected global::System.Web.UI.WebControls.Button Button5;
     }
 }

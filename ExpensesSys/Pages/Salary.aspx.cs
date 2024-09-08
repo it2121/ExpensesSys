@@ -56,6 +56,32 @@ namespace ExpensesSys.Pages
             DataTable SalaryTbl = BBAALL.getSalaryByProjectID(ProjectID);
             DataTable EmpTbl = BBAALL.GetEmpOfProject(ProjectID);
 
+            DataTable EmpAfterTermDate = EmpTbl.Clone();
+            
+            foreach(DataRow dr in EmpTbl.Rows)
+            {
+                EmpAfterTermDate.ImportRow(dr);
+
+            }
+
+            foreach (DataRow dr in EmpAfterTermDate.Rows)
+            {
+                    if(dr["TreminationDate"].Equals("0"))
+                {
+                    dr["TreminationDate"] = "03/02/3024";
+
+                }
+                    
+            }
+
+
+            string datetobewithin =  "01/" + MonthYearSelector.Text;
+
+
+            EmpAfterTermDate = MyStringManager.GetTableAferDateIsWithTheTwoDatesFromTheTable(EmpAfterTermDate, "HiringDate", "TreminationDate",
+               datetobewithin);
+            EmpTbl = EmpAfterTermDate;
+
             DataTable EmpAndSalaryTbl = null;
 
             EmpAndSalaryTbl = EmpTbl.Clone();

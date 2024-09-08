@@ -33,13 +33,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// NameOrReason control.
+        /// PayDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NameOrReason;
+        protected global::System.Web.UI.WebControls.TextBox PayDate;
 
         /// <summary>
         /// Cost control.
@@ -51,13 +51,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox Cost;
 
         /// <summary>
-        /// PayDate control.
+        /// NameOrReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PayDate;
+        protected global::System.Web.UI.WebControls.TextBox NameOrReason;
 
         /// <summary>
         /// WithdrowParty control.

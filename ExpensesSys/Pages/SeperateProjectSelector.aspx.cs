@@ -22,6 +22,8 @@ namespace ExpensesSys.Pages
 
                 DataGridUsers.DataBind();
 
+                OverseeingManagmntBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
+
             }
 
         }

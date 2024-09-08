@@ -427,6 +427,25 @@ namespace ExpensesSys.Pages
         }
         
         
+        public static DataTable GetTechInfo(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetTechInfo";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }     public static DataTable GetGeneralInfo(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetGeneralInfo";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    
         public static DataTable getAllCompOfProject(int ProjectID)
         {
             SqlCommand cm;
@@ -970,7 +989,7 @@ string ContractDate
         }  
         
         public static bool UpdateOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
-            string Note,string InvolvmentType, int ProjectID,int ID)
+            string Note,string InvolvmentType, int ProjectID,int ID, string HiringDate, string TreminationDate)
 
         {
             SqlCommand cm;
@@ -987,14 +1006,15 @@ string ContractDate
             cm.Parameters.AddWithValue("@InvolvmentType", InvolvmentType);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             cm.Parameters.AddWithValue("@ID", ID);
-
+            cm.Parameters.AddWithValue("@HiringDate", HiringDate);
+            cm.Parameters.AddWithValue("@TreminationDate", TreminationDate);
 
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteCommand(cm);
 
 
         }    public static bool InsertIntoOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
-            string Note,string InvolvmentType, int ProjectID)
+            string Note,string InvolvmentType, int ProjectID ,string HiringDate , string TreminationDate )
 
         {
             SqlCommand cm;
@@ -1010,6 +1030,8 @@ string ContractDate
             cm.Parameters.AddWithValue("@Note", Note);
             cm.Parameters.AddWithValue("@InvolvmentType", InvolvmentType);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@HiringDate", HiringDate);
+            cm.Parameters.AddWithValue("@TreminationDate", TreminationDate);
 
 
             SqlConnection.ClearAllPools();
@@ -1086,7 +1108,56 @@ string ContractDate
 
 
 
-        } public static bool UpdateIncome( string TypeOfIncome, int Amount ,int ProjectID, string IncomeDate, string Note,int ID)
+        }
+        
+        
+        public static bool UpdateGeneralInfo(
+          string FullName,
+string PhoneNumber ,
+string UniNumAndCat ,
+string ProNum ,
+int  BuildArea ,
+int ProPrice ,
+string Address ,
+string Emp ,
+int UniArea ,
+string Loan ,
+string RecID ,
+string GINote ,
+int ProjectID
+ )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateGeneralInfo";
+
+
+            cm.Parameters.AddWithValue("@FullName", FullName);
+            cm.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            cm.Parameters.AddWithValue("@UniNumAndCat", UniNumAndCat);
+            cm.Parameters.AddWithValue("@ProNum", ProNum);
+            cm.Parameters.AddWithValue("@BuildArea", BuildArea);
+            cm.Parameters.AddWithValue("@ProPrice", ProPrice);
+            cm.Parameters.AddWithValue("@Address", Address);
+            cm.Parameters.AddWithValue("@Emp", Emp);
+            cm.Parameters.AddWithValue("@UniArea", UniArea);
+            cm.Parameters.AddWithValue("@Loan", Loan);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@GINote", GINote);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }        
+        
+        public static bool UpdateIncome( string TypeOfIncome, int Amount ,int ProjectID, string IncomeDate, string Note,int ID)
 
         {
             SqlCommand cm;
@@ -1101,6 +1172,29 @@ string ContractDate
             cm.Parameters.AddWithValue("@IncomeDate", IncomeDate);
             cm.Parameters.AddWithValue("@Note", Note);
             cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }   public static bool UpdateTechInfo( string BuiType, int ComPre, string ComStage, string RecID,int ProjectID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateTechInfo";
+
+
+            cm.Parameters.AddWithValue("@BuiType", BuiType);
+            cm.Parameters.AddWithValue("@ComPre", ComPre);
+            cm.Parameters.AddWithValue("@ComStage", ComStage);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+     
       
 
 

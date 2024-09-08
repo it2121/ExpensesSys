@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="PeojectUnit.aspx.cs" Inherits="ExpensesSys.Pages.PeojectUnit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="UnitIncome.aspx.cs" Inherits="ExpensesSys.Pages.UnitIncome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+    
          <script type="text/javascript">
 
              $(document).ready(function () {
@@ -14,34 +14,15 @@
 
          </script>
 
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    
     
       <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
                        <div class="col-auto">
-                <div class="field buttons align-items-end">
-
-
-
-
-
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة وحدة جديد"
-        
-         
-         data-target="modal-js-example"
-                                 onclick="GoToNewItem"
-
-                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة وحدة جديد 
-                       
-                        <i class="fas fa-add " style="margin-left: 1em">
-
-                        </i></asp:LinkButton>
-
-                </div>
+             
             </div>
                 
             <div class="col-auto">
@@ -117,39 +98,50 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
            
 
 
-                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
-                    <ItemTemplate>
-                        <asp:Button 
-                                                                class="js-modal-trigger button is-info is-outlined"
-                                    style="Width:50%; Height:25px"  
-
-                            ID="btn_Edit" runat="server" Text="تعديل اسم الوحدة" CommandName="Edit" />
-                    </ItemTemplate>
-            
-                </asp:TemplateField>
+                
 
                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
-                                                                class="js-modal-trigger button is-warning "
+                                                                class="js-modal-trigger button is-primary is-outlined "
                                     style="Width:60%; Height:25px"  
 
-                            ID="GeneralEnfoBtn" runat="server"   Font-Size="Medium" Text="المعلومات العامة" CommandArgument='<%#Eval("RecID") %>' CommandName="GenInfo" />
+                            ID="FinanceInfoBtn" runat="server"   Font-Size="Medium" Text="المعلومات المالية" CommandArgument='<%#Eval("RecID") %>' CommandName="Finance" />
                     </ItemTemplate>
             
                 </asp:TemplateField>
                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
-                                                                class="js-modal-trigger button is-warning "
+                                                                class="js-modal-trigger button is-primary "
                                     style="Width:60%; Height:25px"  
 
-                            ID="TechInfoBtn" runat="server"   Font-Size="Medium" Text="المعلومات الفنية" CommandArgument='<%#Eval("RecID") %>' CommandName="TechInfo" />
+                            ID="PaymentsBtn" runat="server"   Font-Size="Medium" Text="الدفعات" CommandArgument='<%#Eval("RecID") %>' CommandName="Payments" />
                     </ItemTemplate>
             
                 </asp:TemplateField>
 
+                
+                     <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-info is-outlined "
+                                    style="Width:60%; Height:25px"  
 
+                            ID="LoanBtn" runat="server"   Font-Size="Medium" Text="معلومات المبادرة او القرض" CommandArgument='<%#Eval("RecID") %>' CommandName="Loan" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+                     <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-info "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="LoanPaymentsBtn" runat="server"   Font-Size="Medium" Text="دفعات المبادرة او القرض" CommandArgument='<%#Eval("RecID") %>' CommandName="LoanPayments" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
 
 
             </Columns>

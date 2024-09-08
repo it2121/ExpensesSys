@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="">
 <head runat="server">
     <title>نظام الصومعة</title>
        <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
         <script src="../Libs/dataTables.bulma.min.js"></script>
         <link href="../Libs/bulma.min.css" rel="stylesheet" />
             <link href="../Libs/dataTables.bulma.min.css" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/334e818a85.js" crossorigin="anonymous"></script>
+            <link href="../Libs/font-awesome.css"" rel="stylesheet" />
 
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <script src="../Libs/334e818a85.js" crossorigin="anonymous"></script>
+
             <link rel="icon" type="image/png" href="../Images/logo.ico" sizes="32x32">
 
           <style>

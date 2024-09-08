@@ -37,7 +37,12 @@ namespace ExpensesSys.Pages
                             Address.Text = dt["Address"].ToString();
                             Note.Text = dt["Note"].ToString();
                             InvolvmentType = dt["InvolvmentType"].ToString();
+                            HiringDate.Text = dt["HiringDate"].ToString();
+                            TreminationDate.Text = dt["TreminationDate"].ToString();
+                            if (!TreminationDate.Text.Equals("0")) {
 
+                                TreminationDate.Enabled = true;
+                            }
 
                         }
 
@@ -61,6 +66,12 @@ namespace ExpensesSys.Pages
                     Address.Text = "";
                     Note.Text = "";
 
+                    
+                    TreminationDate.Text = "";
+                    TreminationDate.Enabled = false;
+                    DateTime dateTime = DateTime.UtcNow.Date;
+                    HiringDate.Text = dateTime.ToString("dd/MM/yyyy");
+
 
                 }
             }
@@ -74,19 +85,45 @@ namespace ExpensesSys.Pages
 
 
         }
+
+
+        protected void ChckedChanged(object sender, EventArgs e)
+        {
+            if (TermatedCheck.Checked == true)
+            {
+              
+                TreminationDate.Enabled = true;
+                DateTime dateTime = DateTime.UtcNow.Date;
+                TreminationDate.Text = dateTime.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                TreminationDate.Enabled = false;
+                TreminationDate.Text = "";
+
+
+            }
+            UpdateTermanationPanel.Update();
+        }
+
+
+
         protected void CreateItem(object sender, EventArgs e)
         {
+            string Termdate = "0";
+            if (TreminationDate.Text.Length > 0)
+            Termdate = TreminationDate.Text;
             if (ID == 0)
             {
 
 
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
-
+               
 
 
 
                 BBAALL.InsertIntoOrigenalEmp(EmpName.Text,
-                    EmpJob.Text,Depart.Text,Address.Text,Note.Text,InvolvmentType,ProjectID);
+                    EmpJob.Text,Depart.Text,Address.Text,Note.Text,InvolvmentType,ProjectID,HiringDate.Text, Termdate);
 
                 Response.Redirect("OriginalEmp.aspx");
 
@@ -96,7 +133,7 @@ namespace ExpensesSys.Pages
 
 
                 BBAALL.UpdateOrigenalEmp(EmpName.Text,
-                     EmpJob.Text, Depart.Text, Address.Text, Note.Text, InvolvmentType, ProjectID,ID);
+                     EmpJob.Text, Depart.Text, Address.Text, Note.Text, InvolvmentType, ProjectID,ID, HiringDate.Text, Termdate);
 
                 ID = 0;
                 DelBtn.Visible = false;
@@ -125,7 +162,9 @@ namespace ExpensesSys.Pages
             Depart.Text = "";
             Address.Text = "";
             Note.Text = "";
-
+            HiringDate.Text = "";
+            TreminationDate.Text = "";
+            TreminationDate.Enabled = false;
 
 
             Response.Redirect("OriginalEmp.aspx");
