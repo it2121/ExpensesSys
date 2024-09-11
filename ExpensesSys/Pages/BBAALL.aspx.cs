@@ -117,6 +117,16 @@ namespace ExpensesSys.Pages
 
 
 
+           public static DataTable GetSearchList(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetSearchList";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
            public static DataTable getCoutOfUnitsForWorkContracts(int WorkContractID)
         {
             SqlCommand cm;
@@ -162,6 +172,34 @@ namespace ExpensesSys.Pages
         
         
         
+        public static DataTable GetFinanceByRecID(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetFinanceByRecID";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    public static DataTable getComPre(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "getComPre";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }     public static DataTable GetPaidAmount(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetPaidAmount";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    
         public static DataTable GetAllWorkContractsOFAProject(int ProjectID)
         {
             SqlCommand cm;
@@ -215,7 +253,16 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@ID", ID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }      public static DataTable GetTotalPaidAmountOfWorkContract(int ID )
+        }      public static DataTable GetAllUnitPaymentsOfRecID(string RecID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetAllUnitPaymentsOfRecID";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }     public static DataTable GetTotalPaidAmountOfWorkContract(int ID )
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -224,7 +271,16 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@ID", ID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }   public static DataTable getUnitByID(int ID )
+        }   public static DataTable GetUnitPaymentByID(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetUnitPaymentByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  public static DataTable getUnitByID(int ID )
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -267,7 +323,16 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         } 
-           public static DataTable DeleteOriginalEmp(int ID )
+           public static DataTable DeleteUnitPayments(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "DeleteUnitPayments";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable DeleteOriginalEmp(int ID )
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -1124,7 +1189,8 @@ int UniArea ,
 string Loan ,
 string RecID ,
 string GINote ,
-int ProjectID
+int ProjectID,
+string Warn
  )
 
         {
@@ -1147,6 +1213,7 @@ int ProjectID
             cm.Parameters.AddWithValue("@RecID", RecID);
             cm.Parameters.AddWithValue("@GINote", GINote);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@Warn", Warn);
       
 
 
@@ -1215,6 +1282,25 @@ int ProjectID
 
             cm.Parameters.AddWithValue("@ItemName", ItemName);
             cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }   public static bool UpdateTotalPrice(string RecID, int Total)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateTotalPrice";
+
+
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@Total", Total);
       
 
 
@@ -1411,6 +1497,48 @@ int ProjectID
             return DDAALL.ExecuteCommand(cm);
 
 
+
+        }  
+          public static bool InsertIntoUnitPayments(int PayNo, int Amount, string DateOfPay, int PaidAmount
+              , string RecID , string Paid )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoUnitPayments";
+
+
+            cm.Parameters.AddWithValue("@PayNo", PayNo);
+            cm.Parameters.AddWithValue("@Amount", Amount);
+            cm.Parameters.AddWithValue("@DateOfPay", DateOfPay);
+            cm.Parameters.AddWithValue("@PaidAmount", PaidAmount);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@Paid", Paid);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }      public static bool UpdateUnitPayments(int PayNo, int Amount, string DateOfPay, int PaidAmount
+              , string RecID , string Paid ,int ID )
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateUnitPayments";
+
+
+            cm.Parameters.AddWithValue("@PayNo", PayNo);
+            cm.Parameters.AddWithValue("@Amount", Amount);
+            cm.Parameters.AddWithValue("@DateOfPay", DateOfPay);
+            cm.Parameters.AddWithValue("@PaidAmount", PaidAmount);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@Paid", Paid);
+            cm.Parameters.AddWithValue("@ID", ID);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
 
         }  
         

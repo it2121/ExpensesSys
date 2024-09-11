@@ -36,26 +36,27 @@ namespace ExpensesSys.Pages
                 // go to gen info
 
 
-               /* string ID = e.CommandArgument.ToString();
-                GeneralInfoEditor.RecID = ID;
-                GeneralInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("GeneralInfoEditor.aspx");
-*/
+                string RecID = e.CommandArgument.ToString();
+                FinanceEditor.RecID = RecID;
+                FinanceEditor.ProjectID = ProjectID;
+                Response.Redirect("FinanceEditor.aspx");
+
 
 
             }
             else if (x.Equals("Payments"))
             {
 
-            /*    string ID = e.CommandArgument.ToString();
-                TechInfoEditor.RecID = ID;
-                TechInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("TechInfoEditor.aspx");*/
+                string ID = e.CommandArgument.ToString();
+                UnitPayments.RecID = ID;
+                UnitPayments.ProjectID = ProjectID;
+                Response.Redirect("UnitPayments.aspx");
 
 
 
 
-            }else if (x.Equals("Loan"))
+            }
+            else if (x.Equals("Loan"))
             {
 
                /* string ID = e.CommandArgument.ToString();

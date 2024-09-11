@@ -37,6 +37,7 @@ namespace ExpensesSys.Pages
                             Address.Text = dt["Address"].ToString();
                             UniArea.Text = dt["UniArea"].ToString();
                             GINote.Text = dt["GINote"].ToString();
+                        Warn.Text = dt["Warn"].ToString();
                             Loan.Checked = true;
                             Emp.Checked = true;
                             if (!dt["Emp"].ToString().Equals("1"))
@@ -94,7 +95,7 @@ namespace ExpensesSys.Pages
     Convert.ToInt32(UniArea.Text),
      LoanText,
      RecID,
-     GINote.Text,ProjectID
+     GINote.Text,ProjectID, Warn.Text
      );
 
                     Response.Redirect("PeojectUnit.aspx");

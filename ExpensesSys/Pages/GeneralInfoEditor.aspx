@@ -265,6 +265,28 @@
 
                 
                       
+            </div>  <div class="col-12">
+                 
+              
+                         <div class="form__group field">
+ <asp:DropDownList ID="Warn"
+                    class="form__field mt-2" type="text" placeholder="حالة الانذار"
+                    AutoPostBack="True"
+                    runat="server">
+                    <asp:ListItem Selected="True" Value="بلا انذار">بلا انذار</asp:ListItem>
+                    <asp:ListItem Value="انذار اولي"> انذار اولي</asp:ListItem>
+                    <asp:ListItem Value="انذار نهائي">انذار نهائي</asp:ListItem>
+
+
+                </asp:DropDownList>
+    <label for="name" class="form__label">حالة الانذار</label>
+</div>
+
+                     
+
+
+                
+                      
             </div>
 
 

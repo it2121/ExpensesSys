@@ -115,7 +115,7 @@
 
 
     <article class="panel is-info" style="background-color: white;">
-        <p class="panel-heading ">معلومات الموظف</p>
+        <p class="panel-heading ">المعلومات</p>
 
 
                <div class="row m-2">

@@ -38,6 +38,7 @@
        
       <style>
           @font-face {
+
   font-family: CustomFont;
 src: url('../Libs/Beiruti-VariableFont_wght.ttf');
 }

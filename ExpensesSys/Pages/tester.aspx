@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="UnitSearch.aspx.cs" Inherits="ExpensesSys.Pages.UnitSearch" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="tester.aspx.cs" Inherits="ExpensesSys.Pages.tester" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-           <script type="text/javascript">
+        <script type="text/javascript">
 
                $(document).ready(function () {
 
@@ -11,11 +11,10 @@
                    $('.table1').DataTable();
                });
 
-           </script>
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      
-    
+     
     <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
                        <div class="col-auto">
@@ -64,9 +63,10 @@
            
 
 
-                        <asp:GridView ShowHeaderWhenEmpty="true" ID="DataGridUsers" runat="server" AutoGenerateColumns="False"  class="table table-striped  table-hover border-0 " CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"
-                            
-OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
+                        <asp:GridView ShowHeaderWhenEmpty="true" ID="DataGridUsers" runat="server" AutoGenerateColumns="False"  
+                            class="table table-striped  table-hover border-0 " CellPadding="6" 
+
+OnRowEditing="GridView1_RowEditing" 
                             HeaderStyle-HorizontalAlign="Center"
                           
                             >

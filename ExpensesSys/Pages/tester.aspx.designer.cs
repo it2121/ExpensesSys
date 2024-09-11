@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class UnitSearch
+    public partial class tester
     {
 
         /// <summary>

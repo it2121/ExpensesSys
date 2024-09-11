@@ -460,14 +460,7 @@
 
             </div>
 
-            <div class="col-4 mt-5  text-center">
-<%--                <asp:Button runat="server" ID="Button10" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToNth" role="button" Text="النثريــــات"></asp:Button>--%>
-
-
-                                <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف وحدة سكنية"></asp:Button>
-
-
-            </div>
+    
 
 
 
@@ -482,9 +475,20 @@
 
 
             <div class="col-12 mt-5  text-center">
+                                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف الوحدات السكنية"></asp:Button>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row  " style="padding-left: 1em; padding-right: 1em;">
+
+
+
+            <div class="col-12 mt-5  text-center">
                 <asp:Button runat="server" ID="ReportsBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToReports" role="button" Text="التقاريــــر"></asp:Button>
-
-
 
 
             </div>
