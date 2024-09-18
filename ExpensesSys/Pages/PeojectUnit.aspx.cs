@@ -14,14 +14,15 @@ namespace ExpensesSys.Pages
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ProjectID = Global.getProjectID();
             Main.openPage = "ProjMan";
             if (!IsPostBack)
             {
-                DataTable allProjects = BBAALL.GetAllUnitsOfAPorject(ProjectID);
+           /*     DataTable allProjects = BBAALL.GetAllUnitsOfAPorject(ProjectID);
                 DataGridUsers.DataSource = allProjects;
 
 
-                DataGridUsers.DataBind();
+                DataGridUsers.DataBind();*/
 
             }
 
@@ -73,7 +74,14 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void Search(object sender, EventArgs e)
+        {
 
+            DataTable dt = BBAALL.GetSearchListByWord(ProjectID, SearchBox.Text);
+            DataGridUsers.DataSource = dt;
+            DataGridUsers.DataBind();
+
+        }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update
@@ -96,6 +104,12 @@ namespace ExpensesSys.Pages
             // showstuff();
         }
 
+        protected void GoToWeightMan(object sender, EventArgs e)
+        {
+            Weights.ProjectID = Global.getProjectID();
+            Response.Redirect("Weights.aspx");
+
+        }
         protected void GoToNewItem(object sender, EventArgs e)
         {
             PeojectUnitEditor.ID = 0;

@@ -17,16 +17,26 @@ namespace ExpensesSys.Pages
             Main.openPage = "ProjMan";
             if (!IsPostBack)
             {
-                DataTable allProjects = BBAALL.GetAllUnitsOfAPorject(ProjectID);
-                DataGridUsers.DataSource = allProjects;
+              //  DataTable allProjects = BBAALL.GetAllUnitsOfAPorject(ProjectID);
+               // DataGridUsers.DataSource = allProjects;
 
 
-                DataGridUsers.DataBind();
+            //    DataGridUsers.DataBind();
 
             }
 
         }
 
+
+
+        protected void Search(object sender, EventArgs e)
+        {
+
+            DataTable dt = BBAALL.GetSearchListByWord(ProjectID, SearchBox.Text);
+            DataGridUsers.DataSource = dt;
+            DataGridUsers.DataBind();
+
+        }
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
         {
             string x = e.CommandName;//returns "Select" for both asp:CommandField columns

@@ -29,6 +29,7 @@ namespace ExpensesSys.Pages
 
                             IDOFUnitIfExist.Text = dt["IDOFUnitIfExist"].ToString();
                             NameOfUnit.Text = dt["NameOfUnit"].ToString();
+                            UnitType.Text = dt["UnitType"].ToString();
 
 
                         }
@@ -48,6 +49,7 @@ namespace ExpensesSys.Pages
 
                     NameOfUnit.Text = "";
                     IDOFUnitIfExist.Text = "";
+                    UnitType.Text = "";
 
 
                 }
@@ -71,14 +73,7 @@ namespace ExpensesSys.Pages
 
 
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
-
-
-
-                BBAALL.InsertUnit(NameOfUnit.Text, IDOFUnitIfExist.Text, ProjectID);
-
-
-
-
+                BBAALL.InsertUnit(NameOfUnit.Text, IDOFUnitIfExist.Text, ProjectID, UnitType.Text);
                 Response.Redirect("PeojectUnit.aspx");
 
             }
@@ -86,7 +81,7 @@ namespace ExpensesSys.Pages
             {
 
 
-                BBAALL.UpdateUnit(NameOfUnit.Text, IDOFUnitIfExist.Text, ProjectID,ID);
+                BBAALL.UpdateUnit(NameOfUnit.Text, IDOFUnitIfExist.Text, ProjectID,ID, UnitType.Text);
 
                 ID = 0;
 
@@ -94,6 +89,7 @@ namespace ExpensesSys.Pages
 
                 NameOfUnit.Text = "";
                 IDOFUnitIfExist.Text = "";
+                UnitType.Text = "";
                 Response.Redirect("PeojectUnit.aspx");
             }
 
@@ -109,6 +105,7 @@ namespace ExpensesSys.Pages
 
             NameOfUnit.Text = "";
             IDOFUnitIfExist.Text = "";
+            UnitType.Text = "";
 
             Response.Redirect("PeojectUnit.aspx");
 

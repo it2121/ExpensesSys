@@ -23,7 +23,23 @@ namespace ExpensesSys.Pages
             }
             return sb.ToString();
         }
+        public static bool CheckIfTodayIsGreaterThanDate(string date)
+        {
 
+            DateTime Date = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            DateTime TodayDate = DateTime.Now;
+
+
+            int startResult = DateTime.Compare( TodayDate, Date);
+
+            if (startResult >= 0 )
+            {
+
+                return true;
+            }
+            return false;
+        }
         public static string GetNumberWithComas(string numberAsaString)
         {
 

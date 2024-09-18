@@ -120,12 +120,12 @@
 
                <div class="row m-2">
 
-                <div class="col-6">
+                <div class="col-12">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="BuiType"  class="form__field" type="input" placeholder="نوع الوحدة" />
+     <asp:TextBox runat="server" ID="BuiType"  class="form__field" ReadOnly="true" type="input" placeholder="نوع الوحدة" />
 
     <label for="name" class="form__label">نوع الوحدة</label>
 </div>
@@ -142,9 +142,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="ComPre"  class="form__field" type="input" placeholder="نسبة الانجاز" />
+     <asp:TextBox runat="server" ID="ComPre"  class="form__field" type="input" Visible="false" placeholder="نسبة الانجاز" />
 
-    <label for="name" class="form__label">نسبة الانجاز</label>
+<%--    <label for="name" class="form__label">نسبة الانجاز</label>--%>
 </div>
            
             </div>
@@ -156,13 +156,39 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="ComStage"  class="form__field" type="input" placeholder="مرحلة الانجاز" />
+     <asp:TextBox runat="server" ID="ComStage"  class="form__field" type="input"  Visible="false" placeholder="مرحلة الانجاز" />
 
-    <label for="name" class="form__label">مرحلة الانجاز</label>
+<%--    <label for="name" class="form__label">مرحلة الانجاز</label>--%>
 </div>
            
             </div>
                           
+
+
+                   
+                          <div class="col-12 align-content-center  text-center"  >
+
+    <div class="content-1 align-content-center text-center">
+        <div id="Layer1" style="position:relative;height:450px;
+overflow:scroll;">
+      <asp:CheckBoxList runat="server" ID="WeightReachedRecordID_CB"   CssClass="BigCheckBox"  Font-Size="2em" Font-Bold="true" > 
+
+                    </asp:CheckBoxList>
+                                        <label for="name" class="form__label">تحديد مرحلة الانجاز</label>
+
+
+        </div>
+              
+               
+            
+ 
+                
+            </div>
+           
+
+           
+            </div>
+
 
 
 
@@ -189,7 +215,7 @@
 
             <div class="col-md-12 text-center ">
 
-                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em" OnClick="CreateItem" class="button is-primary text-center " Text="تاكيد"></asp:Button>
+                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em" OnClick="CreateItem" class="button is-primary text-center is-large" Text="تاكيد"></asp:Button>
             </div>
 
         </div>
@@ -197,7 +223,7 @@
 
             <div class="col-md-12 text-center ">
 
-                <asp:Button runat="server" ID="SelectAndAddBtn" Style="width: 20em" OnClick="SelectAndAdd" class="button is-primary text-center " Text="تحديد واضافة"></asp:Button>
+                <asp:Button runat="server" ID="SelectAndAddBtn" Style="width: 20em" OnClick="SelectAndAdd" class="button is-primary text-center is-large " Text="تحديد واضافة"></asp:Button>
             </div>
 
         </div>

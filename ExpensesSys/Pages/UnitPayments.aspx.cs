@@ -11,6 +11,7 @@ namespace ExpensesSys.Pages
     public partial class UnitPayments : System.Web.UI.Page
     {
         public static string RecID = "";
+        public static string RecdirectTo = "";
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -68,8 +69,20 @@ namespace ExpensesSys.Pages
         protected void Return(object sender, EventArgs e)
         {
 
+            if (RecdirectTo.Length != 0)
+            {
+                UnitOverlook.RecID = RecID;
+                string temp = RecdirectTo;
+                RecdirectTo = "";
+                Response.Redirect(temp);
 
-            Response.Redirect("UnitIncome.aspx");
+            }
+            else
+            {
+
+                Response.Redirect("UnitIncome.aspx");
+
+            }
 
 
 

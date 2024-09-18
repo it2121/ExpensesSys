@@ -47,13 +47,14 @@ namespace ExpensesSys.Pages
 
                 Session["redirected"] = "1";
                 PeojectSeector.GoToPage = "Home";
+                WorngLbl.Visible = false;
 
                 Response.Redirect("SeperateProjectSelector.aspx");
 
             }
             else
             {
-
+                WorngLbl.Visible = true;
 
             }
 

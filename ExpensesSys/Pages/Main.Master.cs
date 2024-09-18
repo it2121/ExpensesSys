@@ -35,9 +35,27 @@ namespace ExpensesSys.Pages
             //SetBtnsVisibility();
 
             setSelectedPageBGColor(openPage);
-
+            SetBtnsVisibilityAcordingToRoles();
 
         }
+        public void SetBtnsVisibilityAcordingToRoles()
+        {
+
+            if (Session["Role"].ToString().Equals("الفنية"))
+            {
+                Income.Visible = false;
+                Expences.Visible = false;
+                Salary.Visible = false;
+                EmpMan.Visible = false;
+                General.Visible = false;
+                Reports.Visible = false;
+
+            }
+
+
+        }  
+        
+        
         public void SetBtnsVisibility()
         {
 

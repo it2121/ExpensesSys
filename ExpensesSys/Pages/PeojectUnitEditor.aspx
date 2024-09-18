@@ -134,7 +134,7 @@
     
        
      
-      <div class="row m-6" >
+      <div class="row m-4" >
            
                    <div class="col-md-12 text-center ">
 
@@ -146,7 +146,18 @@
 </div>
 </div>
 </div>     
-      <div class="row m-6" >
+      <div class="row m-4" >
+           
+                   <div class="col-md-12 text-center ">
+
+
+                                     <div class="form__group field">
+     <asp:TextBox runat="server" ID="UnitType"  class="form__field" type="input" placeholder="نوع الوحدة" />
+
+    <label for="name" class="form__label">نوع الوحدة</label>
+</div>
+</div>
+</div><div class="row m-4" >
            
                    <div class="col-md-12 text-center ">
 

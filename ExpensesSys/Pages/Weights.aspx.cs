@@ -8,67 +8,54 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
-    public partial class UnitSearch : System.Web.UI.Page
+    public partial class Weights : System.Web.UI.Page
     {
-        public static int ProjectID = 0; 
+        public static int ProjectID = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GetSearchList
-            Main.openPage = "Income";
+            Main.openPage = "Expences";
 
             if (!IsPostBack)
             {
 
-               // DataTable dt = BBAALL.GetSearchList(ProjectID);
+                DataTable dt = BBAALL.GetAllWeightsForProject(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
 
-        
 
 
-                /*DataGridUsers.DataSource = dt;
-                DataGridUsers.DataBind();*/
+                DataGridUsers.DataSource = dt;
+                DataGridUsers.DataBind();
 
 
 
             }
+
         }
-
-
-
-        /*      protected void textChanged(object sender, EventArgs e)
-              {
-                  //NewEditIndex property used to determine the index of the row being edited.
-                  // DataGridUsers.EditIndex = e.NewEditIndex;
-                  //  showstuff();
-
-                   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + SearchBox.Text + "');", true);
-
-
-              }*/
-
-
-        protected void Search(object sender, EventArgs e)
+        protected void GoToNewItem(object sender, EventArgs e)
         {
 
-            DataTable dt = BBAALL.GetSearchListByWord(ProjectID,SearchBox.Text);
-            DataGridUsers.DataSource = dt;
-            DataGridUsers.DataBind();
+
+            WeightsEditor.ProjectID = ProjectID;
+
+            Response.Redirect("WeightsEditor.aspx");
 
         }
-            protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+
+        protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
             // DataGridUsers.EditIndex = e.NewEditIndex;
             //  showstuff();
 
-            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_OR23") as Label;
+            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
 
 
-            UnitOverlook.RecID = id.Text;
-            UnitOverlook.ProjectID = ProjectID;
+            WeightsEditor.ID = Convert.ToInt32(id.Text);
+            WeightsEditor.ProjectID = ProjectID;
 
 
-            Response.Redirect("UnitOverlook.aspx");
+            Response.Redirect("WeightsEditor.aspx");
 
 
         }
@@ -94,7 +81,5 @@ namespace ExpensesSys.Pages
             //  DataGridUsers.EditIndex = -1;
             // showstuff();
         }
-
-
     }
 }

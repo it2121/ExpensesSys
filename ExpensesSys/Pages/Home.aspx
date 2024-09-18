@@ -198,7 +198,7 @@
     </asp:Panel>
     <article class="panel is-info" style="background-color: white; padding-bottom: 2em;">
 
-        <p class="panel-heading text-center" style="background-color: #3399ff;">الرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
+        <p class="panel-heading text-center "  style="background-color: #3399ff;">الــرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
 
 
 
@@ -475,7 +475,7 @@
 
 
             <div class="col-12 mt-5  text-center">
-                                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف الوحدات السكنية"></asp:Button>
+                                <asp:Button runat="server" ID="OverseeingBTn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف الوحدات السكنية"></asp:Button>
 
 
             </div>

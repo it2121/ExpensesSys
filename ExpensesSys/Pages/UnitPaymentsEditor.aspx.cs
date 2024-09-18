@@ -95,10 +95,13 @@ namespace ExpensesSys.Pages
             }
             else
             {
+                string paid = "0";
+
+                if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
 
 
                 BBAALL.UpdateUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                    DateOfPay.Text, Convert.ToInt32(PaidAmount.Text), RecID, Paid, PaymentID);
+                    DateOfPay.Text, Convert.ToInt32(PaidAmount.Text), RecID, paid, PaymentID);
 
                 RecID = "";
                 DelBtn.Visible = false;

@@ -62,6 +62,8 @@
         /* reset input */
         .form__field:required, .form__field:invalid {
             box-shadow: none;
+        }  .Worded {
+            font-size: 1.2em;
         }
     </style>
 </asp:Content>
@@ -112,7 +114,8 @@
 
 
     <article class="panel is-info" style="background-color: white;">
-        <p class="panel-heading ">معلومات الموظف</p>
+          <p class="panel-heading text-center " style="background-color:#3399ff;">                <asp:Label  runat ="server" ID ="OverseeingOfUnit" CssClass="is-large" Font-Size="XX-Large" Text="" ></asp:Label>
+<i class="fa-solid fa-file-invoice-dollar"></i></p>
         <br />
         
             <div class="row m-2" >
@@ -272,7 +275,7 @@
             </div> 
                      
                                       <div class="col-3">
-                                                          <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label"></asp:Label>
+                                                          <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
                                                       </div> 
                                       <div class="col-3">
@@ -388,7 +391,7 @@
             </div>
 
             <div class="col-8">
-                <asp:Label runat="server" ID="TotalLbl" Text="ok" ForeColor="Green" class="form__label"></asp:Label>
+                <asp:Label runat="server" ID="TotalLbl" Text="ok" ForeColor="Green" class="form__label" Worded></asp:Label>
 
 
             </div>
@@ -401,7 +404,7 @@
         <div class="row m-2">
 
 
-            <div class="col-4">
+            <div class="col-3">
 
 
 
@@ -413,7 +416,7 @@
 
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
 
 
                 <div class="form__group field">
@@ -423,10 +426,22 @@
                     <label for="name" class="form__label">المتبقي</label>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
 
                 <div class="form__group field">
-                    <asp:TextBox runat="server" ID="RemBasedOnPrecentage" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب نسبة الانجاز" />
+                    <asp:TextBox runat="server" ID="RemBasedOnPrecentage" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب مرحلة الانجاز" />
+                    <label for="name" class="form__label">المتبقي حسب مرحلة الانجاز</label>
+                </div>
+
+
+
+
+
+
+            </div>       <div class="col-3">
+
+                <div class="form__group field">
+                    <asp:TextBox runat="server" ID="RemBasedOnPrecentageOLD" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب نسبة الانجاز" />
                     <label for="name" class="form__label">المتبقي حسب نسبة الانجاز</label>
                 </div>
 
@@ -445,20 +460,23 @@
 
         <div class="row m-2">
 
-            <div class="col-4">
-                <asp:Label runat="server" ID="PaidLbl" Text="ok" ForeColor="Green" class="form__label"></asp:Label>
+            <div class="col-3">
+                <asp:Label runat="server" ID="PaidLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
             </div>
 
-            <div class="col-4">
-                <asp:Label runat="server" ID="RemLbl" Text="ok" ForeColor="Green" class="form__label"></asp:Label>
+            <div class="col-3">
+                <asp:Label runat="server" ID="RemLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
 
             </div>
 
 
-            <div class="col-4">
-                <asp:Label runat="server" ID="RemPrecLbl" Text="ok" ForeColor="Green" class="form__label"></asp:Label>
+            <div class="col-3">
+                <asp:Label runat="server" ID="RemPrecLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
+
+            </div>   <div class="col-3">
+                <asp:Label runat="server" ID="RemPrecLblOLD" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
             </div>
 
@@ -552,9 +570,21 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="ComStage"  class="form__field" ReadOnly="true" type="input" placeholder="مرحلة الانجاز" />
+     <asp:TextBox runat="server" ID="ComStage"  class="form__field" ReadOnly="true" type="input" placeholder="مرحلة الانجاز - غير معتمد" />
 
-    <label for="name" class="form__label">مرحلة الانجاز</label>
+    <label for="name" class="form__label">مرحلة الانجاز - غير معتمد</label>
+</div>
+           
+            </div>
+                        
+                <div class="col-12">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="CompStageVerfied"  class="form__field" ReadOnly="true" type="input" placeholder="مرحلة الانجاز - معتمد" />
+
+    <label for="name" class="form__label">مرحلة الانجاز - معتمد</label>
 </div>
            
             </div>

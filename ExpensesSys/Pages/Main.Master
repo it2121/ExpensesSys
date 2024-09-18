@@ -236,12 +236,21 @@ html, body {
                                        </a>
                                                                             </asp:Panel>
                                     </li>  
-                           <li> <a href="ProjMan.aspx">
+
+                           <li> 
+                                                                        <asp:Panel runat="server" ID="General" > 
+
+                               <a href="ProjMan.aspx">
                                         <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
                                       <asp:Button runat="server" ID="Button12" class="button  is-text   " Font-Underline="false" ForeColor="white" Font-Bold="true" Text="مصروفـــات عامــــة"  />
                                         <span class="badge badge-pill badge-primary"></span>
                                 </a>
-                                    </li>   <li> 
+                               </asp:Panel>
+
+                                    </li> 
+                                
+                                
+                                <li> 
                                          <asp:Panel runat="server" ID="Reports" > 
                                         <a href="ProjMan.aspx">
                                         <i class="fa fa-list" style="color:white; background-color:transparent;"></i>

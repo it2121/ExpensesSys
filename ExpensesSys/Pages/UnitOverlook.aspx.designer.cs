@@ -33,6 +33,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
+        /// OverseeingOfUnit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label OverseeingOfUnit;
+
+        /// <summary>
         /// FullName control.
         /// </summary>
         /// <remarks>
@@ -213,6 +222,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentage;
 
         /// <summary>
+        /// RemBasedOnPrecentageOLD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentageOLD;
+
+        /// <summary>
         /// PaidLbl control.
         /// </summary>
         /// <remarks>
@@ -238,6 +256,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label RemPrecLbl;
+
+        /// <summary>
+        /// RemPrecLblOLD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RemPrecLblOLD;
 
         /// <summary>
         /// Button2 control.
@@ -292,6 +319,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ComStage;
+
+        /// <summary>
+        /// CompStageVerfied control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CompStageVerfied;
 
         /// <summary>
         /// Button3 control.

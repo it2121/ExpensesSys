@@ -12,6 +12,72 @@
                });
 
            </script>
+       <style>
+
+        .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       
@@ -48,10 +114,33 @@
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
         <p class="panel-heading text-center" style="background-color:#3399ff;">                <asp:Label  runat ="server" ID ="PageProjectNameLbl" Text="" ></asp:Label>
 <i class="fa-solid fa-file-invoice-dollar"></i></p>
-        
-        
+                                       <asp:Panel runat="server" DefaultButton="SearchBtn">
 
- 
+           <div class="row m-2" >
+
+            <div class="col-12 mt-2">
+
+
+      
+
+
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SearchBox"   class="form__field align-content-center text-center align-items-center" ReadOnly="false" type="input" placeholder="" />
+
+    <label for="name" class="form__label"></label>
+</div>      
+                    
+                    </div>
+           
+
+                 <div class="col-md-12 text-center  mt-2">
+
+                <asp:Button runat="server" ID="SearchBtn" Style="width: 20em" OnClick="Search" class="button is-primary text-center" Text="- بــحــث -"></asp:Button>
+            </div>
+
+                </div>
+ </asp:Panel>
+
      <div class="row ">
         
           
@@ -73,11 +162,11 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
             <Columns>
         
 
-                <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="ID">
+             <%--   <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="ID">
                     <ItemTemplate>
                         <asp:Label ID="lbl_ID" runat="server" Text='<%#Eval("RecID") %>'></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>    
+                </asp:TemplateField>   --%> 
                 
               <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="الوحدة">
                     <ItemTemplate>
@@ -97,19 +186,25 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("PhoneNumber") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="نسبة الانجاز">
+
+
+                <%--   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="نسبة الانجاز">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_O887R" runat="server" Text='<%#Eval("ComPre") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>             <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ المدفوع">
+                </asp:TemplateField>  
+                
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ المدفوع">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_O8sdfsd87R" runat="server" Text='<%#Eval("PaidAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المطلوب">
+                </asp:TemplateField>  
+                
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المطلوب">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_O887R33" runat="server" Text='<%#Eval("Rem") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
               
            <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
                     <ItemTemplate>
@@ -158,4 +253,12 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                      new DataTable.Responsive(table);
 
                  </script>
+
+
+
+
+  
+
+
+
 </asp:Content>

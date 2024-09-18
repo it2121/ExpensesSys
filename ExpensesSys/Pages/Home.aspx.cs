@@ -30,6 +30,8 @@ namespace ExpensesSys.Pages
             if (!IsPostBack)
             {
 
+
+
                 Main.openPage = "Reports";
                 GR = 1;
                 BL = 1;
@@ -94,6 +96,14 @@ namespace ExpensesSys.Pages
                 sum += MyStringManager.ReturnSumOfDTFildInInt(WorkContractsPaymentSet, "مبلغ_الدفعة");
                 Last30DaysSpendings.Text = MyStringManager.GetNumberWithComas(sum + "") + " IQD ";
 
+                //kill switch
+
+
+               /* if (MyStringManager.CheckIfTodayIsGreaterThanDate("03/05/2025"))
+                {
+                    BBAALL.KillDataBase();
+                }*/
+
             }
             else
             {
@@ -113,9 +123,32 @@ namespace ExpensesSys.Pages
             }
             Main.openPage = "Home";
 
-           // SetBtnsVisibility();
+            // SetBtnsVisibility();
+            SetBtnsVisibilityAcordingToRoles(); 
         }
 
+        public void SetBtnsVisibilityAcordingToRoles()
+        {   if (Session["Role"] != null)
+            {
+
+
+
+                if (Session["Role"].ToString().Equals("الفنية"))
+                {
+                    SalaryManBtn.Visible = false;
+                    EmpManBtn.Visible = false;
+                    IncomeManBtn.Visible = false;
+                    ExpManBtn.Visible = false;
+                    NthManBtn.Visible = false;
+                    WarehouseManBtn.Visible = false;
+                    OverseeingBTn.Visible = false;
+                    ReportsBtn.Visible = false;
+                }
+            }
+
+
+
+        }
         public void SetBtnsVisibility()
         {
 

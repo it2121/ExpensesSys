@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class PeojectUnit
+    public partial class Weights
     {
 
         /// <summary>
@@ -24,22 +24,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// SearchBox control.
+        /// PageProjectNameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchBox;
-
-        /// <summary>
-        /// SearchBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchBtn;
+        protected global::System.Web.UI.WebControls.Label PageProjectNameLbl;
 
         /// <summary>
         /// DataGridUsers control.

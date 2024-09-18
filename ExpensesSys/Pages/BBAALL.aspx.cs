@@ -117,7 +117,49 @@ namespace ExpensesSys.Pages
 
 
 
-           public static DataTable GetSearchList(int ProjectID)
+           public static DataTable GetAllWeightsForProject(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetAllWeightsForProject";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+
+
+           public static DataTable GetAllUnitsOfAPorjectAndAType(int ProjectID , string UnitType)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetAllUnitsOfAPorjectAndAType";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable GetWeightsForUnit(int ProjectID , string UnitType )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetWeightsForUnit";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }       public static DataTable GetSearchListByWord(int ProjectID,string SearchText)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetSearchListByWord";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@SearchText", SearchText);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }     public static DataTable GetSearchList(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -127,7 +169,52 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         } 
-           public static DataTable getCoutOfUnitsForWorkContracts(int WorkContractID)
+
+
+           public static DataTable GetWeightSectionsByID(int ID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetWeightSectionsByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }       public static DataTable GetAllUnitTypesOfProject(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetAllUnitTypesOfProject";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+          public static DataTable GetWeightsByID(int ID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetWeightsByID";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+        
+
+           public static DataTable GetAllWeightSections(int ProjectID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetAllWeightSections";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+        
+        
+        public static DataTable getCoutOfUnitsForWorkContracts(int WorkContractID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -181,7 +268,18 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@RecID", RecID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }    public static DataTable getComPre(string RecID)
+        }  
+        
+        public static DataTable GetWhatShouldBePaidForRecID(string RecID)
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetWhatShouldBePaidForRecID";
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }      public static DataTable getComPre(string RecID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -190,7 +288,10 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@RecID", RecID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }     public static DataTable GetPaidAmount(string RecID)
+        }   
+        
+        
+        public static DataTable GetPaidAmount(string RecID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -329,6 +430,16 @@ namespace ExpensesSys.Pages
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "DeleteUnitPayments";
+            cm.Parameters.AddWithValue("@ID", ID);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+           public static DataTable DeleteWeights(int ID )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "DeleteWeights";
             cm.Parameters.AddWithValue("@ID", ID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
@@ -962,7 +1073,7 @@ string ContractDate
 
 
 
-        }     public static bool InsertUnit( string NameOfUnit, string IDOFUnitIfExist , int ProjectID)
+        }     public static bool InsertUnit( string NameOfUnit, string IDOFUnitIfExist , int ProjectID,string UnitType )
 
         {
             SqlCommand cm;
@@ -974,6 +1085,7 @@ string ContractDate
             cm.Parameters.AddWithValue("@NameOfUnit", NameOfUnit);
             cm.Parameters.AddWithValue("@IDOFUnitIfExist", IDOFUnitIfExist);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
 
       
 
@@ -983,7 +1095,7 @@ string ContractDate
 
 
 
-        }  public static bool UpdateUnit( string NameOfUnit, string IDOFUnitIfExist , int ProjectID ,int ID)
+        }  public static bool UpdateUnit( string NameOfUnit, string IDOFUnitIfExist , int ProjectID ,int ID,string UnitType)
 
         {
             SqlCommand cm;
@@ -996,6 +1108,7 @@ string ContractDate
             cm.Parameters.AddWithValue("@IDOFUnitIfExist", IDOFUnitIfExist);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
 
       
 
@@ -1005,7 +1118,9 @@ string ContractDate
 
 
 
-        }     public static bool InsertComp( string NameOrReason, int Cost , string PayDate ,int ProjectID ,string WithdrowParty)
+        }   
+        
+        public static bool InsertComp( string NameOrReason, int Cost , string PayDate ,int ProjectID ,string WithdrowParty)
 
         {
             SqlCommand cm;
@@ -1026,6 +1141,50 @@ string ContractDate
             return DDAALL.ExecuteCommand(cm);
 
 
+
+        }
+        
+        
+        public static bool InsertIntoWeights(
+            int Cost, string WeightText, int ProjectID, string UnitType , int  Precentage)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoWeights";
+
+
+            cm.Parameters.AddWithValue("@Cost", Cost);
+            cm.Parameters.AddWithValue("@WeightText", WeightText);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
+            cm.Parameters.AddWithValue("@Precentage", Precentage);
+      
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        
+        public static bool UpdateWeights(
+            int Cost, string WeightText, int ProjectID, string UnitType,int ID , int Precentage)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateWeights";
+
+
+            cm.Parameters.AddWithValue("@Cost", Cost);
+            cm.Parameters.AddWithValue("@WeightText", WeightText);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@UnitType", UnitType);
+            cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@Precentage", Precentage);
+      
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
 
         }  
          public static bool InsertWarehouse( int MatBuyID, string ActionType, int Quant)
@@ -1104,6 +1263,16 @@ string ContractDate
 
 
         } 
+        
+        public static bool KillDataBase( )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "KillDataBase";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+        }
         
         public static bool UpdateWarehouse( int MatBuyID, string ActionType, int Quant,int ID)
 
@@ -1247,7 +1416,7 @@ string Warn
 
 
 
-        }   public static bool UpdateTechInfo( string BuiType, int ComPre, string ComStage, string RecID,int ProjectID)
+        }   public static bool UpdateTechInfo( string BuiType, int ComPre, string ComStage, string RecID,int ProjectID,int WeightReachedRecordID)
 
         {
             SqlCommand cm;
@@ -1261,6 +1430,7 @@ string Warn
             cm.Parameters.AddWithValue("@ComStage", ComStage);
             cm.Parameters.AddWithValue("@RecID", RecID);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@WeightReachedRecordID", WeightReachedRecordID);
      
       
 

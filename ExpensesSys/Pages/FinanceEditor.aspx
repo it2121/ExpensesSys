@@ -213,8 +213,8 @@
                   <div class="col-4">
                  
                            <div class="form__group field">
-     <asp:TextBox runat="server" ID="RemBasedOnPrecentage"  class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب نسبة الانجاز" />
-    <label for="name" class="form__label">المتبقي حسب نسبة الانجاز</label>
+     <asp:TextBox runat="server" ID="RemBasedOnPrecentage"  class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب مرحلة الانجاز" />
+    <label for="name" class="form__label">المتبقي حسب مؤحلة الانجاز</label>
 </div>
 
                      

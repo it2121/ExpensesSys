@@ -185,6 +185,8 @@
     <Content Include="Pages\Warehouse.aspx" />
     <Content Include="Pages\WarehouseEditor.aspx" />
     <Content Include="Pages\WarehouseEditorInside.aspx" />
+    <Content Include="Pages\Weights.aspx" />
+    <Content Include="Pages\WeightsEditor.aspx" />
     <Content Include="Pages\WorkContracts.aspx" />
     <Content Include="Pages\WorkContractsEditor.aspx" />
     <Content Include="Pages\WorkContractsPayments.aspx" />
@@ -519,6 +521,20 @@
     </Compile>
     <Compile Include="Pages\WarehouseEditorInside.aspx.designer.cs">
       <DependentUpon>WarehouseEditorInside.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Weights.aspx.cs">
+      <DependentUpon>Weights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Weights.aspx.designer.cs">
+      <DependentUpon>Weights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeightsEditor.aspx.cs">
+      <DependentUpon>WeightsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WeightsEditor.aspx.designer.cs">
+      <DependentUpon>WeightsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\WorkContracts.aspx.cs">
       <DependentUpon>WorkContracts.aspx</DependentUpon>

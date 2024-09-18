@@ -76,7 +76,10 @@
                                         </span>
                                     </div>
                                 </div>
-                           
+                            <div class="field">
+                                    <asp:Label runat="server" ID="WorngLbl" Visible="false" for="" class="label text-center text-danger ">الرجاء التاكد من كتابة اسم المستخدم و الرمز السري</asp:Label>
+                                  
+                                </div>
 
                                 <div class="field buttons">
                                     <asp:Button runat="server" OnClick="SubmitBtn_Click" ID="btn" Text="تسجيل الدخول" class="button is-fullwidth is-success" BackColor="#33B3FF"></asp:Button>

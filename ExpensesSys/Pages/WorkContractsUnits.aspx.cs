@@ -13,53 +13,79 @@ namespace ExpensesSys.Pages
         public static int ProjectID = 0;
         public static int ID = 0;
         public static string RecID = "";
+        public static string UnitType = "";
+        public static int WeightReachedRecordID = 0;
+      //  public static string ForEmp = "0";
         protected void Page_Load(object sender, EventArgs e)
         {
             Main.openPage = "WorkContracts";
 
 
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
+                DataTable AllUnitNames = null;
 
-                DataTable AllUnitNames = BBAALL.GetAllUnitsOfAPorject(ProjectID);
+                if (WeightReachedRecordID == 0)
+                    AllUnitNames = BBAALL.GetAllUnitsOfAPorject(ProjectID);
+
+
+                if (WeightReachedRecordID != 0)
+                    AllUnitNames = BBAALL.GetAllUnitsOfAPorjectAndAType(ProjectID, UnitType);
+
+
                 DataTable UnitNamesOfWorkContract = BBAALL.GetUnitsPerContractOfAContract(ID);
 
-
-                var list = AllUnitNames.Rows.OfType<DataRow>()
+                if (WeightReachedRecordID == 0)
+                {
+                    var list = AllUnitNames.Rows.OfType<DataRow>()
                    .Select(dr => dr.Field<string>("RecID")).ToList();
-                ChBoxList.DataSource = list;
+                    ChBoxList.DataSource = list;
 
 
-                ChBoxList.DataBind();
+                    ChBoxList.DataBind();
 
-                if (!RecID.Equals("")) { 
-                foreach (ListItem itemm in ChBoxList.Items)
-                    foreach (DataRow dr in UnitNamesOfWorkContract.Rows)
+                    if (!RecID.Equals(""))
                     {
-                        string UnitName = "";
-
-                        foreach (DataRow row in AllUnitNames.Rows)
-                        {
-
-                            if (dr["UnitRecID"].ToString().Equals(row["RecID"].ToString()))
+                        foreach (ListItem itemm in ChBoxList.Items)
+                            foreach (DataRow dr in UnitNamesOfWorkContract.Rows)
                             {
-                                UnitName = row["RecID"].ToString();
+                                string UnitName = "";
 
+                                foreach (DataRow row in AllUnitNames.Rows)
+                                {
+
+                                    if (dr["UnitRecID"].ToString().Equals(row["RecID"].ToString()))
+                                    {
+                                        UnitName = row["RecID"].ToString();
+
+
+                                    }
+                                }
+
+
+                                if (itemm.Text.Equals(UnitName))
+                                {
+
+                                    itemm.Selected = true;
+
+
+                                }
 
                             }
-                        }
-
-
-                        if (itemm.Text.Equals(UnitName))
-                        {
-
-                            itemm.Selected = true;
-
-
-                        }
-
                     }
                 }
+                else {
 
+                    var list = AllUnitNames.Rows.OfType<DataRow>()
+                     .Select(dr => dr.Field<string>("NameOfUnit")).ToList();
+                    ChBoxList.DataSource = list;
+                    ChBoxList.DataBind();
+
+
+
+
+
+                }
             }
 
 
@@ -87,6 +113,7 @@ namespace ExpensesSys.Pages
 
                 InsertTechInfoIntoUnits();
                 RecID = "";
+                WeightReachedRecordID = 0;
                 Response.Redirect("PeojectUnit.aspx");
 
 
@@ -95,7 +122,7 @@ namespace ExpensesSys.Pages
 
 
         }
-   
+
         protected void Return(object sender, EventArgs e)
         {
 
@@ -115,11 +142,16 @@ namespace ExpensesSys.Pages
                 if (itemm.Selected == true)
                 {
 
-                    BBAALL.UpdateTechInfo(TechInfoEditor.BuiTypeG , TechInfoEditor.ComPreG, TechInfoEditor.ComStageG, itemm.Text, ProjectID);
-                   
+                    BBAALL.UpdateTechInfo(TechInfoEditor.BuiTypeG, TechInfoEditor.ComPreG,
+
+                        TechInfoEditor.ComStageG,
+
+
+                        itemm.Text, ProjectID, WeightReachedRecordID);
+
 
                 }
-               
+
             }
 
 
@@ -132,43 +164,43 @@ namespace ExpensesSys.Pages
 
 
             foreach (ListItem itemm in ChBoxList.Items)
+            {
+                if (itemm.Selected == true)
                 {
-                    if (itemm.Selected == true)
-                    {
 
 
-                        foreach (DataRow row in AllUnitNames.Rows)
-                            if (row["RecID"].ToString().Equals(itemm.Text))
-                            {
-                                if (BBAALL.CheckIfUnitExistInWorkContract(ID, row["RecID"].ToString()).Rows.Count == 0)
-                                    BBAALL.InsertIntoUnitToWorkContract(ID, row["RecID"].ToString());
+                    foreach (DataRow row in AllUnitNames.Rows)
+                        if (row["RecID"].ToString().Equals(itemm.Text))
+                        {
+                            if (BBAALL.CheckIfUnitExistInWorkContract(ID, row["RecID"].ToString()).Rows.Count == 0)
+                                BBAALL.InsertIntoUnitToWorkContract(ID, row["RecID"].ToString());
 
-                            }
+                        }
 
 
 
 
-                    }
-                    else
-                    {
-
-                        foreach (DataRow row in AllUnitNames.Rows)
-                            if (row[1].ToString().Equals(itemm.Text))
-                            {
-                                if (BBAALL.CheckIfUnitExistInWorkContract(ID, row["RecID"].ToString()).Rows.Count != 0)
-                                {
-                                    BBAALL.DeleteUnitToWorkContract(ID, row["RecID"].ToString());
-                                }
-
-                            }
-             
-
-
-                    }
                 }
-               
+                else
+                {
 
-            
+                    foreach (DataRow row in AllUnitNames.Rows)
+                        if (row[1].ToString().Equals(itemm.Text))
+                        {
+                            if (BBAALL.CheckIfUnitExistInWorkContract(ID, row["RecID"].ToString()).Rows.Count != 0)
+                            {
+                                BBAALL.DeleteUnitToWorkContract(ID, row["RecID"].ToString());
+                            }
+
+                        }
+
+
+
+                }
+            }
+
+
+
 
         }
 

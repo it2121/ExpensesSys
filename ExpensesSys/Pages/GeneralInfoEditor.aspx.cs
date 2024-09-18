@@ -12,6 +12,7 @@ namespace ExpensesSys.Pages
     {
 
         public static string RecID = "";
+        public static string RecdirectTo = "";
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,8 +61,20 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("PeojectUnit.aspx");
+            if (RecdirectTo.Length != 0)
+            {
+                UnitOverlook.RecID = RecID;
+                string temp = RecdirectTo;
+                RecdirectTo = "";
+                Response.Redirect(temp);
 
+            }
+            else
+            {
+
+                Response.Redirect("PeojectUnit.aspx");
+
+            }
 
 
         }

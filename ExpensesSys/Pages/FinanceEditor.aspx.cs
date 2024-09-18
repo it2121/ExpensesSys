@@ -11,6 +11,7 @@ namespace ExpensesSys.Pages
     public partial class FinanceEditor : System.Web.UI.Page
     {
         public static string RecID = "";
+        public static string RecdirectTo = "";
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,12 +34,23 @@ namespace ExpensesSys.Pages
 
                     }
                     int precentage = Convert.ToInt32(BBAALL.getComPre(RecID).Rows[0][0].ToString());
+                    int ShouldBePaid = Convert.ToInt32(BBAALL.GetWhatShouldBePaidForRecID(RecID).Rows[0]["Cost"].ToString());
 
                     Paid.Text =BBAALL.GetPaidAmount(RecID).Rows[0][0].ToString();
 
                     RemAmount.Text =(Convert.ToInt32(Total.Text) - Convert.ToInt32(Paid.Text) )+"";
-                    RemBasedOnPrecentage.Text =(Convert.ToInt32(Total.Text) *(precentage*0.01) - Convert.ToInt32(Paid.Text))+"" ;
-                    Precantage.Text = BBAALL.getComPre(RecID).Rows[0][0].ToString() +" %";
+
+                    string neg = "";
+                    if((ShouldBePaid - Convert.ToInt32(Paid.Text)) < 0)
+                    {
+                        neg = "-";
+
+                    }
+                    RemBasedOnPrecentage.Text = (ShouldBePaid - Convert.ToInt32(Paid.Text))+"" ;
+                    Precantage.Text = BBAALL.GetWhatShouldBePaidForRecID(RecID).Rows[0]["WeightText"].ToString();
+
+                    
+
 
                     int totaint = Convert.ToInt32(Total.Text);
                   
@@ -47,7 +59,7 @@ namespace ExpensesSys.Pages
 
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     RemAmount.Text = MyStringManager.GetNumberWithComas(RemAmount.Text);
-                    RemBasedOnPrecentage.Text = MyStringManager.GetNumberWithComas(RemBasedOnPrecentage.Text);
+                    RemBasedOnPrecentage.Text = neg+ MyStringManager.GetNumberWithComas(RemBasedOnPrecentage.Text);
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     Total.Text = MyStringManager.GetNumberWithComas(Total.Text);
 
@@ -88,9 +100,21 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("UnitIncome.aspx");
 
+            if (RecdirectTo.Length != 0)
+            {
+                UnitOverlook.RecID = RecID;
+                string temp = RecdirectTo;
+                RecdirectTo = "";
+                Response.Redirect(temp);
 
+            }
+            else
+            {
+
+                Response.Redirect("UnitIncome.aspx");
+
+            }
 
         }
 

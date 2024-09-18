@@ -21,6 +21,8 @@ namespace ExpensesSys.Pages
                     DataTable OrEmpTbl = BBAALL.GetFinanceByRecID(RecID);
                     RecIDTB.Text = RecID;
 
+                    OverseeingOfUnit.Text = RecID;
+
                     foreach (DataRow dt in OrEmpTbl.Rows)
                     {
 
@@ -73,18 +75,47 @@ namespace ExpensesSys.Pages
                         BuiType.Text = dt["BuiType"].ToString();
                         ComPre.Text = dt["ComPre"].ToString();
                         ComStage.Text = dt["ComStage"].ToString();
-                      
+                        foreach (DataRow innerdt in BBAALL.GetWeightsByID( Convert.ToInt32( dt["WeightReachedRecordID"].ToString())).Rows)
+                        {
 
-                    }
+
+
+
+                          
+                            CompStageVerfied.Text = innerdt["WeightText"].ToString();
+
+
+                        }
+
+                    }  
+                    
 
 
                     int precentage = Convert.ToInt32(BBAALL.getComPre(RecID).Rows[0][0].ToString());
-
+                    int ShouldBePaid = Convert.ToInt32(BBAALL.GetWhatShouldBePaidForRecID(RecID).Rows[0]["Cost"].ToString());
+                    
                     Paid.Text = BBAALL.GetPaidAmount(RecID).Rows[0][0].ToString();
 
+                    if (Paid.Text.Length == 0) {
+                        Paid.Text = "0";
+                    }
+
                     RemAmount.Text = (Convert.ToInt32(Total.Text) - Convert.ToInt32(Paid.Text)) + "";
-                    RemBasedOnPrecentage.Text = (Convert.ToInt32(Total.Text) * (precentage * 0.01) - Convert.ToInt32(Paid.Text)) + "";
-                   // Precantage.Text = BBAALL.getComPre(RecID).Rows[0][0].ToString() + " %";
+                    string neg = "";
+                    if ((ShouldBePaid - Convert.ToInt32(Paid.Text)) < 0)
+                    {
+                        neg = "-";
+
+                    }
+                    RemBasedOnPrecentage.Text = (ShouldBePaid - Convert.ToInt32(Paid.Text)) + "";
+                    RemBasedOnPrecentageOLD.Text =   (((Convert.ToInt32(Total.Text) *(precentage*0.01)) - Convert.ToInt32(Paid.Text)) + "")  ;
+
+
+                    RemBasedOnPrecentage.Text = KillEverythingAfteDot(RemBasedOnPrecentage.Text);
+                    RemBasedOnPrecentageOLD.Text = KillEverythingAfteDot(RemBasedOnPrecentageOLD.Text);
+
+
+
 
                     int totaint = Convert.ToInt32(Total.Text);
 
@@ -94,7 +125,8 @@ namespace ExpensesSys.Pages
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     ProPrice.Text = MyStringManager.GetNumberWithComas(ProPrice.Text);
                     RemAmount.Text = MyStringManager.GetNumberWithComas(RemAmount.Text);
-                    RemBasedOnPrecentage.Text = MyStringManager.GetNumberWithComas(RemBasedOnPrecentage.Text);
+                    RemBasedOnPrecentage.Text = neg + MyStringManager.GetNumberWithComas(RemBasedOnPrecentage.Text);
+                    RemBasedOnPrecentageOLD.Text = neg + MyStringManager.GetNumberWithComas(RemBasedOnPrecentageOLD.Text);
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     Total.Text = MyStringManager.GetNumberWithComas(Total.Text);
 
@@ -105,6 +137,15 @@ namespace ExpensesSys.Pages
                 }
 
             }
+        }
+
+        public string KillEverythingAfteDot(string str) {
+
+            string input = str;
+            int index = input.IndexOf(".");
+            if (index >= 0)
+                input =   input.Substring(0, index);
+            return input;
         }
         public void setArabicNumberLabel()
         {
@@ -123,6 +164,9 @@ namespace ExpensesSys.Pages
 
             toWord = new ToWord(Convert.ToDecimal(MyStringManager.GetIntFromNumberStringWithComas(RemBasedOnPrecentage.Text)), currencies[0]);
             RemPrecLbl.Text = toWord.ConvertToArabic();
+
+            toWord = new ToWord(Convert.ToDecimal(MyStringManager.GetIntFromNumberStringWithComas(RemBasedOnPrecentageOLD.Text)), currencies[0]);
+            RemPrecLblOLD.Text = toWord.ConvertToArabic();
 
             toWord = new ToWord(Convert.ToDecimal(MyStringManager.GetIntFromNumberStringWithComas(ProPrice.Text)), currencies[0]);
             ProPriceLbl.Text = toWord.ConvertToArabic();
@@ -148,6 +192,7 @@ namespace ExpensesSys.Pages
 
 
             UnitPayments.RecID = RecID;
+            UnitPayments.RecdirectTo = "UnitOverlook.aspx";
 
                 Response.Redirect("UnitPayments.aspx");
 
@@ -159,9 +204,10 @@ namespace ExpensesSys.Pages
 
 
 
-            TechInfoEditor.RecID = RecID;
+            TechInfoEditor.RecID = RecIDTB.Text;
+            TechInfoEditor.RecdirectTo = "UnitOverlook.aspx";
 
-                Response.Redirect("TechInfoEditor.aspx");
+            Response.Redirect("TechInfoEditor.aspx");
 
             
         }   protected void GoToFinance(object sender, EventArgs e)
@@ -170,8 +216,8 @@ namespace ExpensesSys.Pages
 
 
             FinanceEditor.RecID = RecID;
-
-                Response.Redirect("FinanceEditor.aspx");
+            FinanceEditor.RecdirectTo = "UnitOverlook.aspx";
+            Response.Redirect("FinanceEditor.aspx");
 
             
         }     protected void GoToGenralInfo(object sender, EventArgs e)
@@ -180,8 +226,9 @@ namespace ExpensesSys.Pages
 
 
             GeneralInfoEditor.RecID = RecID;
+            GeneralInfoEditor.RecdirectTo = "UnitOverlook.aspx";
 
-                Response.Redirect("GeneralInfoEditor.aspx");
+            Response.Redirect("GeneralInfoEditor.aspx");
 
             
         }  

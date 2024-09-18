@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class TechInfoEditor
+    public partial class WeightsEditor
     {
 
         /// <summary>
@@ -33,40 +33,40 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// BuiType control.
+        /// Cost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuiType;
+        protected global::System.Web.UI.WebControls.TextBox Cost;
 
         /// <summary>
-        /// ComPre control.
+        /// WeightText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ComPre;
+        protected global::System.Web.UI.WebControls.TextBox WeightText;
 
         /// <summary>
-        /// ComStage control.
+        /// Precentage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ComStage;
+        protected global::System.Web.UI.WebControls.TextBox Precentage;
 
         /// <summary>
-        /// WeightReachedRecordID_CB control.
+        /// UnitType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList WeightReachedRecordID_CB;
+        protected global::System.Web.UI.WebControls.DropDownList UnitType;
 
         /// <summary>
         /// CreateBtn control.
@@ -78,12 +78,12 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button CreateBtn;
 
         /// <summary>
-        /// SelectAndAddBtn control.
+        /// DelBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SelectAndAddBtn;
+        protected global::System.Web.UI.WebControls.Button DelBtn;
     }
 }
