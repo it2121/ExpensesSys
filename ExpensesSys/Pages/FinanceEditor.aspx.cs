@@ -130,8 +130,21 @@ namespace ExpensesSys.Pages
                 BBAALL.UpdateTotalPrice( RecID, Convert.ToInt32( MyStringManager.GetIntFromNumberStringWithComas( Total.Text)));
 
 
-                Response.Redirect("UnitIncome.aspx");
 
+                if (RecdirectTo.Length != 0)
+                {
+                    UnitOverlook.RecID = RecID;
+                    string temp = RecdirectTo;
+                    RecdirectTo = "";
+                    Response.Redirect(temp);
+
+                }
+                else
+                {
+
+                    Response.Redirect("UnitIncome.aspx");
+
+                }
 
 
             }

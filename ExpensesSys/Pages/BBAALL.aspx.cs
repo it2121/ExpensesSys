@@ -16,7 +16,70 @@ namespace ExpensesSys.Pages
 
         }
 
-   public static DataTable getAllWarehouse()
+
+
+        public static DataTable DeleteFile(int  ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "DeleteFile";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  public static DataTable GetFileByDockID(int  ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetFileByDockID";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        public static DataTable GetAllDocksOrARecID(string  RecID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetAllDocksOrARecID";
+
+            cm.Parameters.AddWithValue("@RecID", RecID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        public static DataTable Upload(byte[] Doc ,string  RecID, string DocName, string DocType)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "Upload";
+
+            cm.Parameters.AddWithValue("@Doc", Doc);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@DocName", DocName);
+            cm.Parameters.AddWithValue("@DocType", DocType);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+
+
+        public static DataTable getAllWarehouse()
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -1237,7 +1300,23 @@ string ContractDate
             return DDAALL.ExecuteCommand(cm);
 
 
-        }    public static bool InsertIntoOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        public static bool InsertIntoOrigenalEmp( string EmpName, string EmpJob, string Depart, string Address, 
             string Note,string InvolvmentType, int ProjectID ,string HiringDate , string TreminationDate )
 
         {
@@ -1264,7 +1343,15 @@ string ContractDate
 
         } 
         
-        public static bool KillDataBase( )
+        public static bool GetAllLawUnitInfo( )
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "GetAllLawUnitInfo";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+        }  public static bool KillDataBase( )
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();

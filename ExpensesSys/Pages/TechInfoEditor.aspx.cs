@@ -111,6 +111,8 @@ namespace ExpensesSys.Pages
                // WorkContractsUnits.ForEmp = BBAALL.GetGeneralInfo(RecID).Rows[0]["Emp"].ToString();
                 Response.Redirect("WorkContractsUnits.aspx");
 
+
+
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
 
             }
@@ -134,8 +136,20 @@ namespace ExpensesSys.Pages
 
                     Convert.ToInt32(WeightID));
 
-                Response.Redirect("PeojectUnit.aspx");
+             //   Response.Redirect("PeojectUnit.aspx");
 
+
+                if (RecdirectTo.Length != 0)
+                {
+                    UnitOverlook.RecID = RecID;
+                    string temp = RecdirectTo;
+                    RecdirectTo = "";
+                    Response.Redirect(temp);
+                }
+                else
+                {
+                    Response.Redirect("PeojectUnit.aspx");
+                }
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
 
 

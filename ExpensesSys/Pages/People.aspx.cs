@@ -6,56 +6,44 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ExpensesSys.Pages
+namespace ExpensesSys.Pages.Law
 {
-    public partial class UnitSearch : System.Web.UI.Page
+    public partial class People : System.Web.UI.Page
     {
-        public static int ProjectID = 0; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GetSearchList
-            Main.openPage = "OverView";
+            Main.openPage = "LawPeople";
 
-            if (!IsPostBack)
-            {
-
-               // DataTable dt = BBAALL.GetSearchList(ProjectID);
-                PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
-
-        
-
-
-                /*DataGridUsers.DataSource = dt;
-                DataGridUsers.DataBind();*/
-
-
-
+            if (!IsPostBack) { 
+            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0][0].ToString();
             }
         }
-
-
-
-        /*      protected void textChanged(object sender, EventArgs e)
-              {
-                  //NewEditIndex property used to determine the index of the row being edited.
-                  // DataGridUsers.EditIndex = e.NewEditIndex;
-                  //  showstuff();
-
-                   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + SearchBox.Text + "');", true);
-
-
-              }*/
-
 
         protected void Search(object sender, EventArgs e)
         {
 
-            DataTable dt = BBAALL.GetSearchListByWord(ProjectID,SearchBox.Text);
+            DataTable dt = BBAALL.GetSearchListByWord(Global.getProjectID(), SearchBox.Text);
             DataGridUsers.DataSource = dt;
             DataGridUsers.DataBind();
 
         }
-            protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+        protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string x = e.CommandName;
+
+
+            if (x.Equals("Docks"))
+            {
+
+                string ID = e.CommandArgument.ToString();
+                Documents.RecID = ID;
+                Response.Redirect("Documents.aspx");
+
+            }
+
+
+        }
+        protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
             // DataGridUsers.EditIndex = e.NewEditIndex;
@@ -64,12 +52,14 @@ namespace ExpensesSys.Pages
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_OR23") as Label;
 
 
-            UnitOverlook.RecID = id.Text;
-            UnitOverlook.ProjectID = ProjectID;
 
 
-            Response.Redirect("UnitOverlook.aspx");
 
+            GeneralInfoEditor.RecID = id.Text;
+
+            GeneralInfoEditor.RecdirectTo = "People.aspx";
+            GeneralInfoEditor.ProjectID = Global.getProjectID();
+            Response.Redirect("GeneralInfoEditor.aspx");
 
         }
 
@@ -94,7 +84,6 @@ namespace ExpensesSys.Pages
             //  DataGridUsers.EditIndex = -1;
             // showstuff();
         }
-
 
     }
 }

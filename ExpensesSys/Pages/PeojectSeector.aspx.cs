@@ -15,7 +15,13 @@ namespace ExpensesSys.Pages
         {
            // Main.openPage = "ProjectSelector";
             if (!IsPostBack)
+
             {
+
+                if (Session["Role"].ToString().Equals("القانونية"))
+                {
+                    GoToPage = "LawHome";
+                }
                 DataTable allProjects = BBAALL.GetAllProjects();
                 DataGridUsers.DataSource = allProjects;
 

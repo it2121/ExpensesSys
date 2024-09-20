@@ -17,9 +17,14 @@ namespace ExpensesSys.Pages
 
         }
 
-         //static string DatabaseConnectionString = @"Server=192.168.0.107\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
+        //  static string DatabaseConnectionString = @"Server=192.168.0.107\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
+        //  static string DatabaseConnectionStringLAW = @"Server=192.168.0.107\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
 
-         static string DatabaseConnectionString = @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
+        static string DatabaseConnectionString = @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
+         static string DatabaseConnectionStringLAW = @"Server=DELTA\SQLEXPRESS;Database=LawDB;Trusted_Connection = True;";
+
+
+
 
         //    static string DatabaseConnectionString = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
 
@@ -95,7 +100,27 @@ namespace ExpensesSys.Pages
         }
 
 
-        public static SqlCommand CreateCommand()
+        public static SqlCommand CreateCommandLAW()
+        {
+            try
+            {
+
+                SqlConnection conn = new SqlConnection(DatabaseConnectionStringLAW);
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                conn.Close();
+                return comm;
+            }
+            catch
+            {
+                return null;
+
+
+            }
+        }
+           public static SqlCommand CreateCommand()
         {
             try
             {

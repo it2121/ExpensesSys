@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="UnitSearch.aspx.cs" Inherits="ExpensesSys.Pages.UnitSearch" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="People.aspx.cs" Inherits="ExpensesSys.Pages.Law.People" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-           <script type="text/javascript">
+
+     <script type="text/javascript">
 
                $(document).ready(function () {
 
@@ -11,7 +12,7 @@
                    $('.table1').DataTable();
                });
 
-           </script>
+     </script>
        <style>
 
         .form__group {
@@ -77,11 +78,10 @@
 }
 
     </style>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
       
-    
     <asp:Panel runat="server" ID="ButtonsBar">
         <div class="row " style="margin-bottom: 1em">
                        <div class="col-auto">
@@ -154,7 +154,7 @@
 
 
                         <asp:GridView ShowHeaderWhenEmpty="true" ID="DataGridUsers" runat="server" AutoGenerateColumns="False"  class="table table-striped  table-hover border-0 " CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"
-                            
+                            OnRowCommand="MyGridView_OnRowCommand"
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             HeaderStyle-HorizontalAlign="Center"
                           
@@ -187,47 +187,33 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>
                 
-                   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المدفوع">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl3_OR" runat="server" Text='<%#Eval("PaidAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
+               
 
 
-                <%--   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="نسبة الانجاز">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_O887R" runat="server" Text='<%#Eval("ComPre") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>  
-                
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المبلغ المدفوع">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_O8sdfsd87R" runat="server" Text='<%#Eval("PaidAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>  
-                
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المطلوب">
-                    <ItemTemplate>
-                        <asp:Label  ID="lbl_O887R33" runat="server" Text='<%#Eval("Rem") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>--%>
-              
-           <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_ProviderID" runat="server" Text='<%#Eval("ProviderID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>--%>
            
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-info is-outlined"
                                     style="Width:50%; Height:25px; letter-spacing:1px;"  
-
+                                                                                    OnRowCommand="MyGridView_OnRowCommand"
                             ID="btn_Edit" runat="server" Text="تحديد" CommandName="Edit" />
                     </ItemTemplate>
             
                 </asp:TemplateField>
+
+                  <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-warning "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="UnitDocks" runat="server"   Font-Size="Medium" Text="المستمسكات" CommandArgument='<%#Eval("RecID") %>' CommandName="Docks" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+
+
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 
@@ -264,6 +250,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
 
 
   
+
 
 
 

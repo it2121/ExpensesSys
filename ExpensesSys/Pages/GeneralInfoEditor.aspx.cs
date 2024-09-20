@@ -54,6 +54,19 @@ namespace ExpensesSys.Pages
 
                 }
 
+
+                if (Session["Role"].ToString().Equals("القانونية"))
+                {
+                    UniNumAndCat.ReadOnly = true;
+                    ProNum.ReadOnly = true;
+                    BuildArea.ReadOnly = true;
+                    ProPrice.ReadOnly = true;
+
+
+
+
+
+                }
             }
         }
 
@@ -111,7 +124,24 @@ namespace ExpensesSys.Pages
      GINote.Text,ProjectID, Warn.Text
      );
 
+
+
+                if (RecdirectTo.Length != 0)
+                {
+                    UnitOverlook.RecID = RecID;
+                    string temp = RecdirectTo;
+                    RecdirectTo = "";
+                    Response.Redirect(temp);
+
+                }
+                else
+                {
+
                     Response.Redirect("PeojectUnit.aspx");
+
+                }
+
+
 
                     // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
 

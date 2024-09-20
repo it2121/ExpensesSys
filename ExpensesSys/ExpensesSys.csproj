@@ -144,6 +144,7 @@
     <Content Include="Pages\Comp.aspx" />
     <Content Include="Pages\CompEditor.aspx" />
     <Content Include="Pages\DDAALL.aspx" />
+    <Content Include="Pages\Documents.aspx" />
     <Content Include="Pages\EmpEditor.aspx" />
     <Content Include="Pages\EmpMan.aspx" />
     <Content Include="Pages\Expences.aspx" />
@@ -156,6 +157,10 @@
     <Content Include="Pages\IncomeEditor.aspx" />
     <Content Include="Pages\ItemsEditor.aspx" />
     <Content Include="Pages\ItemsMan.aspx" />
+    <Content Include="Pages\Docks.aspx" />
+    <Content Include="Pages\LawHome.aspx" />
+    <Content Include="Pages\People.aspx" />
+    <Content Include="Pages\Upload.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
     <Content Include="Pages\MatBuy.aspx" />
     <Content Include="Pages\MatBuyEditor.aspx" />
@@ -223,6 +228,13 @@
     </Compile>
     <Compile Include="Pages\DDAALL.aspx.designer.cs">
       <DependentUpon>DDAALL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Documents.aspx.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Documents.aspx.designer.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EmpEditor.aspx.cs">
       <DependentUpon>EmpEditor.aspx</DependentUpon>
@@ -308,6 +320,34 @@
     </Compile>
     <Compile Include="Pages\ItemsMan.aspx.designer.cs">
       <DependentUpon>ItemsMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Docks.aspx.cs">
+      <DependentUpon>Docks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Docks.aspx.designer.cs">
+      <DependentUpon>Docks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LawHome.aspx.cs">
+      <DependentUpon>LawHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LawHome.aspx.designer.cs">
+      <DependentUpon>LawHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\People.aspx.cs">
+      <DependentUpon>People.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\People.aspx.designer.cs">
+      <DependentUpon>People.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\LogInSeprate.aspx.cs">
       <DependentUpon>LogInSeprate.aspx</DependentUpon>

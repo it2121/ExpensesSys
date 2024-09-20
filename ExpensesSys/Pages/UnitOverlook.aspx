@@ -240,6 +240,9 @@
                      <div class="col-3">
                  
                            <div class="form__group field">
+
+
+
      <asp:CheckBox runat="server" ID="Emp"  class="form__field" type="input" ReadOnly="true" placeholder="موظف" />
     <label for="name" class="form__label">موظف</label>
 </div>
@@ -289,7 +292,7 @@
                      <br />
                   </div> 
                       
-            </div>  <div class="col-12">
+            </div>  <div class="col-12 mt-6">
                  
                            <div class="form__group field">
     <asp:TextBox runat="server" ID="GINote"  class="form__field" type="input" ReadOnly="true" placeholder="الملاحظات" />

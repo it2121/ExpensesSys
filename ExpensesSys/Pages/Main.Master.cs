@@ -49,7 +49,20 @@ namespace ExpensesSys.Pages
                 EmpMan.Visible = false;
                 General.Visible = false;
                 Reports.Visible = false;
+          
 
+            }
+            else if (Session["Role"].ToString().Equals("القانونية"))
+            {
+                Income.Visible = false;
+                Expences.Visible = false;
+                Salary.Visible = false;
+                EmpMan.Visible = false;
+                General.Visible = false;
+                Reports.Visible = false;
+                ProjMan.Visible = false;
+                LawPeople.Visible = true;
+                LawArch.Visible = true;
             }
 
 
@@ -114,6 +127,16 @@ namespace ExpensesSys.Pages
                 Reports.BackColor = ColorTranslator.FromHtml("#3399ff");
 
 
+            }else if (pageName.Equals("LawPeople"))
+            {
+                LawPeople.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
+            }else if (pageName.Equals("LawArch"))
+            {
+                LawArch.BackColor = ColorTranslator.FromHtml("#3399ff");
+
+
             }
 
 
@@ -125,12 +148,27 @@ namespace ExpensesSys.Pages
             NameL.Text = "";
             Response.Redirect("LogInSeprate.aspx");
 
-        }      protected void GoToReports(object sender, EventArgs e)
+        }  
+        protected void GoToLawArch(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Arch.aspx");
+
+        }    protected void GoToLawPeople(object sender, EventArgs e)
+        {
+
+            Response.Redirect("People.aspx");
+
+        }   
+        protected void GoToReports(object sender, EventArgs e)
         {
 
             Response.Redirect("Reports.aspx");
 
-        }   protected void GoToProjMan(object sender, EventArgs e)
+        }   
+        
+        
+        protected void GoToProjMan(object sender, EventArgs e)
         {
 
             Response.Redirect("ProjMan.aspx");

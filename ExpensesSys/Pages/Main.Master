@@ -259,6 +259,32 @@ html, body {
                                         </a>
                                                                             </asp:Panel>
                                     </li>  
+
+
+
+                                    
+                                <li> 
+                                         <asp:Panel runat="server" ID="LawPeople" Visible="false" > 
+                                        <a href="ProjMan.aspx">
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button1" class="button  is-text   " Font-Underline="false" onclick="GoToLawPeople"  ForeColor="white"  Font-Bold="true"  Text="الوحدات"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                        </a>
+                                                                            </asp:Panel>
+                                    </li>  
+
+
+
+                                    
+                                <li> 
+                                         <asp:Panel runat="server" ID="LawArch" Visible="false" > 
+                                        <a href="ProjMan.aspx">
+                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
+                                      <asp:Button runat="server" ID="Button2" class="button  is-text   " Font-Underline="false" onclick="GoToLawArch"  ForeColor="white"  Font-Bold="true"  Text="الارشفة"  />
+                                        <span class="badge badge-pill badge-primary"></span>
+                                        </a>
+                                                                            </asp:Panel>
+                                    </li>  
                                 <br />
                                 <br />
                                 <br />
