@@ -18,10 +18,13 @@ namespace ExpensesSys.Pages
 
             {
 
-                if (Session["Role"].ToString().Equals("القانونية"))
+                if (Global.GetRole().Equals("القانونية"))
                 {
                     GoToPage = "LawHome";
+                  //   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
+
                 }
+
                 DataTable allProjects = BBAALL.GetAllProjects();
                 DataGridUsers.DataSource = allProjects;
 
@@ -102,8 +105,9 @@ namespace ExpensesSys.Pages
             }
 
 
-
-            Response.Redirect(GoToPage + ".aspx");
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
+            //Response.Redirect(GoToPage + ".aspx");
+          //  Response.Redirect(GoToPage + ".aspx");
 
 
         }
@@ -175,7 +179,9 @@ namespace ExpensesSys.Pages
             }
 
 
-            Response.Redirect(GoToPage+ ".aspx");
+
+           // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
+           // Response.Redirect(GoToPage+ ".aspx");
 
 
 
@@ -206,7 +212,7 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("Home.aspx");
+           // Response.Redirect("Home.aspx");
 
 
 

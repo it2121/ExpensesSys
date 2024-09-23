@@ -487,8 +487,15 @@
 
 
 
-            <div class="col-12 mt-5  text-center">
-                <asp:Button runat="server" ID="ReportsBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToReports" role="button" Text="التقاريــــر"></asp:Button>
+            <div class="col-6 mt-5  text-center">
+                <asp:Button runat="server" ID="ReportsBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToReports" role="button" Text="تقارير الصرفيات والايرادات"></asp:Button>
+
+
+            </div>
+
+            
+            <div class="col-6 mt-5  text-center">
+                <asp:Button runat="server" ID="UnitReports" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitReports" role="button" Text="تقارير الوحدات"></asp:Button>
 
 
             </div>

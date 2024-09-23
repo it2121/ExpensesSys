@@ -16,6 +16,18 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                if (Global.GetRole().Equals("القانونية"))
+                {
+                    GoToPage = "LawHome";
+                    //   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
+
+                }else
+                {
+
+                    GoToPage = "Home";
+
+
+                }
                 DataTable allProjects = BBAALL.GetAllProjects();
                 DataGridUsers.DataSource = allProjects;
 

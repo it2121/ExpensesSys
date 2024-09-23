@@ -49,12 +49,39 @@ namespace ExpensesSys.Pages
             return returnString;
 
         }
+        public static int GetCountOfRowsWithCondition(DataTable dt , string CoulmnName , string Value)
+        {
+            int count = 0;
 
+            foreach(DataRow dr in dt.Rows)
+            {
+                if (dr[CoulmnName].ToString().Equals(Value))
+                    count++;
+
+            }
+
+            return count;
+
+
+        }   public static double GetSumOfRowsWithCondition(DataTable dt , string CoulmnName )
+        {
+            double Sum = 0;
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                    Sum+= GetIntFromNumberStringWithComas(dr[CoulmnName].ToString());
+
+            }
+
+            return Sum;
+
+
+        }
         public static int GetIntFromNumberStringWithComas(string numWithComasAsString)
         {
 
             string st = MyStringManager.RemoveSpecialCharacters(numWithComasAsString);
-            int RetuirnInt = Convert.ToInt32(st);
+            int RetuirnInt = (int)Convert.ToInt64(st);
             return RetuirnInt;
 
 

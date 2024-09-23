@@ -163,11 +163,12 @@
 
                                     <p class="control has-icons-left">
 
-                                        <asp:DropDownList ID="ProjectName" Enabled="false"
+                                        <asp:
+                                            ID="ProjectName" Enabled="false"
                                             class="input is-info" type="text" placeholder="المشروع"
                                             AutoPostBack="True"
                                             runat="server">
-                                        </asp:DropDownList>
+                                        </asp:>
                                         <span class="icon is-left">
                                             <i class="fas fa-book" aria-hidden="true"></i>
                                         </span>

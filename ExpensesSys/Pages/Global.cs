@@ -8,8 +8,15 @@ namespace ExpensesSys.Pages
     public class Global
     {
         public static int ProjecID = 0;
+        public static string Role = "";
 
-        public static void setProjectID (int projectID)
+        public static void setRole(string role)
+        {
+            Role = role;
+        }
+        public static string GetRole() {
+            return Role;
+        } public static void setProjectID (int projectID)
         {
             ProjecID = projectID;
         }

@@ -149,7 +149,22 @@ namespace ExpensesSys.Pages
             Response.Redirect("LogInSeprate.aspx");
 
         }  
-        protected void GoToLawArch(object sender, EventArgs e)
+        protected void GoToHome(object sender, EventArgs e)
+        {
+            if (Global.GetRole().Equals("القانونية"))
+            {
+                Response.Redirect("LawHome.aspx");
+
+                //   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
+
+            }else
+            {
+                Response.Redirect("Home.aspx");
+
+            }
+
+
+        }    protected void GoToLawArch(object sender, EventArgs e)
         {
 
             Response.Redirect("Arch.aspx");

@@ -11,98 +11,215 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class Main
+    public partial class UnitReports
     {
 
         /// <summary>
-        /// head control.
+        /// ScriptManager11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.ScriptManager ScriptManager11;
 
         /// <summary>
-        /// form1 control.
+        /// ButtonsBar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// TLbl control.
+        /// WithdrowPartyPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TLbl;
+        protected global::System.Web.UI.WebControls.Panel WithdrowPartyPanel;
 
         /// <summary>
-        /// NameL control.
+        /// PrjectNameCheck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameL;
+        protected global::System.Web.UI.WebControls.CheckBox PrjectNameCheck;
 
         /// <summary>
-        /// JobL control.
+        /// ProjectNameUpdatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label JobL;
+        protected global::System.Web.UI.UpdatePanel ProjectNameUpdatePanel;
 
         /// <summary>
-        /// Home control.
+        /// UnitType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Home;
+        protected global::System.Web.UI.WebControls.DropDownList UnitType;
 
         /// <summary>
-        /// Button3 control.
+        /// EmpPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Panel EmpPanel;
 
         /// <summary>
-        /// Income control.
+        /// EmpPanelCheck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Income;
+        protected global::System.Web.UI.WebControls.CheckBox EmpPanelCheck;
 
         /// <summary>
-        /// Button55 control.
+        /// UpdateEmpPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button55;
+        protected global::System.Web.UI.UpdatePanel UpdateEmpPanel;
 
         /// <summary>
-        /// Expences control.
+        /// EmpRadioLost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Expences;
+        protected global::System.Web.UI.WebControls.DropDownList EmpRadioLost;
+
+        /// <summary>
+        /// LoanPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LoanPanel;
+
+        /// <summary>
+        /// LoanCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox LoanCheck;
+
+        /// <summary>
+        /// UpdateLoanCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateLoanCheck;
+
+        /// <summary>
+        /// LoanRadioLost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList LoanRadioLost;
+
+        /// <summary>
+        /// WarnPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel WarnPanel;
+
+        /// <summary>
+        /// WarnCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox WarnCheck;
+
+        /// <summary>
+        /// UpdateWarnPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateWarnPanel;
+
+        /// <summary>
+        /// WarnList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList WarnList;
+
+        /// <summary>
+        /// MoneyFilterPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel MoneyFilterPanel;
+
+        /// <summary>
+        /// MoneyFilterCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox MoneyFilterCheck;
+
+        /// <summary>
+        /// UpdateMoneyFilterPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateMoneyFilterPanel;
+
+        /// <summary>
+        /// MoneyList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList MoneyList;
+
+        /// <summary>
+        /// MoneyTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MoneyTB;
 
         /// <summary>
         /// Button5 control.
@@ -114,156 +231,111 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// ProjMan control.
+        /// ExportBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ProjMan;
+        protected global::System.Web.UI.WebControls.LinkButton ExportBtn;
 
         /// <summary>
-        /// ProjectManBtn control.
+        /// RecevedSum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProjectManBtn;
+        protected global::System.Web.UI.WebControls.Label RecevedSum;
 
         /// <summary>
-        /// Salary control.
+        /// PendningAcordingToCompStage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Salary;
+        protected global::System.Web.UI.WebControls.Label PendningAcordingToCompStage;
 
         /// <summary>
-        /// Button14 control.
+        /// AllRemAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button14;
+        protected global::System.Web.UI.WebControls.Label AllRemAmount;
 
         /// <summary>
-        /// EmpMan control.
+        /// EmpCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EmpMan;
+        protected global::System.Web.UI.WebControls.Label EmpCount;
 
         /// <summary>
-        /// Button13 control.
+        /// NonEmpCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button13;
+        protected global::System.Web.UI.WebControls.Label NonEmpCount;
 
         /// <summary>
-        /// General control.
+        /// LoanCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel General;
+        protected global::System.Web.UI.WebControls.Label LoanCount;
 
         /// <summary>
-        /// Button12 control.
+        /// NonLoanCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button12;
+        protected global::System.Web.UI.WebControls.Label NonLoanCount;
 
         /// <summary>
-        /// Reports control.
+        /// TotalCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Reports;
+        protected global::System.Web.UI.WebControls.Label TotalCount;
 
         /// <summary>
-        /// Button11 control.
+        /// OutComeTablePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button11;
+        protected global::System.Web.UI.WebControls.Panel OutComeTablePanel;
 
         /// <summary>
-        /// LawPeople control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel LawPeople;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Button1 control.
+        /// OutComeTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// LawArch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel LawArch;
-
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
-        /// LogOutBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogOutBtn;
-
-        /// <summary>
-        /// MainLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MainLbl;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.GridView OutComeTable;
     }
 }

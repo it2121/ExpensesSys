@@ -75,9 +75,7 @@ namespace ExpensesSys.Pages
             }
             else if (x.Equals("Delete"))
             {
-
                 int ID =Convert.ToInt32(e.CommandArgument.ToString());
-
                 BBAALL.DeleteFile(ID);
                 Response.Redirect("Documents.aspx");
             }

@@ -160,6 +160,7 @@
     <Content Include="Pages\Docks.aspx" />
     <Content Include="Pages\LawHome.aspx" />
     <Content Include="Pages\People.aspx" />
+    <Content Include="Pages\UnitReports.aspx" />
     <Content Include="Pages\Upload.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
     <Content Include="Pages\MatBuy.aspx" />
@@ -341,6 +342,13 @@
     </Compile>
     <Compile Include="Pages\People.aspx.designer.cs">
       <DependentUpon>People.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitReports.aspx.cs">
+      <DependentUpon>UnitReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitReports.aspx.designer.cs">
+      <DependentUpon>UnitReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>

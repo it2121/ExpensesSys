@@ -795,7 +795,21 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }   
         
-        public static DataTable DeleteMatBuy(int RecID)
+        public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money =0,string MoneyType="")
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "UnitReport";
+            cm.Parameters.AddWithValue("@Unittype ", Unittype);
+            cm.Parameters.AddWithValue("@Emp ", Emp);
+            cm.Parameters.AddWithValue("@Loan ", Loan);
+            cm.Parameters.AddWithValue("@Warn ", Warn);
+            cm.Parameters.AddWithValue("@Money ", Money);
+            cm.Parameters.AddWithValue("@MoneyType ", MoneyType);
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }     public static DataTable DeleteMatBuy(int RecID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();

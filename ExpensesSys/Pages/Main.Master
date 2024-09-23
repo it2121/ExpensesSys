@@ -167,9 +167,10 @@ html, body {
                                 </li>
                                   <li>
                                       <asp:Panel runat="server" ID="Home" >     
-                                          <a href="Home.aspx">
+                                          <a href="">
                                         <i class="fa fa-list"style="color:white; background-color:transparent;"></i>
-                                        <span class="menu-text" style="color:white; " ><strong> الرئيسيـــة</strong></span>
+                                        <asp:Button runat="server" ID="Button3" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToHome" Font-Bold="true"  Text="الرئيسيـــة"  />
+
                                         <span class="badge badge-pill badge-primary"></span>
                                           </a>
                                           </asp:Panel>

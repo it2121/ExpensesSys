@@ -79,7 +79,8 @@ namespace ExpensesSys.Pages
 
             }
           //  UpdatePanelDates.Update();
-        }       protected void ChckedChangedProjectName(object sender, EventArgs e)
+        }      
+        protected void ChckedChangedProjectName(object sender, EventArgs e)
         {
             if(PrjectNameCheck.Checked == true) { 
          
@@ -95,7 +96,6 @@ namespace ExpensesSys.Pages
 
 
             }
-          //  UpdatePanelDates.Update();
         }
 
 
@@ -112,14 +112,11 @@ namespace ExpensesSys.Pages
             }
             else
             {
-              //  StartDate.Text = "";
                 StartDate.Enabled = true;
-               // EndDate.Text = "";
                 EndDate.Enabled = true;
 
 
             }
-          //  UpdatePanelDates.Update();
         }
 
 
@@ -351,211 +348,6 @@ namespace ExpensesSys.Pages
             wb.Worksheets.Add(CompTbl);
             sheetCounter++;
 
-
-            // DataTable ProvidersTbl = BBAALL.GetAllProvidersExcelExport();
-            //  ProvidersTbl.TableName = "ORs";
-
-
-            //DataTable Inv = BBAALL.SelectAllInv();
-            // Inv.TableName = "Invoices";
-
-
-
-
-            /*
-
-                        List<string> rowsToBeBorderdList = new List<string>();
-
-                        List<DataTable> ProvidersItemsTblList = new List<DataTable>();
-                        List<DataTable> reqTblList = new List<DataTable>();
-                        // int counter = 0;
-                        for (int i = 0; i < ProvidersTbl.Rows.Count; i++)
-                        {
-
-                            DataTable ProvidersItemsTbl = BBAALL.GetAllProvidersAndThierItemsForExcelExport(ProvidersTbl.Rows[i][0].ToString());
-
-
-                            ProvidersItemsTbl.Columns.Add("TotalRequested", typeof(int));
-                            ProvidersItemsTbl.Columns["TotalRequested"].SetOrdinal(2);
-                            ProvidersItemsTbl.Columns.Add("AllCallOffQty", typeof(int));
-                            ProvidersItemsTbl.Columns["AllCallOffQty"].SetOrdinal(3);
-
-
-
-
-                            ProvidersItemsTbl.Columns.Add("Remaining", typeof(int));
-                            ProvidersItemsTbl.Columns["Remaining"].SetOrdinal(4);
-                            foreach (DataRow dt in ProvidersItemsTbl.Rows)
-                            {
-
-
-                                DataTable AllProvidersForTheItem = BBAALL.GetAllMastersOfAnItem(Convert.ToInt32(dt["ItemID"]));
-                                int sum = 0;
-                                foreach (DataRow row in AllProvidersForTheItem.Rows)
-                                {
-                                    if (row[3] != null) { }
-                                    sum += Convert.ToInt32(row[3]);
-
-
-                                }
-
-                                dt[3] = sum;
-
-                                DataTable AllCNsOfAnItem = BBAALL.GetAllCNsOfAnItem(Convert.ToInt32(dt["ItemID"]));
-                                int TotalRequested = 0;
-                                foreach (DataRow row in AllCNsOfAnItem.Rows)
-                                {
-                                    if (row[2] != null) { }
-                                    TotalRequested += Convert.ToInt32(row[2]);
-
-
-                                }
-
-                                dt[2] = TotalRequested;
-                                dt[4] = sum - TotalRequested;
-
-
-
-
-                            }
-
-
-
-
-
-
-                            ProvidersItemsTbl.Columns.Remove("ID");
-                            ProvidersItemsTbl.Columns.Remove("ItemID");
-                            ProvidersItemsTbl.Columns.Remove("ID1");
-                            ProvidersItemsTbl.Columns.Remove("ID2");
-
-
-
-                            ProvidersItemsTbl.TableName = "Item of " + ProvidersTbl.Rows[i][0].ToString();
-                            DataTable reqTbl = BBAALL.GetRequestsAndThierItemsForExcelExport(ProvidersTbl.Rows[i][0].ToString());
-
-                            reqTbl.Columns["Comments"].ColumnName = "PhoneNumber";
-
-
-
-                            string newString = "0";
-
-
-                            int ExcelRowCounter = 0;
-                            string ExcelRowCounterString = "";
-                            bool first = true;
-                            foreach (DataRow dt in reqTbl.Rows)
-                            {
-                                if (dt["RequestNumber"].ToString().Equals(newString))
-                                {
-                                    dt["RequestNumber"] = "";
-                                    dt["SubmitDate"] = "";
-                                    dt["BOCWorknumber"] = "";
-                                    dt["Requester"] = "";
-                                    dt["Department"] = "";
-                                    dt["IssuingDate"] = "";
-                                    dt["ReceivedBy"] = "";
-                                    dt["PhoneNumber"] = "";
-                                    dt["DeliveryNote"] = "";
-                                    dt["Complete"] = "";
-                                    first = false;
-
-                                }
-                                else
-                                {
-
-                                    if (ExcelRowCounter != 0)
-                                    {
-
-
-
-                                        ExcelRowCounterString = "A" + ExcelRowCounterString + ":" + "L" + (ExcelRowCounter - 1 + 2) + "";
-
-                                        rowsToBeBorderdList.Add(ExcelRowCounterString);
-                                        ExcelRowCounterString = ExcelRowCounter + 2 + "";
-                                    }
-                                    if (ExcelRowCounter == reqTbl.Rows.Count - 1)
-                                    {
-                                        rowsToBeBorderdList.Add(ExcelRowCounterString);
-
-
-                                    }
-
-
-                                    newString = dt["RequestNumber"].ToString();
-                                    first = true;
-
-                                }
-
-
-
-
-                                if (first)
-                                {
-                                    ExcelRowCounterString = (ExcelRowCounter + 2) + "";
-
-                                }
-
-
-
-
-
-                                ExcelRowCounter++;
-
-                            }
-
-
-
-
-                            reqTbl.Columns.Remove("ID");
-                            reqTbl.TableName = "Requests & Items of " + ProvidersTbl.Rows[i][0].ToString();
-                            ProvidersItemsTblList.Add(ProvidersItemsTbl);
-                            reqTblList.Add(reqTbl);
-                            //  wb.Worksheets.Add(ProvidersItemsTblList[i]);
-                            wb.Worksheets.Add(reqTblList[i]);
-                            sheetCounter++;
-
-                            wb.Worksheets.ElementAt(sheetCounter - 1).Cell(reqTblList[i].Rows.Count + 3, 1).InsertTable(ProvidersItemsTblList[i]);
-                            wb.Worksheets.ElementAt(sheetCounter - 1).Tables.ElementAt(1).Theme = XLTableTheme.TableStyleMedium3;
-                            wb.Worksheets.ElementAt(sheetCounter - 1).Tables.ElementAt(0).Theme = XLTableTheme.TableStyleMedium6;
-
-
-                            foreach (string st in rowsToBeBorderdList)
-                            {
-
-                                if (st.Length > 3)
-                                {
-
-                                    wb.Worksheets.ElementAt(sheetCounter - 1).Range(st).Style
-                .Border.SetOutsideBorder(XLBorderStyleValues.Thick);
-
-                                }
-                                else
-                                {
-                                    wb.Worksheets.ElementAt(sheetCounter - 1).Range("A" + st + ":" + "L" + st).Style
-            .Border.SetOutsideBorder(XLBorderStyleValues.Thick);
-
-
-                                }
-
-                            }
-
-                            rowsToBeBorderdList.Clear();
-
-
-                        }
-            */
-
-
-
-            // ProvidersTbl.Columns.Remove("ID");
-
-
-            //  wb.Worksheets.Add(ProvidersTbl);
-            //  wb.Worksheets.Add(Inv);
-
-            // sheetCounter++;
-            //  sheetCounter++;
 
 
 

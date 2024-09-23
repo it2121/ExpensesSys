@@ -112,24 +112,7 @@ namespace ExpensesSys.Pages
         {
 
             DataTable IncomeTable = BBAALL.REP_GetAllIncomeRecords();
-            /*      case 1:
-              case 3:
-              case 5:
-              case 7:
-              case 8:
-              case 10:
-              case 12:
-                  total_days_in_month = 31;
-              break;
-              case 4:
-              case 6:
-              case 9:
-              case 11:
-                  total_days_in_month = 30;
-              break;
-              case 2:
-              default:
-                  total_days_in_month = 28;*/
+        
             m1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المبلغ");
             m2 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "المبلغ");
             m3 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "المبلغ");

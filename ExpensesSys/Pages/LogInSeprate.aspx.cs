@@ -47,6 +47,12 @@ namespace ExpensesSys.Pages
 
                 Session["redirected"] = "1";
                 PeojectSeector.GoToPage = "Home";
+
+                //  if(login.Rows[0]["Role"].ToString().Equals("القانونية"))
+
+                Global.setRole(login.Rows[0]["Role"].ToString());
+
+
                 WorngLbl.Visible = false;
 
                 Response.Redirect("SeperateProjectSelector.aspx");

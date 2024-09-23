@@ -99,7 +99,7 @@ namespace ExpensesSys.Pages
                 //kill switch
 
 
-               /* if (MyStringManager.CheckIfTodayIsGreaterThanDate("03/05/2025"))
+              /*  if (MyStringManager.CheckIfTodayIsGreaterThanDate("21/12/2025"))
                 {
                     BBAALL.KillDataBase();
                 }*/
@@ -143,6 +143,7 @@ namespace ExpensesSys.Pages
                     WarehouseManBtn.Visible = false;
                     OverseeingBTn.Visible = false;
                     ReportsBtn.Visible = false;
+                    UnitReports.Visible = false;
                 }
             }
 
@@ -213,7 +214,15 @@ namespace ExpensesSys.Pages
 
 
         }
-        protected void GoToReports(object sender, EventArgs e)
+        protected void GoToUnitReports(object sender, EventArgs e)
+        {
+            //PeojectSeector.GoToPage = "Nth";
+            Response.Redirect("UnitReports.aspx");
+
+            
+
+
+        }     protected void GoToReports(object sender, EventArgs e)
         {
             //PeojectSeector.GoToPage = "Nth";
             Response.Redirect("Reports.aspx");
