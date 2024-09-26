@@ -123,6 +123,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.CheckBox Emp;
 
         /// <summary>
+        /// NonEmp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox NonEmp;
+
+        /// <summary>
         /// Loan control.
         /// </summary>
         /// <remarks>
@@ -132,13 +141,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.CheckBox Loan;
 
         /// <summary>
-        /// Warn control.
+        /// NonLoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Warn;
+        protected global::System.Web.UI.WebControls.CheckBox NonLoan;
 
         /// <summary>
         /// ProPriceLbl control.
@@ -150,6 +159,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Label ProPriceLbl;
 
         /// <summary>
+        /// Warn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Warn;
+
+        /// <summary>
         /// GINote control.
         /// </summary>
         /// <remarks>
@@ -157,6 +175,24 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox GINote;
+
+        /// <summary>
+        /// FirstWarnDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FirstWarnDate;
+
+        /// <summary>
+        /// SecondWarnDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SecondWarnDate;
 
         /// <summary>
         /// Button1 control.
@@ -276,6 +312,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
+        /// Button22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button22;
+
+        /// <summary>
         /// Payments control.
         /// </summary>
         /// <remarks>
@@ -285,13 +330,13 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Button Payments;
 
         /// <summary>
-        /// LoanPayments control.
+        /// LoanPaymentsBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoanPayments;
+        protected global::System.Web.UI.WebControls.Button LoanPaymentsBtn;
 
         /// <summary>
         /// BuiType control.

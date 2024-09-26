@@ -364,8 +364,9 @@
 
 
 
-        <br />
         <div style="background-color: #f2fff3; width: 100%;" class="text-center">
+                    <br />
+
             <div class="row mt-4">
 
                 <div class="col-md-4  text-center ">
@@ -470,9 +471,10 @@
 
                     </div>
 
+                                <br />
 
         </div>
-
+        <br />
         <asp:Panel ID="OutComeTablePanel" Width="95%" HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em" runat="server" Visible="false">
 
             <div class="row ">

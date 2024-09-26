@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ExpensesSys.Pages
 {
+
     public partial class GeneralInfoEditor : System.Web.UI.Page
     {
 
@@ -39,6 +40,8 @@ namespace ExpensesSys.Pages
                             UniArea.Text = dt["UniArea"].ToString();
                             GINote.Text = dt["GINote"].ToString();
                         Warn.Text = dt["Warn"].ToString();
+                        FirstWarnDate.Text = dt["FirstWarnDate"].ToString();
+                        SecondWarnDate.Text = dt["SecondWarnDate"].ToString();
                             Loan.Checked = true;
                             Emp.Checked = true;
                             if (!dt["Emp"].ToString().Equals("1"))
@@ -46,8 +49,10 @@ namespace ExpensesSys.Pages
 
                             if (!dt["Loan"].ToString().Equals("1"))
                                 Loan.Checked = false;
-                        
 
+
+                        NonEmp.Checked = !Emp.Checked;
+                        NonLoan.Checked = !Loan.Checked;
                     }
 
 
@@ -121,7 +126,7 @@ namespace ExpensesSys.Pages
     Convert.ToInt32(UniArea.Text),
      LoanText,
      RecID,
-     GINote.Text,ProjectID, Warn.Text
+     GINote.Text,ProjectID, Warn.Text,FirstWarnDate.Text,SecondWarnDate.Text
      );
 
 

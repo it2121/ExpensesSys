@@ -171,10 +171,7 @@ namespace ExpensesSys.Pages
         }
         protected void GoToUnitInfo(object sender, EventArgs e)
         {
-            // PeojectSeector.GoToPage = "OriginalEmp";
-            // PeojectSeector.GoToPage = "OriginalEmpSelector";
-
-
+           
             UnitSearch.ProjectID = Global.getProjectID();
             Response.Redirect("UnitSearch.aspx");
 
@@ -184,10 +181,7 @@ namespace ExpensesSys.Pages
 
         }      protected void GoToOriginalEmp(object sender, EventArgs e)
         {
-           // PeojectSeector.GoToPage = "OriginalEmp";
-           // PeojectSeector.GoToPage = "OriginalEmpSelector";
-
-
+         
             OriginalEmpSelector.ProjectID = Global.getProjectID();
             Response.Redirect("OriginalEmpSelector.aspx");
 

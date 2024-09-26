@@ -57,8 +57,25 @@
        
         </div>
 
+        <br />
+        
+        <div class="row  " style="padding-left: 1em; padding-right: 1em;">
 
 
+
+            
+
+            <div class="col   text-center ">
+                <asp:Button runat="server" ID="GoToCases1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToCases" role="button" Text="دعاوى المشروع"></asp:Button>
+            </div> 
+            
+            <div class="col   text-center ">
+
+                <asp:Button runat="server" ID="GoToContracts1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToContracts" role="button" Text="عقود المشروع"></asp:Button>
+            </div>
+            
+       
+        </div>
 
  
 

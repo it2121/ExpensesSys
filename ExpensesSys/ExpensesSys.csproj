@@ -140,9 +140,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Archiving.aspx" />
     <Content Include="Pages\BBAALL.aspx" />
+    <Content Include="Pages\Cases.aspx" />
+    <Content Include="Pages\CasesEditor.aspx" />
     <Content Include="Pages\Comp.aspx" />
     <Content Include="Pages\CompEditor.aspx" />
+    <Content Include="Pages\ContractsEditor.aspx" />
     <Content Include="Pages\DDAALL.aspx" />
     <Content Include="Pages\Documents.aspx" />
     <Content Include="Pages\EmpEditor.aspx" />
@@ -158,7 +162,11 @@
     <Content Include="Pages\ItemsEditor.aspx" />
     <Content Include="Pages\ItemsMan.aspx" />
     <Content Include="Pages\Docks.aspx" />
+    <Content Include="Pages\LAWContracts.aspx" />
     <Content Include="Pages\LawHome.aspx" />
+    <Content Include="Pages\LoanEditor.aspx" />
+    <Content Include="Pages\LoanPayments.aspx" />
+    <Content Include="Pages\LoanPaymentsEditor.aspx" />
     <Content Include="Pages\People.aspx" />
     <Content Include="Pages\UnitReports.aspx" />
     <Content Include="Pages\Upload.aspx" />
@@ -201,12 +209,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Archiving.aspx.cs">
+      <DependentUpon>Archiving.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Archiving.aspx.designer.cs">
+      <DependentUpon>Archiving.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BBAALL.aspx.cs">
       <DependentUpon>BBAALL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BBAALL.aspx.designer.cs">
       <DependentUpon>BBAALL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cases.aspx.cs">
+      <DependentUpon>Cases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Cases.aspx.designer.cs">
+      <DependentUpon>Cases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CasesEditor.aspx.cs">
+      <DependentUpon>CasesEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CasesEditor.aspx.designer.cs">
+      <DependentUpon>CasesEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Comp.aspx.cs">
       <DependentUpon>Comp.aspx</DependentUpon>
@@ -221,6 +250,13 @@
     </Compile>
     <Compile Include="Pages\CompEditor.aspx.designer.cs">
       <DependentUpon>CompEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ContractsEditor.aspx.cs">
+      <DependentUpon>ContractsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ContractsEditor.aspx.designer.cs">
+      <DependentUpon>ContractsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CurrencyInfo.cs" />
     <Compile Include="Pages\DDAALL.aspx.cs">
@@ -329,12 +365,40 @@
     <Compile Include="Pages\Docks.aspx.designer.cs">
       <DependentUpon>Docks.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LAWContracts.aspx.cs">
+      <DependentUpon>LAWContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LAWContracts.aspx.designer.cs">
+      <DependentUpon>LAWContracts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LawHome.aspx.cs">
       <DependentUpon>LawHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\LawHome.aspx.designer.cs">
       <DependentUpon>LawHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoanEditor.aspx.cs">
+      <DependentUpon>LoanEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LoanEditor.aspx.designer.cs">
+      <DependentUpon>LoanEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoanPayments.aspx.cs">
+      <DependentUpon>LoanPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LoanPayments.aspx.designer.cs">
+      <DependentUpon>LoanPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoanPaymentsEditor.aspx.cs">
+      <DependentUpon>LoanPaymentsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LoanPaymentsEditor.aspx.designer.cs">
+      <DependentUpon>LoanPaymentsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\People.aspx.cs">
       <DependentUpon>People.aspx</DependentUpon>

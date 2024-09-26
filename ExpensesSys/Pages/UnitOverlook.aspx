@@ -237,7 +237,7 @@
                 
                       
             </div>
-                     <div class="col-3">
+                     <div class="col-1">
                  
                            <div class="form__group field">
 
@@ -253,7 +253,25 @@
                 
                       
             </div>
-                     <div class="col-3">
+
+                  <div class="col-1">
+                 
+                           <div class="form__group field">
+
+
+
+     <asp:CheckBox runat="server" ID="NonEmp"  class="form__field" type="input" ReadOnly="true" placeholder="مستفيد" />
+    <label for="name" class="form__label">مستفيد</label>
+</div>
+
+                     
+
+
+                
+                      
+            </div>
+
+                     <div class="col-1">
                  
                            <div class="form__group field">
      <asp:CheckBox runat="server" ID="Loan"  class="form__field" type="input" ReadOnly="true" placeholder="مقترض" />
@@ -262,7 +280,36 @@
 
                                    
                       
-            </div>  <div class="col-3">
+            </div> 
+                 
+                  <div class="col-2">
+                 
+                           <div class="form__group field">
+     <asp:CheckBox runat="server" ID="NonLoan"  class="form__field" type="input" ReadOnly="true" placeholder="غير مقترض" />
+    <label for="name" class="form__label">غير مقترض</label>
+</div>
+
+                                   
+                      
+            </div> 
+                 
+                  <div class="col-2">
+                 
+            </div> 
+
+                   <div class="col-3">
+                                                          <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
+
+                                                      </div> 
+                                      <div class="col-3">
+                                                      </div> 
+                                      <div class="col-3">
+                                                      </div> 
+                                      <div class="col-3">
+                                                      </div> 
+
+
+                 <div class="col-3 mt-6 ">
                  
                            <div class="form__group field">
     <asp:TextBox runat="server" ID="Warn"  class="form__field" type="input" ReadOnly="true" placeholder="حالة الانذار" />
@@ -277,22 +324,13 @@
                       
             </div> 
                      
-                                      <div class="col-3">
-                                                          <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
-
-                                                      </div> 
-                                      <div class="col-3">
-                                                      </div> 
-                                      <div class="col-3">
-                                                      </div> 
-                                      <div class="col-3">
-                                                      </div> 
+                                    
 
                  <div class="col-12">
                      <br />
                   </div> 
                       
-            </div>  <div class="col-12 mt-6">
+            </div>  <div class="col-12 mt-3">
                  
                            <div class="form__group field">
     <asp:TextBox runat="server" ID="GINote"  class="form__field" type="input" ReadOnly="true" placeholder="الملاحظات" />
@@ -307,6 +345,48 @@
                       
             </div>   
        
+
+
+                   <div class="row m-2">
+
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="FirstWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار الاولي" />
+
+    <label for="name" class="form__label">تاريخ الانذار الاولي</label>
+</div>
+           
+
+
+
+            </div>
+
+
+                
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+</div>
+           
+            </div>
+
+   
+
+
+
+            </div>
+
+
+
+
         <br />
                   <div class="row m-2">
 
@@ -497,17 +577,20 @@
                   <div class="row m-2">
 
 
- <div class="col-6 mr-auto ml-auto 
-                        text-center">
+    
                  
-                           <div class="form__group field">
+            <div class="col-6 text-center ">
                 <asp:Button runat="server" ID="Button2" Style="width: 20em" OnClick="GoToFinance" class="button is-primary is-large text-center " Text="تعديل المعلومات المالية"></asp:Button>
+
+</div>         
+     <div class="col-6 text-center ">
+                <asp:Button runat="server" ID="Button22" Style="width: 20em" OnClick="GoToLoan" class="button is-primary is-large text-center " Text="تعديل معلومات المبادرة"></asp:Button>
 
 </div>
 
 
                       
-            </div> 
+            
 
 </div>
         <hr />
@@ -519,7 +602,7 @@
             </div>
             <div class="col-md-6 text-center ">
 
-                <asp:Button runat="server" ID="LoanPayments" Style="width: 20em" OnClick="GoToLoanPayments" class="button is-warning is-large text-center " Text="دفعات القرض او المبادرة"></asp:Button>
+                <asp:Button runat="server" ID="LoanPaymentsBtn" Style="width: 20em" OnClick="GoToLoanPayments" class="button is-warning is-large text-center " Text="دفعات القرض او المبادرة"></asp:Button>
             </div>
 
         </div>
@@ -573,9 +656,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="ComStage"  class="form__field" ReadOnly="true" type="input" placeholder="مرحلة الانجاز - غير معتمد" />
+     <asp:TextBox runat="server" ID="ComStage"  class="form__field" Visible="false" ReadOnly="true" type="input" placeholder="مرحلة الانجاز - غير معتمد" />
 
-    <label for="name" class="form__label">مرحلة الانجاز - غير معتمد</label>
+    <label style="display:none;" for="name" class="form__label">مرحلة الانجاز - غير معتمد</label>
 </div>
            
             </div>
@@ -587,7 +670,7 @@
                          <div class="form__group field">
      <asp:TextBox runat="server" ID="CompStageVerfied"  class="form__field" ReadOnly="true" type="input" placeholder="مرحلة الانجاز - معتمد" />
 
-    <label for="name" class="form__label">مرحلة الانجاز - معتمد</label>
+    <label for="name" class="form__label">مرحلة الانجاز</label>
 </div>
            
             </div>

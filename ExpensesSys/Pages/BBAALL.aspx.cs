@@ -18,7 +18,20 @@ namespace ExpensesSys.Pages
 
 
 
-        public static DataTable DeleteFile(int  ID)
+        public static DataTable DeleteContractLAW(int  ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "DeleteContractLAW";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable DeleteFile(int  ID)
         {
 
 
@@ -31,7 +44,125 @@ namespace ExpensesSys.Pages
 
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
-        }  public static DataTable GetFileByDockID(int  ID)
+        } 
+        
+        public static DataTable GatLoanPaymentByID(int ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GatLoanPaymentByID";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } 
+        
+        
+        public static DataTable GatAllLoanPaymentOfRecID(string RecID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GatAllLoanPaymentOfRecID";
+
+            cm.Parameters.AddWithValue("@RecID", RecID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        public static DataTable GetLoan(string RecID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetLoan";
+
+            cm.Parameters.AddWithValue("@RecID", RecID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        
+        public static DataTable GetAllContractsLAW()
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetAllContractsLAW";
+
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        } public static DataTable GetAllCases()
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetAllCases";
+
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        public static DataTable DeleteCaseLAW(int ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "DeleteCaseLAW";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+            public static DataTable GetCaseByIDLAW(int ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetCaseByIDLAW";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        
+        
+        public static DataTable GetCasesOfAProjectLAW(int ProjectID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetCasesOfAProjectLAW";
+
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        
+        
+        public static DataTable GetFileByDockID(int  ID)
         {
 
 
@@ -45,6 +176,46 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
+        
+        
+        
+        public static DataTable GetContractOfAProjectLAW(int ProjectID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetContractOfAProjectLAW";
+
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+           
+        
+        public static DataTable GetContractByIDLAW(int  ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            cm.CommandText = "GetContractByIDLAW";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+
+
+
+
+
         public static DataTable GetAllDocksOrARecID(string  RecID)
         {
 
@@ -980,7 +1151,29 @@ namespace ExpensesSys.Pages
         }
 
 
-        public static bool UpdateProject(string ProjectName,int ID)
+        public static bool UpdateLoan(string DateOfInv,
+            string Type, int TotalLoanAmount, string RecID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateLoan";
+
+
+            cm.Parameters.AddWithValue("@DateOfInv", DateOfInv);
+            cm.Parameters.AddWithValue("@Type", Type);
+            cm.Parameters.AddWithValue("@TotalLoanAmount", TotalLoanAmount);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }    public static bool UpdateProject(string ProjectName,int ID)
 
         {
             SqlCommand cm;
@@ -1130,7 +1323,97 @@ string ContractDate
 
 
 
-        }     public static bool InsertIntoUnitToWorkContract( int WorkContractID, string UnitRecID)
+        }  
+        
+        
+        public static bool UpdateCasesLAW(
+         string CaseNumber, string CaseDate, string CaseResultes, string CaseResultesDate, int ProjectID,int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateCasesLAW";
+
+            cm.Parameters.AddWithValue("@CaseNumber", CaseNumber);
+            cm.Parameters.AddWithValue("@CaseDate", CaseDate);
+            cm.Parameters.AddWithValue("@CaseResultes", CaseResultes);
+            cm.Parameters.AddWithValue("@CaseResultesDate", CaseResultesDate);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@ID", ID);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        }    public static bool InsertIntoCasesLAW(
+         string CaseNumber, string CaseDate, string CaseResultes, string CaseResultesDate, int ProjectID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoCasesLAW";
+
+            cm.Parameters.AddWithValue("@CaseNumber", CaseNumber);
+            cm.Parameters.AddWithValue("@CaseDate", CaseDate);
+            cm.Parameters.AddWithValue("@CaseResultes", CaseResultes);
+            cm.Parameters.AddWithValue("@CaseResultesDate", CaseResultesDate);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        } 
+        public static bool InsertIntoContactsLAW( 
+            string ContractDate, string ContractType,string ContractingWithParty, string Notes,
+            string ContractNumber, int ProjectID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoContactsLAW";
+
+            cm.Parameters.AddWithValue("@ContractDate", ContractDate);
+            cm.Parameters.AddWithValue("@ContractType", ContractType);
+            cm.Parameters.AddWithValue("@ContractingWithParty", ContractingWithParty);
+            cm.Parameters.AddWithValue("@Notes", Notes);
+            cm.Parameters.AddWithValue("@ContractNumber", ContractNumber);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        } 
+        
+        public static bool UpdateContactsLAW( 
+            string ContractDate, string ContractType,string ContractingWithParty, string Notes,
+            string ContractNumber, int ProjectID,int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommandLAW();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateContactsLAW";
+
+            cm.Parameters.AddWithValue("@ContractDate", ContractDate);
+            cm.Parameters.AddWithValue("@ContractType", ContractType);
+            cm.Parameters.AddWithValue("@ContractingWithParty", ContractingWithParty);
+            cm.Parameters.AddWithValue("@Notes", Notes);
+            cm.Parameters.AddWithValue("@ContractNumber", ContractNumber);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+            cm.Parameters.AddWithValue("@ID", ID);
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+        } 
+        
+          public static bool InsertIntoUnitToWorkContract( int WorkContractID, string UnitRecID)
 
         {
             SqlCommand cm;
@@ -1141,6 +1424,55 @@ string ContractDate
 
             cm.Parameters.AddWithValue("@WorkContractID", WorkContractID);
             cm.Parameters.AddWithValue("@UnitRecID", UnitRecID);
+
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        } 
+        
+        
+        
+        
+        public static bool InsertIntoLoanPayments( int PaymentAmount, string RcvdDate, string RecID , int PaymentNumber)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "InsertIntoLoanPayments";
+
+
+            cm.Parameters.AddWithValue("@PaymentAmount", PaymentAmount);
+            cm.Parameters.AddWithValue("@RcvdDate", RcvdDate);
+            cm.Parameters.AddWithValue("@RecID", RecID);
+            cm.Parameters.AddWithValue("@PaymentNumber", PaymentNumber);
+
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }    public static bool UpdateLoanPayments( int PaymentAmount, string RcvdDate, int ID , int PaymentNumber)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "UpdateLoanPayments";
+
+
+            cm.Parameters.AddWithValue("@PaymentAmount", PaymentAmount);
+            cm.Parameters.AddWithValue("@RcvdDate", RcvdDate);
+            cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@PaymentNumber", PaymentNumber);
 
       
 
@@ -1460,7 +1792,9 @@ string Loan ,
 string RecID ,
 string GINote ,
 int ProjectID,
-string Warn
+string Warn,
+string FirstWarnDate,
+string SecondWarnDate
  )
 
         {
@@ -1484,6 +1818,8 @@ string Warn
             cm.Parameters.AddWithValue("@GINote", GINote);
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             cm.Parameters.AddWithValue("@Warn", Warn);
+            cm.Parameters.AddWithValue("@FirstWarnDate", FirstWarnDate);
+            cm.Parameters.AddWithValue("@SecondWarnDate", SecondWarnDate);
       
 
 
@@ -2027,6 +2363,24 @@ string Warn
             cm = DDAALL.CreateCommand();
             if (cm == null) { return false; }
             cm.CommandText = "DeleteNth";
+
+
+            cm.Parameters.AddWithValue("@ID", ID);
+      
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+
+
+        }   public static bool DeleteLoanPayment(int ID)
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DeleteLoanPayment";
 
 
             cm.Parameters.AddWithValue("@ID", ID);

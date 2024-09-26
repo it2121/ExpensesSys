@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class GeneralInfoEditor
+    public partial class LoanEditor
     {
 
         /// <summary>
@@ -33,148 +33,85 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// FullName control.
+        /// RecIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FullName;
+        protected global::System.Web.UI.WebControls.TextBox RecIDTB;
 
         /// <summary>
-        /// PhoneNumber control.
+        /// DateOfInv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
+        protected global::System.Web.UI.WebControls.TextBox DateOfInv;
 
         /// <summary>
-        /// Address control.
+        /// Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address;
+        protected global::System.Web.UI.WebControls.TextBox Type;
 
         /// <summary>
-        /// UniNumAndCat control.
+        /// TotalLoanAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UniNumAndCat;
+        protected global::System.Web.UI.WebControls.TextBox TotalLoanAmount;
 
         /// <summary>
-        /// ProNum control.
+        /// RecAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProNum;
+        protected global::System.Web.UI.WebControls.TextBox RecAmount;
 
         /// <summary>
-        /// BuildArea control.
+        /// RemAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuildArea;
+        protected global::System.Web.UI.WebControls.TextBox RemAmount;
 
         /// <summary>
-        /// UniArea control.
+        /// TotalLoanAmountLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UniArea;
+        protected global::System.Web.UI.WebControls.Label TotalLoanAmountLbl;
 
         /// <summary>
-        /// ProPrice control.
+        /// RecLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProPrice;
+        protected global::System.Web.UI.WebControls.Label RecLbl;
 
         /// <summary>
-        /// Emp control.
+        /// RemLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Emp;
-
-        /// <summary>
-        /// NonEmp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox NonEmp;
-
-        /// <summary>
-        /// Loan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Loan;
-
-        /// <summary>
-        /// NonLoan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox NonLoan;
-
-        /// <summary>
-        /// GINote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GINote;
-
-        /// <summary>
-        /// Warn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Warn;
-
-        /// <summary>
-        /// FirstWarnDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstWarnDate;
-
-        /// <summary>
-        /// SecondWarnDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SecondWarnDate;
+        protected global::System.Web.UI.WebControls.Label RemLbl;
 
         /// <summary>
         /// CreateBtn control.

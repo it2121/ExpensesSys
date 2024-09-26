@@ -69,22 +69,23 @@ namespace ExpensesSys.Pages
             else if (x.Equals("Loan"))
             {
 
-               /* string ID = e.CommandArgument.ToString();
-                TechInfoEditor.RecID = ID;
-                TechInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("TechInfoEditor.aspx");
-
-*/
+                string RecID = e.CommandArgument.ToString();
+                LoanEditor.RecID = RecID;
+                LoanEditor.ProjectID = ProjectID;
+                Response.Redirect("LoanEditor.aspx");
 
 
-            }else if (x.Equals("LoanPayments"))
+
+
+            }
+            else if (x.Equals("LoanPayments"))
             {
 
-           /*     string ID = e.CommandArgument.ToString();
-                TechInfoEditor.RecID = ID;
-                TechInfoEditor.ProjectID = ProjectID;
-                Response.Redirect("TechInfoEditor.aspx");*/
 
+                string ID = e.CommandArgument.ToString();
+                LoanPayments.RecID = ID;
+                LoanPayments.ProjectID = ProjectID;
+                Response.Redirect("LoanPayments.aspx");
 
 
 

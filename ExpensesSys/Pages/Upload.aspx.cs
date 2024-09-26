@@ -11,6 +11,7 @@ namespace ExpensesSys.Pages.Law
     public partial class Upload : System.Web.UI.Page
     {
         public static string RecID = "";
+        public static string ReturnToPage = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,6 +20,8 @@ namespace ExpensesSys.Pages.Law
 
                 UpLbl.Text = " -  تحميد ملفات لرقم الوحدة   - " + RecID;
 
+                if (RecID.Equals("0"))
+                    UpLbl.Text = "تحميل الملفات";
 
 
             }
@@ -99,7 +102,7 @@ namespace ExpensesSys.Pages.Law
 
             Documents.RecID = RecID;
 
-            Response.Redirect("Documents.aspx");
+            Response.Redirect(ReturnToPage+".aspx");
 
 
 

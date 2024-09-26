@@ -53,13 +53,20 @@ namespace ExpensesSys.Pages
                         UniArea.Text = dt["UniArea"].ToString();
                         GINote.Text = dt["GINote"].ToString();
                         Warn.Text = dt["Warn"].ToString();
+                        FirstWarnDate.Text = dt["FirstWarnDate"].ToString();
+                        SecondWarnDate.Text = dt["SecondWarnDate"].ToString();
                         Loan.Checked = true;
                         Emp.Checked = true;
                         if (!dt["Emp"].ToString().Equals("1"))
                             Emp.Checked = false;
 
+
                         if (!dt["Loan"].ToString().Equals("1"))
                             Loan.Checked = false;
+
+
+                        NonEmp.Checked = !Emp.Checked;
+                        NonLoan.Checked = !Loan.Checked;
 
 
                     }
@@ -93,8 +100,17 @@ namespace ExpensesSys.Pages
 
                     int precentage = Convert.ToInt32(BBAALL.getComPre(RecID).Rows[0][0].ToString());
                     int ShouldBePaid = Convert.ToInt32(BBAALL.GetWhatShouldBePaidForRecID(RecID).Rows[0]["Cost"].ToString());
-                    
-                    Paid.Text = BBAALL.GetPaidAmount(RecID).Rows[0][0].ToString();
+
+                    int PaidFromLoan = 0;
+                    foreach(DataRow dr in BBAALL.GatAllLoanPaymentOfRecID(RecID).Rows)
+                    {
+                        PaidFromLoan += Convert.ToInt32(dr["PaymentAmount"].ToString());
+
+
+                    }
+
+
+                    Paid.Text =(Convert.ToInt32( BBAALL.GetPaidAmount(RecID).Rows[0][0].ToString()) + PaidFromLoan ) + "";
 
                     if (Paid.Text.Length == 0) {
                         Paid.Text = "0";
@@ -210,7 +226,17 @@ namespace ExpensesSys.Pages
             Response.Redirect("TechInfoEditor.aspx");
 
             
-        }   protected void GoToFinance(object sender, EventArgs e)
+        }   protected void GoToLoan(object sender, EventArgs e)
+        {
+
+
+
+            LoanEditor.RecID = RecID;
+            LoanEditor.RecdirectTo = "UnitOverlook.aspx";
+            Response.Redirect("LoanEditor.aspx");
+
+            
+        } protected void GoToFinance(object sender, EventArgs e)
         {
 
 
@@ -236,18 +262,9 @@ namespace ExpensesSys.Pages
         
         protected void GoToLoanPayments(object sender, EventArgs e)
         {
-
-
-
-           
-
-                Response.Redirect("UnitIncome.aspx");
-
-
-
-            
-
-
+            LoanPayments.RecID = RecID;
+            LoanPayments.RecdirectTo = "UnitOverlook.aspx";
+            Response.Redirect("LoanPayments.aspx");
 
         }
     }

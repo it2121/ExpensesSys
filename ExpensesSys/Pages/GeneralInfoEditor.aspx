@@ -227,10 +227,13 @@
                 
                       
             </div>
-                     <div class="col-4">
+                   <div class="col-1">
                  
                            <div class="form__group field">
-     <asp:CheckBox runat="server" ID="Emp"  class="form__field" type="input" placeholder="موظف" />
+
+
+
+     <asp:CheckBox runat="server" ID="Emp"  class="form__field" type="input" ReadOnly="true" placeholder="موظف" />
     <label for="name" class="form__label">موظف</label>
 </div>
 
@@ -240,17 +243,43 @@
                 
                       
             </div>
-                     <div class="col-4">
+
+                  <div class="col-1">
                  
                            <div class="form__group field">
-     <asp:CheckBox runat="server" ID="Loan"  class="form__field" type="input" placeholder="مقترض" />
-    <label for="name" class="form__label">مقترض</label>
+
+
+
+     <asp:CheckBox runat="server" ID="NonEmp"  class="form__field" type="input" ReadOnly="true" placeholder="مستفيد" />
+    <label for="name" class="form__label">مستفيد</label>
 </div>
 
                      
 
 
                 
+                      
+            </div>
+
+                     <div class="col-1">
+                 
+                           <div class="form__group field">
+     <asp:CheckBox runat="server" ID="Loan"  class="form__field" type="input" ReadOnly="true" placeholder="مقترض" />
+    <label for="name" class="form__label">مقترض</label>
+</div>
+
+                                   
+                      
+            </div> 
+                 
+                  <div class="col-2">
+                 
+                           <div class="form__group field">
+     <asp:CheckBox runat="server" ID="NonLoan"  class="form__field" type="input" ReadOnly="true" placeholder="غير مقترض" />
+    <label for="name" class="form__label">غير مقترض</label>
+</div>
+
+                                   
                       
             </div>  <div class="col-12">
                  
@@ -291,7 +320,44 @@
 
 
             </div>
+        
 
+               <div class="row m-2">
+
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="FirstWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار الاولي" />
+
+    <label for="name" class="form__label">تاريخ الانذار الاولي</label>
+</div>
+           
+
+
+
+            </div>
+
+
+                
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+</div>
+           
+            </div>
+
+   
+
+
+
+            </div>
 
 
 

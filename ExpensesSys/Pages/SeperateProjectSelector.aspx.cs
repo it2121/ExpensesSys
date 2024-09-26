@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpensesSys.Pages.Law;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -195,6 +196,12 @@ namespace ExpensesSys.Pages
             else if (GoToPage.Equals("Home"))
             {
                 Home.ProjectID = Convert.ToInt32(id.Text);
+
+                Global.setProjectID(Convert.ToInt32(id.Text));
+
+            }  else if (GoToPage.Equals("LawHome"))
+            {
+                LawHome.ProjectID = Convert.ToInt32(id.Text);
 
                 Global.setProjectID(Convert.ToInt32(id.Text));
 

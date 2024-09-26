@@ -1,4 +1,5 @@
-﻿using ExpensesSys.Pages.Law;
+﻿using ExpensesSys.Pages;
+using ExpensesSys.Pages.Law;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,27 +9,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ExpensesSys.Pages
+namespace ExpensesSys
 {
-    public partial class Documents : System.Web.UI.Page
+    public partial class Archiving : System.Web.UI.Page
     {
         public static string RecID = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
-            DataTable dt = BBAALL.GetAllDocksOrARecID(RecID);
-            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0]["Name"].ToString();
-            DataGridUsers.DataSource = dt;
-            DataGridUsers.DataBind();
+            RecID = "0";
+            if (!IsPostBack)
+            {
+                DataTable dt = BBAALL.GetAllDocksOrARecID(RecID);
+                PageProjectNameLbl.Text = "الارشفة";
+                DataGridUsers.DataSource = dt;
+                DataGridUsers.DataBind();
             }
         }
-
-
         protected void GoToNewItem(object sender, EventArgs e)
         {
             Upload.RecID = RecID;
-            Upload.ReturnToPage = "Documents";
+            Upload.ReturnToPage = "Archiving";
 
             Response.Redirect("Upload.aspx");
 
@@ -57,7 +58,7 @@ namespace ExpensesSys.Pages
                 }
 
                 string sMineType = MimeMapping.GetMimeMapping(filename);
-              
+
 
 
                 HttpContext.Current.Response.Clear();
@@ -77,7 +78,7 @@ namespace ExpensesSys.Pages
             }
             else if (x.Equals("Delete"))
             {
-                int ID =Convert.ToInt32(e.CommandArgument.ToString());
+                int ID = Convert.ToInt32(e.CommandArgument.ToString());
                 BBAALL.DeleteFile(ID);
                 Response.Redirect("Documents.aspx");
             }

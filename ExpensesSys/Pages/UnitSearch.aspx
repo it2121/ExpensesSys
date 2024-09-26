@@ -187,11 +187,11 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>
                 
-                   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المدفوع">
+             <%--      <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="المدفوع">
                     <ItemTemplate>
                         <asp:Label  ID="lbl3_OR" runat="server" Text='<%#Eval("PaidAmount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
 
 
                 <%--   <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="نسبة الانجاز">
