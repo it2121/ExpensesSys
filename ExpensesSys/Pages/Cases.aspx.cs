@@ -19,7 +19,7 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
-                ProjectID = Global.ProjecID;
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable dt = BBAALL.GetCasesOfAProjectLAW(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
@@ -94,8 +94,14 @@ namespace ExpensesSys.Pages
 
             }
 */
-            Response.Redirect("LawHome.aspx");
+           if(ProjectID ==0)
+            {
+                Response.Redirect("SeperateProjectSelector.aspx");
 
+            }
+            else { 
+            Response.Redirect("LawHome.aspx");
+            }
 
         }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)

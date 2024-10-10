@@ -23,7 +23,7 @@
 
 
 
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة دفعة جديدة"
+     <asp:LinkButton  runat="server" ID ="NewPayemnt" style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة دفعة جديدة"
         
          
          data-target="modal-js-example"
@@ -143,12 +143,6 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                 </asp:TemplateField>
 
 
-
-           <%--      <asp:TemplateField  Visible="true" HeaderText="Provider">
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_ProviderID" runat="server" Text='<%#Eval("ProviderID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>--%>
            
                       <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
@@ -156,6 +150,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                                       Font-Bold="true"                          class="js-modal-trigger button is-small is-bold is-info is-outlined"
                                     style="Width:50%; Height:25px"  
                             Font-Size="Large"
+                            Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
                             ID="btn_Edit" runat="server" Text="تعديل" CommandName="Edit" />
                     </ItemTemplate>
             

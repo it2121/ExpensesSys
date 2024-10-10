@@ -156,13 +156,29 @@
 
 
                                      <div class="form__group field">
+     <asp:TextBox runat="server" ID="ContractSub"  class="form__field" type="input" placeholder="موضوع العقد" />
+
+    <label for="name" class="form__label">موضوع العقد</label>
+</div>
+</div>
+</div>
+   
+               <div class="row m-6" >
+           
+               
+
+      
+           
+                   <div class="col-12 text-center ">
+
+
+                                     <div class="form__group field">
      <asp:TextBox runat="server" ID="ContractType"  class="form__field" type="input" placeholder="نوع العقد" />
 
     <label for="name" class="form__label">نوع العقد</label>
 </div>
 </div>
 </div>
-   
 
 
 

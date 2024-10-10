@@ -30,6 +30,9 @@ namespace ExpensesSys.Pages.Law
         protected void GoToArchiving(object sender, EventArgs e)
         {
             Response.Redirect("Archiving.aspx");
+        }  protected void GoToLawReports(object sender, EventArgs e)
+        {
+            Response.Redirect("LawWarnReports.aspx");
         }
     }
 }

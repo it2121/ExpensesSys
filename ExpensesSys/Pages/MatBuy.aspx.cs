@@ -29,6 +29,16 @@ namespace ExpensesSys.Pages
 
             }
         }
+        protected void Return(object sender, EventArgs e)
+        {
+
+            Expences.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+            Response.Redirect("Expences.aspx");
+
+
+
+        }
+
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             try

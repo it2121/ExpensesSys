@@ -23,7 +23,7 @@ namespace ExpensesSys.Pages
             {
                 if (!RecID.Equals(""))
                 {
-                    ProjectID = Global.getProjectID();
+                    ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
                     DataTable OrEmpTbl = BBAALL.GetTechInfo(RecID);
                     DataTable Weights = BBAALL.GetWeightsForUnit(ProjectID, OrEmpTbl.Rows[0]["BuiType"].ToString()
                         );
@@ -70,7 +70,7 @@ namespace ExpensesSys.Pages
             }
             else
             {
-                Response.Redirect("PeojectUnit.aspx");
+                Response.Redirect("UnitTechInfo.aspx");
             }
 
 
@@ -148,17 +148,11 @@ namespace ExpensesSys.Pages
                 }
                 else
                 {
-                    Response.Redirect("PeojectUnit.aspx");
+                    Response.Redirect("UnitTechInfo.aspx");
                 }
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
 
 
-                /*
-
-                                BBAALL.InsertIntoOrigenalEmp(EmpName.Text,
-                                    EmpJob.Text, Depart.Text, Address.Text, Note.Text, InvolvmentType, ProjectID, HiringDate.Text, Termdate);
-
-                                Response.Redirect("OriginalEmp.aspx");*/
 
 
             }

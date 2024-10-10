@@ -46,7 +46,26 @@ namespace ExpensesSys.Pages
 
               }*/
 
+        protected void Return(object sender, EventArgs e)
+        {
 
+            if (Session["Role"].Equals("ادارة"))
+            {
+
+                Response.Redirect("MainProjMan.aspx");
+
+            }
+            else
+            {
+                Response.Redirect("MainFinance.aspx");
+            }
+
+
+
+
+
+
+        }
         protected void Search(object sender, EventArgs e)
         {
 

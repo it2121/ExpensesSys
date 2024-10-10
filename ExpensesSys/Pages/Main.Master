@@ -38,295 +38,149 @@
        
       <style>
           @font-face {
+              font-family: CustomFont;
+              src: url('../Libs/Beiruti-VariableFont_wght.ttf');
+          }
 
-  font-family: CustomFont;
-src: url('../Libs/Beiruti-VariableFont_wght.ttf');
-}
-   * :not(i){
-font-family: CustomFont, sans-serif !important  ;
-  font-optical-sizing: auto !important;
-  font-weight: 700 !important;
-  font-style: normal !important;
-}
+          * :not(i) {
+              font-family: CustomFont, sans-serif !important;
+              font-optical-sizing: auto !important;
+              font-weight: 700 !important;
+              font-style: normal !important;
+          }
+
           body {
               background-image: url("../Images/bgbg.jpg");
               background-repeat: repeat;
               background-size: 300px;
           }
-         .button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #3399ff;
-  
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),White 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 19px;
-  font-weight:bold;
-  border: 0;
 
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+          .button-89 {
+              --b: 3px; /* border thickness */
+              --s: .45em; /* size of the corner */
+              --color: #3399ff;
+              padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+              color: var(--color);
+              --_p: var(--s);
+              background: conic-gradient(from 90deg at var(--b) var(--b),White 90deg,var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+              transition: .3s linear, color 0s, background-color 0s;
+              outline: var(--b) solid #0000;
+              outline-offset: .6em;
+              font-size: 19px;
+              font-weight: bold;
+              border: 0;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation;
+          }
 
-.button-89:hover,
-.button-89:focus-visible{
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
-}
+              .button-89:hover,
+              .button-89:focus-visible {
+                  --_p: 0px;
+                  outline-color: var(--color);
+                  outline-offset: .05em;
+              }
 
-.button-89:active {
-  background: var(--color);
-  color: #fff;
-}
-html, body {
-    margin: 0;
-    height: 100%;
-}   
+              .button-89:active {
+                  background: var(--color);
+                  color: #fff;
+              }
 
-.btn {
- background-color: #44a2ff;
- padding: 14px 40px;
- color: #fff;
- text-transform: uppercase;
- font-size:2em;
- cursor: pointer;
- border-radius: 10px;
- border: 2px dashed #44a2ff;
- box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
- transition: .4s;
-}
+          html, body {
+              margin: 0;
+              height: 100%;
+          }
 
-.btn span:last-child {
- display: none;
-}
+          .btn {
+              background-color: #44a2ff;
+              padding: 14px 40px;
+              color: #fff;
+              text-transform: uppercase;
+              font-size: 2em;
+              cursor: pointer;
+              border-radius: 10px;
+              border: 2px dashed #44a2ff;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+              transition: .4s;
+          }
 
-.btn:hover {
- transition: .4s;
- border: 2px dashed #3b9dff;
- background-color: #fff;
- color: #44a2ff;
-}
+              .btn span:last-child {
+                  display: none;
+              }
 
-.btn:active {
- background-color: #9bcdff;
-}
+              .btn:hover {
+                  transition: .4s;
+                  border: 2px dashed #3b9dff;
+                  background-color: #fff;
+                  color: #44a2ff;
+              }
 
-}
+              .btn:active {
+                  background-color: #9bcdff;
+              }
+
+          }
+
+
+
+
       </style>
     </head>
 <body>
     <form id="form1" runat="server">
-      <div class="page-wrapper legacy-theme sidebar-bg bg4 toggled " >
 
-                <nav id="sidebar"  style="box-shadow:2px 2px 4px #1a1e24;" class="sidebar-wrapper">
-                        
-                    <div class="sidebar-content" style="background-color:#282e37;">
-<%--                                     <button id="toggle-sidebar" class="btn btn-outline-primary"  >Slider</button> --%>
-
-                        <!-- sidebar-brand  -->
-                        <div class="sidebar-item sidebar-brand " style="height:3em;width:17em;
-  
-
-  border: 1px dashed white;">
-                           
-                                                      
-                                                                <asp:Label Font-Bold="true" style="color:white; margin-top:10px;" runat="server" ID="TLbl" Text=""></asp:Label>
-                        </div>
-                        <!-- sidebar-header  -->
-                        <div class="sidebar-item sidebar-header d-flex flex-nowrap">
-                       
-                            <div class="user-info">
-                                <span class="user-name ">
-                                    <asp:Label Font-Bold="true" style="color:darkgray;" runat="server" ID="NameL"></asp:Label>
-                                </span>
-                                <asp:Label runat="server" ID="JobL" Font-Italic="true"></asp:Label>
-
-
-                            </div>
-                        </div>
-                        <!-- sidebar-search  -->
-
-                        <!-- sidebar-menu  -->
-                        <div class=" sidebar-item sidebar-menu">
-                            <ul>
-                               
-                               
-                            
-                               
-                                <li class="header-menu">
-                                    <span></span>
-                                </li>
-                                  <li>
-                                      <asp:Panel runat="server" ID="Home" >     
-                                          <a href="">
-                                        <i class="fa fa-list"style="color:white; background-color:transparent;"></i>
-                                        <asp:Button runat="server" ID="Button3" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToHome" Font-Bold="true"  Text="الرئيسيـــة"  />
-
-                                        <span class="badge badge-pill badge-primary"></span>
-                                          </a>
-                                          </asp:Panel>
-
-                                    </li>
-                           
-                                <li >
-                                     
-                                                                        <asp:Panel runat="server" ID="Income" > 
-
-                                    <a  href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                         <asp:Button runat="server" ID="Button55" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToIncome" Font-Bold="true"  Text="الــــواردات"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                    </a>
-                                                                                  </asp:Panel>
- 
-                                </li>   <li >
-                                     
-                                                                        <asp:Panel runat="server" ID="Expences" > 
-
-                                    <a  href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                         <asp:Button runat="server" ID="Button5" class="button  is-text   " Font-Underline="false" ForeColor="white" OnClick="GoToExpences" Font-Bold="true"  Text="مصروفـــات المشاريــــع"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                    </a>
-                                                                                  </asp:Panel>
- 
-                                </li>
-                              
-                                
-                                <li>
-                                    <asp:Panel runat="server" ID="ProjMan" > 
-                                    <a href="ProjMan.aspx">
-                                        <i class="fa fa-list " style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="ProjectManBtn" class="button  is-text   " Font-Underline="false" ForeColor="white" onclick="GoToProjMan" Font-Bold="true"  Text="ادارة المشاريــــع"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                    </a>
-                                          </asp:Panel>
-                                   
-                                        </li>      
-                                
-                                
-                                <li>
-                                                                        <asp:Panel runat="server" ID="Salary" > 
-
-                                    <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button14" class="button  is-text   " Font-Underline="false" ForeColor="white" onclick="GoToSalary" Font-Bold="true"  Text="رواتـــب الموظفيــــن"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                         </a>
-                                                                                                                      </asp:Panel>
-
-                                    </li>   
-                                
-                                <li> 
-                                    
-                                                                        <asp:Panel runat="server" ID="EmpMan" > 
-
-                                    <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button13" class="button  is-text   " Font-Underline="false" ForeColor="white" onclick="GoToEmpMan"  Font-Bold="true"  Text="ادارة الموظفيـــن"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                       </a>
-                                                                            </asp:Panel>
-                                    </li>  
-
-                           <li> 
-                                                                        <asp:Panel runat="server" ID="General" > 
-
-                               <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button12" class="button  is-text   " Font-Underline="false" ForeColor="white" Font-Bold="true" Text="مصروفـــات عامــــة"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                </a>
-                               </asp:Panel>
-
-                                    </li> 
-                                
-                                
-                                <li> 
-                                         <asp:Panel runat="server" ID="Reports" > 
-                                        <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button11" class="button  is-text   " Font-Underline="false" onclick="GoToReports"  ForeColor="white"  Font-Bold="true"  Text="التقاريــــر"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                        </a>
-                                                                            </asp:Panel>
-                                    </li>  
-
-
-
-                                    
-                                <li> 
-                                         <asp:Panel runat="server" ID="LawPeople" Visible="false" > 
-                                        <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button1" class="button  is-text   " Font-Underline="false" onclick="GoToLawPeople"  ForeColor="white"  Font-Bold="true"  Text="الوحدات"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                        </a>
-                                                                            </asp:Panel>
-                                    </li>  
-
-
-
-                                    
-                                <li> 
-                                         <asp:Panel runat="server" ID="LawArch" Visible="false" > 
-                                        <a href="ProjMan.aspx">
-                                        <i class="fa fa-list" style="color:white; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="Button2" class="button  is-text   " Font-Underline="false" onclick="GoToLawArch"  ForeColor="white"  Font-Bold="true"  Text="الارشفة"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                                        </a>
-                                                                            </asp:Panel>
-                                    </li>  
-                                <br />
-                                <br />
-                                <br />
-                          <li> <a href="ProjMan.aspx">
-                                        <i class="fa-solid fa-right-from-bracket" style="color:Pink; background-color:transparent;"></i>
-                                      <asp:Button runat="server" ID="LogOutBtn" class="button  is-text   " Font-Underline="false" ForeColor="Pink" OnClick="LogOut" Font-Bold="true"  Text="تسجيــل الخروج"  />
-                                        <span class="badge badge-pill badge-primary"></span>
-                               </a>
-                                    </li>  
-                        
-                             
-                          
-                                
-                                
-                               
-                              
-
-                            </ul>
-
-
-                        </div>
-                        <!-- sidebar-menu  -->
-
-                    </div>
-
-
-                </nav>
            
                 <!-- page-content  -->
                 <main class="page-content pt-2">
                     <div id="overlay" class="overlay"> </div>
                     <div class="container-fluid p-5">
-                    <div class="box align-content-center text-center" style="background-color:#343a40; color:white;">
 
                 
                          
                                 <h2></h2>
-                                                                    
-                              <i class="fa-solid fa-2x fa-file-signature" ></i>
+                                                                              <div class="container">
+         
+                       <div class="row mb-4">
+
+                           <div class="col-2">
+                                                                                  <div class="box align-content-center text-center" style="background-color:#343a40; color:white;">
+
+                                      <asp:Button runat="server" ID="LogOutBtn" class="button  is-text   " Font-Underline="false" ForeColor="Pink" OnClick="LogOut" Font-Bold="true"  Text="تسجيــل الخروج"  />
+                           </div>
+                           </div>
+                           <div class="col-8">
+                                                   <div class="box align-content-center text-center" style="background-color:#343a40; color:white;">
+
+                                <i class="fa-solid fa-2x fa-file-signature" ></i>
                                         <asp:Label  ID="MainLbl" runat="server"  class="menu-text  text-center text is-size-4">نظــــام الصومعــــة</asp:Label>
                                         <span class="badge badge-pill badge-primary"></span>
+            </div>
+
+                           </div>
+                           <div class="col-2 ">
+                                                                                  <div class="" style="background-color:#343a40; color:white;">
+
+                                <div class="row mr-2  d-flex flex-row-reverse bd-highlight">
+           <span class="tag mt-2 is-primary is-info">        <asp:Label Font-Bold="true"  Font-Size="X-Large" style="color:white;"   runat="server" ID="TLbl" Text=""></asp:Label></span>
+
+
+                                </div>
+
+                                                                        <div class="row mt-2 mr-2 d-flex flex-row-reverse bd-highlight">
+
+                                        <span class="tag is-primary is-large">  <asp:Label Font-Bold="true" Font-Size="Large" style="color:white;"   runat="server" ID="NameL"></asp:Label>
+</span>
+
+
+
+
+                           </div>
+                           </div>
+                           </div>
+                           </div>
+                       </div>
+
+                             
                             
                      
 
@@ -335,7 +189,6 @@ html, body {
 
 
 
-            </div>
                                          
    
            

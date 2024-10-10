@@ -18,6 +18,15 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
+
+            
+            Response.Redirect("MainFinance.aspx");
+
+
+
+        }
         protected void GoToGeneralIncome(object sender, EventArgs e)
         {
 

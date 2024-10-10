@@ -41,7 +41,15 @@ namespace ExpensesSys.Pages
             Response.Redirect("WeightsEditor.aspx");
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
 
+
+            Response.Redirect("MainTechMan.aspx");
+
+
+
+        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.

@@ -363,8 +363,8 @@ namespace ExpensesSys.Pages
         protected void Return(object sender, EventArgs e)
         {
 
-
-            Response.Redirect("Home.aspx");
+            Expences.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+            Response.Redirect("Expences.aspx");
 
 
 

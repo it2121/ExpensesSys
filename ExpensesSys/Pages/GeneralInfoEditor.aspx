@@ -299,6 +299,7 @@
               
                          <div class="form__group field">
  <asp:DropDownList ID="Warn"
+     OnSelectedIndexChanged="myListDropDown_Change"
                     class="form__field mt-2" type="text" placeholder="حالة الانذار"
                     AutoPostBack="True"
                     runat="server">
@@ -320,9 +321,11 @@
 
 
             </div>
-        
+          <asp:UpdatePanel ID="FirstWarnUpdatePanel" runat="server" style="width: 100%;" UpdateMode="Conditional">
+                        <ContentTemplate>
 
-               <div class="row m-2">
+                            <asp:Panel runat="server" ID ="FirstWarnPanel" Visible="false">
+                                <div class="row m-2">
 
                 <div class="col-6">
 
@@ -346,9 +349,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+     <asp:TextBox runat="server" ID="FirstWarnRecDate"  class="form__field" type="input" placeholder="تاريخ تسليم الانذار الاولي" />
 
-    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+    <label for="name" class="form__label">تاريخ تسليم الانذار الاولي</label>
 </div>
            
             </div>
@@ -358,9 +361,58 @@
 
 
             </div>
+                                </asp:Panel>
+
+
+</ContentTemplate>
+              </asp:UpdatePanel>
+
+          <asp:UpdatePanel ID="SecondWanrUpdatePanel" runat="server" style="width: 100%;" UpdateMode="Conditional">
+                        <ContentTemplate>
+
+                            <asp:Panel runat="server" ID ="SecondWarnPanel" Visible="false">
+        
+               <div class="row m-2">
+
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+</div>
+           
 
 
 
+            </div>
+
+
+                
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnRecDate"  class="form__field" type="input" placeholder="تاريخ تسليم الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ تسليم الانذار النهائي</label>
+</div>
+           
+            </div>
+
+   
+
+
+
+            </div>
+         </asp:Panel>
+
+
+</ContentTemplate>
+              </asp:UpdatePanel>
 
 
 

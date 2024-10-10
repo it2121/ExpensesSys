@@ -55,6 +55,13 @@ namespace ExpensesSys.Pages
                         Warn.Text = dt["Warn"].ToString();
                         FirstWarnDate.Text = dt["FirstWarnDate"].ToString();
                         SecondWarnDate.Text = dt["SecondWarnDate"].ToString();
+                        FirstWarnRecDate.Text = dt["FirstWarnRecDate"].ToString();
+                        SecondWarnRecDate.Text = dt["SecondWarnRecDate"].ToString();
+
+
+
+                        UpdateWarnPanels();
+
                         Loan.Checked = true;
                         Emp.Checked = true;
                         if (!dt["Emp"].ToString().Equals("1"))
@@ -95,8 +102,6 @@ namespace ExpensesSys.Pages
                         }
 
                     }  
-                    
-
 
                     int precentage = Convert.ToInt32(BBAALL.getComPre(RecID).Rows[0][0].ToString());
                     int ShouldBePaid = Convert.ToInt32(BBAALL.GetWhatShouldBePaidForRecID(RecID).Rows[0]["Cost"].ToString());
@@ -105,10 +110,7 @@ namespace ExpensesSys.Pages
                     foreach(DataRow dr in BBAALL.GatAllLoanPaymentOfRecID(RecID).Rows)
                     {
                         PaidFromLoan += Convert.ToInt32(dr["PaymentAmount"].ToString());
-
-
                     }
-
 
                     Paid.Text =(Convert.ToInt32( BBAALL.GetPaidAmount(RecID).Rows[0][0].ToString()) + PaidFromLoan ) + "";
 
@@ -130,13 +132,7 @@ namespace ExpensesSys.Pages
                     RemBasedOnPrecentage.Text = KillEverythingAfteDot(RemBasedOnPrecentage.Text);
                     RemBasedOnPrecentageOLD.Text = KillEverythingAfteDot(RemBasedOnPrecentageOLD.Text);
 
-
-
-
                     int totaint = Convert.ToInt32(Total.Text);
-
-
-
 
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     ProPrice.Text = MyStringManager.GetNumberWithComas(ProPrice.Text);
@@ -146,13 +142,20 @@ namespace ExpensesSys.Pages
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     Total.Text = MyStringManager.GetNumberWithComas(Total.Text);
 
-
                     setArabicNumberLabel();
-
 
                 }
 
             }
+
+
+            EditBtn1.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+            EditBtn2.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+            EditBtn3.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+            EditBtn4.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+            
+
+
         }
 
         public string KillEverythingAfteDot(string str) {
@@ -195,68 +198,55 @@ namespace ExpensesSys.Pages
 
         protected void Return(object sender, EventArgs e)
         {
-
-            
             Response.Redirect("UnitSearch.aspx");
+        }
+        public void UpdateWarnPanels()
+        {
 
-
+            if (Warn.Text.Equals("بلا انذار"))
+            {
+                FirstWarnPanel.Visible = false;
+                SecondWarnPanel.Visible = false;
+            }
+            else if (Warn.Text.Equals("انذار اولي"))
+            {
+                FirstWarnPanel.Visible = true;
+                SecondWarnPanel.Visible = false;
+            }
+            else if (Warn.Text.Equals("انذار نهائي"))
+            {
+                FirstWarnPanel.Visible = true;
+                SecondWarnPanel.Visible = true;
+            }
 
         }
         protected void GoToUnitPayments(object sender, EventArgs e)
         {
-
-
-
             UnitPayments.RecID = RecID;
             UnitPayments.RecdirectTo = "UnitOverlook.aspx";
-
                 Response.Redirect("UnitPayments.aspx");
-
-            
         }  
         
         protected void GoToTechInfo(object sender, EventArgs e)
         {
-
-
-
             TechInfoEditor.RecID = RecIDTB.Text;
             TechInfoEditor.RecdirectTo = "UnitOverlook.aspx";
-
             Response.Redirect("TechInfoEditor.aspx");
-
-            
         }   protected void GoToLoan(object sender, EventArgs e)
         {
-
-
-
             LoanEditor.RecID = RecID;
             LoanEditor.RecdirectTo = "UnitOverlook.aspx";
             Response.Redirect("LoanEditor.aspx");
-
-            
         } protected void GoToFinance(object sender, EventArgs e)
         {
-
-
-
             FinanceEditor.RecID = RecID;
             FinanceEditor.RecdirectTo = "UnitOverlook.aspx";
             Response.Redirect("FinanceEditor.aspx");
-
-            
         }     protected void GoToGenralInfo(object sender, EventArgs e)
         {
-
-
-
             GeneralInfoEditor.RecID = RecID;
             GeneralInfoEditor.RecdirectTo = "UnitOverlook.aspx";
-
             Response.Redirect("GeneralInfoEditor.aspx");
-
-            
         }  
         
         
@@ -265,7 +255,6 @@ namespace ExpensesSys.Pages
             LoanPayments.RecID = RecID;
             LoanPayments.RecdirectTo = "UnitOverlook.aspx";
             Response.Redirect("LoanPayments.aspx");
-
         }
     }
 }

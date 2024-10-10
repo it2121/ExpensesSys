@@ -20,6 +20,7 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable dt = BBAALL.GetAllWorkContractsOFAProject(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
@@ -49,6 +50,19 @@ namespace ExpensesSys.Pages
             }
 
         }
+
+
+        protected void Return(object sender, EventArgs e)
+        {
+
+            Expences.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+            Response.Redirect("Expences.aspx");
+
+
+
+        }
+
+
         protected void GoToNewItem(object sender, EventArgs e)
         {
 

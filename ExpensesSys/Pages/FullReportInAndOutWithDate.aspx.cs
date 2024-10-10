@@ -34,9 +34,11 @@ namespace ExpensesSys.Pages
         public DataTable Comp;
         public DataTable Nth;
         public DataTable Income;
+        public DataTable UnityPayments;
 
 
     public static  DataTable IncomeSet;
+    public static  DataTable UnityPayemetsSet;
         public static DataTable CompSet;
    public static DataTable SalarySet;
         public static DataTable MatBuySet;
@@ -127,6 +129,12 @@ namespace ExpensesSys.Pages
         protected void CalclateAllTables(object sender, EventArgs e)
         {
 
+            UnityPayments = BBAALL.REP_GetAllUnitPaymentRecords();
+
+            UnityPayemetsSet = MyStringManager.GetTableAfterDateCheck(UnityPayments, StartDate.Text, EndDate.Text);
+
+
+            
             Income = BBAALL.REP_GetAllIncomeRecords();
 
              IncomeSet = MyStringManager.GetTableAfterDateCheck(Income, StartDate.Text, EndDate.Text);
@@ -163,6 +171,7 @@ namespace ExpensesSys.Pages
             {
 
                 IncomeSet = MyStringManager.GetTableAfterCeckProjectName(IncomeSet, ProjectName.Text, "اسم_الجهة_المستلمة");
+                UnityPayemetsSet = MyStringManager.GetTableAfterCeckProjectName(UnityPayemetsSet, ProjectName.Text, "اسم_الجهة_المستلمة");
                 MatBuySet = MyStringManager.GetTableAfterCeckProjectName(MatBuySet, ProjectName.Text, "المشروع");
                 SalarySet = MyStringManager.GetTableAfterCeckProjectName(SalarySet, ProjectName.Text, "المشروع");
                 CompSet = MyStringManager.GetTableAfterCeckProjectName(CompSet, ProjectName.Text, "اسم_المشروع");
@@ -183,7 +192,8 @@ namespace ExpensesSys.Pages
             }
 
 
-            IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ")+"") + " IQD مجموع الوارد"; 
+            IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ")+"") + " IQD مجموع الوارد";
+            UnitPaymentIncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(UnityPayemetsSet, "المبلغ_المدفوع") +"") + " IQD مجموع وارد دفعات الوحدات"; 
             NthSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة")+"") + " IQD مجموع الصرفيات العامة";
             CompSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة") +"") + " IQD مجموع الصرفيات الاخرى"; 
             SalarySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم")+"") + " IQD مجموع الرواتب"; 
@@ -206,7 +216,24 @@ namespace ExpensesSys.Pages
             IncomePanel.Visible = true;
             ExportBtn.Visible = true;
         }
-        protected void CreateInReport(object sender, EventArgs e)
+        protected void CreateUnitPayemntReport(object sender, EventArgs e)
+        {
+
+
+
+
+
+            HideAll();
+            UnityPaymentsTbl.DataSource = UnityPayemetsSet;
+
+            UnityPaymentsTbl.DataBind();
+            UnityPaymentsPanel.Visible = true;
+
+            //Response.Redirect("Reports.aspx");
+
+
+
+        }  protected void CreateInReport(object sender, EventArgs e)
         {
 
 
@@ -232,6 +259,7 @@ namespace ExpensesSys.Pages
             SalaryPanel.Visible = false;
             CompPanel.Visible = false;
             NthPanel.Visible = false;
+            UnityPaymentsPanel.Visible = false;
 
 /*
             NthTbl.DataSource = null;

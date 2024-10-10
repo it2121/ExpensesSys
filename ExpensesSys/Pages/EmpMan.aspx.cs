@@ -54,7 +54,15 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
 
+
+            Response.Redirect("MainFinance.aspx");
+
+
+
+        }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update

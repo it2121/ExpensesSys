@@ -19,9 +19,9 @@
 
 
 
-      <asp:Panel runat="server" ID="ButtonsBar">
+           <asp:Panel runat="server" ID="Panel1">
         <div class="row " style="margin-bottom: 1em">
-                       <div class="col-auto">
+                  <div class="col-auto">
                 <div class="field buttons align-items-end">
 
 
@@ -108,11 +108,37 @@
             </div>
             <div class="col-auto">
                 <div class="field buttons align-items-end">
+
+
+                              <div class="col-auto">
+                <div class="field buttons align-items-end">
+
+     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="الرجوع"
+      
+         data-target="modal-js-example"
+                                 onclick="Return"
+
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">الرجوع
+                       
+                        <i class="fas fa-home " style="margin-left: 1em">
+
+                        </i></asp:LinkButton>
+                </div>
+            </div>
                 </div>
             </div>
 
         </div>
+
     </asp:Panel>
+
+
+
+
+
+
+
+
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
         <p class="panel-heading text-center" style="background-color:#3399ff;">                <asp:Label  runat ="server" ID ="PageProjectNameLbl" Text="" ></asp:Label>
 <i class="fa-solid fa-file-invoice-dollar"></i></p>

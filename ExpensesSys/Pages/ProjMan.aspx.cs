@@ -58,7 +58,7 @@ namespace ExpensesSys.Pages
 
         protected void GoToWeightMan(object sender, EventArgs e)
         {
-            Weights.ProjectID = Global.getProjectID();
+            Weights.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Response.Redirect("Weights.aspx");
 
         }

@@ -15,7 +15,7 @@ namespace ExpensesSys.Pages.Law
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = BBAALL.GetAllDocksOrARecID(RecID);
-            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0]["Name"].ToString();
+            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0]["Name"].ToString();
             DataGridUsers.DataSource = dt;
             DataGridUsers.DataBind();
 
@@ -70,7 +70,6 @@ namespace ExpensesSys.Pages.Law
             //  showstuff();
 
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
-           // ItemsEditor.ProjectID = Global.getProjectID();
 
 
             int IntID = Convert.ToInt32(id.Text);

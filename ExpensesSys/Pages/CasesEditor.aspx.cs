@@ -16,7 +16,7 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
-                ProjectID = Global.getProjectID();
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
                 if (CaseID != 0)
                 {
                     DataTable ProjectDT = BBAALL.GetCaseByIDLAW(CaseID);

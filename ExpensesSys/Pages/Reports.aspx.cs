@@ -25,30 +25,30 @@ namespace ExpensesSys.Pages
         public static int GetAllNthSum = 0;
         public static int GetAllCompSum = 0;
 
-        public static int m1 = 0;
-        public static int m2 = 0;
-        public static int m3 = 0;
-        public static int m4 = 0;
-        public static int m5 = 0;
-        public static int m6 = 0;
-        public static int m7 = 0;
-        public static int m8 = 0;
-        public static int m9 = 0;
-        public static int m10 = 0;
-        public static int m11 = 0;
-        public static int m12 = 0;
-        public static int mm1 = 0;
-        public static int mm2 = 0;
-        public static int mm3 = 0;
-        public static int mm4 = 0;
-        public static int mm5 = 0;
-        public static int mm6 = 0;
-        public static int mm7 = 0;
-        public static int mm8 = 0;
-        public static int mm9 = 0;
-        public static int mm10 = 0;
-        public static int mm11 = 0;
-        public static int mm12 = 0;
+        public static double m1 = 0;
+        public static double m2 = 0;
+        public static double m3 = 0;
+        public static double m4 = 0;
+        public static double m5 = 0;
+        public static double m6 = 0;
+        public static double m7 = 0;
+        public static double m8 = 0;
+        public static double m9 = 0;
+        public static double m10 = 0;
+        public static double m11 = 0;
+        public static double m12 = 0;
+        public static double mm1 = 0;
+        public static double mm2 = 0;
+        public static double mm3 = 0;
+        public static double mm4 = 0;
+        public static double mm5 = 0;
+        public static double mm6 = 0;
+        public static double mm7 = 0;
+        public static double mm8 = 0;
+        public static double mm9 = 0;
+        public static double mm10 = 0;
+        public static double mm11 = 0;
+        public static double mm12 = 0;
 
 
 
@@ -108,6 +108,17 @@ namespace ExpensesSys.Pages
 
 
         }
+
+        protected void Return(object sender, EventArgs e)
+        {
+
+
+            Response.Redirect("MainFinance.aspx");
+
+
+
+        }
+
         public void setUpLineChart()
         {
 

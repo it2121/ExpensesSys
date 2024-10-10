@@ -44,7 +44,15 @@ namespace ExpensesSys.Pages
             Response.Redirect("CompEditor.aspx");
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
 
+            Expences.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+            Response.Redirect("Expences.aspx");
+
+
+
+        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.

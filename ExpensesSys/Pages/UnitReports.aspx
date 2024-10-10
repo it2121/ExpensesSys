@@ -360,7 +360,22 @@
 
                         </i></asp:LinkButton>
         </div>
-        <hr />
+     
+
+
+        
+        <div class="row m-1">
+
+            <div class="col-6">
+            <asp:Button runat="server" ID="showdatesBtn" Visible="false" Style="width: 100%; margin-top: 1.6rem;" OnClick="ShowWarnDates" class="button is-info text-center" Font-Size="Larger" Text="اظهار تواريخ الانذارات"></asp:Button>
+                </div>
+            
+            <div class="col-6">
+            <asp:Button runat="server" ID="showmoneyBtn" Visible="false" Style="width: 100%; margin-top: 1.6rem;" OnClick="ShowMoney" class="button is-info text-center" Font-Size="Larger" Text="اظهار المبالغ"></asp:Button>
+                </div>
+        </div>
+
+
 
 
 
@@ -494,7 +509,10 @@
 
 
 
-                                <asp:GridView ShowHeaderWhenEmpty="true" Visible="true" ID="OutComeTable" runat="server" AutoGenerateColumns="True" class="table table-striped display table-hover border-0 " CellPadding="6"
+                                <asp:GridView ShowHeaderWhenEmpty="true" 
+                                    HeaderStyle-Font-Size="Small"
+                                    Font-Size="Small"
+                                    Visible="true" ID="OutComeTable" runat="server" AutoGenerateColumns="True" class="table table-striped display table-hover border-0 " CellPadding="6"
                                     HeaderStyle-HorizontalAlign="Center"
                                     RowStyle-HorizontalAlign="Center">
                                     <Columns>

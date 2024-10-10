@@ -15,7 +15,15 @@ namespace ExpensesSys.Pages
         {
            // SalaryBtn.Visible = ProjectID == 0; 
         }
+        protected void Return(object sender, EventArgs e)
+        {
 
+            
+            Response.Redirect("MainFinance.aspx");
+
+
+
+        }
         protected void GoToItemMan(object sender, EventArgs e)
         {
 

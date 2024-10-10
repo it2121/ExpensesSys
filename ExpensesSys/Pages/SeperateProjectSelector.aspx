@@ -125,6 +125,19 @@ html, body {
 }
       </style>
     
+        <style>
+        .HeaderDiv {
+  box-shadow: 4px 4px 20px Black;
+    border-radius: 10px;
+
+
+
+
+}
+
+
+    </style>
+
 </head>
 <body>
 
@@ -211,13 +224,49 @@ html, body {
         </div>
     </asp:Panel>
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
-        <p class="panel-heading text-center" style="background-color:#3399ff;">تحديد المشروع<i class="fa-solid fa-file-invoice-dollar"></i></p>
+        <p class="panel-heading text-center" style="background-color:#3399ff;"><i class="fa-solid fa-file-invoice-dollar"></i></p>
 
-        
-        
+                <asp:Panel runat="server" ID ="LABtnsPanel" Visible="false">
 
+
+        <br />
+        
+        <div class="row  " style="padding-left: 1em; padding-right: 1em;">
+
+
+
+            
+
+            <div class="col   text-center ">
+                <asp:Button runat="server" ID="GoToCases1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToCases"  role="button" Text="دعاوى الصومعة"></asp:Button>
+            </div> 
+            
+            <div class="col   text-center ">
+
+                <asp:Button runat="server" ID="GoToContracts1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToContracts"  role="button" Text="عقود الصومعة"></asp:Button>
+            </div>
+            
+       
+        </div>
 
  
+
+        </asp:Panel>
+        
+        <asp:Panel runat="server" ID="GeneralInAndOutPanel" Visible ="false">
+        <br />
+     <div class="row ">
+             <div class="col-3"></div>
+             <div class="col-6">
+
+                                 <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralFinanceNav" role="button" Text="الحسابات العامة"></asp:Button>
+
+
+                         </div>  
+   
+
+                 </div>
+            </asp:Panel>
      <div class="row ">
         
           
@@ -246,7 +295,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>    
                 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="أسم المشروع">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_OR" runat="server"  Text='<%#Eval("Name") %>' Font-Bold="true" Font-Size="XX-Large"></asp:Label>
                     </ItemTemplate>
@@ -254,7 +303,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
 
           
            
-                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center"  HeaderText="أسم المشروع">
+                      <asp:TemplateField  ItemStyle-HorizontalAlign="Center"  HeaderText="">
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-info is-outlined"

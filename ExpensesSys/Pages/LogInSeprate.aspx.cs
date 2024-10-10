@@ -50,9 +50,8 @@ namespace ExpensesSys.Pages
 
                 //  if(login.Rows[0]["Role"].ToString().Equals("القانونية"))
 
-                Global.setRole(login.Rows[0]["Role"].ToString());
 
-
+                Session["Role"] = login.Rows[0]["Role"].ToString();
                 WorngLbl.Visible = false;
 
                 Response.Redirect("SeperateProjectSelector.aspx");

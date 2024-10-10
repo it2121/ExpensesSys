@@ -1,95 +1,95 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="WorkContractsUnits.aspx.cs" Inherits="ExpensesSys.Pages.WorkContractsUnits" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-          <style>
-
+    <style>
         .form__group {
-  position: relative;
-  padding: 20px 0 0;
-  width: 100%;
-}
+            position: relative;
+            padding: 20px 0 0;
+            width: 100%;
+        }
 
-.form__field {
-  font-family: inherit;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  font-size: 17px;
-  color: #000;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
+        .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #9b9b9b;
+            outline: 0;
+            font-size: 17px;
+            color: #000;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
 
-.form__field::placeholder {
-  color: transparent;
-}
+            .form__field::placeholder {
+                color: transparent;
+            }
 
-.form__field:placeholder-shown ~ .form__label {
-  font-size: 17px;
-  cursor: text;
-  top: 20px;
-}
+            .form__field:placeholder-shown ~ .form__label {
+                font-size: 17px;
+                cursor: text;
+                top: 20px;
+            }
 
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 17px;
-  color: #9b9b9b;
-  pointer-events: none;
-}
+        .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #9b9b9b;
+            pointer-events: none;
+        }
 
-.form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #116399, #38caef);
-  border-image-slice: 1;
-}
+        .form__field:focus {
+            padding-bottom: 6px;
+            font-weight: 700;
+            border-width: 3px;
+            border-image: linear-gradient(to right, #116399, #38caef);
+            border-image-slice: 1;
+        }
 
-.form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 17px;
-  color: #38caef;
-  font-weight: 700;
-}
+            .form__field:focus ~ .form__label {
+                position: absolute;
+                top: 0;
+                display: block;
+                transition: 0.2s;
+                font-size: 17px;
+                color: #38caef;
+                font-weight: 700;
+            }
 
-/* reset input */
-.form__field:required, .form__field:invalid {
-  box-shadow: none;
-}
-  .BigCheckBox input {width:23px; height:23px;}
+        /* reset input */
+        .form__field:required, .form__field:invalid {
+            box-shadow: none;
+        }
 
+        .BigCheckBox input {
+            width: 23px;
+            height: 23px;
+        }
     </style>
 
 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-      <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
-      <asp:Panel runat="server" ID="ButtonsBar" >
-            <div class="row " style="margin-bottom:1em">
-    
-                      <div class="col-auto">
+
+    <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
+    <asp:Panel runat="server" ID="ButtonsBar">
+        <div class="row " style="margin-bottom: 1em">
+
+            <div class="col-auto">
                 <div class="field buttons align-items-end">
 
 
 
 
 
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="الرجوع"
-        
-         
-         data-target="modal-js-example"
-                                 onclick="Return"
-
+                    <asp:LinkButton runat="server" Style="background-color: white; color: #33B3FF; font: bold; border-color: #33B3FF" Text="الرجوع"
+                        data-target="modal-js-example"
+                        OnClick="Return"
                         class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">الرجوع
                        
                         <i class="fas fa-home " style="margin-left: 1em">
@@ -98,41 +98,28 @@
 
                 </div>
             </div>
-                
 
-                      <div class="col-auto">
+
+            <div class="col-auto">
                 <div class="field buttons align-items-end">
-
-
-                    
-
-
-
                 </div>
             </div>
-                 <div class="col-lg">
-                     </div>
-                   <div class="col-auto">
+            <div class="col-lg">
             </div>
-                   <div class="col-auto  ">
+            <div class="col-auto">
             </div>
-                      <div class="col-auto">
+            <div class="col-auto  ">
+            </div>
+            <div class="col-auto">
                 <div class="field buttons align-items-end">
-
-                      
-
-
-                       
-        
-                    
                 </div>
             </div>
 
         </div>
-            </asp:Panel>
+    </asp:Panel>
 
 
-        <article class="panel is-info" style="background-color: white;">
+    <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading ">الوحدات</p>
 
 
@@ -141,65 +128,63 @@
 
 
 
-            
-            <div class="row m-3  text-center align-content-center" >
 
-       
-
-                                                                 <div class="col-5 align-content-center  text-center"  >
-                                                                             </div>
+        <div class="row m-3  text-center align-content-center">
 
 
-                          <div class="col-2 align-content-center  text-center"  >
 
-    <div class="content-1 align-content-center text-center">
-        <div id="Layer1" style="position:relative;height:450px;
-overflow:scroll;">
-      <asp:CheckBoxList runat="server" ID="ChBoxList"   CssClass="BigCheckBox"  Font-Size="2em" Font-Bold="true" > 
-                        
-                    </asp:CheckBoxList>
+            <div class="col-5 align-content-center  text-center">
+            </div>
+
+
+            <div class="col-2 align-content-center  text-center">
+
+                <div class="content-1 align-content-center text-center">
+                    <div id="Layer1" style="position: relative; height: 450px; overflow: scroll;">
+                        <asp:CheckBoxList runat="server" ID="ChBoxList" CssClass="BigCheckBox" Font-Size="2em" Font-Bold="true">
+                        </asp:CheckBoxList>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+            </div>
 
 
         </div>
-              
-               
-            
- 
-                
+
+
+        <br />
+
+
+
+
+
+
+        <br />
+
+        <div class="row m-2">
+
+            <div class="col-md-12 text-center ">
+
+
+
+                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em" OnClick="CreateItem" class="button is-primary text-center is-large" Text="تحديث"></asp:Button>
             </div>
-           
 
-           
-            </div>
+        </div>
 
-
-            </div>
-
-
-                  <br />
+        <hr />
 
 
 
-
-  
-     
-                  <br />
-
-      <div class="row m-2">
-           
-                   <div class="col-md-12 text-center ">
-
-
-
-              <asp:Button runat="server" ID="CreateBtn" style="width:20em" OnClick="CreateItem" class="button is-primary text-center is-large" Text="تحديث"></asp:Button>
-          </div>
-
-      </div>
-    
-<hr />    
-      
-
-  
         <br />
     </article>
 

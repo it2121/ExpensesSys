@@ -251,8 +251,14 @@
         <div class="row m-2">
 
             <div class="col-md-4 text-center ">
+                                <div class="row m-2">
 
-                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em; margin-top: 1.6rem;" OnClick="CreateInReport" class="button  is-outlined is-primary text-center " Text="اضهار تقرير الوارد"></asp:Button>
+                <asp:Button runat="server" ID="CreateBtn" Style="width: 20em; " OnClick="CreateInReport" class="button  is-outlined is-primary text-center " Text="اضهار تقرير الواردات العامة"></asp:Button>
+            </div>
+                   <div class="row m-2">
+
+                <asp:Button runat="server" ID="Button6" Style="width: 20em; " OnClick="CreateUnitPayemntReport" class="button  is-outlined is-primary text-center " Text="اضهار تقرير واردات الوحدات"></asp:Button>
+            </div>
             </div>
             <div class="col-md-8 text-center ">
                 <div class="row m-2">
@@ -286,8 +292,15 @@
             <div class="row">
 
                 <div class="col-md-4  text-center ">
+                                        <div class="row m-2">
+
                     <asp:Label runat="server" ID="IncomeSum" Font-Bold="true" ForeColor="DarkCyan" Text="0 IQD مجموع الوارد"></asp:Label>
 
+                </div>       <div class="row m-2">
+
+                    <asp:Label runat="server" ID="UnitPaymentIncomeSum" Font-Bold="true" ForeColor="DarkCyan" Text="0 IQD مجموع وارد دفعات الوحدات"></asp:Label>
+
+                </div>
                 </div>
 
                 <div class="col-md-8 text-center  ">
@@ -385,6 +398,50 @@
                 </div>
             </div>
         </asp:Panel>
+
+
+         <asp:Panel ID="UnityPaymentsPanel" Width="95%" HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em" runat="server" Visible="false">
+
+            <div class="row ">
+
+                <div class="col-12  text-center">
+                   <br />
+                    <asp:Label runat="server" ID="Label7" ForeColor="DarkGreen"  Font-Size="Larger" Font-Bold="true" Text="واردات الدفعات"></asp:Label>
+                </div>
+                <br />
+
+                <div class="container-fluid d-flex flex-column">
+                    <div class="row m-2">
+
+                        <div class="col-12">
+
+                            <div class="content-1">
+
+
+
+                                <asp:GridView ShowHeaderWhenEmpty="true" Visible="true" ID="UnityPaymentsTbl" runat="server" AutoGenerateColumns="True" class="table table-striped display table-hover border-0 " CellPadding="6"
+                                    HeaderStyle-HorizontalAlign="Center"
+                                    RowStyle-HorizontalAlign="Center">
+                                    <Columns>
+                                    </Columns>
+                                    <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>
+
+                                </asp:GridView>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+
+
+
+
         <asp:Panel ID="MatBuyPanel" Width="95%" HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em" runat="server" Visible="false">
 
 
@@ -538,6 +595,10 @@
                 </div>
             </div>
         </asp:Panel>
+
+
+
+
     </article>
 
 

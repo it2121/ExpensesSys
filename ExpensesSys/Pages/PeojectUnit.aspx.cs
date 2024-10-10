@@ -14,7 +14,7 @@ namespace ExpensesSys.Pages
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ProjectID = Global.getProjectID();
+            ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Main.openPage = "ProjMan";
             if (!IsPostBack)
             {
@@ -57,16 +57,24 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
+
+            
+            Response.Redirect("MainProjMan.aspx");
+
+
+
+        }
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.
             // DataGridUsers.EditIndex = e.NewEditIndex;
             //  showstuff();
 
-            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
-
-
-            PeojectUnitEditor.ID = Convert.ToInt32(id.Text);
+            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_OR") as Label;
+            int UnitID =Convert.ToInt32(BBAALL.GetUnitByRecIDAndProjectID(id.Text, ProjectID).Rows[0]["ID"].ToString());
+            PeojectUnitEditor.ID = UnitID;
             PeojectUnitEditor.ProjectID = ProjectID;
 
 
@@ -106,7 +114,7 @@ namespace ExpensesSys.Pages
 
         protected void GoToWeightMan(object sender, EventArgs e)
         {
-            Weights.ProjectID = Global.getProjectID();
+            Weights.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Response.Redirect("Weights.aspx");
 
         }

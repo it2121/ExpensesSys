@@ -37,6 +37,15 @@ namespace ExpensesSys.Pages
             DataGridUsers.DataBind();
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
+
+
+            Response.Redirect("Income.aspx");
+
+
+
+        }
         protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
         {
             string x = e.CommandName;//returns "Select" for both asp:CommandField columns

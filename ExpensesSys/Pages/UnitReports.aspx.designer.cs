@@ -240,6 +240,24 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.LinkButton ExportBtn;
 
         /// <summary>
+        /// showdatesBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button showdatesBtn;
+
+        /// <summary>
+        /// showmoneyBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button showmoneyBtn;
+
+        /// <summary>
         /// RecevedSum control.
         /// </summary>
         /// <remarks>

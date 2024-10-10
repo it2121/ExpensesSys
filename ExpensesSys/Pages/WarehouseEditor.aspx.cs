@@ -63,7 +63,17 @@ namespace ExpensesSys.Pages
 
             Response.Redirect("WarehouseEditorInside.aspx");
 
-        } 
+        }
+
+        protected void Return(object sender, EventArgs e)
+        {
+
+
+            Response.Redirect("Warehouse.aspx");
+
+
+
+        }
         protected void GoToNewItemWithdraw(object sender, EventArgs e)
         {
 

@@ -11,21 +11,23 @@ namespace ExpensesSys.Pages
 {
     public partial class SeperateProjectSelector : System.Web.UI.Page
     {
-        public static string GoToPage = "Home";
+        public static string GoToPage = "MainHome";
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Global.GetRole().Equals("القانونية"))
+                if (Session["Role"] .Equals("القانونية"))
                 {
                     GoToPage = "LawHome";
                     //   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
 
-                }else
+                    LABtnsPanel.Visible = true;
+                }
+                else
                 {
-
-                    GoToPage = "Home";
+                    LABtnsPanel.Visible = false;
+                    GoToPage = "MainHome";
 
 
                 }
@@ -37,10 +39,53 @@ namespace ExpensesSys.Pages
 
                 OverseeingManagmntBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
 
+                GeneralInAndOutPanel.Visible= Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
             }
 
         }
 
+
+
+        protected void GoToGeneralFinanceNav(object sender, EventArgs e)
+        {
+            Session["ProjectID"] = "0";
+
+            Response.Redirect("GeneralFinanceNav.aspx");
+        }
+        protected void GoToGeneralIn(object sender, EventArgs e)
+        {
+            Session["ProjectID"] = "0";
+
+            GeneralInAndOut.RecType = "In";
+            Response.Redirect("GeneralInAndOut.aspx");
+        }
+
+        protected void GoToGeneralOut(object sender, EventArgs e)
+        {
+            Session["ProjectID"] = "0";
+
+            GeneralInAndOut.RecType = "Out";
+
+            Response.Redirect("GeneralInAndOut.aspx");
+        }
+
+
+
+        protected void GoToContracts(object sender, EventArgs e)
+        {
+
+            Session["ProjectID"] = "0";
+
+            Response.Redirect("LAWContracts.aspx");
+        }
+
+        protected void GoToCases(object sender, EventArgs e)
+        {
+
+            Session["ProjectID"] = "0";
+
+            Response.Redirect("Cases.aspx");
+        }
         protected void GoToProjectZero(object sender, EventArgs e)
         {
 
@@ -108,10 +153,12 @@ namespace ExpensesSys.Pages
 
 
             }
-            else if (GoToPage.Equals("Home"))
+            else if (GoToPage.Equals("MainHome"))
             {
-                Home.ProjectID = 0;
-                Global.setProjectID(0);
+                MainHome.ProjectID = 0;
+
+                Session["ProjectID"] = "0";
+
 
             }
 
@@ -193,17 +240,20 @@ namespace ExpensesSys.Pages
 
 
             }
-            else if (GoToPage.Equals("Home"))
+            else if (GoToPage.Equals("MainHome"))
             {
-                Home.ProjectID = Convert.ToInt32(id.Text);
+                MainHome.ProjectID = Convert.ToInt32(id.Text);
 
-                Global.setProjectID(Convert.ToInt32(id.Text));
 
-            }  else if (GoToPage.Equals("LawHome"))
+                Session["ProjectID"] = id.Text;
+
+            }
+            else if (GoToPage.Equals("LawHome"))
             {
                 LawHome.ProjectID = Convert.ToInt32(id.Text);
 
-                Global.setProjectID(Convert.ToInt32(id.Text));
+
+                Session["ProjectID"] = id.Text;
 
             }
 
@@ -239,7 +289,7 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("Home.aspx");
+            Response.Redirect("MainHome.aspx");
 
 
 

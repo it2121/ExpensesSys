@@ -224,7 +224,7 @@
                 
                       
             </div>
-                     <div class="col-3">
+                     <div class="col-5">
                  
                            <div class="form__group field">
      <asp:TextBox runat="server" ID="ProPrice"  class="form__field" type="input" ReadOnly="true" placeholder="سعر الوحدة" />
@@ -297,15 +297,15 @@
                  
             </div> 
 
-                   <div class="col-3">
+                   <div class="col-5">
                                                           <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
                                                       </div> 
-                                      <div class="col-3">
+                                      <div class="col-1">
                                                       </div> 
-                                      <div class="col-3">
+                                      <div class="col-2">
                                                       </div> 
-                                      <div class="col-3">
+                                      <div class="col-2">
                                                       </div> 
 
 
@@ -347,7 +347,8 @@
        
 
 
-                   <div class="row m-2">
+                            <asp:Panel runat="server" ID ="FirstWarnPanel" Visible="false">
+                                <div class="row m-2">
 
                 <div class="col-6">
 
@@ -371,9 +372,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+     <asp:TextBox runat="server" ID="FirstWarnRecDate"  class="form__field" type="input" placeholder="تاريخ تسليم الانذار الاولي" />
 
-    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+    <label for="name" class="form__label">تاريخ تسليم الانذار الاولي</label>
 </div>
            
             </div>
@@ -383,6 +384,54 @@
 
 
             </div>
+                                </asp:Panel>
+
+
+
+
+                            <asp:Panel runat="server" ID ="SecondWarnPanel" Visible="false">
+        
+               <div class="row m-2">
+
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnDate"  class="form__field" type="input" placeholder="تاريخ الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ الانذار النهائي</label>
+</div>
+           
+
+
+
+            </div>
+
+
+                
+                <div class="col-6">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="SecondWarnRecDate"  class="form__field" type="input" placeholder="تاريخ تسليم الانذار النهائي" />
+
+    <label for="name" class="form__label">تاريخ تسليم الانذار النهائي</label>
+</div>
+           
+            </div>
+
+   
+
+
+
+            </div>
+         </asp:Panel>
+
+
+
+
 
 
 
@@ -395,7 +444,7 @@
                         text-center">
                  
                            <div class="form__group field">
-                <asp:Button runat="server" ID="Button1" Style="width: 20em" OnClick="GoToGenralInfo" class="button is-primary is-large text-center " Text="تعديل المعلومات العامة"></asp:Button>
+                <asp:Button runat="server" ID="EditBtn1" Style="width: 20em" OnClick="GoToGenralInfo" class="button is-primary is-large text-center " Text="تعديل المعلومات العامة"></asp:Button>
 
 </div>
 
@@ -580,11 +629,11 @@
     
                  
             <div class="col-6 text-center ">
-                <asp:Button runat="server" ID="Button2" Style="width: 20em" OnClick="GoToFinance" class="button is-primary is-large text-center " Text="تعديل المعلومات المالية"></asp:Button>
+                <asp:Button runat="server" ID="EditBtn2" Style="width: 20em" OnClick="GoToFinance" class="button is-primary is-large text-center " Text="تعديل المعلومات المالية"></asp:Button>
 
 </div>         
      <div class="col-6 text-center ">
-                <asp:Button runat="server" ID="Button22" Style="width: 20em" OnClick="GoToLoan" class="button is-primary is-large text-center " Text="تعديل معلومات المبادرة"></asp:Button>
+                <asp:Button runat="server" ID="EditBtn3" Style="width: 20em" OnClick="GoToLoan" class="button is-primary is-large text-center " Text="تعديل معلومات المبادرة"></asp:Button>
 
 </div>
 
@@ -694,7 +743,7 @@
                         text-center">
                  
                            <div class="form__group field">
-                <asp:Button runat="server" ID="Button3" Style="width: 20em" OnClick="GoToTechInfo" class="button is-primary is-large text-center " Text="تعديل المعلومات الفنية"></asp:Button>
+                <asp:Button runat="server" ID="EditBtn4" Style="width: 20em" OnClick="GoToTechInfo" class="button is-primary is-large text-center " Text="تعديل المعلومات الفنية"></asp:Button>
 
 </div>
 

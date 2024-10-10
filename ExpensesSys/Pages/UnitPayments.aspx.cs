@@ -19,7 +19,7 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
-                ProjectID = Global.ProjecID;
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable dt = BBAALL.GetAllUnitPaymentsOfRecID(RecID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
@@ -30,6 +30,8 @@ namespace ExpensesSys.Pages
 
 
             }
+            NewPayemnt.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+
         }
 
 

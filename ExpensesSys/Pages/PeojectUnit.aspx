@@ -83,16 +83,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    
-      <asp:Panel runat="server" ID="ButtonsBar">
+        <asp:Panel runat="server" ID="Panel1">
         <div class="row " style="margin-bottom: 1em">
                        <div class="col-auto">
                 <div class="field buttons align-items-end">
-
-
-
-
 
      <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة وحدة جديد"
         
@@ -106,8 +100,9 @@
 
                         </i></asp:LinkButton>
 
+
                 </div>
-            </div>      
+            </div>
                 
             <div class="col-auto">
                 <div class="field buttons align-items-end">
@@ -127,11 +122,32 @@
             </div>
             <div class="col-auto">
                 <div class="field buttons align-items-end">
+
+
+                              <div class="col-auto">
+                <div class="field buttons align-items-end">
+
+     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="الرجوع"
+      
+         data-target="modal-js-example"
+                                 onclick="Return"
+
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">الرجوع
+                       
+                        <i class="fas fa-home " style="margin-left: 1em">
+
+                        </i></asp:LinkButton>
+                </div>
+            </div>
                 </div>
             </div>
 
         </div>
+
     </asp:Panel>
+    
+    
+
     <article class="panel is-info" style="background-color: white;padding-bottom:2em;">
         <p class="panel-heading text-center" style="background-color:#3399ff;">ادارة وحدات المشاريع<i class="fa-solid fa-file-invoice-dollar"></i></p>
 
@@ -235,7 +251,10 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
             
                 </asp:TemplateField>
-                     <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+
+
+
+<%--                     <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 
                                                                 class="js-modal-trigger button is-warning "
@@ -244,7 +263,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                             ID="TechInfoBtn" runat="server"   Font-Size="Medium" Text="المعلومات الفنية" CommandArgument='<%#Eval("RecID") %>' CommandName="TechInfo" />
                     </ItemTemplate>
             
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
 
 
 

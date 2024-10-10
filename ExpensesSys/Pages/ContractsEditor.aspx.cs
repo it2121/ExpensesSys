@@ -16,7 +16,7 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
-                ProjectID = Global.getProjectID();
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
                 if (ContractID != 0)
                 {
                     DataTable ProjectDT = BBAALL.GetContractByIDLAW(ContractID);
@@ -32,6 +32,7 @@ namespace ExpensesSys.Pages
                             ContractingWithParty.Text = dt["ContractingWithParty"].ToString();
                             Notes.Text = dt["Notes"].ToString();
                             ContractNumber.Text = dt["ContractNumber"].ToString();
+                        ContractSub.Text = dt["ContractSub"].ToString();
 
 
                         
@@ -53,6 +54,7 @@ namespace ExpensesSys.Pages
                     ContractingWithParty.Text = "";
                     Notes.Text = "";
                     ContractNumber.Text = "";
+                    ContractSub.Text = "";
 
 
                     DateTime dateTime = DateTime.UtcNow.Date;
@@ -82,7 +84,7 @@ namespace ExpensesSys.Pages
                     ContractType.Text,
                     ContractingWithParty.Text,
                     Notes.Text,
-                    ContractNumber.Text,ProjectID
+                    ContractNumber.Text, ProjectID, ContractSub.Text
                     );
 
                 Response.Redirect("LAWContracts.aspx");
@@ -98,7 +100,7 @@ namespace ExpensesSys.Pages
                                    Notes.Text,
                                    ContractNumber.Text, 
                                    ProjectID,
-                                   ContractID
+                                   ContractID, ContractSub.Text
                                    );
                 ContractID = 0;
 
@@ -110,6 +112,7 @@ namespace ExpensesSys.Pages
                 ContractingWithParty.Text = "";
                 Notes.Text = "";
                 ContractNumber.Text = "";
+                ContractSub.Text = "";
                 Response.Redirect("LAWContracts.aspx");
             }
 
@@ -131,6 +134,7 @@ namespace ExpensesSys.Pages
             ContractingWithParty.Text = "";
             Notes.Text = "";
             ContractNumber.Text = "";
+            ContractSub.Text = "";
 
             Response.Redirect("LAWContracts.aspx");
 

@@ -18,7 +18,7 @@ namespace ExpensesSys.Pages
 
             {
 
-                if (Global.GetRole().Equals("القانونية"))
+                if (Session["Role"].ToString().Equals("القانونية"))
                 {
                     GoToPage = "LawHome";
                   //   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + GoToPage + "');", true);
@@ -100,7 +100,8 @@ namespace ExpensesSys.Pages
             }   else if (GoToPage.Equals("Home"))
             {
                 Home.ProjectID = 0;
-                Global.setProjectID(0);
+                Session["ProjectID"] = "0";
+
 
             }
 
@@ -174,7 +175,7 @@ namespace ExpensesSys.Pages
             {
                 Home.ProjectID = Convert.ToInt32(id.Text);
 
-                Global.setProjectID(Convert.ToInt32(id.Text));
+                                Session["ProjectID"] = id.Text;
 
             }
 

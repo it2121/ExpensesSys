@@ -85,7 +85,9 @@ namespace ExpensesSys.Pages
                 if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
 
                 BBAALL.InsertIntoUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                    DateOfPay.Text, Convert.ToInt32(PaidAmount.Text),RecID, paid);
+                    MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
+
+                    , Convert.ToInt32(PaidAmount.Text),RecID, paid);
 
 
 
@@ -101,7 +103,8 @@ namespace ExpensesSys.Pages
 
 
                 BBAALL.UpdateUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                    DateOfPay.Text, Convert.ToInt32(PaidAmount.Text), RecID, paid, PaymentID);
+                                        MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
+, Convert.ToInt32(PaidAmount.Text), RecID, paid, PaymentID);
 
                 RecID = "";
                 DelBtn.Visible = false;

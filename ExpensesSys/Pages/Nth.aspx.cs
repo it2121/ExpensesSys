@@ -43,8 +43,8 @@ namespace ExpensesSys.Pages
         protected void Return(object sender, EventArgs e)
         {
 
-
-            Response.Redirect("Home.aspx");
+            
+            Response.Redirect("MainFinance.aspx");
 
 
 

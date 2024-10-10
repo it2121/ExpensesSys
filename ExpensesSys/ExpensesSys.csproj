@@ -154,6 +154,10 @@
     <Content Include="Pages\Expences.aspx" />
     <Content Include="Pages\FinanceEditor.aspx" />
     <Content Include="Pages\FullReportInAndOutWithDate.aspx" />
+    <Content Include="Pages\GeneralFinanceNav.aspx" />
+    <Content Include="Pages\GeneralFinanceReports.aspx" />
+    <Content Include="Pages\GeneralInAndOut.aspx" />
+    <Content Include="Pages\GeneralInAndOutEditor.aspx" />
     <Content Include="Pages\GeneralIncome.aspx" />
     <Content Include="Pages\GeneralInfoEditor.aspx" />
     <Content Include="Pages\Home.aspx" />
@@ -164,11 +168,21 @@
     <Content Include="Pages\Docks.aspx" />
     <Content Include="Pages\LAWContracts.aspx" />
     <Content Include="Pages\LawHome.aspx" />
+    <Content Include="Pages\LawWarnReports.aspx" />
     <Content Include="Pages\LoanEditor.aspx" />
     <Content Include="Pages\LoanPayments.aspx" />
     <Content Include="Pages\LoanPaymentsEditor.aspx" />
+    <Content Include="Pages\MainFinance.aspx" />
+    <Content Include="Pages\MainHome.aspx" />
+    <Content Include="Pages\MainProjMan.aspx" />
+    <Content Include="Pages\MainTechMan.aspx" />
     <Content Include="Pages\People.aspx" />
+    <Content Include="Pages\ProjectAndUnits.aspx" />
+    <Content Include="Pages\SelectAndExtract.aspx" />
+    <Content Include="Pages\TechReports.aspx" />
     <Content Include="Pages\UnitReports.aspx" />
+    <Content Include="Pages\UnitsOfContracts.aspx" />
+    <Content Include="Pages\UnitTechInfo.aspx" />
     <Content Include="Pages\Upload.aspx" />
     <Content Include="Pages\LogInSeprate.aspx" />
     <Content Include="Pages\MatBuy.aspx" />
@@ -308,6 +322,34 @@
     <Compile Include="Pages\FullReportInAndOutWithDate.aspx.designer.cs">
       <DependentUpon>FullReportInAndOutWithDate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GeneralFinanceNav.aspx.cs">
+      <DependentUpon>GeneralFinanceNav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralFinanceNav.aspx.designer.cs">
+      <DependentUpon>GeneralFinanceNav.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralFinanceReports.aspx.cs">
+      <DependentUpon>GeneralFinanceReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralFinanceReports.aspx.designer.cs">
+      <DependentUpon>GeneralFinanceReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralInAndOut.aspx.cs">
+      <DependentUpon>GeneralInAndOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralInAndOut.aspx.designer.cs">
+      <DependentUpon>GeneralInAndOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralInAndOutEditor.aspx.cs">
+      <DependentUpon>GeneralInAndOutEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GeneralInAndOutEditor.aspx.designer.cs">
+      <DependentUpon>GeneralInAndOutEditor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GeneralIncome.aspx.cs">
       <DependentUpon>GeneralIncome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,6 +421,13 @@
     <Compile Include="Pages\LawHome.aspx.designer.cs">
       <DependentUpon>LawHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LawWarnReports.aspx.cs">
+      <DependentUpon>LawWarnReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LawWarnReports.aspx.designer.cs">
+      <DependentUpon>LawWarnReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoanEditor.aspx.cs">
       <DependentUpon>LoanEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +449,34 @@
     <Compile Include="Pages\LoanPaymentsEditor.aspx.designer.cs">
       <DependentUpon>LoanPaymentsEditor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MainFinance.aspx.cs">
+      <DependentUpon>MainFinance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MainFinance.aspx.designer.cs">
+      <DependentUpon>MainFinance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainHome.aspx.cs">
+      <DependentUpon>MainHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MainHome.aspx.designer.cs">
+      <DependentUpon>MainHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainProjMan.aspx.cs">
+      <DependentUpon>MainProjMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MainProjMan.aspx.designer.cs">
+      <DependentUpon>MainProjMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainTechMan.aspx.cs">
+      <DependentUpon>MainTechMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MainTechMan.aspx.designer.cs">
+      <DependentUpon>MainTechMan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\People.aspx.cs">
       <DependentUpon>People.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,12 +484,47 @@
     <Compile Include="Pages\People.aspx.designer.cs">
       <DependentUpon>People.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProjectAndUnits.aspx.cs">
+      <DependentUpon>ProjectAndUnits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProjectAndUnits.aspx.designer.cs">
+      <DependentUpon>ProjectAndUnits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectAndExtract.aspx.cs">
+      <DependentUpon>SelectAndExtract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SelectAndExtract.aspx.designer.cs">
+      <DependentUpon>SelectAndExtract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TechReports.aspx.cs">
+      <DependentUpon>TechReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TechReports.aspx.designer.cs">
+      <DependentUpon>TechReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UnitReports.aspx.cs">
       <DependentUpon>UnitReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\UnitReports.aspx.designer.cs">
       <DependentUpon>UnitReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitsOfContracts.aspx.cs">
+      <DependentUpon>UnitsOfContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitsOfContracts.aspx.designer.cs">
+      <DependentUpon>UnitsOfContracts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitTechInfo.aspx.cs">
+      <DependentUpon>UnitTechInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitTechInfo.aspx.designer.cs">
+      <DependentUpon>UnitTechInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>

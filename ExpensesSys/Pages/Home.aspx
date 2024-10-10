@@ -4,15 +4,9 @@
 
     <style>
         .HeaderDiv {
-  box-shadow: 4px 4px 20px Black;
-    border-radius: 10px;
-
-
-
-
-}
-
-
+            box-shadow: 4px 4px 20px Black;
+            border-radius: 10px;
+        }
     </style>
 
 </asp:Content>
@@ -37,14 +31,14 @@
                         </div>
                         <div class="row">
 
-                            <asp:Label runat="server" ID="EmpCountLbl" Style="font: bolder; width: 100%;" Width="100%"  Font-Size="XX-Large" ForeColor="White" class="" role="button" Text="31"></asp:Label>
+                            <asp:Label runat="server" ID="EmpCountLbl" Style="font: bolder; width: 100%;" Width="100%" Font-Size="XX-Large" ForeColor="White" class="" role="button" Text="31"></asp:Label>
 
 
 
                         </div>
                     </div>
                     <div class="col-5  text-center  align-middle" style="">
-<i class="fa fa-users mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color:white;"></i>
+                        <i class="fa fa-users mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color: white;"></i>
                     </div>
 
 
@@ -58,7 +52,7 @@
 
 
 
-                     <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #459aea;">
+            <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #459aea;">
 
 
                 <div class="row">
@@ -73,14 +67,14 @@
                         </div>
                         <div class="row">
 
-                            <asp:Label runat="server" ID="projectsCountLbl" Style="font: bolder; width: 100%;" Width="100%"  Font-Size="XX-Large" ForeColor="White" class="" role="button" Text="31"></asp:Label>
+                            <asp:Label runat="server" ID="projectsCountLbl" Style="font: bolder; width: 100%;" Width="100%" Font-Size="XX-Large" ForeColor="White" class="" role="button" Text="31"></asp:Label>
 
 
 
                         </div>
                     </div>
                     <div class="col-5  text-center  align-middle" style="">
-<i class="fa-solid fa-building mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color:white;"></i>
+                        <i class="fa-solid fa-building mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color: white;"></i>
                     </div>
 
 
@@ -91,9 +85,9 @@
 
 
             </div>
-         
 
-                     <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #5eb75b;">
+
+            <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #5eb75b;">
 
 
                 <div class="row">
@@ -108,14 +102,14 @@
                         </div>
                         <div class="row">
 
-                            <asp:Label runat="server" ID="Last30DaysIncome" Style="font: bolder; width: 100%;" Width="100%"  Font-Size="Medium" ForeColor="White" class="" role="button" Text="31"></asp:Label>
+                            <asp:Label runat="server" ID="Last30DaysIncome" Style="font: bolder; width: 100%;" Width="100%" Font-Size="Medium" ForeColor="White" class="" role="button" Text="31"></asp:Label>
 
 
 
                         </div>
                     </div>
                     <div class="col-5  text-center  align-middle" style="">
-<i class="fa-solid fa-money-bill-trend-up mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color:white;"></i>
+                        <i class="fa-solid fa-money-bill-trend-up mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color: white;"></i>
                     </div>
 
 
@@ -126,9 +120,9 @@
 
 
             </div>
-     
 
-                     <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #efad4c;">
+
+            <div class="col-xs-6 col-md-2  HeaderDiv text-center" style="background-color: #efad4c;">
 
 
                 <div class="row">
@@ -143,14 +137,14 @@
                         </div>
                         <div class="row">
 
-                            <asp:Label runat="server" ID="Last30DaysSpendings" Style="font: bolder; width: 100%;" Width="100%"  Font-Size="Medium" ForeColor="White" class="" role="button" Text="31"></asp:Label>
+                            <asp:Label runat="server" ID="Last30DaysSpendings" Style="font: bolder; width: 100%;" Width="100%" Font-Size="Medium" ForeColor="White" class="" role="button" Text="31"></asp:Label>
 
 
 
                         </div>
                     </div>
                     <div class="col-5  text-center  align-middle" style="">
-<i class="fa-solid fa-hand-holding-dollar mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color:white;"></i>
+                        <i class="fa-solid fa-hand-holding-dollar mt-4 mr-2 fa-3x text-center justify-content-center align-middle" aria-hidden="true" style="color: white;"></i>
                     </div>
 
 
@@ -165,7 +159,7 @@
 
 
 
-  
+
 
 
 
@@ -198,7 +192,7 @@
     </asp:Panel>
     <article class="panel is-info" style="background-color: white; padding-bottom: 2em;">
 
-        <p class="panel-heading text-center "  style="background-color: #3399ff;">الــرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
+        <p class="panel-heading text-center " style="background-color: #3399ff;">الــرئيسيـــة <i class="fa-solid fa-file-invoice-dollar"></i></p>
 
 
 
@@ -387,18 +381,18 @@
 
 
 
-            
+
 
             <div class="col   text-center ">
                 <asp:Button runat="server" ID="SalaryManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToEmpMan" role="button" Text="ادارة الرواتب"></asp:Button>
-            </div> 
-            
+            </div>
+
             <div class="col   text-center ">
 
                 <asp:Button runat="server" ID="ProjectManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToProjMan" role="button" Text="ادارة المشاريع"></asp:Button>
             </div>
-            
-            
+
+
             <div class="col   text-center ">
                 <asp:Button runat="server" ID="EmpManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalEmp" role="button" Text="الادارة والملاك"></asp:Button>
 
@@ -444,11 +438,7 @@
 
 
             <div class="col-4 mt-5  text-center">
-<%--                <asp:Button runat="server" ID="Button8" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>--%>
-
-
-
-
+                <%--                <asp:Button runat="server" ID="Button8" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToIncome" role="button" Text="الايرادات والتمويل"></asp:Button>--%>
             </div>
 
 
@@ -460,7 +450,7 @@
 
             </div>
 
-    
+
 
 
 
@@ -475,7 +465,20 @@
 
 
             <div class="col-12 mt-5  text-center">
-                                <asp:Button runat="server" ID="OverseeingBTn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف الوحدات السكنية"></asp:Button>
+                <asp:Button runat="server" ID="OverseeingBTn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitInfo" role="button" Text="كشف الوحدات السكنية"></asp:Button>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row  " style="padding-left: 1em; padding-right: 1em;">
+
+
+
+            <div class="col-12 mt-5  text-center">
+                <asp:Button runat="server" ID="MultySelectExtractData" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToSelectAndExtract" role="button" Text="كشف الوحدات السكنية المتعدد"></asp:Button>
 
 
             </div>
@@ -493,7 +496,7 @@
 
             </div>
 
-            
+
             <div class="col-6 mt-5  text-center">
                 <asp:Button runat="server" ID="UnitReports" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToUnitReports" role="button" Text="تقارير الوحدات"></asp:Button>
 

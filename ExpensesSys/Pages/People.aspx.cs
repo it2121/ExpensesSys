@@ -15,14 +15,14 @@ namespace ExpensesSys.Pages.Law
             Main.openPage = "LawPeople";
 
             if (!IsPostBack) { 
-            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0][0].ToString();
+            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0][0].ToString();
             }
         }
 
         protected void Search(object sender, EventArgs e)
         {
 
-            DataTable dt = BBAALL.GetSearchListByWord(Global.getProjectID(), SearchBox.Text);
+            DataTable dt = BBAALL.GetSearchListByWord(Convert.ToInt32(Session["ProjectID"].ToString()), SearchBox.Text);
             DataGridUsers.DataSource = dt;
             DataGridUsers.DataBind();
 
@@ -58,7 +58,7 @@ namespace ExpensesSys.Pages.Law
             GeneralInfoEditor.RecID = id.Text;
 
             GeneralInfoEditor.RecdirectTo = "People.aspx";
-            GeneralInfoEditor.ProjectID = Global.getProjectID();
+            GeneralInfoEditor.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Response.Redirect("GeneralInfoEditor.aspx");
 
         }

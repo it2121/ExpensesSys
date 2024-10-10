@@ -31,9 +31,9 @@ namespace ExpensesSys.Pages
             DateTime TodayDate = DateTime.Now;
 
 
-            int startResult = DateTime.Compare( TodayDate, Date);
+            int startResult = DateTime.Compare(TodayDate, Date);
 
-            if (startResult >= 0 )
+            if (startResult >= 0)
             {
 
                 return true;
@@ -49,11 +49,11 @@ namespace ExpensesSys.Pages
             return returnString;
 
         }
-        public static int GetCountOfRowsWithCondition(DataTable dt , string CoulmnName , string Value)
+        public static int GetCountOfRowsWithCondition(DataTable dt, string CoulmnName, string Value)
         {
             int count = 0;
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 if (dr[CoulmnName].ToString().Equals(Value))
                     count++;
@@ -63,13 +63,14 @@ namespace ExpensesSys.Pages
             return count;
 
 
-        }   public static double GetSumOfRowsWithCondition(DataTable dt , string CoulmnName )
+        }
+        public static double GetSumOfRowsWithCondition(DataTable dt, string CoulmnName)
         {
             double Sum = 0;
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
-                    Sum+= GetIntFromNumberStringWithComas(dr[CoulmnName].ToString());
+                Sum += GetIntFromNumberStringWithComas(dr[CoulmnName].ToString());
 
             }
 
@@ -86,32 +87,32 @@ namespace ExpensesSys.Pages
 
 
         }
-        public static  DataTable GetTableAferDateIsWithTheTwoDatesFromTheTable(DataTable InTbl ,string StartDateFeild, string EndDateFeild , 
+        public static DataTable GetTableAferDateIsWithTheTwoDatesFromTheTable(DataTable InTbl, string StartDateFeild, string EndDateFeild,
             string DateToBeWithn)
         {
 
             DataTable AfterDateDT = InTbl.Clone();
             DataTable retunrDT = AfterDateDT.Clone();
             retunrDT.Clone();
-            if (DateToBeWithn.Length > 0 )
+            if (DateToBeWithn.Length > 0)
             {
                 AfterDateDT.Clear();
 
                 foreach (DataRow dr in InTbl.Rows)
                 {
-                
-                        DateTime Date = DateTime.ParseExact(DateToBeWithn ,"dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        DateTime Startdate = DateTime.ParseExact(dr[StartDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        DateTime Enddate = DateTime.ParseExact(dr[EndDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        int startResult = DateTime.Compare(Date, Startdate);
-                        int endResult = DateTime.Compare(Enddate, Date);
 
-                        if (startResult >= 0 && endResult >= 0)
-                        {
-                            AfterDateDT.ImportRow(dr);
+                    DateTime Date = DateTime.ParseExact(DateToBeWithn, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime Startdate = DateTime.ParseExact(dr[StartDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime Enddate = DateTime.ParseExact(dr[EndDateFeild].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    int startResult = DateTime.Compare(Date, Startdate);
+                    int endResult = DateTime.Compare(Enddate, Date);
 
-                        }
-                 
+                    if (startResult >= 0 && endResult >= 0)
+                    {
+                        AfterDateDT.ImportRow(dr);
+
+                    }
+
 
                 }
                 retunrDT = AfterDateDT;
@@ -124,7 +125,7 @@ namespace ExpensesSys.Pages
 
             return retunrDT;
         }
-          public static  DataTable GetTableAfterDateCheck(DataTable InTbl ,string StartDate, string EndDate)
+        public static DataTable GetTableAfterDateCheck(DataTable InTbl, string StartDate, string EndDate)
         {
 
             DataTable AfterDateDT = InTbl.Clone();
@@ -136,21 +137,58 @@ namespace ExpensesSys.Pages
 
                 foreach (DataRow dr in InTbl.Rows)
                 {
-                
-                        DateTime Date = DateTime.ParseExact(dr["التاريخ"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        DateTime Startdate = DateTime.ParseExact(StartDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        DateTime Enddate = DateTime.ParseExact(EndDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
 
-                        int startResult = DateTime.Compare(Date, Startdate);
-                        int endResult = DateTime.Compare(Enddate, Date);
+                    CultureInfo enUS = new CultureInfo("en-US");
 
-                        if (startResult >= 0 && endResult >= 0)
-                        {
-                            AfterDateDT.ImportRow(dr);
+                    //  var dt = "1374755180";
 
-                        }
-                 
+                    DateTime dateValue;
+                    DateTime Date;
+                    // DateTime Date = DateTime.ParseExact(dr["التاريخ"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                    bool yearFirst = false;
+
+                    // Scenario #2
+                    /*  if (DateTime.TryParseExact(dr["التاريخ"].ToString(), "dd/MM/yyyy", enUS, DateTimeStyles.None, out dateValue))
+                      {
+                          yearFirst = false;
+                          Date = dateValue;
+                      }
+
+                      // Scenario #3
+                      if (DateTime.TryParseExact(dr["التاريخ"].ToString(), "yyyy/MM/dd", enUS, DateTimeStyles.None, out dateValue))
+                      {
+                          yearFirst = true;
+                          Date = dateValue;
+
+                      }*/
+
+                    var formatStrings = new string[] { "dd/MM/yyyy", "yyyy/MM/dd" };
+                    if (DateTime.TryParseExact(dr["التاريخ"].ToString(), formatStrings, enUS, DateTimeStyles.None, out Date))
+                    {
+
+                        //  Date = Date;
+
+                    }
+                    //  return dateValue;
+
+                    string[] formats = { "dd/MM/yyyy", "d/MM/yyyy", "dd/M/yyyy", "d/M/yyyy", "yyyy/MM/dd" , "yyyy/MM/d" , "yyyy/M/dd", "yyyy/M/d" };
+                    var dateTime = DateTime.ParseExact(dr["التاريخ"].ToString(), formats, new CultureInfo("en-GB"), DateTimeStyles.None);
+                    Date = dateTime;
+                    DateTime Startdate = DateTime.ParseExact(StartDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime Enddate = DateTime.ParseExact(EndDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                    int startResult = DateTime.Compare(Date, Startdate);
+                    int endResult = DateTime.Compare(Enddate, Date);
+
+                    if (startResult >= 0 && endResult >= 0)
+                    {
+                        AfterDateDT.ImportRow(dr);
+
+                    }
+
 
                 }
                 retunrDT = AfterDateDT;
@@ -164,6 +202,23 @@ namespace ExpensesSys.Pages
             return retunrDT;
         }
 
+        public static string GetDateAfterCheckingFormating(string inDate)
+        {
+
+
+            DateTime dateValue;
+            DateTime Date;
+
+            string[] formats = { "dd/MM/yyyy", "d/MM/yyyy", "dd/M/yyyy", "d/M/yyyy", "yyyy/MM/dd", "yyyy/MM/d", "yyyy/M/dd", "yyyy/M/d" };
+            var dateTime = DateTime.ParseExact(inDate, formats, new CultureInfo("en-GB"), DateTimeStyles.None);
+            Date = dateTime;
+
+            return Date.ToString("dd/MM/yyyy");
+
+
+
+
+        }
         public static string GetLastDayOfTheMonth(int Month)
         {
             int total_days_in_month;
@@ -191,7 +246,7 @@ namespace ExpensesSys.Pages
                     break;
             }
 
-            return  total_days_in_month+"";
+            return total_days_in_month + "";
 
 
 
@@ -212,13 +267,13 @@ namespace ExpensesSys.Pages
             return String.Empty;
         }
 
-        public static  DataTable GetTableAfterCeckWithdorwParty(DataTable InTbl ,string WithdorwParty, string FeildName)
+        public static DataTable GetTableAfterCeckWithdorwParty(DataTable InTbl, string WithdorwParty, string FeildName)
         {
 
             DataTable AfterPrjectName = InTbl.Clone();
             AfterPrjectName.Clear();
 
-            foreach(DataRow dr in InTbl.Rows)
+            foreach (DataRow dr in InTbl.Rows)
             {
 
                 if (dr[FeildName].ToString().Equals(WithdorwParty))
@@ -231,13 +286,14 @@ namespace ExpensesSys.Pages
 
             return AfterPrjectName;
 
-        }  public static  DataTable GetTableAfterCeckProjectName(DataTable InTbl ,string ProjectName, string FeildName)
+        }
+        public static DataTable GetTableAfterCeckProjectName(DataTable InTbl, string ProjectName, string FeildName)
         {
 
             DataTable AfterPrjectName = InTbl.Clone();
             AfterPrjectName.Clear();
 
-            foreach(DataRow dr in InTbl.Rows)
+            foreach (DataRow dr in InTbl.Rows)
             {
 
                 if (dr[FeildName].ToString().Equals(ProjectName))
@@ -253,7 +309,7 @@ namespace ExpensesSys.Pages
         }
 
 
-        public static DataTable ReturnTableWithCurrencyCommas (DataTable InTbl ,string FeildName)
+        public static DataTable ReturnTableWithCurrencyCommas(DataTable InTbl, string FeildName)
         {
             DataTable NewTable = InTbl.Clone();
 
@@ -262,7 +318,7 @@ namespace ExpensesSys.Pages
 
             NewTable.Columns.Add(FeildName, typeof(String));
 
-            foreach (DataRow dr in InTbl.Rows )
+            foreach (DataRow dr in InTbl.Rows)
 
 
             {
@@ -273,12 +329,12 @@ namespace ExpensesSys.Pages
 
             }
             int counter = 0;
-            foreach (DataRow dr in InTbl.Rows )
+            foreach (DataRow dr in InTbl.Rows)
 
 
             {
 
-                NewTable.Rows[counter][FeildName] = GetNumberWithComas(dr[FeildName].ToString()+"");
+                NewTable.Rows[counter][FeildName] = GetNumberWithComas(dr[FeildName].ToString() + "");
 
                 counter++;
 
@@ -288,12 +344,12 @@ namespace ExpensesSys.Pages
 
             return NewTable;
 
-        } 
+        }
 
 
-        public static int  ReturnSumOfDTFildInInt (DataTable InTbl ,string FildName)
+        public static double ReturnSumOfDTFildInInt(DataTable InTbl, string FildName)
         {
-            int sum = 0;
+            double sum = 0;
             foreach (DataRow dr in InTbl.Rows)
             {
 

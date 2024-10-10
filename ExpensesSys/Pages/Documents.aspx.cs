@@ -18,7 +18,7 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack) { 
             DataTable dt = BBAALL.GetAllDocksOrARecID(RecID);
-            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Global.getProjectID()).Rows[0]["Name"].ToString();
+            PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0]["Name"].ToString();
             DataGridUsers.DataSource = dt;
             DataGridUsers.DataBind();
             }

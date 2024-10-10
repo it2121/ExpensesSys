@@ -33,31 +33,64 @@ namespace ExpensesSys.Pages
 
             }
         }
+
+        public DataTable ReturnTableWithoutDates()
+        {
+            DataTable MoneyTable = IncomeSet.Clone();
+            foreach(DataRow dr in IncomeSet.Rows) { MoneyTable.ImportRow(dr); }
+            MoneyTable.Columns.Remove("الانذار_الاولي");
+            MoneyTable.Columns.Remove("تسليم_الانذار_الاولي");
+            MoneyTable.Columns.Remove("الانذار_النهائي");
+            MoneyTable.Columns.Remove("تسليم_الانذار_النهائي");
+
+
+            return MoneyTable;
+        }
+        public DataTable ReturnTableWithoutMoney()
+        {
+            DataTable WarnTable = IncomeSet.Clone();
+            foreach (DataRow dr in IncomeSet.Rows) { WarnTable.ImportRow(dr); }
+
+            WarnTable.Columns.Remove("المبلغ_الكامل");
+            WarnTable.Columns.Remove("المبلغ_المتبقي");
+            WarnTable.Columns.Remove("المطلوب");
+            WarnTable.Columns.Remove("الواصل");
+
+
+            return WarnTable;
+        }
+
+        protected void ShowMoney(object sender, EventArgs e)
+        {
+
+
+
+
+            OutComeTable.DataSource = ReturnTableWithoutDates();
+            OutComeTable.DataBind();
+
+
+
+
+        }
+
+        protected void ShowWarnDates(object sender, EventArgs e) {
+
+         
+
+
+            OutComeTable.DataSource = ReturnTableWithoutMoney();
+            OutComeTable.DataBind();
+
+
+
+
+        }
         protected void CalclateAllTables(object sender, EventArgs e)
         {
             EmpCount.Text = EmpRadioLost.SelectedItem.Value;
 
             Income = BBAALL.REP_GetAllIncomeRecords();
-
-            // IncomeSet = MyStringManager.GetTableAfterDateCheck(Income, StartDate.Text, EndDate.Text);
-
-
-
-
-            // if (PrjectNameCheck.Checked == false)
-            // {
-
-            //  IncomeSet = MyStringManager.GetTableAfterCeckProjectName(IncomeSet, UnitType.SelectedItem.Value, "اسم_الجهة_المستلمة");
-
-
-
-            //  }
-
-
-            // IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ") + "") + " IQD مجموع الوارد";
-
-
-            //   IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ");
 
             if (PrjectNameCheck.Checked)
                 UnittypeStr = UnitType.Text;
@@ -83,7 +116,6 @@ namespace ExpensesSys.Pages
 
             IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType );
 
-           // EmpCount.Text = IncomeSet.Rows.Count + "";
 
 
 
@@ -103,11 +135,13 @@ namespace ExpensesSys.Pages
             //IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
            // IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
 
-            OutComeTable.DataSource = IncomeSet;
+            OutComeTable.DataSource = ReturnTableWithoutDates();
             OutComeTable.DataBind();
 
             OutComeTablePanel.Visible = true;
             ExportBtn.Visible = true;
+            showmoneyBtn.Visible = true;
+            showdatesBtn.Visible = true;
         }
 
         protected void ChckedChanged(object sender, EventArgs e)
@@ -200,7 +234,8 @@ namespace ExpensesSys.Pages
 
 
             }
-        }     protected void ChckedChangedMoneyStatus(object sender, EventArgs e)
+        }     
+        protected void ChckedChangedMoneyStatus(object sender, EventArgs e)
         {
             if (MoneyFilterCheck.Checked == true)
             {
@@ -218,7 +253,8 @@ namespace ExpensesSys.Pages
 
 
             }
-        }    protected void ChckedChangedLoanStatus(object sender, EventArgs e)
+        }    
+        protected void ChckedChangedLoanStatus(object sender, EventArgs e)
         {
             if (LoanCheck.Checked == true)
             {
@@ -247,10 +283,14 @@ namespace ExpensesSys.Pages
         }
         protected void Return(object sender, EventArgs e)
         {
+            if (Session["Role"].Equals("ادارة")) { 
+            
+             Response.Redirect("MainProjMan.aspx");
 
-
-            Response.Redirect("Home.aspx");
-
+            }
+            else { 
+            Response.Redirect("MainFinance.aspx");
+            }
 
 
         }

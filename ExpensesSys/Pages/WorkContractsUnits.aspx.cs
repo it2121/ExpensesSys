@@ -15,7 +15,7 @@ namespace ExpensesSys.Pages
         public static string RecID = "";
         public static string UnitType = "";
         public static int WeightReachedRecordID = 0;
-      //  public static string ForEmp = "0";
+        //  public static string ForEmp = "0";
         protected void Page_Load(object sender, EventArgs e)
         {
             Main.openPage = "WorkContracts";
@@ -44,7 +44,7 @@ namespace ExpensesSys.Pages
 
                     ChBoxList.DataBind();
 
-                    if (!RecID.Equals(""))
+                    if (ID!=0)
                     {
                         foreach (ListItem itemm in ChBoxList.Items)
                             foreach (DataRow dr in UnitNamesOfWorkContract.Rows)
@@ -74,7 +74,8 @@ namespace ExpensesSys.Pages
                             }
                     }
                 }
-                else {
+                else
+                {
 
                     var list = AllUnitNames.Rows.OfType<DataRow>()
                      .Select(dr => dr.Field<string>("NameOfUnit")).ToList();
@@ -86,6 +87,14 @@ namespace ExpensesSys.Pages
 
 
                 }
+
+
+
+
+
+
+
+
             }
 
 
@@ -104,7 +113,7 @@ namespace ExpensesSys.Pages
 
                 InsertUnits();
 
-                Response.Redirect("WorkContracts.aspx");
+                Response.Redirect("UnitsOfContracts.aspx");
 
             }
 
