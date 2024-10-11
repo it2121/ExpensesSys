@@ -15,10 +15,12 @@ namespace ExpensesSys.Pages
         public static int ProjectID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Main.openPage = "Income";
 
             if (!IsPostBack)
             {
+
                 ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable dt = BBAALL.GetAllUnitPaymentsOfRecID(RecID);

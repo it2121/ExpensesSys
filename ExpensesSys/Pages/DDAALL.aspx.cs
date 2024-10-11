@@ -25,7 +25,7 @@ namespace ExpensesSys.Pages
 
 
 
-         static string DatabaseConnectionString =    @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
+        static string DatabaseConnectionString =    @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
         static string DatabaseConnectionStringLAW = @"Server=DELTA\SQLEXPRESS;Database=LawDB;Trusted_Connection        = True;";
 
 
