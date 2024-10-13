@@ -90,7 +90,7 @@ namespace ExpensesSys.Pages
         {
             EmpCount.Text = EmpRadioLost.SelectedItem.Value;
 
-            Income = BBAALL.REP_GetAllIncomeRecords();
+         //   Income = BBAALL.REP_GetAllIncomeRecords();
 
             if (PrjectNameCheck.Checked)
                 UnittypeStr = UnitType.Text;

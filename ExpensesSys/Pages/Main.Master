@@ -144,7 +144,7 @@
 
                            <div class="col-2">
                                                                                   <div class="box align-content-center text-center" style="background-color:#343a40; color:white;">
-
+                                                                                      <button class="button  is-text   " style="display:none;" > </button>
                                       <asp:Button runat="server" ID="LogOutBtn" class="button  is-text   " Font-Underline="false" ForeColor="Pink" OnClick="LogOut" Font-Bold="true"  Text="تسجيــل الخروج"  />
                            </div>
                            </div>

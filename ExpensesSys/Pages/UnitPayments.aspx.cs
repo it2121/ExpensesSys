@@ -53,16 +53,35 @@ namespace ExpensesSys.Pages
            
 
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_ID") as Label;
-
-
             UnitPaymentsEditor.RecID = RecID;
             UnitPaymentsEditor.PaymentID = Convert.ToInt32(id.Text);
-
-         
-
-
-
             Response.Redirect("UnitPaymentsEditor.aspx");
+
+
+
+
+
+
+
+        }
+
+        protected void MyGridView_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {//GoToPay
+            string x = e.CommandName;//returns "Select" for both asp:CommandField columns
+
+            if (x.Equals("GoToPay"))
+            {
+
+                UnitPaymentsPayments.OriginalPaymentID = Convert.ToInt32(e.CommandArgument.ToString());
+                UnitPaymentsPayments.ProjectID = ProjectID;
+
+
+
+
+
+                Response.Redirect("UnitPaymentsPayments.aspx");
+
+            }
 
 
         }

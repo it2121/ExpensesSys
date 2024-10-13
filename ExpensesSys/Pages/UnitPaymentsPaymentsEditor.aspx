@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="UnitPaymentsEditor.aspx.cs" Inherits="ExpensesSys.Pages.UnitPaymentsEditor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Main.Master" AutoEventWireup="true" CodeBehind="UnitPaymentsPaymentsEditor.aspx.cs" Inherits="ExpensesSys.Pages.UnitPaymentsPaymentsEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-        <style>
+      <style>
 
         .form__group {
   position: relative;
@@ -66,9 +65,10 @@
 }
 
     </style>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
        <asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>
       <asp:Panel runat="server" ID="ButtonsBar" >
             <div class="row " style="margin-bottom:1em">
@@ -140,9 +140,9 @@
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="PayNo"  class="form__field" type="input" placeholder="رقم الدفعة" />
+     <asp:TextBox runat="server" ID="PaidAmount"  class="form__field" type="input" placeholder="المبلغ المدفوع" />
 
-    <label for="name" class="form__label">رقم الدفعة</label>
+    <label for="name" class="form__label">المبلغ المدفوع</label>
 </div>
            
 
@@ -153,29 +153,25 @@
 
 
            
-    
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Amount"  class="form__field" type="input" placeholder="مقدار الدفعة الكامل" />
+     <asp:TextBox runat="server" ID="PayDate"  class="form__field" type="input" placeholder="التاريخ" />
 
-    <label for="name" class="form__label">مقدار الدفعة الكامل</label>
+    <label for="name" class="form__label">التاريخ</label>
 </div>
            
 
 
 
-
             </div>
 
 
 
 
             </div>
-            
-           
+
 
 
             <br />
-
 
 
      
@@ -205,6 +201,7 @@
     <script>function confirmation() {
             return confirm("هل انت متاكد, سوف تحذف الدفعة نهائياً?");
         }</script>
+
 
 
 </asp:Content>

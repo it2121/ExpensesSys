@@ -158,7 +158,9 @@ namespace ExpensesSys.Pages
         {
 
             ManagmentBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
+            Button1.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
             FinanceBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
+            searchPanel.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             TechBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الفنية") ;
 
 
@@ -192,6 +194,17 @@ namespace ExpensesSys.Pages
             SelectAndExtract.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Response.Redirect("SelectAndExtract.aspx");
 
+
+
+
+
+        }
+        protected void BackUp(object sender, EventArgs e)
+        {
+
+            BBAALL.BackupDatabases();
+
+             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('تم انشاء نسخة احتياطية لقاعدة البيانات في - C/Users/GC/Documents/DB_BackUps ');", true);
 
 
 
@@ -257,6 +270,72 @@ namespace ExpensesSys.Pages
             Response.Redirect("Nth.aspx");
 
         }
+
+
+
+
+
+
+
+        protected void Search(object sender, EventArgs e)
+        {
+
+            DataTable dt = BBAALL.GetSearchListByWord(ProjectID, SearchBox.Text);
+            DataGridUsers.DataSource = dt;
+            DataGridUsers.DataBind();
+
+        }
+        protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+        {
+            //NewEditIndex property used to determine the index of the row being edited.
+            // DataGridUsers.EditIndex = e.NewEditIndex;
+            //  showstuff();
+
+            Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_OR23") as Label;
+
+
+            UnitOverlook.RecID = id.Text;
+            UnitOverlook.ProjectID = ProjectID;
+
+
+            Response.Redirect("UnitOverlook.aspx");
+
+
+        }
+
+        protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
+        {
+            //Finding the controls from Gridview for the row which is going to update
+            //  Label id = DataGridUsers.Rows[e.RowIndex].FindControl("lbl_ID") as Label;
+            //  TextBox city = DataGridUsers.Rows[e.RowIndex].FindControl("txt_City") as TextBox;
+
+            //updating the record
+            //  BBAALL.EditAmountOfItemsProvided(Convert.ToInt32(id.Text), Convert.ToInt32(city.Text));
+
+
+            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview
+            //  DataGridUsers.EditIndex = -1;
+            //Call ShowData method for displaying updated data
+            //  showstuff();
+        }//
+        protected void GridView1_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+        {
+            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview
+            //  DataGridUsers.EditIndex = -1;
+            // showstuff();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         protected void GoToIncome(object sender, EventArgs e)
         {
             // PeojectSeector.GoToPage = "Income";

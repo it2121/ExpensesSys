@@ -11,7 +11,7 @@ namespace ExpensesSys.Pages
 {
 
 
-    public partial class UnitPaymentsEditor
+    public partial class UnitPaymentsPaymentsEditor
     {
 
         /// <summary>
@@ -33,22 +33,22 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Panel ButtonsBar;
 
         /// <summary>
-        /// PayNo control.
+        /// PaidAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PayNo;
+        protected global::System.Web.UI.WebControls.TextBox PaidAmount;
 
         /// <summary>
-        /// Amount control.
+        /// PayDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Amount;
+        protected global::System.Web.UI.WebControls.TextBox PayDate;
 
         /// <summary>
         /// CreateBtn control.

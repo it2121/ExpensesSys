@@ -180,6 +180,8 @@
     <Content Include="Pages\ProjectAndUnits.aspx" />
     <Content Include="Pages\SelectAndExtract.aspx" />
     <Content Include="Pages\TechReports.aspx" />
+    <Content Include="Pages\UnitPaymentsPayments.aspx" />
+    <Content Include="Pages\UnitPaymentsPaymentsEditor.aspx" />
     <Content Include="Pages\UnitReports.aspx" />
     <Content Include="Pages\UnitsOfContracts.aspx" />
     <Content Include="Pages\UnitTechInfo.aspx" />
@@ -504,6 +506,20 @@
     </Compile>
     <Compile Include="Pages\TechReports.aspx.designer.cs">
       <DependentUpon>TechReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitPaymentsPayments.aspx.cs">
+      <DependentUpon>UnitPaymentsPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitPaymentsPayments.aspx.designer.cs">
+      <DependentUpon>UnitPaymentsPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UnitPaymentsPaymentsEditor.aspx.cs">
+      <DependentUpon>UnitPaymentsPaymentsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UnitPaymentsPaymentsEditor.aspx.designer.cs">
+      <DependentUpon>UnitPaymentsPaymentsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UnitReports.aspx.cs">
       <DependentUpon>UnitReports.aspx</DependentUpon>

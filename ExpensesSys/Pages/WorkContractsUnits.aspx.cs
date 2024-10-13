@@ -123,7 +123,7 @@ namespace ExpensesSys.Pages
                 InsertTechInfoIntoUnits();
                 RecID = "";
                 WeightReachedRecordID = 0;
-                Response.Redirect("PeojectUnit.aspx");
+                Response.Redirect("UnitTechInfo.aspx");
 
 
             }
@@ -136,7 +136,7 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("WorkContracts.aspx");
+            Response.Redirect("MainTechMan.aspx");
 
 
 

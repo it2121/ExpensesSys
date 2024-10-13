@@ -12,14 +12,17 @@ namespace ExpensesSys.Pages
     {
         public static string RecID = "";
         public static int PaymentID = 0;
+        public static int ProjectID = 0;
         public static string  Paid = "0";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+
                 if (PaymentID != 0)
                 {
+
                     DataTable PayTbl = BBAALL.GetUnitPaymentByID(PaymentID);
                    // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + PayTbl.Rows.Count+ "');", true);
 
@@ -32,8 +35,6 @@ namespace ExpensesSys.Pages
 
                             PayNo.Text = dt["PayNo"].ToString();
                             Amount.Text = dt["Amount"].ToString();
-                            DateOfPay.Text = dt["DateOfPay"].ToString();
-                            PaidAmount.Text = dt["PaidAmount"].ToString();
                             Paid = dt["Paid"].ToString();
 
 
@@ -51,13 +52,10 @@ namespace ExpensesSys.Pages
 
                     CreateBtn.Text = "اضافة دفعة جديدة";
 
-                    DateTime dateTime = DateTime.UtcNow.Date;
-                    DateOfPay.Text = dateTime.ToString("dd/MM/yyyy");
-
+                  
 
                     PayNo.Text = "";
                     Amount.Text = "";
-                    PaidAmount.Text = "";
 
                     Paid = "";
 
@@ -82,29 +80,31 @@ namespace ExpensesSys.Pages
 
                 // ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ORNumber.Text + Date.Text + Value.Text + checkedd + Note.Text + "');", true);
                 string paid = "0";
-                if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
+                //if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
 
-                BBAALL.InsertIntoUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                    MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
+                BBAALL.InsertIntoUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text) ,ProjectID ,RecID, paid);
 
-                    , Convert.ToInt32(PaidAmount.Text),RecID, paid);
-
+                //   MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
 
 
 
-                Response.Redirect("UnitPayments.aspx");
+                UnitPaymentsPaymentsEditor.ID = 0;
+                UnitPaymentsPaymentsEditor.OriginalPaymentID = Convert.ToInt32(BBAALL.GetLastAddedOriginalPayment().Rows[0][0].ToString());
+
+                Response.Redirect("UnitPaymentsPaymentsEditor.aspx");
+
+
 
             }
             else
             {
-                string paid = "0";
+               // string paid = "0";
 
-                if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
+           //     if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
 
 
                 BBAALL.UpdateUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                                        MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
-, Convert.ToInt32(PaidAmount.Text), RecID, paid, PaymentID);
+                                       RecID, PaymentID);
 
                 RecID = "";
                 DelBtn.Visible = false;
@@ -127,14 +127,13 @@ namespace ExpensesSys.Pages
             CreateBtn.Text = "اضافة دفعة جديدة";
 
 
-            DateTime dateTime = DateTime.UtcNow.Date;
+       /*     DateTime dateTime = DateTime.UtcNow.Date;
             DateOfPay.Text = dateTime.ToString("dd/MM/yyyy");
-
+*/
 
             PayNo.Text = "";
             Amount.Text = "";
-            DateOfPay.Text = "";
-            PaidAmount.Text = "";
+  
             Paid = "";
 
             Response.Redirect("UnitPayments.aspx");
