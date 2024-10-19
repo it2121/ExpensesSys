@@ -1017,7 +1017,48 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
+        public static DataTable GetAllWorkContractsTbl()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand___OUT();
 
+            cm.CommandText = "GetAllWorkContractsTbl";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+          public static DataTable getAllWarehouse__OUT()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand___OUT();
+
+            cm.CommandText = "getAllWarehouse";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+
+        public static DataTable GetAllWeights()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand___OUT();
+
+            cm.CommandText = "GetAllWeights";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+        
+
+        public static DataTable GetAllTechInto()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand___OUT();
+
+            cm.CommandText = "GetAllTechInto";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+        
         public static DataTable GetTechInfo(string RecID)
         {
             SqlCommand cm;
@@ -1028,6 +1069,11 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
+
+
+
+
+
         public static DataTable GetGeneralInfo(string RecID)
         {
             SqlCommand cm;
@@ -2124,7 +2170,9 @@ string PayDate, int PaidAmount, int ID)
             return DDAALL.ExecuteCommand(cm);
         }
 
-        public static bool UpdateWarehouse(int MatBuyID, string ActionType, int Quant, int ID)
+        public static bool UpdateWarehouse(
+            int MatBuyID, string ActionType, int Quant, int ID
+            )
 
         {
             SqlCommand cm;
@@ -2276,7 +2324,8 @@ string SecondWarnRecDate
 
 
         }
-        public static bool UpdateTechInfo(string BuiType, int ComPre, string ComStage, string RecID, int ProjectID, int WeightReachedRecordID)
+        public static bool UpdateTechInfo(
+            string BuiType, int ComPre, string ComStage, string RecID, int ProjectID, int WeightReachedRecordID)
 
         {
             SqlCommand cm;
@@ -2525,6 +2574,84 @@ string ContractNumber,
 
 
         }
+        
+
+        public static bool DropWorkContractsTbl()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropWorkContractsTbl";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        public static bool DropWeightSections()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropWeightSections";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+         public static bool DropWeights()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropWeights";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        
+        public static bool DropWarehouseTbl()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropWarehouseTbl";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        
+
+        public static bool DropUnitsPerContractTbl()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropUnitsPerContractTbl";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        
+        
+        public static bool DropTechInfo()
+
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            if (cm == null) { return false; }
+            cm.CommandText = "DropTechInfo";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteCommand(cm);
+
+        }  
+        
+        
+        
+        
+        
         public static bool InsertNth(string Name, int Quant, string BuyDate, int Cost, string WithdrowParty)
 
         {

@@ -40,6 +40,11 @@ namespace ExpensesSys.Pages
             SelectAndExtract.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
             Response.Redirect("SelectAndExtract.aspx");
 
+        }   protected void GoToOriginalempslector(object sender, EventArgs e)
+        {
+            OriginalEmpSelector.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+            Response.Redirect("OriginalEmpSelector.aspx");
+
         }
         protected void Return(object sender, EventArgs e)
         {

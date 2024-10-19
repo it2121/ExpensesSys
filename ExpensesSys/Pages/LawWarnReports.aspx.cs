@@ -231,7 +231,7 @@ namespace ExpensesSys.Pages
         {
 
 
-            Response.Redirect("Home.aspx");
+            Response.Redirect("LawHome.aspx");
 
 
 

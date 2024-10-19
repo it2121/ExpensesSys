@@ -26,7 +26,7 @@
 
     <script src="../Libs/334e818a85.js" crossorigin="anonymous"></script>
 
-            <link rel="icon" type="image/png" href="../Images/logo.ico" sizes="32x32">
+            <link rel="icon" type="image/png" href="../Images/logoNew.ico" sizes="32x32">
 
           <style>
           body {

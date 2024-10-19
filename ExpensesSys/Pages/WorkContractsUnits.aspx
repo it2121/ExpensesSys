@@ -69,6 +69,13 @@
             width: 23px;
             height: 23px;
         }
+         .BigCheckBox tr, .BigCheckBox tr td, .BigCheckBox tr th
+{
+  background-color: #eeeeee;
+  padding: 3px;
+  border: solid 1px #bbbbbb;
+  vertical-align: top;
+}
     </style>
 
 

@@ -26,6 +26,15 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void Return(object sender, EventArgs e)
+        {
+
+            
+            Response.Redirect("MainProjMan.aspx");
+
+
+
+        }
         protected void GoToOriginalEmpAsEngineering(object sender, EventArgs e)
         {
             OriginalEmp.ProjectID = ProjectID;

@@ -21,6 +21,8 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                WeightReachedRecordID_CB.Attributes.Add("onclick", "radioMe(event);");
+
                 if (!RecID.Equals(""))
                 {
                     ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());

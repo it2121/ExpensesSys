@@ -54,62 +54,11 @@
 
     </asp:Panel>
 
+
     <article class="panel is-info" style="background-color: white;">
         <p class="panel-heading text-center">التقارير</p>
     
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-
-
-
-        <div class="row m-2 ">
-
-
-
-      <%--      <div class="col-6 justify-content-center ">
-               <div class="justify-content-center" style="width:100%; height:90% ;display: flex;
-    align-items: center;
-    flex-wrap: wrap;">
-            <canvas id="myChart"></canvas>
-        </div>
-
-            </div>  --%> 
-            
-            <div class="col-6 justify-content-center ">
-               <div class="justify-content-center" style="width:100% ;height:100%;display: flex;
-    align-items: center;
-    flex-wrap: wrap;">
-            <canvas id="myChart1"></canvas>
-        </div>
-
-            </div>
-       <div class="col-6 justify-content-center ">
-               <div class="justify-content-center" style="width:100% ;height:100%;display: flex;
-    align-items: center;
-    flex-wrap: wrap;">
-            <canvas id="myChart2"></canvas>
-        </div>
-
-            </div>   
-            
-            
-       <div class="col-6 justify-content-center ">
-               <div class="justify-content-center" style="width:100% ;display: flex;
-    align-items: center;
-    flex-wrap: wrap;">
-            <canvas id="LineChart"></canvas>
-        </div>
-
-            </div>
-
-
-
-        </div>  
-        <br />
-
-
+        
          <div class="row  " style="padding-left :1em; padding-right:1em; margin-bottom:1em;">
         
           
@@ -160,6 +109,61 @@
      
 
             </div> 
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+        <hr />
+
+        <div class="row m-2 ">
+
+
+
+      <%--      <div class="col-6 justify-content-center ">
+               <div class="justify-content-center" style="width:100%; height:90% ;display: flex;
+    align-items: center;
+    flex-wrap: wrap;">
+            <canvas id="myChart"></canvas>
+        </div>
+
+            </div>  --%> 
+
+   <div class="col-12 justify-content-center ">
+               <div class="justify-content-center" style="width:100% ;display: flex;
+    align-items: center;
+    flex-wrap: wrap;">
+            <canvas id="LineChart" height="75rem"></canvas>
+        </div>
+
+            </div>
+            
+            <div class="col-6 justify-content-center ">
+               <div class="justify-content-center" style="width:100% ;height:100%;display: flex;
+    align-items: center;
+    flex-wrap: wrap;">
+            <canvas id="myChart1"></canvas>
+        </div>
+
+            </div>
+       <div class="col-6 justify-content-center ">
+               <div class="justify-content-center" style="width:100% ;height:100%;display: flex;
+    align-items: center;
+    flex-wrap: wrap;">
+            <canvas id="myChart2"></canvas>
+        </div>
+
+            </div>   
+            
+            
+    
+
+
+
+        </div>  
+        <br />
+
 
 
    
@@ -318,8 +322,7 @@
               var m8 = '<%= m8 %>';
               var m9 = '<%= m9 %>';
               var m10 = '<%= m10 %>';
-              var m11 = '<%= m11 %>';
-              var m12 = '<%= m12 %>';
+           
 
               var mm1 = '<%= mm1 %>';
               var mm2 = '<%= mm2 %>';
@@ -331,9 +334,7 @@
               var mm8 = '<%= mm8 %>';
               var mm9 = '<%= mm9 %>';
               var mm10 = '<%= mm10 %>';
-              var mm11 = '<%= mm11 %>';
-              var mm12 = '<%= mm12 %>';
-         
+            
               const ctx3 = document.getElementById('LineChart');
 
               new Chart(
@@ -341,11 +342,11 @@
 
                       type: 'line',
                   data: {
-                      labels: ['يناير 1', 'فبراير 2', 'مارس 3', 'أبريل 4', 'مايو 5', 'يونيو 6', 'يوليو 7', 'أغسطس 8', 'سبتمبر 9', 'أكتوبر 10', 'نوفمبر 11', 'ديسمبر 12'],
+                      labels: [mm1, mm2, mm3, mm4, mm5, mm6, mm7 , mm8, mm9, mm10],
                       datasets: [{
-                          label: 'الايرادات',
+                          label: 'ايرادات الدفعات',
                           data: [m1, m2, m3, m4, m5, m6, m7,
-                              m8, m9, m10, m11, m12],
+                              m8, m9, m10],
                           backgroundColor: [
                               'rgba(255, 99, 132, 1)'
 
@@ -356,19 +357,7 @@
 
                           ],
                           hoverOffset: 1
-                      }, {
-                              label: 'المصاريف',
-                              data: [mm1, mm2, mm3, mm4, mm5, mm6, mm7,
-                                  mm8, mm9, mm10, mm11, mm12],
-                              backgroundColor: [
-                                  'rgba(144, 238, 144,1)'
-
-
-                              ], borderColor: [
-                              'rgba(144, 298, 44, 0.8)'
-                          ],
-                              hoverOffset: 1
-                          }]
+                      }]
                   },
                   options: {
                       scales: {

@@ -11,6 +11,7 @@ namespace ExpensesSys.Pages.Law
     {public static int ProjectID =0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
         }
         protected void GoToContracts(object sender, EventArgs e)

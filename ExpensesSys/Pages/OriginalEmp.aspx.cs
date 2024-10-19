@@ -31,7 +31,15 @@ namespace ExpensesSys.Pages
 
             }
         }
+        protected void Return(object sender, EventArgs e)
+        {
+            
 
+            Response.Redirect("OriginalEmpSelector.aspx");
+
+
+
+        }
         protected void GoToNewItem(object sender, EventArgs e)
         {
 

@@ -28,9 +28,8 @@ namespace ExpensesSys.Pages
             if (!IsPostBack)
             {
 
+                HeaderLabels.Visible= Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة") || Session["Role"].Equals("الحسابات");
 
-
-                Main.openPage = "Reports";
                 GR = 1;
                 BL = 1;
                 AB = 1;
@@ -159,11 +158,13 @@ namespace ExpensesSys.Pages
 
             ManagmentBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
             Button1.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
+            Button2.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
             FinanceBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             searchPanel.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             TechBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الفنية") ;
 
-
+            //Button2.Visible = false;
+            //Button1.Visible = false;
 
         }
 
@@ -199,6 +200,153 @@ namespace ExpensesSys.Pages
 
 
         }
+        protected void syncTechDep(object sender, EventArgs e)
+        {
+            BBAALL.BackupDatabases();
+
+
+
+
+
+
+            DataTable WorkContractsTbl = BBAALL.GetAllWorkContractsTbl();
+
+            foreach (DataRow dr in WorkContractsTbl.Rows)
+            {
+
+                if (BBAALL.GetWorkContractByID(Convert.ToInt32(dr["ID"].ToString())).Rows.Count > 0)
+
+                {
+                    BBAALL.UpdateIntoWorkContracs(
+
+
+                      dr["ContractNumber"].ToString(),
+                      dr["ContractType"].ToString(),
+                      dr["NameOfPersonal"].ToString(),
+                      dr["NumberOfPersonal"].ToString(),
+                      dr["AddressOfPersonal"].ToString(),
+
+                                          Convert.ToInt32(dr["Quant"].ToString()),
+                                          Convert.ToInt32(dr["Feetage"].ToString()),
+                                          Convert.ToInt32(dr["UnitPrice"].ToString()),
+
+                      dr["UnityType"].ToString(),
+
+                                          Convert.ToInt32(dr["TotalCost"].ToString()),
+                                          Convert.ToInt32(dr["ID"].ToString()),
+
+                      dr["ContractDate"].ToString()
+
+
+                        );
+                }
+                else
+                {
+                    BBAALL.InsertIntoWorkContracs(
+                      dr["ContractNumber"].ToString(),
+                      dr["ContractType"].ToString(),
+                      dr["NameOfPersonal"].ToString(),
+                      dr["NumberOfPersonal"].ToString(),
+                      dr["AddressOfPersonal"].ToString(),
+                                          Convert.ToInt32(dr["Quant"].ToString()),
+                                          Convert.ToInt32(dr["Feetage"].ToString()),
+                                          Convert.ToInt32(dr["UnitPrice"].ToString()),
+                      dr["UnityType"].ToString(),
+                                          Convert.ToInt32(dr["TotalCost"].ToString()),
+                                          Convert.ToInt32(dr["ProjectID"].ToString()),
+                      dr["ContractDate"].ToString()
+                        );
+                }
+            }
+            DataTable WarehouseTbl = BBAALL.getAllWarehouse__OUT();
+            foreach (DataRow dr in WarehouseTbl.Rows)
+            {
+                if (BBAALL.getWarehouseByID(Convert.ToInt32(dr["ID"].ToString())).Rows.Count > 0)
+                {
+                    BBAALL.UpdateWarehouse(
+                         Convert.ToInt32(dr["MatBuyID"].ToString()),
+                      dr["ActionType"].ToString(),
+                                          Convert.ToInt32(dr["Quant"].ToString()),
+
+                                                              Convert.ToInt32(dr["ID"].ToString())
+
+                        );
+                }
+                else
+                {
+                    BBAALL.InsertWarehouse(
+                          Convert.ToInt32(dr["MatBuyID"].ToString()),
+                       dr["ActionType"].ToString(),
+                                           Convert.ToInt32(dr["Quant"].ToString())
+
+
+
+
+
+                         );
+
+                }
+            }
+
+
+
+            DataTable weightsTable = BBAALL.GetAllWeights();
+
+            foreach (DataRow dr in weightsTable.Rows)
+            {
+
+                if (BBAALL.GetWeightsByID(Convert.ToInt32(dr["ID"].ToString())).Rows.Count > 0)
+
+            
+                { 
+                BBAALL.UpdateWeights(
+                     Convert.ToInt32(dr["Cost"].ToString()),
+                  dr["WeightText"].ToString(),
+                                      Convert.ToInt32(dr["ProjectID"].ToString()),
+
+                    dr["UnitType"].ToString(),
+                                                          Convert.ToInt32(dr["ID"].ToString()),
+                                                          Convert.ToInt32(dr["Precentage"].ToString())
+                    );
+            }else
+            {
+                    BBAALL.InsertIntoWeights(
+                   Convert.ToInt32(dr["Cost"].ToString()),
+                dr["WeightText"].ToString(),
+                                    Convert.ToInt32(dr["ProjectID"].ToString()),
+
+                  dr["UnitType"].ToString(),
+                                                        Convert.ToInt32(dr["Precentage"].ToString())
+                  );
+
+                }
+            }
+
+
+
+
+
+
+            DataTable TechTable = BBAALL.GetAllTechInto();
+
+            foreach(DataRow dr in TechTable.Rows)
+            {
+                BBAALL.UpdateTechInfo(
+                    dr["BuiType"].ToString(),
+                  Convert.ToInt32(  dr["ComPre"].ToString()),
+                    dr["ComStage"].ToString(),
+                    dr["RecID"].ToString(),
+                    Convert.ToInt32(dr["ProjectID"].ToString()),
+                    Convert.ToInt32(dr["WeightReachedRecordID"].ToString())
+
+                    );
+
+            }
+
+
+
+        }
+
         protected void BackUp(object sender, EventArgs e)
         {
 

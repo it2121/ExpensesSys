@@ -87,6 +87,18 @@
 
 
               
+        
+           <div class="row m-4 " style="padding-left: 1em; padding-right: 1em;">
+
+
+
+
+
+               <div class="col   text-center ">
+                <asp:Button runat="server" ID="Button5" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToOriginalempslector" role="button" Text="ادارة ملاك الموظفين"></asp:Button>
+            </div>
+            </div>
+
 
 
 

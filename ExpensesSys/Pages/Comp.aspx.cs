@@ -21,6 +21,7 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
+               
 
                 DataTable dt = BBAALL.getAllCompOfProject(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();

@@ -90,7 +90,7 @@
 
 
 
-
+         <asp:Panel runat="server" ID="HeaderLabels" Visible ="true">
 
         <div class="row  justify-content-between" style="padding-left: 1em; padding-right: 1em;">
 
@@ -243,7 +243,7 @@
 
 
         </div>
-
+             </asp:Panel>
         <div class="row " style="margin-bottom: 1em">
 
             <div class="col-auto">
@@ -472,7 +472,16 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
 
             </div>
         </div>
-  
+    <div class="row  m-4" style="padding-left: 1em; padding-right: 1em;">
+
+            <div class="col   text-center ">
+                <asp:Button runat="server" ID="Button2" Style="font: bolder; width: 100%;" class="btn" OnClick="syncTechDep" role="button" Text="مزامنة البيانات الفنية"></asp:Button>
+
+
+
+
+            </div>
+        </div>
       
         <div class="row ">
         </div>

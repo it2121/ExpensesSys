@@ -276,33 +276,6 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox Paid;
 
         /// <summary>
-        /// RemAmount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RemAmount;
-
-        /// <summary>
-        /// RemBasedOnPrecentage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentage;
-
-        /// <summary>
-        /// RemBasedOnPrecentageOLD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentageOLD;
-
-        /// <summary>
         /// PaidLbl control.
         /// </summary>
         /// <remarks>
@@ -310,6 +283,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label PaidLbl;
+
+        /// <summary>
+        /// RemAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RemAmount;
 
         /// <summary>
         /// RemLbl control.
@@ -321,6 +303,15 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.Label RemLbl;
 
         /// <summary>
+        /// RemBasedOnPrecentage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentage;
+
+        /// <summary>
         /// RemPrecLbl control.
         /// </summary>
         /// <remarks>
@@ -328,6 +319,15 @@ namespace ExpensesSys.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label RemPrecLbl;
+
+        /// <summary>
+        /// RemBasedOnPrecentageOLD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RemBasedOnPrecentageOLD;
 
         /// <summary>
         /// RemPrecLblOLD control.

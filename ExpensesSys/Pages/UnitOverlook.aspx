@@ -65,6 +65,15 @@
         }  .Worded {
             font-size: 1.2em;
         }
+
+           .emp{
+               color:darkgreen;
+               
+           }
+              .nonEmp{
+               color:gray;
+               
+           }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -128,7 +137,7 @@
         
                <div class="row m-2">
 
-                <div class="col-4">
+                <div class="col-4 col-sm-12 col-lg-4">
 
 
            
@@ -145,7 +154,7 @@
 
 
                 
-                <div class="col-4">
+                <div class="col-4 col-sm-12 col-lg-4">
 
 
            
@@ -159,7 +168,7 @@
 
 
                 
-                <div class="col-4">
+                <div class="col-4 col-sm-12 col-lg-4">
 
 
            
@@ -180,7 +189,7 @@
 
            
                  
-                 <div class="col-3">
+                 <div class="col-3 col-sm-12 col-lg-3">
 
 
                          <div class="form__group field">
@@ -189,7 +198,7 @@
     <label for="name" class="form__label">رقم السجل والصفحة</label>
 </div>
             </div> 
-                  <div class="col-3">
+                  <div class="col-3 col-sm-12 col-lg-3">
                  
                            <div class="form__group field">
      <asp:TextBox runat="server" ID="ProNum"  class="form__field" type="input"  ReadOnly="true" placeholder="رقم الطابو" />
@@ -203,7 +212,7 @@
                       
             </div>   
                  
-                 <div class="col-3">
+                 <div class="col-3 col-sm-12 col-lg-3">
                  
                            <div class="form__group field">
      <asp:TextBox runat="server" ID="BuildArea"  class="form__field" type="input" ReadOnly="true" placeholder="مساحة البناء" />
@@ -211,7 +220,7 @@
 </div>
 </div>
 
-                   <div class="col-3">
+                   <div class="col-3 col-sm-12 col-lg-3">
                  
                            <div class="form__group field">
      <asp:TextBox runat="server" ID="UniArea"  class="form__field" type="input" ReadOnly="true" placeholder="مساحة الوحدة" />
@@ -224,7 +233,7 @@
                 
                       
             </div>
-                     <div class="col-5">
+                     <div class="col-5 col-sm-12 col-lg-5">
                  
                            <div class="form__group field">
      <asp:TextBox runat="server" ID="ProPrice"  class="form__field" type="input" ReadOnly="true" placeholder="سعر الوحدة" />
@@ -237,7 +246,7 @@
                 
                       
             </div>
-                     <div class="col-1">
+                     <div class="col-1 col-sm-6 col-lg-1">
                  
                            <div class="form__group field">
 
@@ -254,7 +263,7 @@
                       
             </div>
 
-                  <div class="col-1">
+                  <div class="col-1 col-sm-6 col-lg-1">
                  
                            <div class="form__group field">
 
@@ -271,7 +280,7 @@
                       
             </div>
 
-                     <div class="col-1">
+                     <div class="col-1 col-sm-6 col-lg-1">
                  
                            <div class="form__group field">
      <asp:CheckBox runat="server" ID="Loan"  class="form__field" type="input" ReadOnly="true" placeholder="مقترض" />
@@ -282,7 +291,7 @@
                       
             </div> 
                  
-                  <div class="col-2">
+                  <div class="col-2 col-sm-6 col-lg-2">
                  
                            <div class="form__group field">
      <asp:CheckBox runat="server" ID="NonLoan"  class="form__field" type="input" ReadOnly="true" placeholder="غير مقترض" />
@@ -298,7 +307,7 @@
             </div> 
 
                    <div class="col-5">
-                                                          <asp:Label runat="server" ID="ProPriceLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
+                                                          <asp:Label runat="server" ID="ProPriceLbl" Visible="false" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
                                                       </div> 
                                       <div class="col-1">
@@ -309,7 +318,7 @@
                                                       </div> 
 
 
-                 <div class="col-3 mt-6 ">
+                 <div class="col-3 mt-6 col-sm-12 col-lg-3 ">
                  
                            <div class="form__group field">
     <asp:TextBox runat="server" ID="Warn"  class="form__field" type="input" ReadOnly="true" placeholder="حالة الانذار" />
@@ -326,7 +335,7 @@
                      
                                     
 
-                 <div class="col-12">
+                 <div class="col-12 ">
                      <br />
                   </div> 
                       
@@ -350,7 +359,7 @@
                             <asp:Panel runat="server" ID ="FirstWarnPanel" Visible="false">
                                 <div class="row m-2">
 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -367,7 +376,7 @@
 
 
                 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -393,7 +402,7 @@
         
                <div class="row m-2">
 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -410,7 +419,7 @@
 
 
                 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -440,7 +449,7 @@
                   <div class="row m-2">
 
 
- <div class="col-6 mr-auto ml-auto 
+ <div class="col-6 mr-auto ml-auto  col-sm-12 col-lg-6
                         text-center">
                  
                            <div class="form__group field">
@@ -478,7 +487,7 @@
         <br />
         <div class="row m-2">
 
-            <div class="col-4">
+            <div class="col-4 col-sm-12 col-lg-4">
 
 
 
@@ -495,7 +504,7 @@
 
 
 
-            <div class="col-8">
+            <div class="col-8 col-sm-12 col-lg-8">
 
 
 
@@ -519,10 +528,10 @@
 
         <div class="row m-2">
 
-            <div class="col-4">
+            <div class="col-4 col-sm-12 col-lg-4">
             </div>
 
-            <div class="col-8">
+            <div class="col-8 col-sm-12 col-lg-8">
                 <asp:Label runat="server" ID="TotalLbl" Text="ok" ForeColor="Green" class="form__label" Worded></asp:Label>
 
 
@@ -536,9 +545,10 @@
         <div class="row m-2">
 
 
-            <div class="col-3">
+            <div class="col-3 col-sm-12 col-lg-3">
 
-
+                  <div class="row mt-6">
+                    <div class="col">
 
                 <div class="form__group field">
                     <asp:TextBox runat="server" ID="Paid" class="form__field" type="input" ReadOnly="true" placeholder="المدفوع" />
@@ -547,33 +557,79 @@
                 </div>
 
             </div>
+            </div>
+                 
+                
+                <div class="row">
+                    <div class="col">
+                <asp:Label runat="server" ID="PaidLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
-            <div class="col-3">
 
+            </div>
+            </div>
+            </div>
+
+            <div class="col-3 col-sm-12 col-lg-3">
+                 <div class="row mt-6">
+                    <div class="col">
 
                 <div class="form__group field">
-                    <asp:TextBox runat="server" ID="RemAmount" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي" />
+                    <asp:TextBox runat="server" 
+                        
+                        ID="RemAmount" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي" />
 
 
                     <label for="name" class="form__label">المتبقي</label>
                 </div>
+                         </div>
             </div>
-            <div class="col-3">
+                 
+                
+                <div class="row ">
+                    <div class="col">
+                                        <asp:Label runat="server" ID="RemLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
+
+
+            </div>
+            </div>
+            </div>
+            <div class="col-3 col-sm-12 col-lg-3">
+
+                <div class="row mt-6">
+                    <div class="col">
                 <div class="form__group field">
-                    <asp:TextBox runat="server" ID="RemBasedOnPrecentage" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب مرحلة الانجاز" />
+                    <asp:TextBox runat="server" ID="RemBasedOnPrecentage" 
+
+
+
+
+                        class="form__field " ReadOnly="true" type="input" placeholder="المتبقي حسب مرحلة الانجاز" />
                     <label for="name" class="form__label">المتبقي حسب مرحلة الانجاز</label>
                 </div>
 
+                    </div>
+                    </div>
+                              
+                <div class="row">
+                    <div class="col">
+                <asp:Label runat="server" ID="RemPrecLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
 
 
+            </div>   
+            </div>   
+            </div>   
+            
+            <div class="col-3 col-sm-12 col-lg-3">
+                <div class="row mt-6">
+                    <div class="col">
+                <div class="form__group field " >
+                    <asp:TextBox runat="server" ID="RemBasedOnPrecentageOLD" 
 
-
-
-            </div>       <div class="col-3">
-
-                <div class="form__group field">
-                    <asp:TextBox runat="server" ID="RemBasedOnPrecentageOLD" class="form__field" ReadOnly="true" type="input" placeholder="المتبقي حسب نسبة الانجاز" />
+                        class="form__field" 
+                        
+                        
+                        ReadOnly="true" type="input" placeholder="المتبقي حسب نسبة الانجاز" />
                     <label for="name" class="form__label">المتبقي حسب نسبة الانجاز</label>
                 </div>
 
@@ -583,6 +639,16 @@
 
 
             </div>
+            </div>
+
+                  <div class="row">
+                    <div class="col">
+                                        <asp:Label runat="server" ID="RemPrecLblOLD" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
+
+
+            </div>
+            </div>
+            </div>
 
 
 
@@ -590,29 +656,6 @@
         </div>
 
 
-        <div class="row m-2">
-
-            <div class="col-3">
-                <asp:Label runat="server" ID="PaidLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
-
-            </div>
-
-            <div class="col-3">
-                <asp:Label runat="server" ID="RemLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
-
-
-            </div>
-
-
-            <div class="col-3">
-                <asp:Label runat="server" ID="RemPrecLbl" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
-
-            </div>   <div class="col-3">
-                <asp:Label runat="server" ID="RemPrecLblOLD" Text="ok" ForeColor="Green" class="form__label Worded"></asp:Label>
-
-            </div>
-
-        </div>
 
 
 
@@ -628,11 +671,11 @@
 
     
                  
-            <div class="col-6 text-center ">
+            <div class="col-6 text-center  col-sm-12 col-lg-6">
                 <asp:Button runat="server" ID="EditBtn2" Style="width: 20em" OnClick="GoToFinance" class="button is-primary is-large text-center " Text="تعديل المعلومات المالية"></asp:Button>
 
 </div>         
-     <div class="col-6 text-center ">
+     <div class="col-6 text-center col-sm-12 col-lg-6 ">
                 <asp:Button runat="server" ID="EditBtn3" Style="width: 20em" OnClick="GoToLoan" class="button is-primary is-large text-center " Text="تعديل معلومات المبادرة"></asp:Button>
 
 </div>
@@ -645,11 +688,11 @@
         <hr />
             <div class="row m-2">
 
-            <div class="col-md-6 text-center ">
+            <div class="col-md-6 text-center  col-sm-12 col-lg-6">
 
                 <asp:Button runat="server" ID="Payments" Style="width: 20em" OnClick="GoToUnitPayments" class="button is-warning is-large text-center " Text="الدفعات"></asp:Button>
             </div>
-            <div class="col-md-6 text-center ">
+            <div class="col-md-6 text-center col-sm-12 col-lg-6 ">
 
                 <asp:Button runat="server" ID="LoanPaymentsBtn" Style="width: 20em" OnClick="GoToLoanPayments" class="button is-warning is-large text-center " Text="دفعات القرض او المبادرة"></asp:Button>
             </div>
@@ -669,7 +712,7 @@
         
                <div class="row m-2">
 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -686,7 +729,7 @@
 
 
                 
-                <div class="col-6">
+                <div class="col-6 col-sm-12 col-lg-6">
 
 
            
@@ -700,7 +743,7 @@
 
 
                 
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-lg-12">
 
 
            
@@ -712,7 +755,7 @@
            
             </div>
                         
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-lg-12">
 
 
            
@@ -739,7 +782,7 @@
                   <div class="row m-2">
 
 
- <div class="col-6 mr-auto ml-auto 
+ <div class="col-6 mr-auto ml-auto  col-sm-12 col-lg-6
                         text-center">
                  
                            <div class="form__group field">

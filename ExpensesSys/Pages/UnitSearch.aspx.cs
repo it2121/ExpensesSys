@@ -14,12 +14,12 @@ namespace ExpensesSys.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             //GetSearchList
-            Main.openPage = "OverView";
-
             if (!IsPostBack)
             {
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
-               // DataTable dt = BBAALL.GetSearchList(ProjectID);
+
+                // DataTable dt = BBAALL.GetSearchList(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
 
         

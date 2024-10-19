@@ -35,20 +35,19 @@ namespace ExpensesSys.Pages
         public static double m8 = 0;
         public static double m9 = 0;
         public static double m10 = 0;
-        public static double m11 = 0;
-        public static double m12 = 0;
-        public static double mm1 = 0;
-        public static double mm2 = 0;
-        public static double mm3 = 0;
-        public static double mm4 = 0;
-        public static double mm5 = 0;
-        public static double mm6 = 0;
-        public static double mm7 = 0;
-        public static double mm8 = 0;
-        public static double mm9 = 0;
-        public static double mm10 = 0;
-        public static double mm11 = 0;
-        public static double mm12 = 0;
+
+
+        public static string mm1 = "";
+        public static string mm2 = "";
+        public static string mm3 = "";
+        public static string mm4 = "";
+        public static string mm5 = "";
+        public static string mm6 = "";
+        public static string mm7 = "";
+        public static string mm8 = "";
+        public static string mm9 = "";
+        public static string mm10 = "";
+
 
 
 
@@ -121,89 +120,136 @@ namespace ExpensesSys.Pages
 
         public void setUpLineChart()
         {
-
             DataTable IncomeTable = BBAALL.REP_GetAllIncomeRecords();
-        
-            m1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المبلغ");
-            m2 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "المبلغ");
-            m3 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "المبلغ");
-            m4 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "المبلغ");
-            m5 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "المبلغ");
-            m6 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "المبلغ");
-            m7 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "المبلغ");
-            m8 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "المبلغ");
-            m9 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "المبلغ");
-            m10 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "المبلغ");
-            m11 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/11" + "/" + DateTime.Now.Year, "30/11" + "/" + DateTime.Now.Year), "المبلغ");
-            m12 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/12" + "/" + DateTime.Now.Year, "31/12" + "/" + DateTime.Now.Year), "المبلغ");
+
+           
+
+            int convertion = -9;
+
+            DateTime start = DateTime.Now.AddDays(convertion);
+
+            string startDate = start.ToString("dd/MM/yyyy");
+
+            DataTable unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, startDate);
+            m1 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm1 = startDate;
+
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m2 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm2 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m3 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm3= DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m4 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm4 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m5 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm5 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m6 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm6 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m7 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm7 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m8 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm8 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m9 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm9 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
+
+            convertion++;
+            unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+            m10 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm10 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
 
 
 
-            DataTable Nth = BBAALL.REP_GetAllNthRecords();
-            DataTable Comp = BBAALL.REP_GetAllCompRecords();
-            DataTable Salary = BBAALL.REP_GetAllSalaryRecords();
-            DataTable MatBuy = BBAALL.REP_GetAllMatBuyRecords();
+            /*    m1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المبلغ");
+                m2 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "المبلغ");
+                m3 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "المبلغ");
+                m4 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "المبلغ");
+                m5 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "المبلغ");
+                m6 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "المبلغ");
+                m7 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "المبلغ");
+                m8 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "المبلغ");
+                m9 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "المبلغ");
+                m10 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "المبلغ");
+    */
 
-            mm1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm2 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm3 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm4 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm5 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm6 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm7 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "الكلفة")
-                    + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "الكلفة")
-                    + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                    + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm8 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm9 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm10 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm11 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/11" + "/" + DateTime.Now.Year, "30/11" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/11" + "/" + DateTime.Now.Year, "30/11" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/11" + "/" + DateTime.Now.Year, "30/11" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/11" + "/" + DateTime.Now.Year, "30/11" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
-            mm12 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/12" + "/" + DateTime.Now.Year, "31/12" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/12" + "/" + DateTime.Now.Year, "31/12" + "/" + DateTime.Now.Year), "الكلفة")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/12" + "/" + DateTime.Now.Year, "31/12" + "/" + DateTime.Now.Year), "المرتب_المستلم")
-                + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/12" + "/" + DateTime.Now.Year, "31/12" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
-                ;
+            /*          DataTable Nth = BBAALL.REP_GetAllNthRecords();
+                      DataTable Comp = BBAALL.REP_GetAllCompRecords();
+                      DataTable Salary = BBAALL.REP_GetAllSalaryRecords();
+                      DataTable MatBuy = BBAALL.REP_GetAllMatBuyRecords();
+
+                      mm1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm2 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/02" + "/" + DateTime.Now.Year, "28/02" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm3 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/03" + "/" + DateTime.Now.Year, "31/03" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm4 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/04" + "/" + DateTime.Now.Year, "30/04" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm5 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/05" + "/" + DateTime.Now.Year, "31/05" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm6 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/06" + "/" + DateTime.Now.Year, "30/06" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm7 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "الكلفة")
+                              + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "الكلفة")
+                              + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                              + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/07" + "/" + DateTime.Now.Year, "31/07" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm8 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/08" + "/" + DateTime.Now.Year, "31/08" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm9 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/09" + "/" + DateTime.Now.Year, "30/09" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+                      mm10 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Nth, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Comp, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "الكلفة")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(Salary, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "المرتب_المستلم")
+                          + MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(MatBuy, "01/10" + "/" + DateTime.Now.Year, "31/10" + "/" + DateTime.Now.Year), "مبلغ_الدفعة")
+                          ;
+            */
 
 
         }

@@ -17,16 +17,20 @@ namespace ExpensesSys.Pages
 
         }
 
-
-
-       // static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
-      //  static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
-
+        // static string DatabaseConnectionString = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
+        // static string DatabaseConnectionStringLAW = @"Server=sql5112.site4now.net; Database=db_aa8601_lawdb; User Id=db_aa8601_lawdb_admin; Password=Akastarlord1._; ";
 
 
 
-        static string DatabaseConnectionString =    @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
-       static string DatabaseConnectionStringLAW = @"Server=DELTA\SQLEXPRESS;Database=LawDB;Trusted_Connection        = True;";
+         // static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
+         // static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
+
+
+
+
+         static string DatabaseConnectionString =    @"Server=DELTA\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection = True;";
+        static string DatabaseConnectionStringLAW = @"Server=DELTA\SQLEXPRESS;Database=LawDB;Trusted_Connection      = True;";
+
 
 
         // static string DatabaseConnectionString = @"Server=192.168.0.107\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
@@ -43,7 +47,7 @@ namespace ExpensesSys.Pages
 
 
 
-        //    static string DatabaseConnectionString = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
+        static string DatabaseConnectionString__OUT = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
 
 
         /// <summary>
@@ -117,6 +121,26 @@ namespace ExpensesSys.Pages
         }
 
 
+        public static SqlCommand CreateCommand___OUT()
+        {
+            try
+            {
+
+                SqlConnection conn = new SqlConnection(DatabaseConnectionString__OUT);
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                conn.Close();
+                return comm;
+            }
+            catch
+            {
+                return null;
+
+
+            }
+        }
         public static SqlCommand CreateCommandLAW()
         {
             try

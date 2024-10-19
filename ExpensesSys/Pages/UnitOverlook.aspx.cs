@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,7 @@ namespace ExpensesSys.Pages
     {
         public static string RecID = "";
         public static int ProjectID = 0;
+        public static string EmpStr = "0";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -132,6 +134,8 @@ namespace ExpensesSys.Pages
                     RemBasedOnPrecentage.Text = KillEverythingAfteDot(RemBasedOnPrecentage.Text);
                     RemBasedOnPrecentageOLD.Text = KillEverythingAfteDot(RemBasedOnPrecentageOLD.Text);
 
+                   
+
                     int totaint = Convert.ToInt32(Total.Text);
 
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
@@ -141,6 +145,15 @@ namespace ExpensesSys.Pages
                     RemBasedOnPrecentageOLD.Text = neg + MyStringManager.GetNumberWithComas(RemBasedOnPrecentageOLD.Text);
                     Paid.Text = MyStringManager.GetNumberWithComas(Paid.Text);
                     Total.Text = MyStringManager.GetNumberWithComas(Total.Text);
+
+
+
+                    RemBasedOnPrecentage.ForeColor = !Emp.Checked ? Color.Green : Color.Gray;
+                    RemBasedOnPrecentageOLD.ForeColor = Emp.Checked ? Color.Green : Color.Gray;
+
+
+
+
 
                     setArabicNumberLabel();
 

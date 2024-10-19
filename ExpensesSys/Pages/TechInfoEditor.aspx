@@ -63,6 +63,26 @@
 .form__field:required, .form__field:invalid {
   box-shadow: none;
 }
+  .BigCheckBox input {
+      
+      
+      
+      width:23px; height:23px;
+
+       border-radius: 7px;
+  border: solid 1px #bbbbbb;
+
+
+
+
+  }
+  .BigCheckBox tr, .BigCheckBox tr td, .BigCheckBox tr th
+{
+  background-color: #eeeeee;
+  padding: 3px;
+  border: solid 1px #bbbbbb;
+  vertical-align: top;
+}
 
     </style>
 
@@ -171,7 +191,7 @@
     <div class="content-1 align-content-center text-center">
         <div id="Layer1" style="position:relative;height:450px;
 overflow:scroll;">
-      <asp:CheckBoxList runat="server" ID="WeightReachedRecordID_CB"   CssClass="BigCheckBox"  Font-Size="2em" Font-Bold="true" > 
+      <asp:CheckBoxList runat="server" ID="WeightReachedRecordID_CB"    CssClass="BigCheckBox"  Font-Size="2em" Font-Bold="true" > 
 
                     </asp:CheckBoxList>
                                         <label for="name" class="form__label">تحديد مرحلة الانجاز</label>
@@ -234,5 +254,22 @@ overflow:scroll;">
         <br />
     </article>
 
+    <script>
 
+        function radioMe(e) {
+            if (!e) e = window.event;
+            var sender = e.target || e.srcElement;
+
+            if (sender.nodeName != 'INPUT') return;
+            var checker = sender;
+            var chkBox = document.getElementById('<%= WeightReachedRecordID_CB.ClientID %>');
+            var chks = chkBox.getElementsByTagName('INPUT');
+            for (i = 0; i < chks.length; i++) {
+                if (chks[i] != checker)
+                    chks[i].checked = false;
+            }
+        }
+
+
+    </script>
 </asp:Content>
