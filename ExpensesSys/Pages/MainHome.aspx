@@ -88,8 +88,6 @@
      <asp:Panel runat="server" ID="ButtonsBar">
 
 
-
-
          <asp:Panel runat="server" ID="HeaderLabels" Visible ="true">
 
         <div class="row  justify-content-between" style="padding-left: 1em; padding-right: 1em;">
@@ -350,7 +348,7 @@
 
                  <div class="col-md-12 text-center  mt-2">
 
-                <asp:Button runat="server" ID="SearchBtn" Style="width: 20em" OnClick="Search" class="button is-primary text-center" Text="- بــحــث -"></asp:Button>
+                <asp:Button runat="server" ID="SearchBtn"  Style="width: 20em" OnClick="Search" class="button is-primary text-center" Text="- بــحــث -"></asp:Button>
             </div>
 
                 </div>

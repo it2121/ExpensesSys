@@ -84,9 +84,6 @@
                                 <div class="field buttons">
                                     <asp:Button runat="server" OnClick="SubmitBtn_Click" ID="btn" Text="تسجيل الدخول" class="button is-fullwidth is-success" BackColor="#33B3FF"></asp:Button>
                                 </div>
-
-                          
-
                             </div>
 
 

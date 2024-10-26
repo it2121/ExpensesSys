@@ -202,7 +202,10 @@ namespace ExpensesSys.Pages
         }
         protected void syncTechDep(object sender, EventArgs e)
         {
-            BBAALL.BackupDatabases();
+            DateTime NewDate = DateTime.Now;
+
+            string NewDateStr = NewDate.ToString("dd/MM/yyyy");
+            BBAALL.BackupDatabases(Session["SyncDate"].ToString() , NewDateStr);
 
 
 
@@ -350,9 +353,13 @@ namespace ExpensesSys.Pages
         protected void BackUp(object sender, EventArgs e)
         {
 
-            BBAALL.BackupDatabases();
+            DateTime NewDate = DateTime.Now;
 
-             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('تم انشاء نسخة احتياطية لقاعدة البيانات في - C/Users/GC/Documents/DB_BackUps ');", true);
+            string NewDateStr = NewDate.ToString("dd/MM/yyyy");
+            BBAALL.BackupDatabases(Session["SyncDate"].ToString(), NewDateStr);
+
+
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('تم انشاء نسخة احتياطية لقاعدة البيانات في - C/Users/GC/Documents/DB_BackUps ');", true);
 
 
 

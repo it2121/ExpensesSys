@@ -96,8 +96,14 @@
               padding: 14px 40px;
               color: #fff;
               text-transform: uppercase;
-              font-size: 2em;
-              cursor: pointer;
+
+
+/*                font-size:  calc(2em + 2vw);
+*/               font-size: 6vmin;
+
+
+
+                    cursor: pointer;
               border-radius: 10px;
               border: 2px dashed #44a2ff;
               box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -195,7 +201,19 @@
 
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-  
+  <footer class="main-footer bg-white footer1" style="width:100%; background-color:#343b46;" >
+					<div class="float-right d-none d-sm-inline-block">
+
+
+<asp:Label Visible="true" runat="server" ID="SyncDate" CssClass="label is-large">
+    
+
+</asp:Label>		</div>
+
+			<div class="float-right d-none d-sm-inline-block">
+				
+			</div>
+		</footer>
          
           </div>
        

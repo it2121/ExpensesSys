@@ -356,6 +356,12 @@ namespace ExpensesSys.Pages
             wb.Worksheets.Add(IncomeExTbl);
             sheetCounter++;
 
+            DataTable UnityPayemetsTbl = UnityPayemetsSet;
+            UnityPayemetsTbl.TableName = "وارد دفعات الوحدات";
+            wb.Worksheets.Add(UnityPayemetsTbl);
+            sheetCounter++;
+
+
             DataTable MatBuyTbl = MatBuySet;
             MatBuyTbl.TableName = "صرفيات المواد";
             wb.Worksheets.Add(MatBuyTbl);

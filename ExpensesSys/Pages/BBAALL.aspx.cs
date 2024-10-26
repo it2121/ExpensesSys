@@ -75,7 +75,19 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         } 
         
-        public static DataTable GetUnitPaymentsPaymentsByID(int ID)
+        public static DataTable GetSyncDate()
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetSyncDate";
+
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable GetUnitPaymentsPaymentsByID(int ID)
         {
 
 
@@ -2369,7 +2381,7 @@ string SecondWarnRecDate
 
 
 
-        }    public static bool BackupDatabases()
+        }    public static bool BackupDatabases(string OldDate, string NewDate)
 
         {
             SqlCommand cm;
@@ -2377,7 +2389,8 @@ string SecondWarnRecDate
             if (cm == null) { return false; }
             cm.CommandText = "BackupDatabases";
 
-
+            cm.Parameters.AddWithValue("@OldDate", OldDate);
+            cm.Parameters.AddWithValue("@NewDate", NewDate);
 
 
 

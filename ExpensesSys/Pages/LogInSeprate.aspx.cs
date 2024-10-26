@@ -46,6 +46,11 @@ namespace ExpensesSys.Pages
                 Session["Role"] = login.Rows[0]["Role"];
 
                 Session["redirected"] = "1";
+
+
+             Session["SyncDate"] = BBAALL.GetSyncDate().Rows[0]["SyncDate"].ToString();
+
+
                 PeojectSeector.GoToPage = "Home";
 
                 //  if(login.Rows[0]["Role"].ToString().Equals("القانونية"))

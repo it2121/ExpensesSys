@@ -37,6 +37,8 @@ namespace ExpensesSys.Pages
             setSelectedPageBGColor(openPage);
             SetBtnsVisibilityAcordingToRoles();
 
+            SyncDate.Visible = false;
+           // SyncDate.Text = Session["SyncDate"].ToString() + "  : تاريخ المزامنة";
         }
         public void SetBtnsVisibilityAcordingToRoles()
         {
