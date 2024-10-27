@@ -18,8 +18,19 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                if (Session["RecID"] != null)
+                {
+                    RecID = Session["RecID"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("UnitSearch.aspx");
+
+                }
                 if (!RecID.Equals(""))
                 {
+                   
+
                     DataTable OrEmpTbl = BBAALL.GetFinanceByRecID(RecID);
                     RecIDTB.Text = RecID;
 
@@ -235,7 +246,9 @@ namespace ExpensesSys.Pages
         }
         protected void GoToUnitPayments(object sender, EventArgs e)
         {
-            UnitPayments.RecID = RecID;
+           // UnitPayments.RecID = RecID;
+          // Session["RecID"] = RecID;
+
             UnitPayments.RecdirectTo = "UnitOverlook.aspx";
                 Response.Redirect("UnitPayments.aspx");
         }  

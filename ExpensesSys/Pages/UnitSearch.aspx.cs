@@ -82,8 +82,8 @@ namespace ExpensesSys.Pages
 
             Label id = DataGridUsers.Rows[e.NewEditIndex].FindControl("lbl_OR23") as Label;
 
-
-            UnitOverlook.RecID = id.Text;
+            Session["RecID"] = id.Text;
+           // UnitOverlook.RecID = id.Text;
             UnitOverlook.ProjectID = ProjectID;
 
 

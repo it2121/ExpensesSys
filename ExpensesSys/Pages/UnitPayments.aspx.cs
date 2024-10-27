@@ -20,7 +20,15 @@ namespace ExpensesSys.Pages
 
             if (!IsPostBack)
             {
+                if (Session["RecID"] != null)
+                {
+                    RecID = Session["RecID"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("UnitSearch.aspx");
 
+                }
                 ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable dt = BBAALL.GetAllUnitPaymentsOfRecID(RecID);

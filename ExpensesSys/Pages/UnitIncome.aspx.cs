@@ -67,7 +67,9 @@ namespace ExpensesSys.Pages
             {
 
                 string ID = e.CommandArgument.ToString();
-                UnitPayments.RecID = ID;
+               // UnitPayments.RecID = ID;
+                Session["RecID"] = ID;
+
                 UnitPayments.ProjectID = ProjectID;
                 Response.Redirect("UnitPayments.aspx");
 
