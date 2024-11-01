@@ -222,6 +222,42 @@ namespace ExpensesSys.Pages
         protected global::System.Web.UI.WebControls.TextBox MoneyTB;
 
         /// <summary>
+        /// DatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel DatePanel;
+
+        /// <summary>
+        /// UnMarkedDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox UnMarkedDate;
+
+        /// <summary>
+        /// UpdatePanelDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelDates;
+
+        /// <summary>
+        /// StartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox StartDate;
+
+        /// <summary>
         /// Button5 control.
         /// </summary>
         /// <remarks>

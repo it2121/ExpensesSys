@@ -17,8 +17,8 @@ namespace ExpensesSys.Pages
 
         }
 
-       //  static string DatabaseConnectionString = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
-        // static string DatabaseConnectionStringLAW = @"Server=sql5112.site4now.net; Database=db_aa8601_lawdb; User Id=db_aa8601_lawdb_admin; Password=Akastarlord1._; ";
+         static string DatabaseConnectionString = @"Server=sql8020.site4now.net; Database=db_aa8601_ex; User Id=db_aa8601_ex_admin; Password=Akastarlord1._; ";
+         static string DatabaseConnectionStringLAW = @"Server=sql5112.site4now.net; Database=db_aa8601_lawdb; User Id=db_aa8601_lawdb_admin; Password=Akastarlord1._; ";
 
 
 
@@ -28,8 +28,8 @@ namespace ExpensesSys.Pages
 
 
 
-        static string DatabaseConnectionString =     @"Server=DELTA\SQLEXPRESS;  Database=ExpensesDB; Trusted_Connection  = True;";
-        static string DatabaseConnectionStringLAW =  @"Server=DELTA\SQLEXPRESS;  Database=LawDB;      Trusted_Connection  = True;";
+      //  static string DatabaseConnectionString =     @"Server=DELTA\SQLEXPRESS;  Database=ExpensesDB; Trusted_Connection  = True;";
+      // static string DatabaseConnectionStringLAW =  @"Server=DELTA\SQLEXPRESS;  Database=LawDB;      Trusted_Connection  = True;";
 
 
 

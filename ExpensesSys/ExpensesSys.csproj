@@ -818,12 +818,16 @@
     <Content Include="Pages\Main.Master" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile10.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile11.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile5.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile6.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile7.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile8.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile9.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile2.pubxml" />
@@ -835,6 +839,16 @@
     <None Include="Properties\PublishProfiles\ortest21-001-site2 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\ortest21-001-site2 - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\ortest21-001-site2 - Web Deploy3.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - FTP2.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - FTP3.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - FTP4.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - Web Deploy3.pubxml" />
+    <None Include="Properties\PublishProfiles\ortest21-001-site3 - Web Deploy4.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

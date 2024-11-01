@@ -294,7 +294,7 @@
             </div>
 
 
-     <div class="col-8 mt-3">
+     <div class="col-4 mt-3">
 
                 <asp:Panel ID="MoneyFilterPanel" Width="95%" HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em" runat="server" Visible="true">
                     <div class="row  m-4">
@@ -338,6 +338,44 @@
 
 
 
+                 <div class="col-4">
+                <asp:Panel ID="DatePanel" Width="95%" HorizontalAlign="Center" CssClass="container-fluid" BorderColor="LightGreen" BorderStyle="Solid" BorderWidth="0.2em" runat="server" Visible="true">
+
+
+
+
+                    <div class="row  m-4">
+
+
+
+
+                        <asp:CheckBox runat="server" ID="UnMarkedDate" class="input is-info border-0 checkbox " 
+                            Width="100%" Checked="false" AutoPostBack="true" OnCheckedChanged="ChckedChanged" type="text" 
+                            Text="تاريخ اخر دفعة" TextAlign="Right" placeholder="تاريخ اخر دفعة" />
+                    </div>
+
+                    <asp:UpdatePanel ID="UpdatePanelDates" runat="server" style="width: 100%;" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="row m-4">
+                                <div class="col-12">
+
+                                    <p class="control has-icons-left">
+
+                                        <asp:TextBox runat="server" ID="StartDate" Enabled="false" class="input is-info" type="text" placeholder="التاريخ" />
+                                        <span class="icon is-left">
+                                            <i class="fas fa-book" aria-hidden="true"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                          
+                            </div>
+
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                </asp:Panel>
+
+            </div>
 
 
         </div>

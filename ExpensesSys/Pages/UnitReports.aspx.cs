@@ -114,7 +114,7 @@ namespace ExpensesSys.Pages
             }
 
 
-            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType );
+            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType ,StartDate.Text);
 
 
 
@@ -146,21 +146,19 @@ namespace ExpensesSys.Pages
 
         protected void ChckedChanged(object sender, EventArgs e)
         {
-           /* if (UnMarkedDate.Checked == true)
+            if (UnMarkedDate.Checked == true)
             {
-                StartDate.Text = "";
-                StartDate.Enabled = false;
-                EndDate.Text = "";
-                EndDate.Enabled = false;
+                StartDate.Enabled = true;
+
 
             }
             else
             {
-                StartDate.Enabled = true;
-                EndDate.Enabled = true;
 
+                StartDate.Text = "";
+                StartDate.Enabled = false;
 
-            }*/
+            }
         }
         protected void CreateInReport(object sender, EventArgs e)
         {

@@ -163,8 +163,8 @@ namespace ExpensesSys.Pages
             searchPanel.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             TechBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الفنية") ;
 
-            //Button2.Visible = false;
-            //Button1.Visible = false;
+            Button2.Visible = false;
+            Button1.Visible = false;
 
         }
 
@@ -177,6 +177,7 @@ namespace ExpensesSys.Pages
         protected void OneUnitOverView(object sender, EventArgs e)
         {
             UnitSearch.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+        
             Response.Redirect("UnitSearch.aspx");
 
         }
@@ -437,6 +438,7 @@ namespace ExpensesSys.Pages
 
             DataTable dt = BBAALL.GetSearchListByWord(ProjectID, SearchBox.Text);
             DataGridUsers.DataSource = dt;
+            SearchBox.Text = "";
             DataGridUsers.DataBind();
 
         }

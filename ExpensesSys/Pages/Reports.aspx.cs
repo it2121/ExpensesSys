@@ -25,6 +25,10 @@ namespace ExpensesSys.Pages
         public static int GetAllNthSum = 0;
         public static int GetAllCompSum = 0;
 
+        public static double[] m = new double[30];
+        public static string[] mm = new string[30];
+
+
         public static double m1 = 0;
         public static double m2 = 0;
         public static double m3 = 0;
@@ -124,18 +128,28 @@ namespace ExpensesSys.Pages
 
            
 
-            int convertion = -9;
+            int convertion = -29;
 
             DateTime start = DateTime.Now.AddDays(convertion);
 
             string startDate = start.ToString("dd/MM/yyyy");
 
             DataTable unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, startDate);
-            m1 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
-            mm1 = startDate;
+            m[0] = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+            mm[0] = startDate;
+
+            for (int i = 1; i <=29; i++)
+            {
+                convertion++;
+                unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+                m[i] = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
+                mm[i] = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
 
 
-            convertion++;
+            }
+           
+
+          /*  convertion++;
             unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
             m2 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
             mm2 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
@@ -179,7 +193,7 @@ namespace ExpensesSys.Pages
             unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
             m10 = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
             mm10 = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
-
+*/
 
 
             /*    m1 = MyStringManager.ReturnSumOfDTFildInInt(MyStringManager.GetTableAfterDateCheck(IncomeTable, "01/01" + "/" + DateTime.Now.Year, "31/01" + "/" + DateTime.Now.Year), "المبلغ");

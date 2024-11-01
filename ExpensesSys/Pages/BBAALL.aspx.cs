@@ -1237,7 +1237,7 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
-        public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "")
+        public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "" , string startDate ="")
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -1249,6 +1249,7 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@Warn ", Warn);
             cm.Parameters.AddWithValue("@Money ", Money);
             cm.Parameters.AddWithValue("@MoneyType ", MoneyType);
+            cm.Parameters.AddWithValue("@startDate ", startDate);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }   public static DataTable TechUnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "")

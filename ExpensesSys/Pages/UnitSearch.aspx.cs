@@ -71,6 +71,7 @@ namespace ExpensesSys.Pages
 
             DataTable dt = BBAALL.GetSearchListByWord(ProjectID,SearchBox.Text);
             DataGridUsers.DataSource = dt;
+            SearchBox.Text = "";
             DataGridUsers.DataBind();
 
         }

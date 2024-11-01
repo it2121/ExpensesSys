@@ -141,7 +141,7 @@
 
 
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="SearchBox"   class="form__field align-content-center text-center align-items-center" ReadOnly="false" type="input" placeholder="" />
+     <asp:TextBox runat="server" ID="SearchBox"   TextMode="Search"     class="form__field align-content-center text-center align-items-center" ReadOnly="false" type="input" placeholder="" />
 
     <label for="name" class="form__label"></label>
 </div>      

@@ -312,29 +312,70 @@
 
           </script>
           <script>
-              var m1 = '<%= m1 %>';
-              var m2 = '<%= m2 %>';
-              var m3 = '<%= m3 %>';
-              var m4 = '<%= m4 %>';
-              var m5 = '<%= m5 %>';
-              var m6 = '<%= m6 %>';
-              var m7 = '<%= m7 %>';
-              var m8 = '<%= m8 %>';
-              var m9 = '<%= m9 %>';
-              var m10 = '<%= m10 %>';
+              var m1 = '<%= m[0] %>';
+              var m2 = '<%= m[1] %>';
+              var m3 = '<%= m[2] %>';
+              var m4 = '<%= m[3] %>';
+              var m5 = '<%= m[4] %>';
+              var m6 = '<%= m[5] %>';
+              var m7 = '<%= m[6] %>';
+              var m8 = '<%= m[7] %>';
+              var m9 = '<%= m[8] %>';
+              var m10 = '<%= m[9] %>';
+              var m11 = '<%= m[10] %>';
+              var m12 = '<%= m[11] %>';
+              var m13 = '<%= m[12] %>';
+              var m14 = '<%= m[13] %>';
+              var m15 = '<%= m[14] %>';
+              var m16 = '<%= m[15] %>';
+              var m17 = '<%= m[16] %>';
+              var m18 = '<%= m[17] %>';
+              var m19 = '<%= m[18] %>';
+              var m20 = '<%= m[19] %>';
+              var m21 = '<%= m[20] %>';
+              var m22 = '<%= m[21] %>';
+              var m23 = '<%= m[22] %>';
+              var m24 = '<%= m[23] %>';
+              var m25 = '<%= m[24] %>';
+              var m26 = '<%= m[25] %>';
+              var m27 = '<%= m[26] %>';
+              var m28 = '<%= m[27] %>';
+              var m29 = '<%= m[28] %>';
+              var m30 = '<%= m[29] %>';
+
            
 
-              var mm1 = '<%= mm1 %>';
-              var mm2 = '<%= mm2 %>';
-              var mm3 = '<%= mm3 %>';
-              var mm4 = '<%= mm4 %>';
-              var mm5 = '<%= mm5 %>';
-              var mm6 = '<%= mm6 %>';
-              var mm7 = '<%= mm7 %>';
-              var mm8 = '<%= mm8 %>';
-              var mm9 = '<%= mm9 %>';
-              var mm10 = '<%= mm10 %>';
-            
+              var mm1 = '<%= mm[0] %>';
+              var mm2 = '<%= mm[1] %>';
+              var mm3 = '<%= mm[2] %>';
+              var mm4 = '<%= mm[3] %>';
+              var mm5 = '<%= mm[4] %>';
+              var mm6 = '<%= mm[5] %>';
+              var mm7 = '<%= mm[6] %>';
+              var mm8 = '<%= mm[7] %>';
+              var mm9 = '<%= mm[8] %>';
+              var mm10 = '<%= mm[9] %>';
+              var mm11 = '<%= mm[10] %>';
+              var mm12 = '<%= mm[11] %>';
+              var mm13 = '<%= mm[12] %>';
+              var mm14 = '<%= mm[13] %>';
+              var mm15 = '<%= mm[14] %>';
+              var mm16 = '<%= mm[15] %>';
+              var mm17 = '<%= mm[16] %>';
+              var mm18 = '<%= mm[17] %>';
+              var mm19 = '<%= mm[18] %>';
+              var mm20 = '<%= mm[19] %>';
+              var mm21 = '<%= mm[20] %>';
+              var mm22 = '<%= mm[21] %>';
+              var mm23 = '<%= mm[22] %>';
+              var mm24 = '<%= mm[23] %>';
+              var mm25 = '<%= mm[24] %>';
+              var mm26 = '<%= mm[25] %>';
+              var mm27 = '<%= mm[26] %>';
+              var mm28 = '<%= mm[27] %>';
+              var mm29 = '<%= mm[28] %>';
+              var mm30 = '<%= mm[29] %>';
+
               const ctx3 = document.getElementById('LineChart');
 
               new Chart(
@@ -342,11 +383,26 @@
 
                       type: 'line',
                   data: {
-                      labels: [mm1, mm2, mm3, mm4, mm5, mm6, mm7 , mm8, mm9, mm10],
+                      labels: [
+
+                          mm1, mm2, mm3, mm4, mm5, mm6, mm7, mm8, mm9, mm10,
+                          mm11, mm12, mm13, mm14, mm15, mm16, mm17, mm18, mm19, mm20,
+                          mm21, mm22, mm23, mm24, mm25, mm26, mm27, mm28, mm29, mm30
+
+
+
+                      ],
                       datasets: [{
-                          label: 'ايرادات الدفعات',
-                          data: [m1, m2, m3, m4, m5, m6, m7,
-                              m8, m9, m10],
+                          label: ' ايرادات الدفعات لاخر 30 يوم',
+                          data: [
+
+                              m1, m2, m3, m4, m5, m6, m7, m8, m9, m10,
+                              m11, m12, m13, m14, m15, m16, m17, m18, m19, m20,
+                              m21, m22, m23, m24, m25, m26, m27, m28, m29, m30
+
+
+                          ],
+
                           backgroundColor: [
                               'rgba(255, 99, 132, 1)'
 
@@ -356,10 +412,13 @@
                               'rgb(255, 99, 132)'
 
                           ],
-                          hoverOffset: 1
+                          hoverOffset: 1,
+                          tension: 0.1
+                           
                       }]
-                  },
-                  options: {
+                      },
+                      options: {
+
                       scales: {
                           y: {
                               beginAtZero: true
