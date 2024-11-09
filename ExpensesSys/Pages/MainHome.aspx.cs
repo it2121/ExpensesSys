@@ -163,8 +163,8 @@ namespace ExpensesSys.Pages
             searchPanel.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             TechBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الفنية") ;
 
-            Button2.Visible = false;
-            Button1.Visible = false;
+         //   Button2.Visible = false;
+          //  Button1.Visible = false;
 
         }
 
@@ -325,7 +325,7 @@ namespace ExpensesSys.Pages
 
                 }
             }
-
+            
 
 
 

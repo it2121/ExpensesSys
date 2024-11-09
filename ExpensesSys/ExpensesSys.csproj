@@ -179,6 +179,8 @@
     <Content Include="Pages\People.aspx" />
     <Content Include="Pages\ProjectAndUnits.aspx" />
     <Content Include="Pages\SelectAndExtract.aspx" />
+    <Content Include="Pages\SitePlan.aspx" />
+    <Content Include="Pages\SitePlanSeperate.aspx" />
     <Content Include="Pages\TechReports.aspx" />
     <Content Include="Pages\UnitPaymentsPayments.aspx" />
     <Content Include="Pages\UnitPaymentsPaymentsEditor.aspx" />
@@ -499,6 +501,20 @@
     </Compile>
     <Compile Include="Pages\SelectAndExtract.aspx.designer.cs">
       <DependentUpon>SelectAndExtract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SitePlan.aspx.cs">
+      <DependentUpon>SitePlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SitePlan.aspx.designer.cs">
+      <DependentUpon>SitePlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SitePlanSeperate.aspx.cs">
+      <DependentUpon>SitePlanSeperate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SitePlanSeperate.aspx.designer.cs">
+      <DependentUpon>SitePlanSeperate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TechReports.aspx.cs">
       <DependentUpon>TechReports.aspx</DependentUpon>
