@@ -20,6 +20,7 @@ namespace ExpensesSys.Pages
         string Warn = "";
         int Money = 0;
         string MoneyType = "";
+        string BeforeAfter = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -113,8 +114,16 @@ namespace ExpensesSys.Pages
 
             }
 
+            if (UnMarkedDate.Checked)
+            {
 
-            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType ,StartDate.Text);
+                BeforeAfter = PaymentDateBeforeAfter.SelectedValue;
+
+
+            }
+
+
+            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType ,StartDate.Text,BeforeAfter);
 
 
 
@@ -149,6 +158,7 @@ namespace ExpensesSys.Pages
             if (UnMarkedDate.Checked == true)
             {
                 StartDate.Enabled = true;
+                PaymentDateBeforeAfter.Enabled = true;
 
 
             }
@@ -157,8 +167,11 @@ namespace ExpensesSys.Pages
 
                 StartDate.Text = "";
                 StartDate.Enabled = false;
-
+                PaymentDateBeforeAfter.Enabled = false;
             }
+
+
+
         }
         protected void CreateInReport(object sender, EventArgs e)
         {

@@ -1237,19 +1237,21 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
-        public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "" , string startDate ="")
+        public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", 
+            string Warn = "", int Money = 0, string MoneyType = "" , string startDate ="",string BeforeAfter = "")
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "UnitReport";
             cm.Parameters.AddWithValue("@Unittype ", Unittype);
-            cm.Parameters.AddWithValue("@Emp ", Emp);
-            cm.Parameters.AddWithValue("@Loan ", Loan);
-            cm.Parameters.AddWithValue("@Warn ", Warn);
-            cm.Parameters.AddWithValue("@Money ", Money);
-            cm.Parameters.AddWithValue("@MoneyType ", MoneyType);
-            cm.Parameters.AddWithValue("@startDate ", startDate);
+            cm.Parameters.AddWithValue("@Emp", Emp);
+            cm.Parameters.AddWithValue("@Loan", Loan);
+            cm.Parameters.AddWithValue("@Warn", Warn);
+            cm.Parameters.AddWithValue("@Money", Money);
+            cm.Parameters.AddWithValue("@MoneyType", MoneyType);
+            cm.Parameters.AddWithValue("@startDate", startDate);
+            cm.Parameters.AddWithValue("@BeforeAfter", BeforeAfter);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }   public static DataTable TechUnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "")

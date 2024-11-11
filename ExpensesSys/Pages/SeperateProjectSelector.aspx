@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>نظام الصومعة</title>
+    <title>نظام الشركة الفلانية</title>
 
       <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />
      <script src="../Libs/bootstrap.min.js"></script>
@@ -154,7 +154,7 @@ html, body {
                                 <h2></h2>
                                                                     
                               <i class="fa-solid fa-2x fa-file-signature" ></i>
-                                        <asp:Label  ID="MainLbl" runat="server"  class="menu-text  text-center text is-size-4">نظــــام الصومعــــة</asp:Label>
+                                        <asp:Label  ID="MainLbl" runat="server"  class="menu-text  text-center text is-size-4">نظــــام الشركة الفلانية</asp:Label>
                                         <span class="badge badge-pill badge-primary"></span>
                             
                      
@@ -238,12 +238,12 @@ html, body {
             
 
             <div class="col   text-center ">
-                <asp:Button runat="server" ID="GoToCases1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToCases"  role="button" Text="دعاوى الصومعة"></asp:Button>
+                <asp:Button runat="server" ID="GoToCases1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToCases"  role="button" Text="دعاوى الشركة الفلانية"></asp:Button>
             </div> 
             
             <div class="col   text-center ">
 
-                <asp:Button runat="server" ID="GoToContracts1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToContracts"  role="button" Text="عقود الصومعة"></asp:Button>
+                <asp:Button runat="server" ID="GoToContracts1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToContracts"  role="button" Text="عقود الشركة الفلانية"></asp:Button>
             </div>
             
        

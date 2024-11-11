@@ -30,7 +30,7 @@ namespace ExpensesSys.Pages
             }
             TLbl.Text= Session["Name"].ToString();
             NameL.Text = Session["Role"].ToString();
-            MainLbl.Text = "   نظــــام الصومعــــة  -" + "   مشروع   " + BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0][0].ToString();
+            MainLbl.Text = "   نظــــام الشركة الفلانية  -" + "   مشروع   " + BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0][0].ToString();
 
             //SetBtnsVisibility();
 

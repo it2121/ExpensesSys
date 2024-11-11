@@ -357,7 +357,24 @@
                     <asp:UpdatePanel ID="UpdatePanelDates" runat="server" style="width: 100%;" UpdateMode="Conditional">
                         <ContentTemplate>
                             <div class="row m-4">
-                                <div class="col-12">
+                                   <div class="col-6 align-content-center text-center">
+                                    <p class="control align-content-center text-center">
+
+
+                                        <asp:DropDownList ID="PaymentDateBeforeAfter" Enabled="false"
+                                            class="input is-info" type="text" placeholder="نوع الفلتر"
+                                            AutoPostBack="True"
+                                            runat="server">
+
+                                            <asp:ListItem Selected="True" Value="قبل" Text="">قبل</asp:ListItem>
+                                            <asp:ListItem Value="بعد" Text="بعد">بعد</asp:ListItem>
+                                        </asp:DropDownList>
+
+
+
+                                    </p>
+                                </div>
+                                <div class="col-6">
 
                                     <p class="control has-icons-left">
 

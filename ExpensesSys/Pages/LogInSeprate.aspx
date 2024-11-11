@@ -5,7 +5,7 @@
 
 <html xmlns="">
 <head runat="server">
-    <title>نظام الصومعة</title>
+    <title>نظام الشركة الفلانية</title>
        <link href="../Libs/jquery.dataTables.min.css" rel="stylesheet" />
      <script src="../Libs/bootstrap.min.js"></script>
         <script src="../Libs/jquery.min.js"></script>
