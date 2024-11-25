@@ -135,7 +135,7 @@
             
             <div class="row m-2">
 
-                <div class="col-6">
+                <div class="col-4">
 
 
            
@@ -149,7 +149,7 @@
 
 
             </div>
-                    <div class="col-6">
+                    <div class="col-4">
 
 
            
@@ -162,11 +162,26 @@
            
 
 
-
+    
 
             </div>
 
+                 <div class="col-4">
 
+
+           
+    
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="TicketDate"  class="form__field" type="input" placeholder="تاريخ الوصل" />
+
+    <label for="name" class="form__label">تاريخ الوصل</label>
+</div>
+           
+
+
+
+
+            </div>
 
 
             </div>

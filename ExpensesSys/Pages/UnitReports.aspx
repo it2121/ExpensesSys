@@ -351,7 +351,7 @@
 
                         <asp:CheckBox runat="server" ID="UnMarkedDate" class="input is-info border-0 checkbox " 
                             Width="100%" Checked="false" AutoPostBack="true" OnCheckedChanged="ChckedChanged" type="text" 
-                            Text="تاريخ اخر دفعة" TextAlign="Right" placeholder="تاريخ اخر دفعة" />
+                            Text="تاريخ اخر دفعة حسب الوصل" TextAlign="Right" placeholder="تاريخ اخر دفعة حسب الوصل" />
                     </div>
 
                     <asp:UpdatePanel ID="UpdatePanelDates" runat="server" style="width: 100%;" UpdateMode="Conditional">

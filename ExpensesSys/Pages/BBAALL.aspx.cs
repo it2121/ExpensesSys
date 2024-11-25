@@ -2692,7 +2692,7 @@ string ContractNumber,
 
         }
         public static bool InsertIntoUnitPayments(int PayNo, int Amount, int ProjectID
-            , string RecID, string Paid)
+            , string RecID, string Paid,string TicketDate)
 
         {
             SqlCommand cm;
@@ -2706,12 +2706,13 @@ string ContractNumber,
             cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             cm.Parameters.AddWithValue("@RecID", RecID);
             cm.Parameters.AddWithValue("@Paid", Paid);
+            cm.Parameters.AddWithValue("@TicketDate", TicketDate);
 
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteCommand(cm);
 
         }
-        public static bool UpdateUnitPayments(int PayNo, int Amount , string RecID, int ID)
+        public static bool UpdateUnitPayments(int PayNo, int Amount , string RecID, int ID,string TicketDate)
 
         {
             SqlCommand cm;
@@ -2725,6 +2726,7 @@ string ContractNumber,
 
             cm.Parameters.AddWithValue("@RecID", RecID);
             cm.Parameters.AddWithValue("@ID", ID);
+            cm.Parameters.AddWithValue("@TicketDate", TicketDate);
 
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteCommand(cm);

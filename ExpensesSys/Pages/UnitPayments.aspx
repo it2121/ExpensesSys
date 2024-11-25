@@ -134,11 +134,19 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                 </asp:TemplateField>         
                 
                 
-                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="تاريخ الدفعة الاخيرة">
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="تاريخ استلام الدفعة الاخيرة">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_Quant1WithdrowParty" runat="server" Text='<%#Eval("DateOfPay") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>        
+                </asp:TemplateField>      
+                
+                    
+                <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="تاريخ الوصل">
+                    <ItemTemplate>
+                        <asp:Label  ID="lbl_Quant1WithdrowParty2" runat="server" Text='<%#Eval("TicketDate") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>   
+
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="عدد الدفعات">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_Quant1WithdrowPartycount" runat="server" Text='<%#Eval("PayemntsPayemntsCount") %>' Font-Bold="true" Font-Size="Large"></asp:Label>

@@ -36,6 +36,7 @@ namespace ExpensesSys.Pages
                             PayNo.Text = dt["PayNo"].ToString();
                             Amount.Text = dt["Amount"].ToString();
                             Paid = dt["Paid"].ToString();
+                            TicketDate .Text= dt["TicketDate"].ToString();
 
 
                         
@@ -43,6 +44,9 @@ namespace ExpensesSys.Pages
                     }
                     DelBtn.Visible = true;
                     CreateBtn.Text = "حفظ التعديلات";
+
+
+
 
 
                 }
@@ -58,7 +62,10 @@ namespace ExpensesSys.Pages
                     Amount.Text = "";
 
                     Paid = "";
+        
 
+                    DateTime dateTime = DateTime.UtcNow.Date;
+                    TicketDate.Text = dateTime.ToString("dd/MM/yyyy");
                 }
             }
         }
@@ -82,7 +89,7 @@ namespace ExpensesSys.Pages
                 string paid = "0";
                 //if (Convert.ToInt32(Amount.Text) == Convert.ToInt32(PaidAmount.Text)) { paid = "1"; }
 
-                BBAALL.InsertIntoUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text) ,ProjectID ,RecID, paid);
+                BBAALL.InsertIntoUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text) ,ProjectID ,RecID, paid, MyStringManager.GetDateAfterCheckingFormating(TicketDate.Text));
 
                 //   MyStringManager.GetDateAfterCheckingFormating(DateOfPay.Text)
 
@@ -104,7 +111,7 @@ namespace ExpensesSys.Pages
 
 
                 BBAALL.UpdateUnitPayments(Convert.ToInt32(PayNo.Text), Convert.ToInt32(Amount.Text),
-                                       RecID, PaymentID);
+                                       RecID, PaymentID, MyStringManager.GetDateAfterCheckingFormating(TicketDate.Text));
 
                 RecID = "";
                 DelBtn.Visible = false;
