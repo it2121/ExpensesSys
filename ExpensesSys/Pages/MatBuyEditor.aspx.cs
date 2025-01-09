@@ -138,7 +138,7 @@ namespace ExpensesSys.Pages
                     ContractDate.Text, MatUnit.Text, NameOfSupplyer.Text, NumberOfSupplyer.Text, AddressOfSupplyer.Text
                     );
 
-
+                
 
 
                 Response.Redirect("MatBuy.aspx");

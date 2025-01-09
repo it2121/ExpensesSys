@@ -61,31 +61,31 @@ namespace ExpensesSys.Pages
 
                 double sumUnitIn = 0;
 
-/*
-                DataTable allpayments = BBAALL.REP_GetAllIncomeRecordsUnit();
-                foreach (DataRow Row in allpayments.Rows)
-                {
-                    DataTable Payment = BBAALL.GetUnitPaymentByID(Convert.ToInt32(Row["ID"].ToString()));
+                /*
+                                DataTable allpayments = BBAALL.REP_GetAllIncomeRecordsUnit();
+                                foreach (DataRow Row in allpayments.Rows)
+                                {
+                                    DataTable Payment = BBAALL.GetUnitPaymentByID(Convert.ToInt32(Row["ID"].ToString()));
 
-                    foreach (DataRow innerRow in Payment.Rows)
-                    {
+                                    foreach (DataRow innerRow in Payment.Rows)
+                                    {
 
-                        BBAALL.UpdateUnitPayments(Convert.ToInt32(innerRow["PayNo"].ToString()),
-                            Convert.ToInt32(innerRow["Amount"].ToString()),
-                         MyStringManager.GetDateAfterCheckingFormating(innerRow["DateOfPay"].ToString())
-, Convert.ToInt32(innerRow["PaidAmount"].ToString())
-, innerRow["RecID"].ToString(), innerRow["Paid"].ToString(), Convert.ToInt32(Row["ID"].ToString()));
+                                        BBAALL.UpdateUnitPayments(Convert.ToInt32(innerRow["PayNo"].ToString()),
+                                            Convert.ToInt32(innerRow["Amount"].ToString()),
+                                         MyStringManager.GetDateAfterCheckingFormating(innerRow["DateOfPay"].ToString())
+                , Convert.ToInt32(innerRow["PaidAmount"].ToString())
+                , innerRow["RecID"].ToString(), innerRow["Paid"].ToString(), Convert.ToInt32(Row["ID"].ToString()));
 
-                    }
-
-
-
-
-                }*/
+                                    }
 
 
 
-                sumUnitIn += Convert.ToDouble(BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, endtDate).Rows[0][0].ToString());
+
+                                }*/
+
+                
+
+                sumUnitIn += Convert.ToDouble(BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, endtDate, Convert.ToInt32( Session["ProjectID"].ToString())).Rows[0][0].ToString());
                 sumUnitIn += MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ");
 
                 Last30DaysIncome.Text = MyStringManager.GetNumberWithComas(sumUnitIn + "") + " IQD ";

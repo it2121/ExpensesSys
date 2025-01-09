@@ -32,14 +32,46 @@ namespace ExpensesSys.Pages
 
                 }
                 DataTable allProjects = BBAALL.GetAllProjects();
-                DataGridUsers.DataSource = allProjects;
 
+
+
+
+                DataTable allProjectsAfterRemoving = allProjects.Clone();
+
+                allProjectsAfterRemoving.Clear();
+
+
+                DataTable userProjects = BBAALL.GetAllProjectsOfAUser(Convert.ToInt32(Session["ID"]));
+
+                foreach (DataRow row in userProjects.Rows )
+
+                {
+
+
+                    foreach (DataRow InnerRow in allProjects.Rows)
+
+                    {
+                        if(row["ProjectID"] .Equals (InnerRow["ID"]))
+                        {
+
+                            allProjectsAfterRemoving.ImportRow(InnerRow);
+                        }
+
+
+                    }
+                }
+
+                DataGridUsers.DataSource = allProjectsAfterRemoving;
 
                 DataGridUsers.DataBind();
 
-                OverseeingManagmntBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
+                //OverseeingManagmntBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("ادارة");
+                OverseeingManagmntBtn.Visible = Session["God"].Equals("1");
 
-                GeneralInAndOutPanel.Visible= Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+               // GeneralInAndOutPanel.Visible= Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+                GeneralInAndOutPanel.Visible = Session["God"].Equals("1") ;
+                
+            
             }
 
         }

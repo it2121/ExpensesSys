@@ -183,7 +183,16 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
             
                 </asp:TemplateField>
+                  <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-warning "
+                                    style="Width:60%; Height:25px"  
 
+                            ID="UnitDocks" runat="server"   Font-Size="Medium" Text="المستمسكات" CommandArgument='<%#Eval("FileID") %>' CommandName="Docks" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 

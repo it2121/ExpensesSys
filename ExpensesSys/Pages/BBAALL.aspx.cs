@@ -32,7 +32,20 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable DeleteFile(int ID)
+        public static DataTable DeleteFileOriginalDB(int ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "DeleteFile";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }    public static DataTable DeleteFile(int ID)
         {
 
 
@@ -60,7 +73,20 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         } 
-           public static DataTable GetTheSumOfOriginalPayment(int OriginalPaymentID)
+           public static DataTable GetAllProjectsOfAUser(int UserID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetAllProjectsOfAUser";
+
+            cm.Parameters.AddWithValue("@UserID ", UserID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable GetTheSumOfOriginalPayment(int OriginalPaymentID)
         {
 
 
@@ -161,7 +187,19 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
-        public static DataTable GetAllContractsLAW()
+        public static DataTable GetAllUsers()
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetAllUsers";
+
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }   public static DataTable GetAllContractsLAW()
         {
 
 
@@ -233,6 +271,22 @@ namespace ExpensesSys.Pages
         }
 
 
+        public static DataTable GetFileByDockIDOriginaldB(int ID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetFileByDockIDOriginaldB";
+
+            cm.Parameters.AddWithValue("@ID", ID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
+
+        
         public static DataTable GetFileByDockID(int ID)
         {
 
@@ -287,6 +341,20 @@ namespace ExpensesSys.Pages
 
 
 
+        public static DataTable GetAllDocksOrARecIDOriginalDB(int RecordID)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetAllDocksOrARecIDOriginalDB";
+
+            cm.Parameters.AddWithValue("@RecordID", RecordID);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
         public static DataTable GetAllDocksOrARecID(string RecID)
         {
 
@@ -319,6 +387,23 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
+        public static DataTable UploadFile(byte[] Doc, int RecordID, string DocName, string DocType)
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "UploadFile";
+
+            cm.Parameters.AddWithValue("@Doc", Doc);
+            cm.Parameters.AddWithValue("@RecordID", RecordID);
+            cm.Parameters.AddWithValue("@DocName", DocName);
+            cm.Parameters.AddWithValue("@DocType", DocType);
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }
 
 
         public static DataTable getAllWarehouse()
@@ -377,12 +462,14 @@ namespace ExpensesSys.Pages
 
 
 
-        public static DataTable REP_GetAllIncomeRecordsUnit()
+        public static DataTable REP_GetAllIncomeRecordsUnit(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "REP_GetAllIncomeRecordsUnit";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
@@ -953,7 +1040,7 @@ namespace ExpensesSys.Pages
 
 
 
-        public static DataTable REP_GetAllIncomeRecordsUnitSumWithDates(string startDate, string EndDate)
+        public static DataTable REP_GetAllIncomeRecordsUnitSumWithDates(string startDate, string EndDate,int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -961,6 +1048,8 @@ namespace ExpensesSys.Pages
             cm.CommandText = "REP_GetAllIncomeRecordsUnitSumWithDates";
             cm.Parameters.AddWithValue("@startDate", startDate);
             cm.Parameters.AddWithValue("@EndDate", EndDate);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }   public static DataTable getIncomeByID(int ID)

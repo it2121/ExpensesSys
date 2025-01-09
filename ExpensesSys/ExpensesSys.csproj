@@ -149,9 +149,11 @@
     <Content Include="Pages\ContractsEditor.aspx" />
     <Content Include="Pages\DDAALL.aspx" />
     <Content Include="Pages\Documents.aspx" />
+    <Content Include="Pages\DocUp.aspx" />
     <Content Include="Pages\EmpEditor.aspx" />
     <Content Include="Pages\EmpMan.aspx" />
     <Content Include="Pages\Expences.aspx" />
+    <Content Include="Pages\Files.aspx" />
     <Content Include="Pages\FinanceEditor.aspx" />
     <Content Include="Pages\FullReportInAndOutWithDate.aspx" />
     <Content Include="Pages\GeneralFinanceNav.aspx" />
@@ -291,6 +293,13 @@
     <Compile Include="Pages\Documents.aspx.designer.cs">
       <DependentUpon>Documents.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DocUp.aspx.cs">
+      <DependentUpon>DocUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DocUp.aspx.designer.cs">
+      <DependentUpon>DocUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EmpEditor.aspx.cs">
       <DependentUpon>EmpEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,6 +320,13 @@
     </Compile>
     <Compile Include="Pages\Expences.aspx.designer.cs">
       <DependentUpon>Expences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Files.aspx.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Files.aspx.designer.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FinanceEditor.aspx.cs">
       <DependentUpon>FinanceEditor.aspx</DependentUpon>

@@ -134,14 +134,14 @@ namespace ExpensesSys.Pages
 
             string startDate = start.ToString("dd/MM/yyyy");
 
-            DataTable unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, startDate);
+            DataTable unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(startDate, startDate, Convert.ToInt32(Session["ProjectID"].ToString()));
             m[0] = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
             mm[0] = startDate;
 
             for (int i = 1; i <=29; i++)
             {
                 convertion++;
-                unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"));
+                unitthingy = BBAALL.REP_GetAllIncomeRecordsUnitSumWithDates(DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy"), Convert.ToInt32(Session["ProjectID"].ToString()));
                 m[i] = Convert.ToInt32(unitthingy.Rows[0][0].ToString());
                 mm[i] = DateTime.Now.AddDays(convertion).ToString("dd/MM/yyyy");
 

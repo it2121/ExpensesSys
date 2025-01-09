@@ -40,10 +40,12 @@ namespace ExpensesSys.Pages
 
                 }
                 Session["Month"] = temp;
+                Session["God"] = login.Rows[0]["God"]; ;
 
                 Session["Name"] = login.Rows[0]["Name"];
 
                 Session["Role"] = login.Rows[0]["Role"];
+                Session["ID"] = login.Rows[0]["ID"];
 
                 Session["redirected"] = "1";
 

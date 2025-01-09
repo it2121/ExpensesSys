@@ -88,6 +88,15 @@ namespace ExpensesSys.Pages
                 Response.Redirect("Pay.aspx");
 
             }
+            if (x.Equals("Docks"))
+            {
+
+
+                string ID = e.CommandArgument.ToString();
+                Files.RecordID = Convert.ToInt32( ID);
+                Response.Redirect("Files.aspx");
+
+            }
 
 
         }
