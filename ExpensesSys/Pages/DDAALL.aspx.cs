@@ -25,8 +25,8 @@ namespace ExpensesSys.Pages
        //   static string DatabaseConnectionStringLAW = @"Server=sql5112.site4now.net; Database=db_aa8601_lawdb; User Id=db_aa8601_lawdb_admin; Password=Akastarlord1._; ";
 
 
-        //  static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
-        //  static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
+         // static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
+         //static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
 
 
 

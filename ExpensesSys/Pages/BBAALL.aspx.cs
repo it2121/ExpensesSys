@@ -60,7 +60,19 @@ namespace ExpensesSys.Pages
             return DDAALL.ExecuteSelectCommand(cm);
         }
 
-        public static DataTable GetLastAddedOriginalPayment()
+        public static DataTable GetWhatsInTheSafe()
+        {
+
+
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+            cm.CommandText = "GetWhatsInTheSafe";
+
+
+
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }      public static DataTable GetLastAddedOriginalPayment()
         {
 
 
@@ -493,21 +505,26 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable REP_GetAllIncomeRecords()
+        public static DataTable REP_GetAllIncomeRecords(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "REP_GetAllIncomeRecords";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable GetAllIncomeSum()
+        public static DataTable GetAllIncomeSum(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
             cm.CommandText = "GetAllIncomeSum";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
@@ -978,33 +995,36 @@ namespace ExpensesSys.Pages
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable GetAllCompSum()
+        public static DataTable GetAllCompSum(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
 
             cm.CommandText = "GetAllCompSum";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable GetAllSalarySum()
+        public static DataTable GetAllSalarySum(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
 
 
             cm.CommandText = "GetAllSalarySum";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
+
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
-        public static DataTable GetAllMatBuySum()
+        public static DataTable GetAllMatBuySum(int ProjectID)
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
-
-
             cm.CommandText = "GetAllMatBuySum";
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }
@@ -1094,6 +1114,17 @@ namespace ExpensesSys.Pages
         
         
         
+        public static DataTable GetLastAddedMatBuyRecord()
+        {
+            SqlCommand cm;
+            cm = DDAALL.CreateCommand();
+
+            cm.CommandText = "GetLastAddedMatBuyRecord";
+            SqlConnection.ClearAllPools();
+            return DDAALL.ExecuteSelectCommand(cm);
+        }  
+        
+            
         public static DataTable GetAllIn()
         {
             SqlCommand cm;
@@ -1327,7 +1358,9 @@ namespace ExpensesSys.Pages
         }
 
         public static DataTable UnitReport(string Unittype = "", string Emp = "", string Loan = "", 
-            string Warn = "", int Money = 0, string MoneyType = "" , string startDate ="",string BeforeAfter = "")
+            string Warn = "", int Money = 0, string MoneyType = "" , string startDate ="",string BeforeAfter = "", int ProjectID=0
+            
+            )
         {
             SqlCommand cm;
             cm = DDAALL.CreateCommand();
@@ -1341,6 +1374,7 @@ namespace ExpensesSys.Pages
             cm.Parameters.AddWithValue("@MoneyType", MoneyType);
             cm.Parameters.AddWithValue("@startDate", startDate);
             cm.Parameters.AddWithValue("@BeforeAfter", BeforeAfter);
+            cm.Parameters.AddWithValue("@ProjectID", ProjectID);
             SqlConnection.ClearAllPools();
             return DDAALL.ExecuteSelectCommand(cm);
         }   public static DataTable TechUnitReport(string Unittype = "", string Emp = "", string Loan = "", string Warn = "", int Money = 0, string MoneyType = "")

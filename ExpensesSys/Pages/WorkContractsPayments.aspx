@@ -29,7 +29,7 @@
          
          data-target="modal-js-example"
                                  onclick="GoToNewItem"
-
+                ID ="NewBtn"
                         class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة دفعة جديدة 
                        
                         <i class="fas fa-add " style="margin-left: 1em">
@@ -145,6 +145,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Button 
                                       Font-Bold="true"                          class="js-modal-trigger button is-large is-bold is-info is-outlined"
                                     style="Width:50%; Height:25px"  
+                                                                                    Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
 
                             ID="btn_Edit" runat="server" Text="تعديل" CommandName="Edit" />
                     </ItemTemplate>

@@ -16,6 +16,8 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+        
+
                 if (ID != 0)
                 {
                     DataTable IncomeTbl = BBAALL.getIncomeByID(ID);
@@ -62,6 +64,8 @@ namespace ExpensesSys.Pages
 
 
                 }
+                CreateBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+                DelBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
             }
 
         }

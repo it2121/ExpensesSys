@@ -287,6 +287,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Button 
                                                                 class="js-modal-trigger button is-info is-outlined"
                                     style="Width:40%; Height:25px"  
+                                                                                    Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
 
                             ID="btn_Edit" runat="server" Font-Size="Small" Text="ادخال يدوي" CommandName="Edit" />
                     </ItemTemplate>
@@ -299,7 +300,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                                                                 class="js-modal-trigger button is-warning "
                                     style="Width:40%; Height:25px"  
 
-                            ID="AutoIn" runat="server"  Visible ='<%# Eval("RecDate").ToString().Length > 0 ? false :true  %>' Font-Size="Small" Text="ادخال تلقائي" CommandArgument='<%#Eval("EmpID") %>' CommandName="AutoIn" />
+                            ID="AutoIn" runat="server"  Visible ='<%# (Eval("RecDate").ToString().Length > 0 )&& (Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات"))? false :true  %>' Font-Size="Small" Text="ادخال تلقائي" CommandArgument='<%#Eval("EmpID") %>' CommandName="AutoIn" />
                     </ItemTemplate>
             
                 </asp:TemplateField>

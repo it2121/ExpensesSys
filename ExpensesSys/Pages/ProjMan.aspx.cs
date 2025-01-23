@@ -16,7 +16,18 @@ namespace ExpensesSys.Pages
             if (!IsPostBack)
             {
                 DataTable allProjects = BBAALL.GetAllProjects();
-                DataGridUsers.DataSource = allProjects;
+                DataTable allProjectsafter = allProjects.Clone();
+
+
+
+                foreach (DataRow row in allProjects.Rows)
+                {
+
+                    if (Convert.ToInt32(row["ID"]) == Convert.ToInt32(Session["ProjectID"].ToString()))
+                        allProjectsafter.ImportRow(row);
+                }
+
+                DataGridUsers.DataSource = allProjectsafter;
 
 
                 DataGridUsers.DataBind();
@@ -86,6 +97,7 @@ namespace ExpensesSys.Pages
 
         protected void GoToNewItem(object sender, EventArgs e)
         {
+            ProjEditor.ProjID = 0;
             Response.Redirect("ProjEditor.aspx");
 
         }

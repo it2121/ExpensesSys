@@ -181,6 +181,8 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                                                                 class="js-modal-trigger  is-bold button is-warning "
                                     style="Width:50%; Height:25px"  
                             CommandArgument='<%#Eval("ID") %>' CommandName="GoToPay"
+                                                        Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
+
                             ID="btn_Edit1" runat="server" Text="الدفعات"  />
                     </ItemTemplate>
             

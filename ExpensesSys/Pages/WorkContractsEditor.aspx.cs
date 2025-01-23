@@ -83,6 +83,11 @@ namespace ExpensesSys.Pages
                     TotalCost.Text = "";
 
                 }
+
+                CreateBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+                //Button1.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+                DelBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
+
             }
 
         }

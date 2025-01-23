@@ -32,7 +32,7 @@
          
          data-target="modal-js-example"
                                  onclick="GoToNewItem"
-
+         ID ="AddNewBtn"
                         class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة قيد جديد 
                        
                         <i class="fas fa-add " style="margin-left: 1em">

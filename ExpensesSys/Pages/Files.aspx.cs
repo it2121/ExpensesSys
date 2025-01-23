@@ -12,6 +12,7 @@ namespace ExpensesSys.Pages
     public partial class Files : System.Web.UI.Page
     {
         public static int RecordID = 0;
+        public static string redirectTo = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +22,7 @@ namespace ExpensesSys.Pages
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0]["Name"].ToString();
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
+                AddNewBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
             }
         }
 
@@ -28,7 +30,10 @@ namespace ExpensesSys.Pages
         {
 
             Expences.ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
-            Response.Redirect("MatBuy.aspx");
+
+
+
+            Response.Redirect(redirectTo+".aspx");
 
 
 

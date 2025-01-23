@@ -27,7 +27,7 @@
 
 
 
-     <asp:LinkButton  runat="server"  style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة قيد شراء جديد"
+     <asp:LinkButton  runat="server"  ID="AddnewBtn" style="background-color: white; color: #33B3FF; font: bold; border-color:#33B3FF" text="اضافة قيد شراء جديد"
         
          
          data-target="modal-js-example"
@@ -118,6 +118,12 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
                 </asp:TemplateField>    
                 
+                     <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="FileID">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_IDFileID" runat="server" Text='<%#Eval("FileID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>    
+
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="رقم العقد">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_OR4" runat="server" Text='<%#Eval("ContractNumber") %>' Font-Bold="true" Font-Size="Medium"></asp:Label>
@@ -176,13 +182,28 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                   <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button Font-Bold="true"
-                                                                class="js-modal-trigger  is-bold button is-warning "
+                                                                class="js-modal-trigger button  is-bold is-primary is-outlined"
                                     style="Width:50%; Height:25px"  
+                                                        Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
+
                             CommandArgument='<%#Eval("ID") %>' CommandName="GoToPay"
                             ID="btn_Edit1" runat="server" Text="الدفعات"  />
                     </ItemTemplate>
             
                 </asp:TemplateField>
+
+                        <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button  is-bold is-info "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="RepoPrinto" runat="server"   Font-Size="Medium" Text="سحب التقرير" CommandArgument='<%#Eval("ID") %>' CommandName="PrintReport" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+
+
                   <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
                     <ItemTemplate>
                         <asp:Button 

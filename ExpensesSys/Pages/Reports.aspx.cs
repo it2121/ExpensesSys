@@ -24,6 +24,7 @@ namespace ExpensesSys.Pages
         public static int GetAllSalarySum = 0;
         public static int GetAllNthSum = 0;
         public static int GetAllCompSum = 0;
+        public static int ProjectID = 0;
 
         public static double[] m = new double[30];
         public static string[] mm = new string[30];
@@ -74,18 +75,20 @@ namespace ExpensesSys.Pages
                 BL = 1;
                 AB = 1;
                 Outcome = Convert.ToInt32(BBAALL.GetAllOutcomeSum().Rows[0][0].ToString());
-                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum().Rows[0][0].ToString());
+                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum(ProjectID).Rows[0][0].ToString());
 
                 DataTable Out30 = BBAALL.GetAllOutcomeSum();
-                DataTable Inc30 = BBAALL.GetAllIncomeSum();
+                DataTable Inc30 = BBAALL.GetAllIncomeSum(ProjectID);
                 // DateTime enteredDate;
                 //  foreach(DataRow row in Out30.Rows)
                 //  {
                 //     enteredDate = DateTime.Parse(row[""]);
                 //   }
-                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum().Rows[0][0].ToString());
-                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum().Rows[0][0].ToString());
-                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum().Rows[0][0].ToString());
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
+
+                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum(ProjectID).Rows[0][0].ToString());
+                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum(ProjectID).Rows[0][0].ToString());
+                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum(ProjectID).Rows[0][0].ToString());
                 GetAllNthSum = Convert.ToInt32(BBAALL.GetAllNthSum().Rows[0][0].ToString());
                 setUpLineChart();
 
@@ -101,10 +104,10 @@ namespace ExpensesSys.Pages
 
                 Outcome = Convert.ToInt32(BBAALL.GetAllOutcomeSum().Rows[0][0].ToString());
 
-                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum().Rows[0][0].ToString());
-                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum().Rows[0][0].ToString());
-                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum().Rows[0][0].ToString());
-                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum().Rows[0][0].ToString());
+                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum(ProjectID).Rows[0][0].ToString());
+                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum(ProjectID).Rows[0][0].ToString());
+                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum(ProjectID).Rows[0][0].ToString());
+                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum(ProjectID).Rows[0][0].ToString());
                 GetAllNthSum = Convert.ToInt32(BBAALL.GetAllNthSum().Rows[0][0].ToString());
                 setUpLineChart();
             }
@@ -124,7 +127,7 @@ namespace ExpensesSys.Pages
 
         public void setUpLineChart()
         {
-            DataTable IncomeTable = BBAALL.REP_GetAllIncomeRecords();
+            DataTable IncomeTable = BBAALL.REP_GetAllIncomeRecords(ProjectID);
 
            
 

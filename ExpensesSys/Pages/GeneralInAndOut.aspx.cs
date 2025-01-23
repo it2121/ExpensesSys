@@ -20,8 +20,9 @@ namespace ExpensesSys.Pages
                 if (RecType.Equals("Out"))
                     dt = BBAALL.GetAllOut();
 
-            
 
+
+                addnewBtn.Visible =  Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
 
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
@@ -46,7 +47,7 @@ namespace ExpensesSys.Pages
         {
             
 
-            Response.Redirect("SeperateProjectSelector.aspx");
+            Response.Redirect("GeneralFinanceNav.aspx");
 
 
 

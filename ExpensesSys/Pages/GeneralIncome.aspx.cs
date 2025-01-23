@@ -22,6 +22,9 @@ namespace ExpensesSys.Pages
                 DataTable dt = BBAALL.getAllIncomeOfProject(ProjectID);
                 PageProjectNameLbl.Text = BBAALL.getProjectNameByID(ProjectID).Rows[0][0].ToString();
 
+                AddNewBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
+
+
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
 

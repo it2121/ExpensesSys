@@ -36,7 +36,7 @@
          
          data-target="modal-js-example"
                                  onclick="GoToNewItem"
-
+                ID="NewBtn"
                         class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">اضافة عقد جديد 
                        
                         <i class="fas fa-add " style="margin-left: 1em">
@@ -119,7 +119,11 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Label ID="lbl_ID" runat="server" Text='<%#Eval("ID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>    
-                
+                       <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="ID">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_IDFileID" runat="server" Text='<%#Eval("FileID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField> 
                 <asp:TemplateField   ItemStyle-HorizontalAlign="Center" Visible="true" HeaderText="رقم العقد">
                     <ItemTemplate>
                         <asp:Label  ID="lbl_OR" runat="server" Text='<%#Eval("ContractNumber") %>' Font-Bold="true" Font-Size="Large"></asp:Label>
@@ -185,6 +189,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                         <asp:Button 
                                                                 class="js-modal-trigger button is-primary "
                                     style="Width:75%; Height:25px"  
+                                                                                    Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
 
                             ID="GoToUnitsBtn" runat="server"   Font-Size="Medium" Text="تحديد الوحدات المشمولة" CommandArgument='<%#Eval("ID") %>' CommandName="GoToUnits" />
                     </ItemTemplate>
@@ -201,6 +206,29 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     </ItemTemplate>
             
                 </asp:TemplateField>
+
+                
+                        <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button  is-bold is-info "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="RepoPrinto" runat="server"   Font-Size="Medium" Text="سحب التقرير" CommandArgument='<%#Eval("ID") %>' CommandName="PrintReport" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+                  <asp:TemplateField  ItemStyle-HorizontalAlign="Center" >
+                    <ItemTemplate>
+                        <asp:Button 
+                                                                class="js-modal-trigger button is-warning "
+                                    style="Width:60%; Height:25px"  
+
+                            ID="UnitDocks" runat="server"   Font-Size="Medium" Text="المستمسكات" CommandArgument='<%#Eval("FileID") %>' CommandName="Docks" />
+                    </ItemTemplate>
+            
+                </asp:TemplateField>
+
             </Columns>
                                 <EmptyDataTemplate>لا توجد معلومات بعد</EmptyDataTemplate>  
 

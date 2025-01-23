@@ -123,7 +123,7 @@ namespace ExpensesSys.Pages
             }
 
 
-            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType ,StartDate.Text,BeforeAfter);
+            IncomeSet = BBAALL.UnitReport(UnittypeStr,  Emp ,  Loan ,  Warn ,  Money ,  MoneyType ,StartDate.Text,BeforeAfter,Convert.ToInt32(Session["ProjectID"].ToString()));
 
 
 

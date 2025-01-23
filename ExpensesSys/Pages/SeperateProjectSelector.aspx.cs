@@ -17,6 +17,8 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                Session["ProjectID"] = "0";
+
                 if (Session["Role"] .Equals("القانونية"))
                 {
                     GoToPage = "LawHome";
@@ -121,7 +123,7 @@ namespace ExpensesSys.Pages
         protected void GoToProjectZero(object sender, EventArgs e)
         {
 
-            if (GoToPage.Equals("ProjEditor"))
+           /* if (GoToPage.Equals("ProjEditor"))
             {
                 // ProjEditor.ProjID = Convert.ToInt32(id.Text);
             }
@@ -193,8 +195,9 @@ namespace ExpensesSys.Pages
 
 
             }
+*/
 
-
+            Session["ProjectID"] = "00";
 
             Response.Redirect(GoToPage + ".aspx");
 

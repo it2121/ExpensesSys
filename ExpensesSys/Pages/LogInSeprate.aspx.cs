@@ -39,6 +39,7 @@ namespace ExpensesSys.Pages
 
 
                 }
+
                 Session["Month"] = temp;
                 Session["God"] = login.Rows[0]["God"]; ;
 

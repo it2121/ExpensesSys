@@ -37,30 +37,68 @@ namespace ExpensesSys.Pages
         public DataTable UnityPayments;
 
 
+    public static  int ProjectID;
     public static  DataTable IncomeSet;
     public static  DataTable UnityPayemetsSet;
         public static DataTable CompSet;
    public static DataTable SalarySet;
         public static DataTable MatBuySet;
         public static DataTable NthSet;
+        public static DataTable allProjectsAfterRemoving;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
                 DataTable ProjectsNames = BBAALL.GetAllProjects();
+                if(Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات"))
                 ProjectName.Items.Add("القناة العامة");
+
                 WithdrowParty.Items.Add("تمويل من المستثمر");
                 WithdrowParty.Items.Add("قرض");
+
+
+
+
+                allProjectsAfterRemoving = ProjectsNames.Clone();
+
+                allProjectsAfterRemoving.Clear();
+
+
+                DataTable userProjects = BBAALL.GetAllProjectsOfAUser(Convert.ToInt32(Session["ID"]));
+
+                foreach (DataRow row in userProjects.Rows)
+
+                {
+
+
+                    foreach (DataRow InnerRow in ProjectsNames.Rows)
+
+                    {
+                        if (row["ProjectID"].Equals(InnerRow["ID"]))
+                        {
+
+                            allProjectsAfterRemoving.ImportRow(InnerRow);
+                        }
+
+
+                    }
+                }
+                foreach (DataRow row in allProjectsAfterRemoving.Rows)
+                {
+
+                    ProjectName.Items.Add(row["Name"].ToString());
+
+
+                }
 
                 foreach (DataRow row in ProjectsNames.Rows)
                 {
 
-                    ProjectName.Items.Add(row["Name"].ToString());
+
                     WithdrowParty.Items.Add(row["Name"].ToString());
 
                 }
-
             }
 
         }
@@ -135,7 +173,7 @@ namespace ExpensesSys.Pages
 
 
             
-            Income = BBAALL.REP_GetAllIncomeRecords();
+            Income = BBAALL.REP_GetAllIncomeRecords(ProjectID);
 
              IncomeSet = MyStringManager.GetTableAfterDateCheck(Income, StartDate.Text, EndDate.Text);
 
@@ -161,10 +199,13 @@ namespace ExpensesSys.Pages
              CompSet = MyStringManager.GetTableAfterDateCheck(Comp, StartDate.Text, EndDate.Text);
 
 
+            if (Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات"))
+            {
+                Nth = BBAALL.REP_GetAllNthRecords();
 
-            Nth = BBAALL.REP_GetAllNthRecords();
-
-             NthSet = MyStringManager.GetTableAfterDateCheck(Nth, StartDate.Text, EndDate.Text);
+                NthSet = MyStringManager.GetTableAfterDateCheck(Nth, StartDate.Text, EndDate.Text);
+            }
+   
 
 
             if (PrjectNameCheck.Checked == false)
@@ -178,7 +219,95 @@ namespace ExpensesSys.Pages
 
 
 
-            }   if (WithdrowPartyCheck.Checked == false)
+            }
+            else
+            {
+                DataTable IncomeSetTemp = IncomeSet.Clone();
+                DataTable IncomeSetTempFinal = IncomeSet.Clone();
+
+                DataTable UnityPayemetsSetTemp = UnityPayemetsSet.Clone();
+                DataTable UnityPayemetsSetFinal = UnityPayemetsSet.Clone();
+
+                DataTable MatBuySetTemp = MatBuySet.Clone();
+                DataTable MatBuySetFinal = MatBuySet.Clone();
+
+                DataTable SalarySetTemp = SalarySet.Clone();
+                DataTable SalarySetFinal = SalarySet.Clone();
+
+                DataTable CompSetTemp = CompSet.Clone();
+                DataTable CompSetFinal = CompSet.Clone();
+
+                //IncomeSet = MyStringManager.GetTableAfterCeckProjectName(IncomeSet, ProjectName.Text, "اسم_الجهة_المستلمة");
+               // UnityPayemetsSet = MyStringManager.GetTableAfterCeckProjectName(UnityPayemetsSet, ProjectName.Text, "اسم_الجهة_المستلمة");
+              //  MatBuySet = MyStringManager.GetTableAfterCeckProjectName(MatBuySet, ProjectName.Text, "المشروع");
+               // SalarySet = MyStringManager.GetTableAfterCeckProjectName(SalarySet, ProjectName.Text, "المشروع");
+                //CompSet = MyStringManager.GetTableAfterCeckProjectName(CompSet, ProjectName.Text, "اسم_المشروع");
+
+
+
+                foreach (var str in ProjectName.Items)
+                {
+                    IncomeSetTemp = MyStringManager.GetTableAfterCeckProjectName(IncomeSet, str.ToString(), "اسم_الجهة_المستلمة");
+                    foreach(DataRow InnerRow in IncomeSetTemp.Rows)
+                    {
+                        IncomeSetTempFinal.ImportRow(InnerRow);
+                    }
+                }
+
+                foreach (var str in ProjectName.Items)
+                {
+                    UnityPayemetsSetTemp = MyStringManager.GetTableAfterCeckProjectName(UnityPayemetsSet, str.ToString(), "اسم_الجهة_المستلمة");
+                    foreach (DataRow InnerRow in UnityPayemetsSetTemp.Rows)
+                    {
+                        UnityPayemetsSetFinal.ImportRow(InnerRow);
+                    }
+
+
+                }
+
+                foreach (var str in ProjectName.Items)
+                {
+                    MatBuySetTemp = MyStringManager.GetTableAfterCeckProjectName(MatBuySet, str.ToString(), "المشروع");
+                    foreach (DataRow InnerRow in MatBuySetTemp.Rows)
+                    {
+                        MatBuySetFinal.ImportRow(InnerRow);
+                    }
+
+
+                }
+
+                foreach (var str in ProjectName.Items)
+                {
+                    SalarySetTemp = MyStringManager.GetTableAfterCeckProjectName(SalarySet, str.ToString(), "المشروع");
+                    foreach (DataRow InnerRow in SalarySetTemp.Rows)
+                    {
+                        SalarySetFinal.ImportRow(InnerRow);
+                    }
+
+
+                }
+
+                foreach (var str in ProjectName.Items)
+                {
+                    CompSetTemp = MyStringManager.GetTableAfterCeckProjectName(CompSet, str.ToString(), "اسم_المشروع");
+                    foreach (DataRow InnerRow in CompSetTemp.Rows)
+                    {
+                        CompSetFinal.ImportRow(InnerRow);
+                    }
+
+
+                }
+
+                IncomeSet = IncomeSetTempFinal;
+                UnityPayemetsSet = UnityPayemetsSetFinal;
+                MatBuySet = MatBuySetFinal;
+                SalarySet = SalarySetFinal;
+                CompSet = CompSetFinal;
+
+            }
+
+
+            if (WithdrowPartyCheck.Checked == false)
             {
 
                 IncomeSet = MyStringManager.GetTableAfterCeckWithdorwParty(IncomeSet, WithdrowParty.Text, "اسم_الجهة_المستلمة");
@@ -192,14 +321,22 @@ namespace ExpensesSys.Pages
             }
 
 
-            IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ")+"") + " IQD مجموع الوارد";
-            UnitPaymentIncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(UnityPayemetsSet, "المبلغ_المدفوع") +"") + " IQD مجموع وارد دفعات الوحدات"; 
-            NthSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة")+"") + " IQD مجموع الصرفيات العامة";
-            CompSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة") +"") + " IQD مجموع الصرفيات الاخرى"; 
-            SalarySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم")+"") + " IQD مجموع الرواتب"; 
-            MatBuySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة")+"") + " IQD مجموع صرفيات المواد";
+            IncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(IncomeSet, "المبلغ") + "") + " IQD مجموع الوارد";
+            
+            UnitPaymentIncomeSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(UnityPayemetsSet, "المبلغ_المدفوع") + "") + " IQD مجموع وارد دفعات الوحدات";
 
+            if (Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات"))
+            {
+                NthSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(NthSet, "الكلفة") + "") + " IQD مجموع الصرفيات العامة";
+            }
+
+            CompSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(CompSet, "الكلفة") + "") + " IQD مجموع الصرفيات الاخرى";
+            SalarySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(SalarySet, "المرتب_المستلم") + "") + " IQD مجموع الرواتب";
+            MatBuySum.Text = MyStringManager.GetNumberWithComas(MyStringManager.ReturnSumOfDTFildInInt(MatBuySet, "مبلغ_الدفعة") + "") + " IQD مجموع صرفيات المواد";
+
+            if (Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات")) { 
             NthSet = MyStringManager.ReturnTableWithCurrencyCommas(NthSet, "الكلفة");
+                }
             CompSet = MyStringManager.ReturnTableWithCurrencyCommas(CompSet, "الكلفة");
 
             SalarySet = MyStringManager.ReturnTableWithCurrencyCommas(SalarySet, "المرتب_المستلم");

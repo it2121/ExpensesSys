@@ -14,7 +14,12 @@ namespace ExpensesSys.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Button5.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") ;
 
+
+            }
 
 
         }

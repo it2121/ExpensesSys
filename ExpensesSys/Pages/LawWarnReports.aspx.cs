@@ -13,6 +13,7 @@ namespace ExpensesSys.Pages
     public partial class LawWarnReports : System.Web.UI.Page
     {
         public static DataTable IncomeSet;
+        public static int ProjectID;
         public DataTable Income;
         string UnittypeStr = "";
         string Emp = "";
@@ -24,6 +25,7 @@ namespace ExpensesSys.Pages
         {
             if (!IsPostBack)
             {
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 UnitType.Items.Add("A");
                 UnitType.Items.Add("B");
@@ -62,7 +64,7 @@ namespace ExpensesSys.Pages
         {
             EmpCount.Text = EmpRadioLost.SelectedItem.Value;
 
-            Income = BBAALL.REP_GetAllIncomeRecords();
+            Income = BBAALL.REP_GetAllIncomeRecords(ProjectID);
 
             if (PrjectNameCheck.Checked)
                 UnittypeStr = UnitType.Text;

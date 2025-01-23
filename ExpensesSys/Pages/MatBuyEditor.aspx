@@ -355,6 +355,16 @@
           </div>
 
       </div>
+
+
+            <div class="row m-2">
+           
+                   <div class="col-md-12 text-center ">
+
+              <asp:Button runat="server" ID="Button1" style="width:20em" OnClick="PrintAndCreate" class="button is-primary text-center " Text="اضافة وطباعة"></asp:Button>
+          </div>
+
+      </div>
     
 <hr />    
       

@@ -11,7 +11,13 @@ namespace ExpensesSys.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                WhatsInTheSafeLbl.Text =  MyStringManager.GetNumberWithComas( BBAALL.GetWhatsInTheSafe().Rows[0][0].ToString()) ;
 
+
+
+            }
         }
         protected void Return(object sender, EventArgs e)
         {

@@ -28,7 +28,7 @@
          
          data-target="modal-js-example"
                                  onclick="GoToNewItem"
-
+         ID="AddNewBtn"
                         class="js-modal-trigger button is-fullwidth  align align-content-center  button is-ou">رفع ملف جديد 
                        
                         <i class="fas fa-add " style="margin-left: 1em">
@@ -148,6 +148,9 @@
                                                                 class="js-modal-trigger button is-danger "
                                     style="Width:60%; Height:25px"  
                              OnClientClick="return confirmation();"
+                                                        Visible='<%#Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات") %>'
+
+
                             ID="FileDel" runat="server"   Font-Size="Medium" Text="حذف الملف" CommandArgument='<%#Eval("ID") %>' CommandName="Delete" />
                     </ItemTemplate>
             

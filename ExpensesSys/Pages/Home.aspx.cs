@@ -37,23 +37,24 @@ namespace ExpensesSys.Pages
                 BL = 1;
                 AB = 1;
                 Outcome = Convert.ToInt32(BBAALL.GetAllOutcomeSum().Rows[0][0].ToString());
-                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum().Rows[0][0].ToString());
+                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum(ProjectID).Rows[0][0].ToString());
+                ProjectID = Convert.ToInt32(Session["ProjectID"].ToString());
 
                 DataTable Out30 = BBAALL.GetAllOutcomeSum();
-                DataTable Inc30 = BBAALL.GetAllIncomeSum();
+                DataTable Inc30 = BBAALL.GetAllIncomeSum(ProjectID);
                 // DateTime enteredDate;
                 //  foreach(DataRow row in Out30.Rows)
                 //  {
                 //     enteredDate = DateTime.Parse(row[""]);\
                 //   }
-                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum().Rows[0][0].ToString());
-                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum().Rows[0][0].ToString());
-                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum().Rows[0][0].ToString());
+                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum(ProjectID).Rows[0][0].ToString());
+                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum(ProjectID).Rows[0][0].ToString());
+                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum(ProjectID).Rows[0][0].ToString());
                 GetAllNthSum = Convert.ToInt32(BBAALL.GetAllNthSum().Rows[0][0].ToString());
 
                 EmpCountLbl.Text = BBAALL.getAllEmpCount().Rows[0][0].ToString();
                 projectsCountLbl.Text = BBAALL.getAllProjectCount().Rows[0][0].ToString();
-                DataTable IncomeTbl = BBAALL.REP_GetAllIncomeRecords();
+                DataTable IncomeTbl = BBAALL.REP_GetAllIncomeRecords(ProjectID);
                 DateTime start = DateTime.Now.AddDays(-30);
                 DateTime end = DateTime.Now;
 
@@ -115,10 +116,10 @@ namespace ExpensesSys.Pages
 
                 Outcome = Convert.ToInt32(BBAALL.GetAllOutcomeSum().Rows[0][0].ToString());
 
-                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum().Rows[0][0].ToString());
-                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum().Rows[0][0].ToString());
-                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum().Rows[0][0].ToString());
-                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum().Rows[0][0].ToString());
+                Income = Convert.ToInt32(BBAALL.GetAllIncomeSum(ProjectID).Rows[0][0].ToString());
+                GetAllMatBuySum = Convert.ToInt32(BBAALL.GetAllMatBuySum(ProjectID).Rows[0][0].ToString());
+                GetAllSalarySum = Convert.ToInt32(BBAALL.GetAllSalarySum(ProjectID).Rows[0][0].ToString());
+                GetAllCompSum = Convert.ToInt32(BBAALL.GetAllCompSum(ProjectID).Rows[0][0].ToString());
                 GetAllNthSum = Convert.ToInt32(BBAALL.GetAllNthSum().Rows[0][0].ToString());
             }
             Main.openPage = "Home";

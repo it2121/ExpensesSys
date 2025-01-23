@@ -24,6 +24,7 @@ namespace ExpensesSys.Pages
                 DataGridUsers.DataSource = dt;
                 DataGridUsers.DataBind();
 
+                NewBtn.Visible = Session["Role"].Equals("تطوير") || Session["Role"].Equals("الحسابات");
 
 
             }

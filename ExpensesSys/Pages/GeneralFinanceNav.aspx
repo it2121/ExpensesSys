@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
           <style>
         .HeaderDiv {
-            box-shadow: 4px 4px 20px Black;
-            border-radius: 10px;
+            box-shadow: 2px 2px 10px Gray;
+            border-radius: 5px;
         }
     </style>
 </asp:Content>
@@ -69,39 +69,68 @@
         <br />
 
 
+            <div class="row   m-4" style="padding-left: 1em; padding-right: 1em;">
+
+
+                  <div class="col-xs-6 col-md-12  HeaderDiv text-center" style="background-color: #eeeeee;">
+
+
+                <div class="row">
+                    <div class="col-12  text-center" style="">
+
+                        <div class="row">
+
+                            <asp:Label runat="server" ID="Button1722" Style="font: bolder; width: 100%;" Width="100%" Font-Size="X-Large" ForeColor="Black" class="m-2" role="button" Text="المبلغ المتوفر في الحسابات"></asp:Label>
+
+
+
+                        </div>
+                        <div class="row">
+
+                            <asp:Label runat="server" ID="WhatsInTheSafeLbl" Style="font: bolder; width: 100%;" Width="100%" Font-Size="XX-Large" ForeColor="DarkGreen" class="" role="button" Text="31"></asp:Label>
+
+
+
+                        </div>
+                    </div>
+                 
+
+
+
+                </div>
+
+
+
+
+            </div>
 
 
 
 
 
+            </div>
+
+
+
+        <hr />
           <div class="row   m-4" style="padding-left: 1em; padding-right: 1em;">
 
 
 
 
 
-            <div class="col   text-center ">
-                                 <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralIn" role="button" Text="الواردات العامة"></asp:Button>
+       
+
+               <div class="col   text-center ">
+                             <asp:Button runat="server" ID="SalaryManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralOut" BackColor="Salmon" role="button" Text="المصروفات العامة"></asp:Button>
+            </div>
+                   <div class="col   text-center ">
+                                 <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralIn" BackColor="LightGreen" role="button" Text="الواردات العامة"></asp:Button>
+            </div>
             </div>
 
-
-
-            </div>
-
-          <div class="row  m-4" style="padding-left: 1em; padding-right: 1em;">
-
-
-
-
-
-            <div class="col   text-center ">
-                             <asp:Button runat="server" ID="SalaryManBtn" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralOut" role="button" Text="المصروفات العامة"></asp:Button>
-            </div>
-
-
-
-            </div>
-
+    
+        <hr />
            <div class="row  m-4" style="padding-left: 1em; padding-right: 1em;">
 
 

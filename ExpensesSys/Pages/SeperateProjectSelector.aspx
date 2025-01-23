@@ -182,7 +182,7 @@ html, body {
          data-target="modal-js-example"
                                  onclick="GoToProjectZero"
 
-                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-large">الادارة العامة 
+                        class="js-modal-trigger button is-fullwidth  align align-content-center  button is-large ">الادارة العامة 
                        
                         <i class="fas " style="margin-left: 1em">
 
@@ -259,7 +259,7 @@ html, body {
              <div class="col-3"></div>
              <div class="col-6">
 
-                                 <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" OnClick="GoToGeneralFinanceNav" role="button" Text="الحسابات العامة"></asp:Button>
+                                 <asp:Button runat="server" ID="Button1" Style="font: bolder; width: 100%;" class="btn" BackColor="Goldenrod" OnClick="GoToGeneralFinanceNav" role="button" Text="الحسابات العامة"></asp:Button>
 
 
                          </div>  

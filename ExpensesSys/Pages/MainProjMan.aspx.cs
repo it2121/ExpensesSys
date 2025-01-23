@@ -27,7 +27,7 @@ namespace ExpensesSys.Pages
         protected void GoToProjAndUnit(object sender, EventArgs e)
         {
             
-            Response.Redirect("ProjectAndUnits.aspx");
+            Response.Redirect("ProjMan.aspx");
 
         }  protected void OneUnitOverView(object sender, EventArgs e)
         {

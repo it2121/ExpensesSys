@@ -228,7 +228,7 @@
             
             <div class="row m-2">
 
-                <div class="col-3">
+                <div class="col-2">
 
 
            
@@ -244,41 +244,41 @@
             </div>
 
 
+      
+
                 
                 <div class="col-3">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="Feetage"  class="form__field" type="input" placeholder="الذرعة" />
+     <asp:TextBox runat="server" ID="UnityType"  class="form__field" type="input" placeholder="نوع الوحدة القياسية" />
 
-    <label for="name" class="form__label">الذرعة</label>
+    <label for="name" class="form__label">نوع الوحدة القياسية</label>
+</div>
+           
+            </div>       
+                          
+                <div class="col-3">
+
+
+           
+                         <div class="form__group field">
+     <asp:TextBox runat="server" ID="Feetage"  class="form__field" type="input" placeholder="عدد الوحدة القياسية" />
+
+    <label for="name" class="form__label">عدد الوحدة القياسية</label>
 </div>
            
             </div>
 
-
-                
-                <div class="col-3">
+                <div class="col-4">
 
 
            
                          <div class="form__group field">
-     <asp:TextBox runat="server" ID="UnityType"  class="form__field" type="input" placeholder="نوع الوحدة" />
+     <asp:TextBox runat="server" ID="UnitPrice"  class="form__field" type="input" placeholder="كلفة العقد للوحدة السكنية او التجارية الواحدة" />
 
-    <label for="name" class="form__label">نوع الوحدة</label>
-</div>
-           
-            </div>       
-
-                <div class="col-3">
-
-
-           
-                         <div class="form__group field">
-     <asp:TextBox runat="server" ID="UnitPrice"  class="form__field" type="input" placeholder="سعر الوحدة" />
-
-    <label for="name" class="form__label">سعر الوحدة</label>
+    <label for="name" class="form__label">كلفة العقد للوحدة السكنية او التجارية الواحدة</label>
 </div>
            
             </div>
