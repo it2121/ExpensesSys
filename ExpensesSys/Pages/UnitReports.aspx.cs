@@ -130,7 +130,7 @@ namespace ExpensesSys.Pages
 
 
             RecevedSum.Text = MyStringManager.GetNumberWithComas(MyStringManager.GetSumOfRowsWithCondition(IncomeSet, "الواصل") +"") + " IQD مجموع المبالغ المستلمة";
-           PendningAcordingToCompStage.Text = MyStringManager.GetNumberWithComas(MyStringManager.GetSumOfRowsWithCondition(IncomeSet, "المطلوب") +"") + " IQD مجموع المبالغ المطلوبة حسب مرحلة الانجاز";
+            PendningAcordingToCompStage.Text = MyStringManager.GetNumberWithComas(MyStringManager.GetSumOfRowsWithCondition(IncomeSet, "المطلوب") +"") + " IQD مجموع المبالغ المطلوبة حسب مرحلة الانجاز";
             AllRemAmount.Text = MyStringManager.GetNumberWithComas(MyStringManager.GetSumOfRowsWithCondition(IncomeSet, "المبلغ_المتبقي") +"") + " IQD مجموع المبالغ المتبقية";
             EmpCount.Text = (MyStringManager.GetCountOfRowsWithCondition(IncomeSet, "التوظيف","موظف")) +"" + " : عدد الموظفين ";
             NonEmpCount.Text = (MyStringManager.GetCountOfRowsWithCondition(IncomeSet, "التوظيف","غير موظف")) +"" + " : عدد غير الموظفين ";
@@ -141,7 +141,7 @@ namespace ExpensesSys.Pages
 
            // IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
            // IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_المتبقي");
-            //IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
+           //IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
            // IncomeSet = MyStringManager.ReturnTableWithCurrencyCommas(IncomeSet, "المبلغ_الكامل");
 
             OutComeTable.DataSource = ReturnTableWithoutDates();

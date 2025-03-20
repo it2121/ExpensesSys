@@ -25,14 +25,17 @@ namespace ExpensesSys.Pages
        //   static string DatabaseConnectionStringLAW = @"Server=sql5112.site4now.net; Database=db_aa8601_lawdb; User Id=db_aa8601_lawdb_admin; Password=Akastarlord1._; ";
 
 
-         // static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER;Database=ExpensesDB; User Id=exp; Password=123;  ";
-         //static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER;Database=LawDB; User Id=exp; Password=123;  ";
+          static string DatabaseConnectionString = @"Server=192.168.0.117\HEADSERVER2;Database=ExpensesDB; User Id=exp; Password=123;  ";
+         static string DatabaseConnectionStringLAW = @"Server=192.168.0.117\HEADSERVER2;Database=LawDB; User Id=exp; Password=123;  ";
 
 
 
 
-              static string DatabaseConnectionString =     @"Server=DELTA\SQLEXPRESS;  Database=ExpensesDB; Trusted_Connection  = True;";
+          /*    static string DatabaseConnectionString =     @"Server=DELTA\SQLEXPRESS;  Database=ExpensesDB; Trusted_Connection  = True;";
               static string DatabaseConnectionStringLAW =  @"Server=DELTA\SQLEXPRESS;  Database=LawDB;      Trusted_Connection  = True;";
+*/
+ //            static string DatabaseConnectionString = @"Server=DESKTOP-DE1EPPS;  Database=ExpensesDB;  User Id=exp; Password=123;";
+//              static string DatabaseConnectionStringLAW = @"Server=DESKTOP-DE1EPPS;  Database=LawDB;       User Id=exp; Password=123;";
 
 
 

@@ -280,7 +280,7 @@ namespace ExpensesSys.Pages
             {
               Font NormalFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK);
                 Document doc = new Document(PageSize.A4, 88f, 88f, 90f, 25f);
-
+                
                 BaseFont basefontArabic = BaseFont.CreateFont(System.Web.HttpContext.Current.Server.MapPath("/fonts/times.ttf"), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 iTextSharp.text.Font f = new iTextSharp.text.Font(basefontArabic, 14);
                 iTextSharp.text.Font fcontent = new iTextSharp.text.Font(basefontArabic, 12);
@@ -316,11 +316,11 @@ namespace ExpensesSys.Pages
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     table.SetWidths(new float[] { 700f });
                     table.SpacingBefore = 20f;
-
-
-
+                    
+                        
+                            
                     cell = PhraseCellClear(new Phrase(BBAALL.getProjectNameByID(Convert.ToInt32(Session["ProjectID"].ToString())).Rows[0][0].ToString(), fLarg), PdfPCell.ALIGN_CENTER);
-                    cell.BackgroundColor = GrayColor.WHITE;
+                    cell.BackgroundColor = GrayColor.GREEN;
 
                     cell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
 
@@ -806,6 +806,7 @@ namespace ExpensesSys.Pages
 
 
                     table.AddCell(cell);
+                   
                     doc.Add(table);
 
 

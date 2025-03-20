@@ -115,9 +115,8 @@ namespace ExpensesSys.Pages
 
                 string ID = e.CommandArgument.ToString();
                 Files.RecordID = Convert.ToInt32(ID);
-                Files.redirectTo = "MatBuy";
-
-                Response.Redirect("WorkContracts.aspx");
+                Files.redirectTo = "WorkContracts";
+                Response.Redirect("Files.aspx");
 
             }
             if (x.Equals("PrintReport"))
