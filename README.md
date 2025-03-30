@@ -1,6 +1,3 @@
-Here’s an improved version of your **ERP system for a construction company** description with more visuals and structured formatting:  
-
----
 
 # 🏗️ ExpensesSys - ERP System for Construction Companies 💼  
 
